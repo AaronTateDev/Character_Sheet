@@ -1,21 +1,15 @@
-/*<!------------------SUMMING INPUT ELEMENTS---------------->
+/*---------------------- Primary Stats ------------------------ */
+var 
+sTotal,
+pTotal,
+eTotal,
+cTotal,
+iTotal,
+aTotal,
+lTotal;
 
-
-Qty1 : <input onblur="findTotal()" type="text" name="qty" id="qty1"/><br>
-Qty2 : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
-Qty3 : <input onblur="findTotal()" type="text" name="qty" id="qty3"/><br>
-Qty4 : <input onblur="findTotal()" type="text" name="qty" id="qty4"/><br>
-Qty5 : <input onblur="findTotal()" type="text" name="qty" id="qty5"/><br>
-Qty6 : <input onblur="findTotal()" type="text" name="qty" id="qty6"/><br>
-Qty7 : <input onblur="findTotal()" type="text" name="qty" id="qty7"/><br>
-Qty8 : <input onblur="findTotal()" type="text" name="qty" id="qty8"/><br>
-<br><br>
-Total : <input type="text" name="total" id="total"/>
-*/
-
-    
 function findTotal(){
-    var arr = document.getElementsByName('qty');
+    var arr = document.getElementsByName('qtyBase');
     var tot=0;
     for(var i=0;i<arr.length;i++){
         if(parseInt(arr[i].value))
@@ -36,4 +30,32 @@ function findTotal(){
     
 }
 
-    
+function statTotals(){
+	sTotal = +document.getElementById('qtyBaseS').value + +document.getElementById('qtyModS').value;
+	document.getElementById('qtyTotalS').value = sTotal;
+
+	pTotal = +document.getElementById('qtyBaseP').value + +document.getElementById('qtyModP').value;
+	document.getElementById('qtyTotalP').value = pTotal;
+
+	eTotal = +document.getElementById('qtyBaseE').value + +document.getElementById('qtyModE').value;
+	document.getElementById('qtyTotalE').value = eTotal;
+
+	cTotal = +document.getElementById('qtyBaseC').value + +document.getElementById('qtyModC').value;
+	document.getElementById('qtyTotalC').value = cTotal;
+
+	iTotal = +document.getElementById('qtyBaseI').value + +document.getElementById('qtyModI').value;
+	document.getElementById('qtyTotalI').value = iTotal;
+
+	aTotal = +document.getElementById('qtyBaseA').value + +document.getElementById('qtyModA').value;
+	document.getElementById('qtyTotalA').value = aTotal;
+
+	lTotal = +document.getElementById('qtyBaseL').value + +document.getElementById('qtyModL').value;
+	document.getElementById('qtyTotalL').value = lTotal;
+}
+
+/*---------------------- Secondary Stats ------------------------ */
+
+document.addEventListener("input", function(){
+    healthTotal = 3 * eTotal + +(20 + sTotal);
+    document.getElementById('baseHealth').value = healthTotal;
+});

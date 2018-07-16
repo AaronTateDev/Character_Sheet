@@ -3,62 +3,165 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
 	<title>Charcater Sheet</title>
 </head>
 <body>
 
-	<h2>Character Sheet</h2>
-
-	<table>
-<tbody>
-<tr>
-<td>&nbsp;S.P.E.C.I.A.L.</td>
-<td>Total</td>
-<td>Mods</td>
-</tr>
-<tr>
-<td>&nbsp;Strength</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty1"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Perception</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty2"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Endurance</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty3"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Charisma</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty4"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Intelligence</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty5"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Agility</td>
-<td><input onInput="findTotal()" maxlength="2" name="qty" size="1" type="text" id="qty6"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>&nbsp;Luck</td>
-<td><input onInput="findTotal()" maxlength="2" size="1" name="qty" type="text" id="qty7"/></td>
-<td><input maxlength="2" name="stat" size="1" type="text" /></td>
-</tr>
-<tr>
-<td>TOTALS:</td>
-<td><span id="total"></span></td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-	
+	<h2 class="charSheet">Character Sheet</h2>
+	<div class="grid-container">
+		<div class="nameArea">
+		</div>
+		<div class="healthArmor">
+		</div>
+		<div class="primaryStat">
+			<table>
+				<tbody>
+					<tr>
+						<th>&nbsp;S.P.E.C.I.A.L.</th>
+						<th>Base</th>
+						<th>Mods</th>
+						<th>Total</th>
+					</tr>
+					<tr>
+						<td>&nbsp;Strength</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseS"/>
+						</td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModS"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalS" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Perception</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseP"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModP"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalP" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Endurance</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseE"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModE"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalE" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Charisma</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseC"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModC"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalC" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Intelligence</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseI"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModI"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalI" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Agility</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseA"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModA"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalA" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Luck</td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseL"/></td>
+						<td><input onInput="findTotal()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModL"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalL" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;BASE TOTAL:</td>
+						<td><span id="total">0</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="secondaryStat">
+			<table>
+				<tbody>
+					<tr>
+						<th>Secondary</th>
+						<th>Base</th>
+						<th>Mods</th>
+						<th>Total</th>
+					</tr>
+					<tr>
+						<td>&nbsp;Health</td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Base" type="text" id="baseHealth"/></td>
+						<td><input value=0 maxlength="4" size="1" name="qty2Mod" type="text" id="modHealth"/></td>
+						<td><input value=0 maxlength="4" size="1" name="qty2Total" type="text" id="totalHealth" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Skill Pts</td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Base" type="text" id="baseSkillPts"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Mod" type="text" id="modSkillPts"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Total" type="text" id="totalSkillPts" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;AP (Action Pts)</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseAP"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modAP"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalAP" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Carry Wt.</td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Base" type="text" id="baseCarry"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Mod" type="text" id="modCarry"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Total" type="text" id="totalCarry" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Melee Dmg</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseMeleeD"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modMeleeD"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalMeleeD" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Poison Res</td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Base" type="text" id="basePoisonRes"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Mod" type="text" id="modPoisonRes"/></td>
+						<td><input value=0 maxlength="3" size="1" name="qty2Total" type="text" id="totalPoisonRes" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Radiation Res</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseRadRes"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modRadRes"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalRadRes" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Sequence</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseSequence"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modSequence"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalSequence" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Healing Rate</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseHeal"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modHeal"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalHeal" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Crit Chance</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseCrit"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modCrit"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalCrit" readonly/></td>
+					</tr>
+					<tr>
+						<td>&nbsp;Imp Endurance</td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Base" type="text" id="baseImpEnd"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Mod" type="text" id="modImpEnd"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qty2Total" type="text" id="totalImpEnd" readonly/></td>
+					</tr>				
+				</tbody>
+			</table>
+		</div>
+		<div class="apSpoolImpEndurance">
+		</div>
+		<div class="skills1">
+		</div>
+		<div class="skills2">
+		</div>
+		<div class="skills3">
+		</div>
+		<div class="skills4">
+		</div>
+	</div>
 
 <script src="main.js"></script>
 

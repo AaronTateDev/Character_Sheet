@@ -1,0 +1,52 @@
+
+/*--------------------- Grid Container -------------------*/
+.grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4" "skills1 skills2 skills3 skills4";
+}
+
+.nameArea {
+  grid-area: nameArea;
+}
+
+.healthArmor {
+  grid-area: healthArmor;
+}
+
+.primaryStat {
+  grid-area: primaryStat;
+}
+
+.secondaryStat {
+  grid-area: secondaryStat;
+}
+
+.apSpoolImpEndurance {
+  grid-area: apSpoolImpEndurance;
+}
+
+.skills1 {
+  grid-area: skills1;
+}
+
+.skills2 {
+  grid-area: skills2;
+}
+
+.skills3 {
+  grid-area: skills3;
+}
+
+.skills4 {
+  grid-area: skills4;
+}
+
+/*--------------------- Title Styles -------------------*/
+
+.charSheet {
+  text-align: center;
+  text-transform: uppercase;
+}
