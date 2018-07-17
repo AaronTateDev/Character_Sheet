@@ -56,6 +56,76 @@ function statTotals(){
 /*---------------------- Secondary Stats ------------------------ */
 
 document.addEventListener("input", function(){
-    healthTotal = 3 * eTotal + +(20 + sTotal);
-    document.getElementById('baseHealth').value = healthTotal;
+    baseHealthTotal = 3 * eTotal + +(20 + sTotal);
+    if (eTotal == 0 && sTotal == 0) {
+    	document.getElementById('baseHealth').value = 0;
+    }else {
+    	document.getElementById('baseHealth').value = baseHealthTotal;
+    } /*---- Base Health Calc ----*/
+
+    /*---- Skill Pts Calc HERE ----*/
+    
+    baseApTotal = Math.floor(0.5 * aTotal + 5);
+    if (aTotal != 0 && aTotal < 10) {
+    	document.getElementById('baseAP').value = baseApTotal;
+    }else if (aTotal >= 10) {
+    	document.getElementById('baseAP').value = aTotal;
+    }else if (aTotal == 0) {
+    	document.getElementById('baseAP').value = 0;
+    } /*---- Base AP Calc ----*/
+    
+    baseWeightTotal = 25 * sTotal + 25;
+    if (sTotal >= 1) {
+    	document.getElementById('baseCarry').value = baseWeightTotal;
+    }else {
+    	document.getElementById('baseCarry').value = 0;
+    } /*---- Base Weight Calc ----*/
+
+    baseMeleeDTotal = sTotal - 5;
+    if (baseMeleeDTotal <= 1 && sTotal != 0) {
+    	document.getElementById('baseMeleeD').value = 1;
+    }else if (baseMeleeDTotal > 1) {
+    	document.getElementById('baseMeleeD').value = baseMeleeDTotal;
+    }else if (sTotal == 0) {
+    	document.getElementById('baseMeleeD').value = 0; 
+    }/*---- Base Melee Damage Calc ----*/
+
+    basePoisonResTotal = 5 * eTotal;
+    baseRadResTotal = 2 * eTotal;
+    if (eTotal != 0) {
+    	document.getElementById('basePoisonRes').value = basePoisonResTotal;
+    	document.getElementById('baseRadRes').value = baseRadResTotal;
+    }else {
+    	document.getElementById('basePoisonRes').value = 0;
+    	document.getElementById('baseRadRes').value = 0;
+    }/*---- Base Poison/Rad Resist Calc ----*/
+
+    /*---- Base Electricity Resist Calc (race/items required)----*/
+
+    /*---- Base Gas Resist Calc (items required)----*/
+
+    baseSequenceTotal = pTotal * 2;
+    if (pTotal != 0) {
+    	document.getElementById('baseSequence').value = baseSequenceTotal;
+    }else {
+    	document.getElementById('baseSequence').value = 0;
+    }/*---- Base Sequence Calc ----*/
+
+    baseHealTotal = Math.floor(0.33 * eTotal);
+    if (eTotal != 0) {
+    	document.getElementById('baseHeal').value = baseHealTotal;
+    }else {
+    	document.getElementById('baseHeal').value = 0;
+    }/*---- Base Heal Rate Calc ----*/
+
+    document.getElementById('baseCrit').value = aTotal;
+    /*---- Base Crit Calc ----*/
+
+    baseImpEndTotal =  10 * (eTotal + iTotal);
+    if (eTotal != 0 || iTotal != 0) {
+    	document.getElementById('baseImpEnd').value = baseImpEndTotal;
+    }else {
+    	document.getElementById('baseImpEnd').value = 0;
+    }/*---- Base ImpEnd Calc ----*/
+
 });

@@ -10,7 +10,7 @@
 
 .nameArea {
   grid-area: nameArea;
-}
+ }
 
 .healthArmor {
   grid-area: healthArmor;
