@@ -57,10 +57,10 @@ function statTotals(){
 
 document.addEventListener("input", function(){
     baseHealthTotal = 3 * eTotal + +(20 + sTotal);
-    if (eTotal == 0 && sTotal == 0) {
-    	document.getElementById('baseHealth').value = 0;
-    }else {
+    if (eTotal > 0 && sTotal > 0) {
     	document.getElementById('baseHealth').value = baseHealthTotal;
+    }else {
+    	document.getElementById('baseHealth').value = 0;
     } /*---- Base Health Calc ----*/
 
     /*---- Skill Pts Calc HERE ----*/
@@ -92,7 +92,7 @@ document.addEventListener("input", function(){
 
     basePoisonResTotal = 5 * eTotal;
     baseRadResTotal = 2 * eTotal;
-    if (eTotal != 0) {
+    if (eTotal > 0) {
     	document.getElementById('basePoisonRes').value = basePoisonResTotal;
     	document.getElementById('baseRadRes').value = baseRadResTotal;
     }else {
@@ -105,24 +105,25 @@ document.addEventListener("input", function(){
     /*---- Base Gas Resist Calc (items required)----*/
 
     baseSequenceTotal = pTotal * 2;
-    if (pTotal != 0) {
+    if (pTotal > 0) {
     	document.getElementById('baseSequence').value = baseSequenceTotal;
     }else {
     	document.getElementById('baseSequence').value = 0;
     }/*---- Base Sequence Calc ----*/
 
     baseHealTotal = Math.floor(0.33 * eTotal);
-    if (eTotal != 0) {
+    if (eTotal > 0) {
     	document.getElementById('baseHeal').value = baseHealTotal;
     }else {
     	document.getElementById('baseHeal').value = 0;
     }/*---- Base Heal Rate Calc ----*/
 
-    document.getElementById('baseCrit').value = aTotal;
-    /*---- Base Crit Calc ----*/
+    if (aTotal > 0) {
+    	document.getElementById('baseCrit').value = aTotal;
+    }/*---- Base Crit Calc ----*/
 
     baseImpEndTotal =  10 * (eTotal + iTotal);
-    if (eTotal != 0 || iTotal != 0) {
+    if (eTotal > 0 || iTotal > 0) {
     	document.getElementById('baseImpEnd').value = baseImpEndTotal;
     }else {
     	document.getElementById('baseImpEnd').value = 0;

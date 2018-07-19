@@ -11,6 +11,30 @@
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
 		<div class="nameArea">
+			<p>Name: <input class="justice" type="text" size="8"/><span>
+				Sex: <select name="cars">
+    					<option value="Male">Male</option>
+   						<option value="Female">Female</option>
+    					<option value="Select" selected>Select</option>
+   					 </select>
+				<!--Sex: <input class="justice" type="text" size="4" value="?"/>--></span><br/></p>
+			
+			<p>Race: <input class="justice" type="text" size="8" value="?"/><span>
+				Age: <input class="justice" type="text" size="3" value="?"/></span><br/></p>
+
+			<p>Height: <input class="justice" type="text" value="?"/><span>
+			   Weight: <input class="justice" type="text" value="?"/>
+				 Eyes: <input class="justice" type="text" value="?"/></span><br/></p>
+
+			<p>Hair: <input class="justice" type="text" value="?"/><span>
+			   Skin: <input class="justice" type="text" value="?"/></span><br/></p>
+
+			<p>Exp to Level: <input class="justice" type="text" value="?"/><span>
+			  Current Level: <input class="justice" type="text" value="?"/></span><br/></p>
+
+
+			
+
 		</div>
 		<div class="healthArmor">
 		</div>
@@ -25,7 +49,7 @@
 					</tr>
 					<tr>
 						<td>&nbsp;Strength</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseS"/>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="2" name="qtyBase" type="text" id="qtyBaseS"/>
 						</td>
 						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModS"/></td>
 						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalS" readonly/></td>
