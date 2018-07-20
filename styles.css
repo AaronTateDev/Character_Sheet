@@ -56,9 +56,47 @@
   changing the size of number fields to HTML number boxes and text input fields to 
   underlined spaces then finish name section*/
 
+/*Example
 input[type="text"]#fun
 {
     border: 0;
     border-bottom: 1px solid red;
     outline: 0;
+}*/
+
+.nameSpace
+{
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: 0;
+}
+
+.nameArea span, p, select {
+    margin-left: 5px;
+}
+
+.numSpace
+{
+    text-align: center;
+    border: 0;
+    border-bottom: 2px solid red;
+    outline: 0;
+    font-weight: bold;
+    width: 35px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}/*Removes Number spinners from input type=number fields*/
+
+.primaryStat input{
+  width: 35px;
+  text-align: center;
+}
+
+#total{
+  margin-left: 10px;
 }

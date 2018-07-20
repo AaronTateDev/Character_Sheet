@@ -6,7 +6,8 @@ eTotal,
 cTotal,
 iTotal,
 aTotal,
-lTotal;
+lTotal,
+charLevel;
 
 function findTotal(){
     var arr = document.getElementsByName('qtyBase');
@@ -51,12 +52,14 @@ function statTotals(){
 
 	lTotal = +document.getElementById('qtyBaseL').value + +document.getElementById('qtyModL').value;
 	document.getElementById('qtyTotalL').value = lTotal;
+
+	charLevel = document.getElementById('level').value;
 }
 
 /*---------------------- Secondary Stats ------------------------ */
 
 document.addEventListener("input", function(){
-    baseHealthTotal = 3 * eTotal + +(20 + sTotal);
+    baseHealthTotal = 3 * eTotal + +(20 + sTotal) + (5 + 2*eTotal) * (charLevel - 1) ;
     if (eTotal > 0 && sTotal > 0) {
     	document.getElementById('baseHealth').value = baseHealthTotal;
     }else {

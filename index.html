@@ -11,31 +11,41 @@
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
 		<div class="nameArea">
-			<p>Name: <input class="justice" type="text" size="8"/><span>
-				Sex: <select name="cars">
+			<p>Name: <input class="nameSpace" type="text" size="20"/><span>
+				Sex: <select name="Sex" class="nameSpace">
+						<option value="" selected disabled hidden>Select</option>
     					<option value="Male">Male</option>
    						<option value="Female">Female</option>
-    					<option value="Select" selected>Select</option>
+    				 </select></span><br/></p>
+			
+			<p>Race: <select name="races" class="nameSpace">
+						<option value="" selected disabled hidden>Select Race</option>
+	    				<option value="Human">Human</option>
+	   					<option value="Ghoul">Ghoul</option>
+	   					<option value="Super-Mutant">Super-Mutant</option>
+	   					<option value="Half-Mutant">Half-Mutant</option>
+	   					<option value="Deathclaw">Deathclaw</option>
+	   					<option value="Deathclaw (Grey Tribe)">Deathclaw (Grey Tribe)</option>
+	   					<option value="Dog">Dog</option>
+	   					<option value="Robot">Robot</option>
+	   					<option value="Humanoid Andriod Robot">Humanoid Andriod Robot</option>
    					 </select>
-				<!--Sex: <input class="justice" type="text" size="4" value="?"/>--></span><br/></p>
-			
-			<p>Race: <input class="justice" type="text" size="8" value="?"/><span>
-				Age: <input class="justice" type="text" size="3" value="?"/></span><br/></p>
+			<span>Age: <input class="nameSpace" type="text" size="3"/></span><br/></p>
 
-			<p>Height: <input class="justice" type="text" value="?"/><span>
-			   Weight: <input class="justice" type="text" value="?"/>
-				 Eyes: <input class="justice" type="text" value="?"/></span><br/></p>
+			<p>Height: <input class="nameSpace" type="text" size="6"/><span>
+			   Weight: <input class="nameSpace" type="text" size="7"/></span><br/></p>
 
-			<p>Hair: <input class="justice" type="text" value="?"/><span>
-			   Skin: <input class="justice" type="text" value="?"/></span><br/></p>
+			<p>Hair: <input class="nameSpace" type="text" size="10"/><span>
+			   Skin: <input class="nameSpace" type="text" size="10"/></span><span>
+			   Eyes: <input class="nameSpace" type="text" size="10"/></span><br/></p>
 
-			<p>Exp to Level: <input class="justice" type="text" value="?"/><span>
-			  Current Level: <input class="justice" type="text" value="?"/></span><br/></p>
+			<p>Exp to Level: <input class="nameSpace" type="text" size="15"/><span>
+			  Current Level: <input id="level" class="numSpace" min="1" max="100" type="number" value="1" /></span><br/></p>
 
 
 			
 
-		</div>
+		</div><!-- End of Name Section-->
 		<div class="healthArmor">
 		</div>
 		<div class="primaryStat">
@@ -49,46 +59,46 @@
 					</tr>
 					<tr>
 						<td>&nbsp;Strength</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="2" name="qtyBase" type="text" id="qtyBaseS"/>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseS"/>
 						</td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModS"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalS" readonly/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModS"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalS" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Perception</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseP"/></td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModP"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalP" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseP"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModP"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalP" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Endurance</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseE"/></td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModE"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalE" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseE"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModE"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalE" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Charisma</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseC"/></td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModC"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalC" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseC"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModC"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalC" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Intelligence</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseI"/></td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModI"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalI" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseI"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModI"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalI" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Agility</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseA"/></td>
-						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModA"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalA" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseA"/></td>
+						<td><input onInput="statTotals()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModA"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalA" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Luck</td>
-						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="text" id="qtyBaseL"/></td>
-						<td><input onInput="findTotal()" value=0 maxlength="2" size="1" name="qtyMod" type="text" id="qtyModL"/></td>
-						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="text" id="qtyTotalL" readonly/></td>
+						<td><input onInput="findTotal();statTotals()" value=0 maxlength="2" size="1" name="qtyBase" type="number" id="qtyBaseL"/></td>
+						<td><input onInput="findTotal()" value=0 maxlength="2" size="1" name="qtyMod" type="number" id="qtyModL"/></td>
+						<td><input value=0 maxlength="2" size="1" name="qtyTotal" type="number" id="qtyTotalL" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;BASE TOTAL:</td>
@@ -96,7 +106,7 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</div> <!-- End of Stats Section-->
 		<div class="secondaryStat">
 			<table>
 				<tbody>
@@ -186,7 +196,7 @@
 					</tr>				
 				</tbody>
 			</table>
-		</div>
+		</div><!-- End of Secondary Stats Section-->
 		<div class="apSpoolImpEndurance">
 		</div>
 		<div class="skills1">
