@@ -66,10 +66,15 @@ document.addEventListener("input", function(){
     	document.getElementById('baseHealth').value = 0;
     } /*---- Base Health Calc ----*/
 
-    /*---- Skill Pts Calc HERE ----*/
+    baseSkillsTotal = (5 + 2*iTotal) * (charLevel - 1) ;
+    if (iTotal > 0) {
+    	document.getElementById('baseSkillPts').value = baseSkillsTotal;
+    }else {
+    	document.getElementById('baseSkillPts').value = 0;
+    }/*---- Skill Pts Calc HERE ----*/
     
     baseApTotal = Math.floor(0.5 * aTotal + 5);
-    if (aTotal != 0 && aTotal < 10) {
+    if (aTotal > 0 && aTotal < 10) {
     	document.getElementById('baseAP').value = baseApTotal;
     }else if (aTotal >= 10) {
     	document.getElementById('baseAP').value = aTotal;
@@ -121,8 +126,10 @@ document.addEventListener("input", function(){
     	document.getElementById('baseHeal').value = 0;
     }/*---- Base Heal Rate Calc ----*/
 
-    if (aTotal > 0) {
-    	document.getElementById('baseCrit').value = aTotal;
+    if (lTotal > 0) {
+    	document.getElementById('baseCrit').value = lTotal;
+    }else {
+    	document.getElementById('baseCrit').value = 0;
     }/*---- Base Crit Calc ----*/
 
     baseImpEndTotal =  10 * (eTotal + iTotal);
@@ -131,5 +138,72 @@ document.addEventListener("input", function(){
     }else {
     	document.getElementById('baseImpEnd').value = 0;
     }/*---- Base ImpEnd Calc ----*/
+
+    /*---------------------------------- SKILLS PART --------------------------------------*/
+    /*------------------------------*/
+    /*---- Base Skills1 Section ----*/
+    /*------------------------------*/
+	basePistolsTotal =  5 + (4 * aTotal);
+    if (aTotal > 0) {
+    	document.getElementById('basePistolSkill').value = basePistolsTotal;
+    }else {
+    	document.getElementById('basePistolSkill').value = 0;
+    }/*---- Base Pistol Skill Calc ----*/ 
+
+    baseSMGTotal =  5 + 3 * aTotal + sTotal;
+    if (aTotal > 0 && sTotal > 0) {
+    	document.getElementById('baseSMGSkill').value = baseSMGTotal;
+    }else {
+    	document.getElementById('baseSMGSkill').value = 0;
+    }/*---- Base SMG Skill Calc ----*/    
+
+    baseARTotal =  2 * (pTotal + aTotal);
+    if (pTotal > 0 && aTotal > 0) {
+    	document.getElementById('baseARSkill').value = baseARTotal;
+    }else {
+    	document.getElementById('baseARSkill').value = 0;
+    }/*---- Base Assault Rifle Skill Calc ----*/    
+
+    basePrimTotal =  (2 * aTotal) + (3 * sTotal);
+    if (aTotal > 0 && sTotal > 0) {
+    	document.getElementById('basePrimSkill').value = basePrimTotal;
+    }else {
+    	document.getElementById('basePrimSkill').value = 0;
+    }/*---- Base Prim. Missile Weap Skill Calc ----*/    
+
+    baseThrowingTotal =  5 + (4 * aTotal);
+    if (aTotal > 0) {
+    	document.getElementById('baseThrowSkill').value = baseThrowingTotal;
+    }else {
+    	document.getElementById('baseThrowSkill').value = 0;
+    }/*---- Base Throwing Skill Calc ----*/    
+
+    baseRifleTotal =  (4 * pTotal);
+    if (pTotal > 0) {
+    	document.getElementById('baseRifleSkill').value = baseRifleTotal;
+    }else {
+    	document.getElementById('baseRifleSkill').value = 0;
+    }/*---- Base Rifle Skill Calc ----*/    
+
+    baseShotgunTotal =  3 * (sTotal + aTotal);
+    if (aTotal > 0 && sTotal > 0) {
+    	document.getElementById('baseShotgunSkill').value = baseShotgunTotal;
+    }else {
+    	document.getElementById('baseShotgunSkill').value = 0;
+    }/*---- Base Shotgun Skill Calc ----*/  
+
+    baseMGTotal =  10 + (4 * sTotal);
+    if (sTotal > 0) {
+    	document.getElementById('baseMgSkill').value = baseMGTotal;
+    }else {
+    	document.getElementById('baseMgSkill').value = 0;
+    }/*---- Base Machine Gun Skill Calc ----*/ 
+
+    /*------------------------------*/
+    /*---- Base Skills2 Section ----*/
+    /*------------------------------*/ 
+
+
+    /*THIS SECTION NEXT*/  
 
 });
