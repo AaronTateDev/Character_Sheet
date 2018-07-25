@@ -9,6 +9,18 @@ aTotal,
 lTotal,
 charLevel;
 
+$("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+  }); /*Jquery that disables key presses for inputs of type number*/
+
+$("[type='number']").keydown(function (e) {
+  var key = e.keyCode || e.charCode;
+  if (key == 8 || key == 46) {
+      e.preventDefault();
+      e.stopPropagation();
+  }
+}); /*Jquery that disables del/backspace use for inputs of type number*/
+
 function findTotal(){
     var arr = document.getElementsByName('qtyBase');
     var tot=0;
@@ -387,5 +399,50 @@ document.addEventListener("input", function(){
     }else {
     	document.getElementById('baseTrackSkill').value = 0;
     }/*---- Base Tracking Skill Calc ----*/
+
+
+
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    let x = +document.getElementById('basePistolSkill').value;
+    let y = +document.getElementById('spentPistolSkill').value;
+    let z = x + y;
+
+    if (z <= 100) {
+    	document.getElementById('totalPistolSkill').value = x + y;
+    }else if (z > 100 && z <= 125){
+    	baseZ = 100 - x; /*to get base skill*/
+
+    	console.log(trueZ)
+
+
+    	document.getElementById('totalPistolSkill').value = x + y;
+
+
+    }
+    
+    /*for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);*/
+
+
+
+
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
 
 });
