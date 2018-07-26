@@ -28,6 +28,7 @@ function findTotal(){
         if(parseInt(arr[i].value))
             tot += parseInt(arr[i].value);
     }
+
     document.getElementById('total').innerHTML = tot;
     
     if (tot > 40 && tot <= 47){
@@ -411,6 +412,48 @@ document.addEventListener("input", function(){
     /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
+
+
+    let x = +document.getElementById('basePistolSkill').value;
+    let y = +document.getElementById('spentPistolSkill').value;
+    let v = +document.getElementById('totalPistolSkill').value;
+    let z = x + y;
+    let Skillpointsremaining = -1;
+    let Skillpointcost = 1;
+
+    if (z <= 100) {
+    	document.getElementById('totalPistolSkill').value = x + y;
+        Skillpointsremaining = 0;
+        v = +document.getElementById('totalPistolSkill').value;
+
+   }else if (z > 200){
+   		document.getElementById('totalPistolSkill').value = Math.floor((x + y)/6);
+        Skillpointsremaining = y%6;
+        v = +document.getElementById('totalPistolSkill').value;
+	
+   }else if (z > 100 && z <= 200){
+
+        Skillpointsremaining = y;
+
+        while(y > 0) {
+        	
+            Skillpointcost = Math.ceil(((z-100)/25) + 1);
+            console.log(Skillpointcost + " " + Skillpointsremaining);
+            z = z+1;
+            y = y - Skillpointcost;
+            document.getElementById('spentPistolSkill').value = +document.getElementById('spentPistolSkill').value + +Skillpointcost;
+
+            if(y > 0){
+             Skillpointsremaining = y;
+             document.getElementById('totalPistolSkill').value = z;
+
+            }else{
+                document.getElementById('totalPistolSkill').value = z;
+            }
+
+        }
+    }
+/*
     let x = +document.getElementById('basePistolSkill').value;
     let y = +document.getElementById('spentPistolSkill').value;
     let z = x + y;
@@ -418,7 +461,7 @@ document.addEventListener("input", function(){
     if (z <= 100) {
     	document.getElementById('totalPistolSkill').value = x + y;
     }else if (z > 100 && z <= 125){
-    	baseZ = 100 - x; /*to get base skill*/
+    	baseZ = 100 - x; /*to get base skill
 
     	console.log(trueZ)
 
@@ -428,9 +471,7 @@ document.addEventListener("input", function(){
 
     }
     
-    /*for(var i=0;i<arr.length;i++){
-        if(parseInt(arr[i].value))
-            tot += parseInt(arr[i].value);*/
+    */
 
 
 
