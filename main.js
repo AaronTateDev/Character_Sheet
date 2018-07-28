@@ -287,50 +287,45 @@ document.addEventListener("input", function(){
     }else {
     	document.getElementById('baseFAidSkill').value = 0;
     }/*---- Base First Aid Skill Calc ----*/    
-//LEFT OFF HERE---------------------------------------------------------------------------------
-//LEFT OFF HERE---------------------------------------------------------------------------------
-//LEFT OFF HERE---------------------------------------------------------------------------------
-//LEFT OFF HERE---------------------------------------------------------------------------------
-//LEFT OFF HERE---------------------------------------------------------------------------------
-//LEFT OFF HERE---------------------------------------------------------------------------------
-    baseFThrowerTotal = (4 * eTotal) + sTotal;
-    if (eTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseSneakSkill').value = baseFThrowerTotal;
+
+    baseSneakTotal = 5 + (3 * aTotal);
+    if (aTotal > 0) {
+    	document.getElementById('baseSneakSkill').value = baseSneakTotal;
     }else {
     	document.getElementById('baseSneakSkill').value = 0;
     }/*---- Base Sneak Skill Calc ----*/    
 
-    baseEPistolTotal = (2 * aTotal) + (iTotal * 2);
-    if (aTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseLockpickSkill').value = baseEPistolTotal;
+    baseLockpickTotal = 10 + (pTotal + aTotal);
+    if (pTotal > 0 && aTotal > 0) {
+    	document.getElementById('baseLockpickSkill').value = baseLockpickTotal;
     }else {
     	document.getElementById('baseLockpickSkill').value = 0;
     }/*---- Base Lockpicking Skill Calc ----*/
 
-    baseERifleTotal = (2 * pTotal) + (iTotal * 2);
-    if (pTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseStealSkill').value = baseERifleTotal;
+    baseStealingTotal = 5 + (pTotal + aTotal * 2);
+    if (pTotal > 0 && aTotal > 0) {
+    	document.getElementById('baseStealSkill').value = baseStealingTotal;
     }else {
     	document.getElementById('baseStealSkill').value = 0;
     }/*---- Base Stealing Skill Calc ----*/    
        
-    baseBEWeapTotal = (2 * sTotal) + (iTotal * 2);
-    if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseT/MSkill').value = baseBEWeapTotal;
+    baseTMTotal = 10 + aTotal + iTotal;
+    if (aTotal > 0 && iTotal > 0) {
+    	document.getElementById('baseT/MSkill').value = baseTMTotal;
     }else {
     	document.getElementById('baseT/MSkill').value = 0;
     }/*---- Base Traps/Mines Skill Calc ----*/    
 
-    baseMeleeTotal =  15 + aTotal + (sTotal * 3);
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseScienceSkill').value = baseMeleeTotal;
+    baseScienceTotal = (4 * iTotal);
+    if (iTotal > 0 ) {
+    	document.getElementById('baseScienceSkill').value = baseScienceTotal;
     }else {
     	document.getElementById('baseScienceSkill').value = 0;
     }/*---- Base Science Skill Calc ----*/  
 
-    baseUnarmedTotal =  20 + (aTotal * 3) + sTotal ;
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseRepairSkill').value = baseUnarmedTotal;
+    baseRepairTotal =  sTotal + (iTotal * 3);
+    if (sTotal > 0 && iTotal > 0) {
+    	document.getElementById('baseRepairSkill').value = baseRepairTotal;
     }else {
     	document.getElementById('baseRepairSkill').value = 0;
     }/*---- Base Repair Skill Calc ----*/   
@@ -338,65 +333,65 @@ document.addEventListener("input", function(){
     /*------------------------------*/
     /*---- Base Skills4 Section ----*/
     /*------------------------------*/
-    baseGMLaunchTotal = (3 * sTotal) + aTotal;
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseP,C/TSkill').value = baseGMLaunchTotal;
+    baseLandcraftTotal = (aTotal + pTotal) * 2;
+    if (aTotal > 0 && pTotal > 0) {
+    	document.getElementById('baseP,C/TSkill').value = baseLandcraftTotal;
     }else {
     	document.getElementById('baseP,C/TSkill').value = 0;
     }/*---- Base Pilot, Car/Truck Skill Calc ----*/ 
 
-    baseMortarsTotal = 10 + (sTotal + iTotal) * 2;
-    if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseP,WSkill').value = baseMortarsTotal;
+    baseWatercraftTotal = 5 + (pTotal * 3);
+    if (pTotal > 0) {
+    	document.getElementById('baseP,WSkill').value = baseWatercraftTotal;
     }else {
     	document.getElementById('baseP,WSkill').value = 0;
     }/*---- Base Pilot, Watercraft Skill Calc ----*/    
 
-    baseFThrowerTotal = (4 * eTotal) + sTotal;
-    if (eTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseP,ASkill').value = baseFThrowerTotal;
+    baseAircraftTotal = (iTotal + pTotal) * 2;
+    if (iTotal > 0 && pTotal > 0) {
+    	document.getElementById('baseP,ASkill').value = baseAircraftTotal;
     }else {
     	document.getElementById('baseP,ASkill').value = 0;
     }/*---- Base Pilot, Aircraft Skill Calc ----*/    
 
-    baseEPistolTotal = (2 * aTotal) + (iTotal * 2);
-    if (aTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseP,APC/TSkill').value = baseEPistolTotal;
+    baseAPCTankTotal = (sTotal + pTotal) * 2;
+    if (sTotal > 0 && pTotal > 0) {
+    	document.getElementById('baseP,APC/TSkill').value = baseAPCTankTotal;
     }else {
     	document.getElementById('baseP,APC/TSkill').value = 0;
     }/*---- Base Pilot, APC/Tank Skill Calc ----*/
 
-    baseERifleTotal = (2 * pTotal) + (iTotal * 2);
-    if (pTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseSpeechSkill').value = baseERifleTotal;
+    baseSpeechTotal = cTotal * 5;
+    if (cTotal > 0) {
+    	document.getElementById('baseSpeechSkill').value = baseSpeechTotal;
     }else {
     	document.getElementById('baseSpeechSkill').value = 0;
     }/*---- Base Speech Skill Calc ----*/    
        
-    baseBEWeapTotal = (2 * sTotal) + (iTotal * 2);
-    if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseBarterSkill').value = baseBEWeapTotal;
+    baseBarterTotal = cTotal * 4;
+    if (cTotal > 0) {
+    	document.getElementById('baseBarterSkill').value = baseBarterTotal;
     }else {
     	document.getElementById('baseBarterSkill').value = 0;
     }/*---- Base Barter Skill Calc ----*/    
 
-    baseMeleeTotal =  15 + aTotal + (sTotal * 3);
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseGamblingSkill').value = baseMeleeTotal;
+    baseGamblingTotal = (lTotal * 4);
+    if (lTotal > 0) {
+    	document.getElementById('baseGamblingSkill').value = baseGamblingTotal;
     }else {
     	document.getElementById('baseGamblingSkill').value = 0;
     }/*---- Base Gambling Skill Calc ----*/  
 
-    baseUnarmedTotal =  20 + (aTotal * 3) + sTotal ;
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseSurvivalSkill').value = baseUnarmedTotal;
+    baseSurvivalTotal = (eTotal + iTotal) * 2;
+    if (eTotal > 0 && iTotal > 0) {
+    	document.getElementById('baseSurvivalSkill').value = baseSurvivalTotal;
     }else {
     	document.getElementById('baseSurvivalSkill').value = 0;
     }/*---- Base Survivalist Skill Calc ----*/
 
-    baseUnarmedTotal =  20 + (aTotal * 3) + sTotal ;
-    if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseTrackSkill').value = baseUnarmedTotal;
+    baseTrackingTotal = (eTotal + lTotal) * 3;
+    if (eTotal > 0 && lTotal > 0) {
+    	document.getElementById('baseTrackSkill').value = baseTrackingTotal;
     }else {
     	document.getElementById('baseTrackSkill').value = 0;
     }/*---- Base Tracking Skill Calc ----*/
