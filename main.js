@@ -21,6 +21,7 @@ $("[type='number']").keydown(function (e) {
   }
 }); /*Jquery that disables del/backspace use for inputs of type number*/
 
+
 function findTotal(){
     var arr = document.getElementsByName('qtyBase');
     var tot=0;
@@ -70,6 +71,7 @@ function statTotals(){
 }
 
 /*---------------------- Secondary Stats ------------------------ */
+
 
 document.addEventListener("input", function(){
     baseHealthTotal = 3 * eTotal + +(20 + sTotal) + (5 + 2*eTotal) * (charLevel - 1) ;
@@ -132,7 +134,7 @@ document.addEventListener("input", function(){
     	document.getElementById('baseSequence').value = 0;
     }/*---- Base Sequence Calc ----*/
 
-    baseHealTotal = Math.floor(0.33 * eTotal);
+    baseHealTotal = Math.floor(eTotal / 3);
     if (eTotal > 0) {
     	document.getElementById('baseHeal').value = baseHealTotal;
     }else {
@@ -157,247 +159,583 @@ document.addEventListener("input", function(){
     /*---- Base Skills1 Section ----*/
     /*------------------------------*/
 	basePistolsTotal =  5 + (4 * aTotal);
+	basePi = document.getElementById('basePistolSkill');
+    spendPi = document.getElementById('spendPistolSkill');
     if (aTotal > 0) {
-    	document.getElementById('basePistolSkill').value = basePistolsTotal;
+    	basePi.value = basePistolsTotal;
+    	if (spendPi.min > basePi.value){
+    		spendPi.value = spendPi.value - (spendPi.min - basePi.value);
+
+    	}else if(spendPi.min < basePi.value) {
+    		spendPi.value = +spendPi.value + (basePi.value - spendPi.min);
+    	}
+    	spendPi.min = basePistolsTotal;
+    	
     }else {
-    	document.getElementById('basePistolSkill').value = 0;
+    	basePi.value = 0;
     }/*---- Base Pistol Skill Calc ----*/ 
 
     baseSMGTotal =  5 + 3 * aTotal + sTotal;
+    baseSMG = document.getElementById('baseSMGSkill');
+    spendSMG = document.getElementById('spendSMGSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseSMGSkill').value = baseSMGTotal;
+    	baseSMG.value = baseSMGTotal;
+    	if (spendSMG.min > baseSMG.value){
+    		spendSMG.value = spendSMG.value - (spendSMG.min - baseSMG.value);
+
+    	}else if(spendSMG.min < baseSMG.value) {
+    		spendSMG.value = +spendSMG.value + (baseSMG.value - spendSMG.min);
+    	}
+    	spendSMG.min = baseSMGTotal;
+    	
     }else {
-    	document.getElementById('baseSMGSkill').value = 0;
+    	baseSMG.value = 0;
     }/*---- Base SMG Skill Calc ----*/    
 
     baseARTotal =  2 * (pTotal + aTotal);
+    baseAR = document.getElementById('baseARSkill');
+    spendAR = document.getElementById('spendARSkill');
     if (pTotal > 0 && aTotal > 0) {
-    	document.getElementById('baseARSkill').value = baseARTotal;
+    	baseAR.value = baseARTotal;
+    	if (spendAR.min > baseAR.value){
+    		spendAR.value = spendAR.value - (spendAR.min - baseAR.value);
+
+    	}else if(spendAR.min < baseAR.value) {
+    		spendAR.value = +spendAR.value + (baseAR.value - spendAR.min);
+    	}
+    	spendAR.min = baseARTotal;
+    	
     }else {
-    	document.getElementById('baseARSkill').value = 0;
+    	baseAR.value = 0;
     }/*---- Base Assault Rifle Skill Calc ----*/    
 
     basePrimTotal =  (2 * aTotal) + (3 * sTotal);
+    basePr = document.getElementById('basePrimSkill');
+    spendPr = document.getElementById('spendPrimSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('basePrimSkill').value = basePrimTotal;
+    	basePr.value = basePrimTotal;
+    	if (spendPr.min > basePr.value){
+    		spendPr.value = spendPr.value - (spendPr.min - basePr.value);
+
+    	}else if(spendPr.min < basePr.value) {
+    		spendPr.value = +spendPr.value + (basePr.value - spendPr.min);
+    	}
+    	spendPr.min = basePrimTotal;
+    	
     }else {
-    	document.getElementById('basePrimSkill').value = 0;
+    	basePr.value = 0;
     }/*---- Base Prim. Missile Weap Skill Calc ----*/    
 
     baseThrowingTotal =  5 + (4 * aTotal);
+    baseTh = document.getElementById('baseThrowSkill');
+    spendTh = document.getElementById('spendThrowSkill');
     if (aTotal > 0) {
-    	document.getElementById('baseThrowSkill').value = baseThrowingTotal;
+    	baseTh.value = baseThrowingTotal;
+    	if (spendTh.min > baseTh.value){
+    		spendTh.value = spendTh.value - (spendTh.min - baseTh.value);
+
+    	}else if(spendTh.min < baseTh.value) {
+    		spendTh.value = +spendTh.value + (baseTh.value - spendTh.min);
+    	}
+    	spendTh.min = baseThrowingTotal;
+    	
     }else {
-    	document.getElementById('baseThrowSkill').value = 0;
+    	baseTh.value = 0;
     }/*---- Base Throwing Skill Calc ----*/    
 
     baseRifleTotal =  (4 * pTotal);
+    baseRi = document.getElementById('baseRifleSkill');
+    spendRi = document.getElementById('spendRifleSkill');
     if (pTotal > 0) {
-    	document.getElementById('baseRifleSkill').value = baseRifleTotal;
+    	baseRi.value = baseRifleTotal;
+    	if (spendRi.min > baseRi.value){
+    		spendRi.value = spendRi.value - (spendRi.min - baseRi.value);
+
+    	}else if(spendRi.min < baseRi.value) {
+    		spendRi.value = +spendRi.value + (baseRi.value - spendRi.min);
+    	}
+    	spendRi.min = baseRifleTotal;
+    	
     }else {
-    	document.getElementById('baseRifleSkill').value = 0;
+    	baseRi.value = 0;
     }/*---- Base Rifle Skill Calc ----*/    
 
     baseShotgunTotal =  3 * (sTotal + aTotal);
+    baseSh = document.getElementById('baseShotgunSkill');
+    spendSh = document.getElementById('spendShotgunSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseShotgunSkill').value = baseShotgunTotal;
+    	baseSh.value = baseShotgunTotal;
+    	if (spendSh.min > baseSh.value){
+    		spendSh.value = spendSh.value - (spendSh.min - baseSh.value);
+
+    	}else if(spendSh.min < baseSh.value) {
+    		spendSh.value = +spendSh.value + (baseSh.value - spendSh.min);
+    	}
+    	spendSh.min = baseShotgunTotal;
+    	
     }else {
-    	document.getElementById('baseShotgunSkill').value = 0;
+    	baseSh.value = 0;
     }/*---- Base Shotgun Skill Calc ----*/  
 
     baseMGTotal =  10 + (4 * sTotal);
+    baseMG = document.getElementById('baseMgSkill');
+    spendMG = document.getElementById('spendMgSkill');
     if (sTotal > 0) {
-    	document.getElementById('baseMgSkill').value = baseMGTotal;
+    	baseMG.value = baseMGTotal;
+    	if (spendMG.min > baseMG.value){
+    		spendMG.value = spendMG.value - (spendMG.min - baseMG.value);
+
+    	}else if(spendMG.min < baseMG.value) {
+    		spendMG.value = +spendMG.value + (baseMG.value - spendMG.min);
+    	}
+    	spendMG.min = baseMGTotal;
+    	
     }else {
-    	document.getElementById('baseMgSkill').value = 0;
+    	baseMG.value = 0;
     }/*---- Base Machine Gun Skill Calc ----*/ 
 
     /*------------------------------*/
     /*---- Base Skills2 Section ----*/
     /*------------------------------*/ 
     baseGMLaunchTotal = (3 * sTotal) + aTotal;
+    baseGML = document.getElementById('baseG/MLaunchSkill');
+    spendGML = document.getElementById('spendG/MLaunchSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseG/MLaunchSkill').value = baseGMLaunchTotal;
+    	baseGML.value = baseGMLaunchTotal;
+    	if (spendGML.min > baseGML.value){
+    		spendGML.value = spendGML.value - (spendGML.min - baseGML.value);
+
+    	}else if(spendGML.min < baseGML.value) {
+    		spendGML.value = +spendGML.value + (baseGML.value - spendGML.min);
+    	}
+    	spendGML.min = baseGMLaunchTotal;
+    	
     }else {
-    	document.getElementById('baseG/MLaunchSkill').value = 0;
+    	baseGML.value = 0;
     }/*---- Base Grenade/Missile Launcher Skill Calc ----*/ 
 
     baseMortarsTotal = 10 + (sTotal + iTotal) * 2;
+    baseMo = document.getElementById('baseMortarSkill');
+    spendMo = document.getElementById('spendMortarSkill');
     if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseMortarSkill').value = baseMortarsTotal;
+    	baseMo.value = baseMortarsTotal;
+    	if (spendMo.min > baseMo.value){
+    		spendMo.value = spendMo.value - (spendMo.min - baseMo.value);
+
+    	}else if(spendMo.min < baseMo.value) {
+    		spendMo.value = +spendMo.value + (baseMo.value - spendMo.min);
+    	}
+    	spendMo.min = baseMortarsTotal;
+    	
     }else {
-    	document.getElementById('baseMortarSkill').value = 0;
+    	baseMo.value = 0;
     }/*---- Base Mortars Skill Calc ----*/    
 
     baseFThrowerTotal = (4 * eTotal) + sTotal;
+    baseFT = document.getElementById('baseFThrowerSkill');
+    spendFT = document.getElementById('spendFThrowerSkill');
     if (eTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseFThrowerSkill').value = baseFThrowerTotal;
+    	baseFT.value = baseFThrowerTotal;
+    	if (spendFT.min > baseFT.value){
+    		spendFT.value = spendFT.value - (spendFT.min - baseFT.value);
+
+    	}else if(spendFT.min < baseFT.value) {
+    		spendFT.value = +spendFT.value + (baseFT.value - spendFT.min);
+    	}
+    	spendFT.min = baseFThrowerTotal;
+    	
     }else {
-    	document.getElementById('baseFThrowerSkill').value = 0;
+    	baseFT.value = 0;
     }/*---- Base Flame Throwers Skill Calc ----*/    
 
     baseEPistolTotal = (2 * aTotal) + (iTotal * 2);
+    baseEP = document.getElementById('baseEPistolSkill');
+    spendEp = document.getElementById('spendEPistolSkill');
     if (aTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseEPistolSkill').value = baseEPistolTotal;
+    	baseEP.value = baseEPistolTotal;
+    	if (spendEp.min > baseEP.value){
+    		spendEp.value = spendEp.value - (spendEp.min - baseEP.value);
+
+    	}else if(spendEp.min < baseEP.value) {
+    		spendEp.value = +spendEp.value + (baseEP.value - spendEp.min);
+    	}
+    	spendEp.min = baseEPistolTotal;
+    	
     }else {
-    	document.getElementById('baseEPistolSkill').value = 0;
+    	baseEP.value = 0;
     }/*---- Base Energy Pistols Skill Calc ----*/
 
     baseERifleTotal = (2 * pTotal) + (iTotal * 2);
+    baseER = document.getElementById('baseERifleSkill');
+    spendER = document.getElementById('spendERifleSkill');
     if (pTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseERifleSkill').value = baseERifleTotal;
+    	baseER.value = baseERifleTotal;
+    	if (spendER.min > baseER.value){
+    		spendER.value = spendER.value - (spendER.min - baseER.value);
+
+    	}else if(spendER.min < baseER.value) {
+    		spendER.value = +spendER.value + (baseER.value - spendER.min);
+    	}
+    	spendER.min = baseERifleTotal;
+    	
     }else {
-    	document.getElementById('baseERifleSkill').value = 0;
+    	baseER.value = 0;
     }/*---- Base Energy Rifles Skill Calc ----*/    
        
     baseBEWeapTotal = (2 * sTotal) + (iTotal * 2);
+    baseBEW = document.getElementById('baseBEWeapSkill');
+    spendBEW = document.getElementById('spendBEWeapSkill');
     if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseBEWeapSkill').value = baseBEWeapTotal;
+    	baseBEW.value = baseBEWeapTotal;
+    	if (spendBEW.min > baseBEW.value){
+    		spendBEW.value = spendBEW.value - (spendBEW.min - baseBEW.value);
+
+    	}else if(spendBEW.min < baseBEW.value) {
+    		spendBEW.value = +spendBEW.value + (baseBEW.value - spendBEW.min);
+    	}
+    	spendBEW.min = baseBEWeapTotal;
+    	
     }else {
-    	document.getElementById('baseBEWeapSkill').value = 0;
+    	baseBEW.value = 0;
     }/*---- Base Big Energy Weapons Skill Calc ----*/    
 
     baseMeleeTotal =  15 + aTotal + (sTotal * 3);
+    baseMe = document.getElementById('baseMeleeSkill');
+    spendMe = document.getElementById('spendMeleeSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseMeleeSkill').value = baseMeleeTotal;
+    	baseMe.value = baseMeleeTotal;
+    	if (spendMe.min > baseMe.value){
+    		spendMe.value = spendMe.value - (spendMe.min - baseMe.value);
+
+    	}else if(spendMe.min < baseMe.value) {
+    		spendMe.value = +spendMe.value + (baseMe.value - spendMe.min);
+    	}
+    	spendMe.min = baseMeleeTotal;
+    	
     }else {
-    	document.getElementById('baseMeleeSkill').value = 0;
+    	baseMe.value = 0;
     }/*---- Base Melee Skill Calc ----*/  
 
     baseUnarmedTotal =  20 + (aTotal * 3) + sTotal ;
+    baseUn = document.getElementById('baseUnarmedSkill');
+    spendUn = document.getElementById('spendUnarmedSkill');
     if (aTotal > 0 && sTotal > 0) {
-    	document.getElementById('baseUnarmedSkill').value = baseUnarmedTotal;
+    	baseUn.value = baseUnarmedTotal;
+    	if (spendUn.min > baseUn.value){
+    		spendUn.value = spendUn.value - (spendUn.min - baseUn.value);
+
+    	}else if(spendUn.min < baseUn.value) {
+    		spendUn.value = +spendUn.value + (baseUn.value - spendUn.min);
+    	}
+    	spendUn.min = baseUnarmedTotal;
+    	
     }else {
-    	document.getElementById('baseUnarmedSkill').value = 0;
+    	baseUn.value = 0;
     }/*---- Base Unarmed Skill Calc ----*/   
 
     /*------------------------------*/
     /*---- Base Skills3 Section ----*/
     /*------------------------------*/ 
     baseDoctorTotal = 5 + pTotal + iTotal;
+    baseDoc = document.getElementById('baseDoctorSkill');
+    spendDoc = document.getElementById('spendDoctorSkill');
     if (pTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseDoctorSkill').value = baseDoctorTotal;
+    	baseDoc.value = baseDoctorTotal;
+    	if (spendDoc.min > baseDoc.value){
+    		spendDoc.value = spendDoc.value - (spendDoc.min - baseDoc.value);
+
+    	}else if(spendDoc.min < baseDoc.value) {
+    		spendDoc.value = +spendDoc.value + (baseDoc.value - spendDoc.min);
+    	}
+    	spendDoc.min = baseDoctorTotal;
+    	
     }else {
-    	document.getElementById('baseDoctorSkill').value = 0;
+    	baseDoc.value = 0;
     }/*---- Base Doctor Skill Calc ----*/ 
 
     baseFAidTotal = (pTotal + eTotal) * 2;
+    baseFA = document.getElementById('baseFAidSkill');
+    spendFA = document.getElementById('spendFAidSkill');
     if (pTotal > 0 && eTotal > 0) {
-    	document.getElementById('baseFAidSkill').value = baseFAidTotal;
+    	baseFA.value = baseFAidTotal;
+    	if (spendFA.min > baseFA.value){
+    		spendFA.value = spendFA.value - (spendFA.min - baseFA.value);
+
+    	}else if(spendFA.min < baseFA.value) {
+    		spendFA.value = +spendFA.value + (baseFA.value - spendFA.min);
+    	}
+    	spendFA.min = baseFAidTotal;
+    	
     }else {
-    	document.getElementById('baseFAidSkill').value = 0;
+    	baseFA.value = 0;
     }/*---- Base First Aid Skill Calc ----*/    
 
     baseSneakTotal = 5 + (3 * aTotal);
+    baseSn = document.getElementById('baseSneakSkill');
+    spendSn = document.getElementById('spendSneakSkill');
     if (aTotal > 0) {
-    	document.getElementById('baseSneakSkill').value = baseSneakTotal;
+    	baseSn.value = baseSneakTotal;
+    	if (spendSn.min > baseSn.value){
+    		spendSn.value = spendSn.value - (spendSn.min - baseSn.value);
+
+    	}else if(spendSn.min < baseSn.value) {
+    		spendSn.value = +spendSn.value + (baseSn.value - spendSn.min);
+    	}
+    	spendSn.min = baseSneakTotal;
+    	
     }else {
-    	document.getElementById('baseSneakSkill').value = 0;
+    	baseSn.value = 0;
     }/*---- Base Sneak Skill Calc ----*/    
 
     baseLockpickTotal = 10 + (pTotal + aTotal);
+    baseLo = document.getElementById('baseLockpickSkill');
+    spendLo = document.getElementById('spendLockpickSkill');
     if (pTotal > 0 && aTotal > 0) {
-    	document.getElementById('baseLockpickSkill').value = baseLockpickTotal;
+    	baseLo.value = baseLockpickTotal;
+    	if (spendLo.min > baseLo.value){
+    		spendLo.value = spendLo.value - (spendLo.min - baseLo.value);
+
+    	}else if(spendLo.min < baseLo.value) {
+    		spendLo.value = +spendLo.value + (baseLo.value - spendLo.min);
+    	}
+    	spendLo.min = baseLockpickTotal;
+    	
     }else {
-    	document.getElementById('baseLockpickSkill').value = 0;
+    	baseLo.value = 0;
     }/*---- Base Lockpicking Skill Calc ----*/
 
     baseStealingTotal = 5 + (pTotal + aTotal * 2);
+    baseSt = document.getElementById('baseStealSkill');
+    spendSt = document.getElementById('spendStealSkill');
     if (pTotal > 0 && aTotal > 0) {
-    	document.getElementById('baseStealSkill').value = baseStealingTotal;
+    	baseSt.value = baseStealingTotal;
+    	if (spendSt.min > baseSt.value){
+    		spendSt.value = spendSt.value - (spendSt.min - baseSt.value);
+
+    	}else if(spendSt.min < baseSt.value) {
+    		spendSt.value = +spendSt.value + (baseSt.value - spendSt.min);
+    	}
+    	spendSt.min = baseStealingTotal;
+    	
     }else {
-    	document.getElementById('baseStealSkill').value = 0;
+    	baseSt.value = 0;
     }/*---- Base Stealing Skill Calc ----*/    
        
     baseTMTotal = 10 + aTotal + iTotal;
+    baseTM = document.getElementById('baseT/MSkill');
+    spendTM = document.getElementById('spendT/MSkill');
     if (aTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseT/MSkill').value = baseTMTotal;
+    	baseTM.value = baseTMTotal;
+    	if (spendTM.min > baseTM.value){
+    		spendTM.value = spendTM.value - (spendTM.min - baseTM.value);
+
+    	}else if(spendTM.min < baseTM.value) {
+    		spendTM.value = +spendTM.value + (baseTM.value - spendTM.min);
+    	}
+    	spendTM.min = baseTMTotal;
+    	
     }else {
-    	document.getElementById('baseT/MSkill').value = 0;
+    	baseTM.value = 0;
     }/*---- Base Traps/Mines Skill Calc ----*/    
 
     baseScienceTotal = (4 * iTotal);
+    baseSc = document.getElementById('baseScienceSkill');
+    spendSc = document.getElementById('spendScienceSkill');
     if (iTotal > 0 ) {
-    	document.getElementById('baseScienceSkill').value = baseScienceTotal;
+    	baseSc.value = baseScienceTotal;
+    	if (spendSc.min > baseSc.value){
+    		spendSc.value = spendSc.value - (spendSc.min - baseSc.value);
+
+    	}else if(spendSc.min < baseSc.value) {
+    		spendSc.value = +spendSc.value + (baseSc.value - spendSc.min);
+    	}
+    	spendSc.min = baseScienceTotal;
+    	
     }else {
-    	document.getElementById('baseScienceSkill').value = 0;
+    	baseSc.value = 0;
     }/*---- Base Science Skill Calc ----*/  
 
     baseRepairTotal =  sTotal + (iTotal * 3);
+    baseRe = document.getElementById('baseRepairSkill');
+    spendRe = document.getElementById('spendRepairSkill');
     if (sTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseRepairSkill').value = baseRepairTotal;
+    	baseRe.value = baseRepairTotal;
+    	if (spendRe.min > baseRe.value){
+    		spendRe.value = spendRe.value - (spendRe.min - baseRe.value);
+
+    	}else if(spendRe.min < baseRe.value) {
+    		spendRe.value = +spendRe.value + (baseRe.value - spendRe.min);
+    	}
+    	spendRe.min = baseRepairTotal;
+    	
     }else {
-    	document.getElementById('baseRepairSkill').value = 0;
+    	baseRe.value = 0;
     }/*---- Base Repair Skill Calc ----*/   
 
     /*------------------------------*/
     /*---- Base Skills4 Section ----*/
     /*------------------------------*/
     baseLandcraftTotal = (aTotal + pTotal) * 2;
+    baseCT = document.getElementById('baseP,C/TSkill');
+    spendCT = document.getElementById('spendP,C/TSkill');
     if (aTotal > 0 && pTotal > 0) {
-    	document.getElementById('baseP,C/TSkill').value = baseLandcraftTotal;
+    	baseCT.value = baseLandcraftTotal;
+    	if (spendCT.min > baseCT.value){
+    		spendCT.value = spendCT.value - (spendCT.min - baseCT.value);
+
+    	}else if(spendCT.min < baseCT.value) {
+    		spendCT.value = +spendCT.value + (baseCT.value - spendCT.min);
+    	}
+    	spendCT.min = baseLandcraftTotal;
+    	
     }else {
-    	document.getElementById('baseP,C/TSkill').value = 0;
+    	baseCT.value = 0;
     }/*---- Base Pilot, Car/Truck Skill Calc ----*/ 
 
     baseWatercraftTotal = 5 + (pTotal * 3);
+    baseWa = document.getElementById('baseP,WSkill');
+    spendWa = document.getElementById('spendP,WSkill');
     if (pTotal > 0) {
-    	document.getElementById('baseP,WSkill').value = baseWatercraftTotal;
+    	baseWa.value = baseWatercraftTotal;
+    	if (spendWa.min > baseWa.value){
+    		spendWa.value = spendWa.value - (spendWa.min - baseWa.value);
+
+    	}else if(spendWa.min < baseWa.value) {
+    		spendWa.value = +spendWa.value + (baseWa.value - spendWa.min);
+    	}
+    	spendWa.min = baseWatercraftTotal;
+    	
     }else {
-    	document.getElementById('baseP,WSkill').value = 0;
+    	baseWa.value = 0;
     }/*---- Base Pilot, Watercraft Skill Calc ----*/    
 
     baseAircraftTotal = (iTotal + pTotal) * 2;
+    baseAi = document.getElementById('baseP,ASkill');
+    spendAi = document.getElementById('spendP,ASkill');
     if (iTotal > 0 && pTotal > 0) {
-    	document.getElementById('baseP,ASkill').value = baseAircraftTotal;
+    	baseAi.value = baseAircraftTotal;
+    	if (spendAi.min > baseAi.value){
+    		spendAi.value = spendAi.value - (spendAi.min - baseAi.value);
+
+    	}else if(spendAi.min < baseAi.value) {
+    		spendAi.value = +spendAi.value + (baseAi.value - spendAi.min);
+    	}
+    	spendAi.min = baseAircraftTotal;
+    	
     }else {
-    	document.getElementById('baseP,ASkill').value = 0;
+    	baseAi.value = 0;
     }/*---- Base Pilot, Aircraft Skill Calc ----*/    
 
     baseAPCTankTotal = (sTotal + pTotal) * 2;
+    baseAPC = document.getElementById('baseP,APC/TSkill');
+    spendAPC = document.getElementById('spendP,APC/TSkill');
     if (sTotal > 0 && pTotal > 0) {
-    	document.getElementById('baseP,APC/TSkill').value = baseAPCTankTotal;
+    	baseAPC.value = baseAPCTankTotal;
+    	if (spendAPC.min > baseAPC.value){
+    		spendAPC.value = spendAPC.value - (spendAPC.min - baseAPC.value);
+
+    	}else if(spendAPC.min < baseAPC.value) {
+    		spendAPC.value = +spendAPC.value + (baseAPC.value - spendAPC.min);
+    	}
+    	spendAPC.min = baseAPCTankTotal;
+    	
     }else {
-    	document.getElementById('baseP,APC/TSkill').value = 0;
+    	baseAPC.value = 0;
     }/*---- Base Pilot, APC/Tank Skill Calc ----*/
 
     baseSpeechTotal = cTotal * 5;
+    baseSp = document.getElementById('baseSpeechSkill');
+    spendSp = document.getElementById('spendSpeechSkill');
     if (cTotal > 0) {
-    	document.getElementById('baseSpeechSkill').value = baseSpeechTotal;
+    	baseSp.value = baseSpeechTotal;
+    	if (spendSp.min > baseSp.value){
+    		spendSp.value = spendSp.value - (spendSp.min - baseSp.value);
+
+    	}else if(spendSp.min < baseSp.value) {
+    		spendSp.value = +spendSp.value + (baseSp.value - spendSp.min);
+    	}
+    	spendSp.min = baseSpeechTotal;
+    	
     }else {
-    	document.getElementById('baseSpeechSkill').value = 0;
+    	baseSp.value = 0;
     }/*---- Base Speech Skill Calc ----*/    
-       
+
     baseBarterTotal = cTotal * 4;
+    baseBa = document.getElementById('baseBarterSkill');
+    spendBa = document.getElementById('spendBarterSkill');
     if (cTotal > 0) {
-    	document.getElementById('baseBarterSkill').value = baseBarterTotal;
+    	baseBa.value = baseBarterTotal;
+    	if (spendBa.min > baseBa.value){
+    		spendBa.value = spendBa.value - (spendBa.min - baseBa.value);
+
+    	}else if(spendBa.min < baseBa.value) {
+    		spendBa.value = +spendBa.value + (baseBa.value - spendBa.min);    		
+    	}
+    	spendBa.min = baseBarterTotal; 
+
     }else {
-    	document.getElementById('baseBarterSkill').value = 0;
+    	baseBa.value = 0;
     }/*---- Base Barter Skill Calc ----*/    
-
+    
     baseGamblingTotal = (lTotal * 4);
+    baseGa = document.getElementById('baseGamblingSkill');
+    spendGa = document.getElementById('spendGamblingSkill');
     if (lTotal > 0) {
-    	document.getElementById('baseGamblingSkill').value = baseGamblingTotal;
+    	baseGa.value = baseGamblingTotal;
+    	if (spendGa.min > baseGa.value){
+    		spendGa.value = spendGa.value - (spendGa.min - baseGa.value);
+
+    	}else if(spendGa.min < baseGa.value) {
+    		spendGa.value = +spendGa.value + (baseGa.value - spendGa.min);    		
+    	}
+    	spendGa.min = baseGamblingTotal; 
+
     }else {
-    	document.getElementById('baseGamblingSkill').value = 0;
+    	baseGa.value = 0;
     }/*---- Base Gambling Skill Calc ----*/  
-
+    
     baseSurvivalTotal = (eTotal + iTotal) * 2;
+    baseSu = document.getElementById('baseSurvivalSkill');
+    spendSu = document.getElementById('spendSurvivalSkill');
     if (eTotal > 0 && iTotal > 0) {
-    	document.getElementById('baseSurvivalSkill').value = baseSurvivalTotal;
-    }else {
-    	document.getElementById('baseSurvivalSkill').value = 0;
-    }/*---- Base Survivalist Skill Calc ----*/
+    	baseSu.value = baseSurvivalTotal;
+    	if (spendSu.min > baseSu.value){
+    		spendSu.value = spendSu.value - (spendSu.min - baseSu.value);
 
-    baseTrackingTotal = (eTotal + lTotal) * 3;
-    if (eTotal > 0 && lTotal > 0) {
-    	document.getElementById('baseTrackSkill').value = baseTrackingTotal;
+    	}else if(spendSu.min < baseSu.value) {
+    		spendSu.value = +spendSu.value + (baseSu.value - spendSu.min);    		
+    	}
+    	spendSu.min = baseSurvivalTotal; 
+
     }else {
-    	document.getElementById('baseTrackSkill').value = 0;
+    	baseSu.value = 0;
+    }/*---- Base Survivalist Skill Calc ----*/ 
+
+    baseTrackingTotal = (eTotal + pTotal) * 3;
+    baseTr = document.getElementById('baseTrackSkill');
+    spendTr = document.getElementById('spendTrackSkill');
+    if (eTotal > 0 && pTotal > 0) {
+    	baseTr.value = baseTrackingTotal;
+    	if (spendTr.min > baseTr.value){
+    		spendTr.value = spendTr.value - (spendTr.min - baseTr.value);
+
+    	}else if(spendTr.min < baseTr.value) {
+    		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);
+    	}
+    	spendTr.min = baseTrackingTotal;
+    	
+    }else {
+    	baseTr.value = 0;
     }/*---- Base Tracking Skill Calc ----*/
 
-
-
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
+    /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
@@ -410,7 +748,7 @@ document.addEventListener("input", function(){
 
 
     let x = +document.getElementById('basePistolSkill').value;
-    let y = +document.getElementById('spentPistolSkill').value;
+    let y = +document.getElementById('spendPistolSkill').value;
     let v = +document.getElementById('totalPistolSkill').value;
     let z = x + y;
     let Skillpointsremaining = -1;
@@ -436,7 +774,7 @@ document.addEventListener("input", function(){
             console.log(Skillpointcost + " " + Skillpointsremaining);
             z = z+1;
             y = y - Skillpointcost;
-            document.getElementById('spentPistolSkill').value = +document.getElementById('spentPistolSkill').value + +Skillpointcost;
+            document.getElementById('spendPistolSkill').value = +document.getElementById('spendPistolSkill').value + +Skillpointcost;
 
             if(y > 0){
              Skillpointsremaining = y;
@@ -450,7 +788,7 @@ document.addEventListener("input", function(){
     }
 /*
     let x = +document.getElementById('basePistolSkill').value;
-    let y = +document.getElementById('spentPistolSkill').value;
+    let y = +document.getElementById('spendPistolSkill').value;
     let z = x + y;
 
     if (z <= 100) {

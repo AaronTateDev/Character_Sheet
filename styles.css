@@ -52,17 +52,10 @@
 }
 
 /*--------------------- Input Field Styles -------------------*/
-/*Start changing all input fields to number and use this css to style them
-  changing the size of number fields to HTML number boxes and text input fields to 
-  underlined spaces then finish name section*/
-
-/*Example
-input[type="text"]#fun
-{
-    border: 0;
-    border-bottom: 1px solid red;
-    outline: 0;
-}*/
+#modSkillPts:hover {
+  background-color: #bec5d1;
+  cursor: not-allowed;
+}
 
 .nameSpace
 {
