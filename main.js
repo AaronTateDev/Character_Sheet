@@ -711,7 +711,7 @@ document.addEventListener("input", function(){
     	baseSu.value = 0;
     }/*---- Base Survivalist Skill Calc ----*/ 
 
-    baseTrackingTotal = (eTotal + pTotal) * 3;
+    baseTrackingTotal = (iTotal + pTotal) * 3;
     baseTr = document.getElementById('baseTrackSkill');
     spendTr = document.getElementById('spendTrackSkill');
     if (eTotal > 0 && pTotal > 0) {
@@ -723,7 +723,15 @@ document.addEventListener("input", function(){
     		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);
     	}
     	spendTr.min = baseTrackingTotal;
-    	
+    	/*-------------------------------------------------
+
+    	WORKS HERE!! Just find a way to stop the reduction if the change is
+    	greater than one point per increment.
+
+    	console.log(spendTr.prevValue);
+    	spendTr.prevValue = spendTr.value;
+    	console.log(spendTr.value);
+    	--------------------------------------------------*/
     }else {
     	baseTr.value = 0;
     }/*---- Base Tracking Skill Calc ----*/
@@ -747,7 +755,7 @@ document.addEventListener("input", function(){
     /*---- In Progress (testing) ----*/
 
 
-    let x = +document.getElementById('basePistolSkill').value;
+   /* let x = +document.getElementById('basePistolSkill').value;
     let y = +document.getElementById('spendPistolSkill').value;
     let v = +document.getElementById('totalPistolSkill').value;
     let z = x + y;
@@ -786,7 +794,7 @@ document.addEventListener("input", function(){
 
         }
     }
-/*
+
     let x = +document.getElementById('basePistolSkill').value;
     let y = +document.getElementById('spendPistolSkill').value;
     let z = x + y;
@@ -820,3 +828,4 @@ document.addEventListener("input", function(){
     /*---- In Progress (testing) ----*/
 
 });
+
