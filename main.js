@@ -7,7 +7,13 @@ cTotal,
 iTotal,
 aTotal,
 lTotal,
-charLevel;
+charLevel,
+skillPtMod,
+skillPtTotal;
+
+skillPtBase = document.getElementById('baseSkillPts');
+skillPtMod = document.getElementById('modSkillPts');
+skillPtTotal = document.getElementById('totalSkillPts');
 
 $("[type='number']").keypress(function (evt) {
     evt.preventDefault();
@@ -716,24 +722,36 @@ document.addEventListener("input", function(){
     spendTr = document.getElementById('spendTrackSkill');
     if (eTotal > 0 && pTotal > 0) {
     	baseTr.value = baseTrackingTotal;
+
     	if (spendTr.min > baseTr.value){
     		spendTr.value = spendTr.value - (spendTr.min - baseTr.value);
-
+    		
     	}else if(spendTr.min < baseTr.value) {
     		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);
+    		
     	}
+/*-------------------------WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO----------------------------------------------*/
+/*-------------------------IT WORKS DOING IT HERE-------------------------------------------------------*/
+/*-------------------------Use this first if statement below--------------------------------------------*/
+/*-------------------------event.target.name == "Godmode"-----------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+    	skillPtCheck = spendTr.prevValue - spendTr.value;
+    	if (spendTr.prevValue > spendTr.value && event.target.name == "skills"){
+    		skillPtMod.value = skillPtMod.value - (spendTr.prevValue - spendTr.value);
+    		
+    	}else if(spendTr.prevValue < spendTr.value && event.target.name == "skills") {
+    		skillPtMod.value = skillPtMod.value - (spendTr.prevValue - spendTr.value);
+    		
+    	}
+    	/*skillPtMod.value = skillPtBase.value - (spendTr.prevValue - spendTr.value);*/
+    	console.log(spendTr.prevValue + " Do math for skills here" + (event.target.name));
+    	console.log(skillPtMod.value + " Skill mod " + (spendTr.prevValue- spendTr.value) );
     	spendTr.min = baseTrackingTotal;
-    	/*-------------------------------------------------
-
-    	WORKS HERE!! Just find a way to stop the reduction if the change is
-    	greater than one point per increment.
-
-    	console.log(spendTr.prevValue);
     	spendTr.prevValue = spendTr.value;
-    	console.log(spendTr.value);
-    	--------------------------------------------------*/
     }else {
     	baseTr.value = 0;
+    	spendTr.prevValue = 0;
     }/*---- Base Tracking Skill Calc ----*/
 
     /*---- In Progress (testing) ----*/

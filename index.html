@@ -41,7 +41,7 @@
 			   Eyes: <input class="nameSpace" type="text" size="10"/></span><br/></p>
 
 			<p>Exp to Level: <input class="nameSpace" type="text" size="15"/><span>
-	     	   Current Level: <input onInput="statTotals()" id="level" class="numSpace" type="number" value="1" /></span><br/></p>
+	     	   Current Level: <input onInput="statTotals()" id="level" class="numSpace" type="number" min="1" value="1" /></span><br/></p>
 		</div><!-- End of Name Section-->
 		<div class="healthArmor">
 		</div>
@@ -121,7 +121,7 @@
 					<tr>
 						<td>&nbsp;Skill Pts</td>
 						<td><input value=0 name="qty2Base" type="number" id="baseSkillPts" readonly/></td>
-						<td><input value=0 name="qty2Mod" type="number" id="modSkillPts" disabled/></td>
+						<td><input value=0 name="qty2Mod" type="name" id="modSkillPts" disabled/></td>
 						<td><input value=0 name="qty2Total" type="number" id="totalSkillPts" readonly/></td>
 					</tr>
 					<tr>
