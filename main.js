@@ -736,19 +736,19 @@ document.addEventListener("input", function(){
 /*-------------------------event.target.name == "Godmode"-----------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------*/
-    	skillPtCheck = spendTr.prevValue - spendTr.value;
+    	/*skillPtCheck = spendTr.prevValue - spendTr.value;
     	if (spendTr.prevValue > spendTr.value && event.target.name == "skills"){
-    		skillPtMod.value = skillPtMod.value - (spendTr.prevValue - spendTr.value);
+    		skillPtMod.value = skillPtMod.value - skillPtCheck;
+    		console.log(Math.ceil(((spendTr.prevValue-100)/25) + 1));
     		
     	}else if(spendTr.prevValue < spendTr.value && event.target.name == "skills") {
-    		skillPtMod.value = skillPtMod.value - (spendTr.prevValue - spendTr.value);
+    		skillPtMod.value = skillPtMod.value - skillPtCheck;
+    		console.log(Math.ceil(((spendTr.value-100)/25) + 1));
     		
     	}
-    	/*skillPtMod.value = skillPtBase.value - (spendTr.prevValue - spendTr.value);*/
-    	console.log(spendTr.prevValue + " Do math for skills here" + (event.target.name));
-    	console.log(skillPtMod.value + " Skill mod " + (spendTr.prevValue- spendTr.value) );
+    	*/
     	spendTr.min = baseTrackingTotal;
-    	spendTr.prevValue = spendTr.value;
+    	/*spendTr.prevValue = spendTr.value;*/
     }else {
     	baseTr.value = 0;
     	spendTr.prevValue = 0;
@@ -845,5 +845,52 @@ document.addEventListener("input", function(){
     /*---- In Progress (testing) ----*/
     /*---- In Progress (testing) ----*/
 
+    /*skillPtCheck = spendTr.prevValue - spendTr.value;*/
+   
+    	
+
 });
 
+document.addEventListener("input", function(){
+	
+	skillPtCheck = event.target.prevValue - event.target.value;
+	console.log(skillPtCheck);
+	
+		if (event.target.prevValue > event.target.value && event.target.name == "skills" && event.target.value > 75) {
+	    	switch (Math.ceil(((event.target.value-100)/25) + 1)) {
+	    		case 1:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+	    		case 2:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+			    case 3:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+			    case 4:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+			    case 5:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+			    case 6:
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;
+			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        break; 
+	    		default: 
+	        		skillPtMod.value = skillPtMod.value - 6;
+	        		console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+				}
+			
+
+			}else {
+				skillPtMod.value = +skillPtMod.value + 1;
+			}
+		
+		event.target.prevValue = event.target.value;
+});
