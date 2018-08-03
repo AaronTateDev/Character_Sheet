@@ -754,143 +754,32 @@ document.addEventListener("input", function(){
     	spendTr.prevValue = 0;
     }/*---- Base Tracking Skill Calc ----*/
 
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-
-
-   /* let x = +document.getElementById('basePistolSkill').value;
-    let y = +document.getElementById('spendPistolSkill').value;
-    let v = +document.getElementById('totalPistolSkill').value;
-    let z = x + y;
-    let Skillpointsremaining = -1;
-    let Skillpointcost = 1;
-
-    if (z <= 100) {
-    	document.getElementById('totalPistolSkill').value = x + y;
-        Skillpointsremaining = 0;
-        v = +document.getElementById('totalPistolSkill').value;
-
-   }else if (z > 200){
-   		document.getElementById('totalPistolSkill').value = Math.floor((x + y)/6);
-        Skillpointsremaining = y%6;
-        v = +document.getElementById('totalPistolSkill').value;
-	
-   }else if (z > 100 && z <= 200){
-
-        Skillpointsremaining = y;
-
-        while(y > 0) {
-        	
-            Skillpointcost = Math.ceil(((z-100)/25) + 1);
-            console.log(Skillpointcost + " " + Skillpointsremaining);
-            z = z+1;
-            y = y - Skillpointcost;
-            document.getElementById('spendPistolSkill').value = +document.getElementById('spendPistolSkill').value + +Skillpointcost;
-
-            if(y > 0){
-             Skillpointsremaining = y;
-             document.getElementById('totalPistolSkill').value = z;
-
-            }else{
-                document.getElementById('totalPistolSkill').value = z;
-            }
-
-        }
-    }
-
-    let x = +document.getElementById('basePistolSkill').value;
-    let y = +document.getElementById('spendPistolSkill').value;
-    let z = x + y;
-
-    if (z <= 100) {
-    	document.getElementById('totalPistolSkill').value = x + y;
-    }else if (z > 100 && z <= 125){
-    	baseZ = 100 - x; /*to get base skill
-
-    	console.log(trueZ)
-
-
-    	document.getElementById('totalPistolSkill').value = x + y;
-
-
-    }
-    
-    */
-
-
-
-
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-    /*---- In Progress (testing) ----*/
-
-    /*skillPtCheck = spendTr.prevValue - spendTr.value;*/
-   
-    	
-
 });
+
 
 document.addEventListener("input", function(){
 	
 	skillPtCheck = event.target.prevValue - event.target.value;
+	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck ;
 	console.log(skillPtCheck);
 	
-		if (event.target.prevValue > event.target.value && event.target.name == "skills" && event.target.value > 75) {
-	    	switch (Math.ceil(((event.target.value-100)/25) + 1)) {
-	    		case 1:
+	    	switch (true) {
+	    		case (event.target.name == "skills" && event.target.value <= 75 ):
 			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+			        console.log("< 75 " + skillPtMod.value);
 			        break; 
-	    		case 2:
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+	    		case (event.target.name == "skills" && event.target.value <= 200):
+			        skillPtMod.value = skillPtMod.value - skillIncrement;
+			        console.log("< 201 " + skillIncrement + " " + skillPtCheck);
 			        break; 
-			    case 3:
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
-			        break; 
-			    case 4:
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
-			        break; 
-			    case 5:
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
-			        break; 
-			    case 6:
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
-			        break; 
+			    case (event.target.name == "skills" && event.target.value >= 201):
+			        skillPtMod.value = +skillPtMod.value - skillPtCheck * 6;
+			        console.log("> 200 " + skillPtMod.value);
+			        break;			    			    
 	    		default: 
-	        		skillPtMod.value = skillPtMod.value - 6;
-	        		console.log(event.target.value + "< Value :: PrevValue >" + event.target.prevValue + "<br/> " + Math.ceil(((event.target.value-100)/25) + 1));
+	        		console.log("default");
 				}
-			
-
-			}else {
-				skillPtMod.value = +skillPtMod.value + 1;
-			}
 		
-		event.target.prevValue = event.target.value;
+	event.target.prevValue = event.target.value;
 });
+

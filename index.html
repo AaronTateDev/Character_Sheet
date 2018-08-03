@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<title>Charcater Sheet</title>
 </head>
-<body>
+<body onLoad="findTotal();statTotals()">
 
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
@@ -121,7 +121,7 @@
 					<tr>
 						<td>&nbsp;Skill Pts</td>
 						<td><input value=0 name="qty2Base" type="number" id="baseSkillPts" readonly/></td>
-						<td><input value=0 name="qty2Mod" type="name" id="modSkillPts" disabled/></td>
+						<td><input value=0 name="qty2Mod" type="number" id="modSkillPts" disabled/></td>
 						<td><input value=0 name="qty2Total" type="number" id="totalSkillPts" readonly/></td>
 					</tr>
 					<tr>
@@ -207,13 +207,13 @@
 					<tr>
 						<td>&nbsp;Pistols</td>
 						<td><input value=0 name="skills" type="number" id="basePistolSkill" readonly/></td>
-						<td><input onInput="skillPtCalc(event)" value=0 name="skills" type="number" id="spendPistolSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendPistolSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalPistolSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;Sub-Machine Guns</td>
 						<td><input value=0 name="skills" type="number" id="baseSMGSkill" readonly/></td>
-						<td><input onInput="skillPtCalc(event)" value=0 name="skills" type="number" id="spendSMGSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendSMGSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalSMGSkill" readonly/></td>
 					</tr>
 					<tr>
