@@ -78,8 +78,7 @@ function statTotals(){
 
 /*---------------------- Secondary Stats ------------------------ */
 
-
-document.addEventListener("input", function(){
+function secondarySkills() {
     baseHealthTotal = 3 * eTotal + +(20 + sTotal) + (5 + 2*eTotal) * (charLevel - 1) ;
     if (eTotal > 0 && sTotal > 0) {
     	document.getElementById('baseHealth').value = baseHealthTotal;
@@ -176,6 +175,7 @@ document.addEventListener("input", function(){
     		spendPi.value = +spendPi.value + (basePi.value - spendPi.min);
     	}
     	spendPi.min = basePistolsTotal;
+    	spendPi.prevValue = spendPi.value;
     	
     }else {
     	basePi.value = 0;
@@ -193,6 +193,7 @@ document.addEventListener("input", function(){
     		spendSMG.value = +spendSMG.value + (baseSMG.value - spendSMG.min);
     	}
     	spendSMG.min = baseSMGTotal;
+    	spendSMG.prevValue = spendSMG.value;
     	
     }else {
     	baseSMG.value = 0;
@@ -210,6 +211,7 @@ document.addEventListener("input", function(){
     		spendAR.value = +spendAR.value + (baseAR.value - spendAR.min);
     	}
     	spendAR.min = baseARTotal;
+    	spendAR.prevValue = spendAR.value;
     	
     }else {
     	baseAR.value = 0;
@@ -227,6 +229,7 @@ document.addEventListener("input", function(){
     		spendPr.value = +spendPr.value + (basePr.value - spendPr.min);
     	}
     	spendPr.min = basePrimTotal;
+    	spendPr.prevValue = spendPr.value;
     	
     }else {
     	basePr.value = 0;
@@ -244,6 +247,7 @@ document.addEventListener("input", function(){
     		spendTh.value = +spendTh.value + (baseTh.value - spendTh.min);
     	}
     	spendTh.min = baseThrowingTotal;
+    	spendTh.prevValue = spendTh.value;
     	
     }else {
     	baseTh.value = 0;
@@ -261,6 +265,7 @@ document.addEventListener("input", function(){
     		spendRi.value = +spendRi.value + (baseRi.value - spendRi.min);
     	}
     	spendRi.min = baseRifleTotal;
+    	spendRi.prevValue = spendRi.value;
     	
     }else {
     	baseRi.value = 0;
@@ -278,6 +283,7 @@ document.addEventListener("input", function(){
     		spendSh.value = +spendSh.value + (baseSh.value - spendSh.min);
     	}
     	spendSh.min = baseShotgunTotal;
+    	spendSh.prevValue = spendSh.value;
     	
     }else {
     	baseSh.value = 0;
@@ -295,6 +301,7 @@ document.addEventListener("input", function(){
     		spendMG.value = +spendMG.value + (baseMG.value - spendMG.min);
     	}
     	spendMG.min = baseMGTotal;
+    	spendMG.prevValue = spendMG.value;
     	
     }else {
     	baseMG.value = 0;
@@ -315,6 +322,7 @@ document.addEventListener("input", function(){
     		spendGML.value = +spendGML.value + (baseGML.value - spendGML.min);
     	}
     	spendGML.min = baseGMLaunchTotal;
+    	spendGML.prevValue = spendGML.value;
     	
     }else {
     	baseGML.value = 0;
@@ -332,6 +340,7 @@ document.addEventListener("input", function(){
     		spendMo.value = +spendMo.value + (baseMo.value - spendMo.min);
     	}
     	spendMo.min = baseMortarsTotal;
+    	spendMo.prevValue = spendMo.value;
     	
     }else {
     	baseMo.value = 0;
@@ -349,6 +358,7 @@ document.addEventListener("input", function(){
     		spendFT.value = +spendFT.value + (baseFT.value - spendFT.min);
     	}
     	spendFT.min = baseFThrowerTotal;
+    	spendFT.prevValue = spendFT.value;
     	
     }else {
     	baseFT.value = 0;
@@ -366,6 +376,7 @@ document.addEventListener("input", function(){
     		spendEp.value = +spendEp.value + (baseEP.value - spendEp.min);
     	}
     	spendEp.min = baseEPistolTotal;
+    	spendEp.prevValue = spendEp.value;
     	
     }else {
     	baseEP.value = 0;
@@ -383,6 +394,7 @@ document.addEventListener("input", function(){
     		spendER.value = +spendER.value + (baseER.value - spendER.min);
     	}
     	spendER.min = baseERifleTotal;
+    	spendER.prevValue = spendER.value;
     	
     }else {
     	baseER.value = 0;
@@ -400,6 +412,7 @@ document.addEventListener("input", function(){
     		spendBEW.value = +spendBEW.value + (baseBEW.value - spendBEW.min);
     	}
     	spendBEW.min = baseBEWeapTotal;
+    	spendBEW.prevValue = spendBEW.value;
     	
     }else {
     	baseBEW.value = 0;
@@ -417,6 +430,7 @@ document.addEventListener("input", function(){
     		spendMe.value = +spendMe.value + (baseMe.value - spendMe.min);
     	}
     	spendMe.min = baseMeleeTotal;
+    	spendMe.prevValue = spendMe.value;
     	
     }else {
     	baseMe.value = 0;
@@ -434,6 +448,7 @@ document.addEventListener("input", function(){
     		spendUn.value = +spendUn.value + (baseUn.value - spendUn.min);
     	}
     	spendUn.min = baseUnarmedTotal;
+    	spendUn.prevValue = spendUn.value;
     	
     }else {
     	baseUn.value = 0;
@@ -454,6 +469,7 @@ document.addEventListener("input", function(){
     		spendDoc.value = +spendDoc.value + (baseDoc.value - spendDoc.min);
     	}
     	spendDoc.min = baseDoctorTotal;
+    	spendDoc.prevValue = spendDoc.value;
     	
     }else {
     	baseDoc.value = 0;
@@ -471,6 +487,7 @@ document.addEventListener("input", function(){
     		spendFA.value = +spendFA.value + (baseFA.value - spendFA.min);
     	}
     	spendFA.min = baseFAidTotal;
+    	spendFA.prevValue = spendFA.value;
     	
     }else {
     	baseFA.value = 0;
@@ -488,6 +505,7 @@ document.addEventListener("input", function(){
     		spendSn.value = +spendSn.value + (baseSn.value - spendSn.min);
     	}
     	spendSn.min = baseSneakTotal;
+    	spendSn.prevValue = spendSn.value;
     	
     }else {
     	baseSn.value = 0;
@@ -505,6 +523,7 @@ document.addEventListener("input", function(){
     		spendLo.value = +spendLo.value + (baseLo.value - spendLo.min);
     	}
     	spendLo.min = baseLockpickTotal;
+    	spendLo.prevValue = spendLo.value;
     	
     }else {
     	baseLo.value = 0;
@@ -522,6 +541,7 @@ document.addEventListener("input", function(){
     		spendSt.value = +spendSt.value + (baseSt.value - spendSt.min);
     	}
     	spendSt.min = baseStealingTotal;
+    	spendSt.prevValue = spendSt.value;
     	
     }else {
     	baseSt.value = 0;
@@ -539,6 +559,7 @@ document.addEventListener("input", function(){
     		spendTM.value = +spendTM.value + (baseTM.value - spendTM.min);
     	}
     	spendTM.min = baseTMTotal;
+    	spendTM.prevValue = spendTM.value;
     	
     }else {
     	baseTM.value = 0;
@@ -556,6 +577,7 @@ document.addEventListener("input", function(){
     		spendSc.value = +spendSc.value + (baseSc.value - spendSc.min);
     	}
     	spendSc.min = baseScienceTotal;
+    	spendSc.prevValue = spendSc.value;
     	
     }else {
     	baseSc.value = 0;
@@ -573,6 +595,7 @@ document.addEventListener("input", function(){
     		spendRe.value = +spendRe.value + (baseRe.value - spendRe.min);
     	}
     	spendRe.min = baseRepairTotal;
+    	spendRe.prevValue = spendRe.value;
     	
     }else {
     	baseRe.value = 0;
@@ -593,6 +616,7 @@ document.addEventListener("input", function(){
     		spendCT.value = +spendCT.value + (baseCT.value - spendCT.min);
     	}
     	spendCT.min = baseLandcraftTotal;
+    	spendCT.prevValue = spendCT.value;
     	
     }else {
     	baseCT.value = 0;
@@ -610,6 +634,7 @@ document.addEventListener("input", function(){
     		spendWa.value = +spendWa.value + (baseWa.value - spendWa.min);
     	}
     	spendWa.min = baseWatercraftTotal;
+    	spendWa.prevValue = spendWa.value;
     	
     }else {
     	baseWa.value = 0;
@@ -627,6 +652,7 @@ document.addEventListener("input", function(){
     		spendAi.value = +spendAi.value + (baseAi.value - spendAi.min);
     	}
     	spendAi.min = baseAircraftTotal;
+    	spendAi.prevValue = spendAi.value;
     	
     }else {
     	baseAi.value = 0;
@@ -644,6 +670,7 @@ document.addEventListener("input", function(){
     		spendAPC.value = +spendAPC.value + (baseAPC.value - spendAPC.min);
     	}
     	spendAPC.min = baseAPCTankTotal;
+    	spendAPC.prevValue = spendAPC.value;
     	
     }else {
     	baseAPC.value = 0;
@@ -661,6 +688,7 @@ document.addEventListener("input", function(){
     		spendSp.value = +spendSp.value + (baseSp.value - spendSp.min);
     	}
     	spendSp.min = baseSpeechTotal;
+    	spendSp.prevValue = spendSp.value;
     	
     }else {
     	baseSp.value = 0;
@@ -677,7 +705,8 @@ document.addEventListener("input", function(){
     	}else if(spendBa.min < baseBa.value) {
     		spendBa.value = +spendBa.value + (baseBa.value - spendBa.min);    		
     	}
-    	spendBa.min = baseBarterTotal; 
+    	spendBa.min = baseBarterTotal;
+    	spendBa.prevValue = spendBa.value; 
 
     }else {
     	baseBa.value = 0;
@@ -695,6 +724,7 @@ document.addEventListener("input", function(){
     		spendGa.value = +spendGa.value + (baseGa.value - spendGa.min);    		
     	}
     	spendGa.min = baseGamblingTotal; 
+    	spendGa.prevValue = spendGa.value;
 
     }else {
     	baseGa.value = 0;
@@ -711,7 +741,8 @@ document.addEventListener("input", function(){
     	}else if(spendSu.min < baseSu.value) {
     		spendSu.value = +spendSu.value + (baseSu.value - spendSu.min);    		
     	}
-    	spendSu.min = baseSurvivalTotal; 
+    	spendSu.min = baseSurvivalTotal;
+    	spendSu.prevValue = spendSu.value;
 
     }else {
     	baseSu.value = 0;
@@ -730,56 +761,37 @@ document.addEventListener("input", function(){
     		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);
     		
     	}
-/*-------------------------WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO----------------------------------------------*/
-/*-------------------------IT WORKS DOING IT HERE-------------------------------------------------------*/
-/*-------------------------Use this first if statement below--------------------------------------------*/
-/*-------------------------event.target.name == "Godmode"-----------------------------------------------*/
-/*------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------------*/
-    	/*skillPtCheck = spendTr.prevValue - spendTr.value;
-    	if (spendTr.prevValue > spendTr.value && event.target.name == "skills"){
-    		skillPtMod.value = skillPtMod.value - skillPtCheck;
-    		console.log(Math.ceil(((spendTr.prevValue-100)/25) + 1));
-    		
-    	}else if(spendTr.prevValue < spendTr.value && event.target.name == "skills") {
-    		skillPtMod.value = skillPtMod.value - skillPtCheck;
-    		console.log(Math.ceil(((spendTr.value-100)/25) + 1));
-    		
-    	}
-    	*/
     	spendTr.min = baseTrackingTotal;
-    	/*spendTr.prevValue = spendTr.value;*/
+    	spendTr.prevValue = spendTr.value;
+
     }else {
     	baseTr.value = 0;
     	spendTr.prevValue = 0;
     }/*---- Base Tracking Skill Calc ----*/
-
-});
+}
 
 
 document.addEventListener("input", function(){
-	
+
+
 	skillPtCheck = event.target.prevValue - event.target.value;
-	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck ;
-	console.log(skillPtCheck);
-	
+	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck;
+		
 	    	switch (true) {
 	    		case (event.target.name == "skills" && event.target.value <= 75 ):
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;
-			        console.log("< 75 " + skillPtMod.value);
+			        skillPtMod.value = skillPtMod.value - skillPtCheck;			       
 			        break; 
 	    		case (event.target.name == "skills" && event.target.value <= 200):
-			        skillPtMod.value = skillPtMod.value - skillIncrement;
-			        console.log("< 201 " + skillIncrement + " " + skillPtCheck);
+			        skillPtMod.value = skillPtMod.value - skillIncrement;			        
 			        break; 
 			    case (event.target.name == "skills" && event.target.value >= 201):
-			        skillPtMod.value = +skillPtMod.value - skillPtCheck * 6;
-			        console.log("> 200 " + skillPtMod.value);
+			        skillPtMod.value = +skillPtMod.value - skillPtCheck * 6;			        
 			        break;			    			    
 	    		default: 
-	        		console.log("default");
+	        		console.log(event.target.name);
 				}
 		
 	event.target.prevValue = event.target.value;
+	secondarySkills();
 });
 
