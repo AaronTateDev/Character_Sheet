@@ -772,26 +772,31 @@ function secondarySkills() {
 
 
 document.addEventListener("input", function(){
-
-
 	skillPtCheck = event.target.prevValue - event.target.value;
 	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck;
-		
-	    	switch (true) {
-	    		case (event.target.name == "skills" && event.target.value <= 75 ):
-			        skillPtMod.value = skillPtMod.value - skillPtCheck;			       
-			        break; 
-	    		case (event.target.name == "skills" && event.target.value <= 200):
-			        skillPtMod.value = skillPtMod.value - skillIncrement;			        
-			        break; 
-			    case (event.target.name == "skills" && event.target.value >= 201):
-			        skillPtMod.value = +skillPtMod.value - skillPtCheck * 6;			        
-			        break;			    			    
-	    		default: 
-	        		console.log(event.target.name);
-				}
+	switch (true) {
+	    case (event.target.name == "skills" && event.target.value <= 75 ):
+			skillPtMod.value = skillPtMod.value - skillPtCheck;			       
+			break;			    		         
+	    case (event.target.name == "skills" && event.target.value < 201):
+			skillPtMod.value = skillPtMod.value - skillIncrement;
+
+			if((event.target.prevValue == 101 || event.target.prevValue == 126 || 
+				event.target.prevValue == 151 || event.target.prevValue == 176 || 
+				event.target.prevValue == 201) && skillPtCheck === 1) {
+				skillPtMod.value = skillPtMod.value - 1;
+			}       
+			break; 
+		case (event.target.name == "skills" && event.target.value > 200):
+			skillPtMod.value = skillPtMod.value - skillPtCheck * 6;			        			                
+			break;			    			    
+	    default: 
+	        console.log(event.target.name);
+	}
 		
 	event.target.prevValue = event.target.value;
 	secondarySkills();
-});
+
+});/*End of Skill Point Spending Code*/
+
 
