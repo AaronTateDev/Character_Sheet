@@ -800,3 +800,48 @@ document.addEventListener("input", function(){
 });/*End of Skill Point Spending Code*/
 
 
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+
+
+document.addEventListener("click", function(){
+	justice = document.getElementById(event.target.nextElementSibling.firstChild.id);
+	       /*THOUGH PROBABLY BEST TO JUST SET THE ONCLICK TO THE TD AND THEN CALL THE NAMED FUNCTION WITH THAT INSTEAD
+	       OF GOING CRAZY HERE... BUT I DID IT EVENT LISTNER FTW*/
+	       
+
+	if(justice.parentElement.previousElementSibling.style.background == 'red'
+	   ){
+
+	     justice.parentElement.previousElementSibling.style.background = 'white';
+	
+	}else {justice.parentElement.previousElementSibling.style.background = 'red';}
+	
+});/*TEST CODE*/
+
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+/*TEST CODE*/
+
+
+
+
+
