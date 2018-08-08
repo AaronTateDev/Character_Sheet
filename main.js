@@ -694,6 +694,7 @@ function secondarySkills() {
     	baseSp.value = 0;
     }/*---- Base Speech Skill Calc ----*/    
 
+    
     baseBarterTotal = cTotal * 4;
     baseBa = document.getElementById('baseBarterSkill');
     spendBa = document.getElementById('spendBarterSkill');
@@ -747,12 +748,14 @@ function secondarySkills() {
     }else {
     	baseSu.value = 0;
     }/*---- Base Survivalist Skill Calc ----*/ 
-
     baseTrackingTotal = (iTotal + pTotal) * 3;
     baseTr = document.getElementById('baseTrackSkill');
     spendTr = document.getElementById('spendTrackSkill');
+    
+
     if (eTotal > 0 && pTotal > 0) {
     	baseTr.value = baseTrackingTotal;
+        
 
     	if (spendTr.min > baseTr.value){
     		spendTr.value = spendTr.value - (spendTr.min - baseTr.value);
@@ -763,10 +766,10 @@ function secondarySkills() {
     	}
     	spendTr.min = baseTrackingTotal;
     	spendTr.prevValue = spendTr.value;
-
+    
     }else {
     	baseTr.value = 0;
-    	spendTr.prevValue = 0;
+    	spendTr.prevValue = 0;       
     }/*---- Base Tracking Skill Calc ----*/
 }
 
@@ -780,7 +783,6 @@ document.addEventListener("input", function(){
 			break;			    		         
 	    case (event.target.name == "skills" && event.target.value < 201):
 			skillPtMod.value = skillPtMod.value - skillIncrement;
-
 			if((event.target.prevValue == 101 || event.target.prevValue == 126 || 
 				event.target.prevValue == 151 || event.target.prevValue == 176 || 
 				event.target.prevValue == 201) && skillPtCheck === 1) {
@@ -813,20 +815,38 @@ document.addEventListener("input", function(){
 /*TEST CODE*/
 
 
-document.addEventListener("click", function(){
+function tagSkills(){
+    var one = event.target;
 	justice = document.getElementById(event.target.nextElementSibling.firstChild.id);
 	       /*THOUGH PROBABLY BEST TO JUST SET THE ONCLICK TO THE TD AND THEN CALL THE NAMED FUNCTION WITH THAT INSTEAD
 	       OF GOING CRAZY HERE... BUT I DID IT EVENT LISTNER FTW*/
-	       
 
-	if(justice.parentElement.previousElementSibling.style.background == 'red'
+	if(event.target.style.background == 'red'){
+        event.target.style.background = 'white';
+        var x1=-20;
+        console.log(one.style.background);
+
+        
+
+    
+    }else {event.target.style.background = 'red';
+        var x1=20;
+        console.log(one.style.background);
+
+       
+    }
+    secondarySkills();
+    
+}       
+
+	/*if(justice.parentElement.previousElementSibling.style.background == 'red'
 	   ){
 
 	     justice.parentElement.previousElementSibling.style.background = 'white';
 	
 	}else {justice.parentElement.previousElementSibling.style.background = 'red';}
 	
-});/*TEST CODE*/
+}*//*TEST CODE*/
 
 /*TEST CODE*/
 /*TEST CODE*/
