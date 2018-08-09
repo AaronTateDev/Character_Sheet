@@ -9,7 +9,10 @@ aTotal,
 lTotal,
 charLevel,
 skillPtMod,
-skillPtTotal;
+skillPtTotal,
+taggedSkills;
+
+var tagColor = 'rgb(255, 96, 96)';/*color of skill tag highlight*/
 
 skillPtBase = document.getElementById('baseSkillPts');
 skillPtMod = document.getElementById('modSkillPts');
@@ -166,17 +169,20 @@ function secondarySkills() {
 	basePistolsTotal =  5 + (4 * aTotal);
 	basePi = document.getElementById('basePistolSkill');
     spendPi = document.getElementById('spendPistolSkill');
+    if (basePi.parentElement.previousElementSibling.style.background == tagColor){
+        basePistolsTotal =  5 + (4 * aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0) {
     	basePi.value = basePistolsTotal;
     	if (spendPi.min > basePi.value){
     		spendPi.value = spendPi.value - (spendPi.min - basePi.value);
-
     	}else if(spendPi.min < basePi.value) {
     		spendPi.value = +spendPi.value + (basePi.value - spendPi.min);
     	}
+
     	spendPi.min = basePistolsTotal;
-    	spendPi.prevValue = spendPi.value;
-    	
+    	spendPi.prevValue = spendPi.value;    	
     }else {
     	basePi.value = 0;
     }/*---- Base Pistol Skill Calc ----*/ 
@@ -184,17 +190,20 @@ function secondarySkills() {
     baseSMGTotal =  5 + 3 * aTotal + sTotal;
     baseSMG = document.getElementById('baseSMGSkill');
     spendSMG = document.getElementById('spendSMGSkill');
+    if (baseSMG.parentElement.previousElementSibling.style.background == tagColor){
+        baseSMGTotal =  5 + 3 * aTotal + sTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	baseSMG.value = baseSMGTotal;
     	if (spendSMG.min > baseSMG.value){
     		spendSMG.value = spendSMG.value - (spendSMG.min - baseSMG.value);
-
     	}else if(spendSMG.min < baseSMG.value) {
     		spendSMG.value = +spendSMG.value + (baseSMG.value - spendSMG.min);
     	}
+
     	spendSMG.min = baseSMGTotal;
-    	spendSMG.prevValue = spendSMG.value;
-    	
+    	spendSMG.prevValue = spendSMG.value;    	
     }else {
     	baseSMG.value = 0;
     }/*---- Base SMG Skill Calc ----*/    
@@ -202,17 +211,20 @@ function secondarySkills() {
     baseARTotal =  2 * (pTotal + aTotal);
     baseAR = document.getElementById('baseARSkill');
     spendAR = document.getElementById('spendARSkill');
+    if (baseAR.parentElement.previousElementSibling.style.background == tagColor){
+        baseARTotal =  2 * (pTotal + aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && aTotal > 0) {
     	baseAR.value = baseARTotal;
     	if (spendAR.min > baseAR.value){
     		spendAR.value = spendAR.value - (spendAR.min - baseAR.value);
-
     	}else if(spendAR.min < baseAR.value) {
     		spendAR.value = +spendAR.value + (baseAR.value - spendAR.min);
     	}
+
     	spendAR.min = baseARTotal;
-    	spendAR.prevValue = spendAR.value;
-    	
+    	spendAR.prevValue = spendAR.value;    	
     }else {
     	baseAR.value = 0;
     }/*---- Base Assault Rifle Skill Calc ----*/    
@@ -220,17 +232,20 @@ function secondarySkills() {
     basePrimTotal =  (2 * aTotal) + (3 * sTotal);
     basePr = document.getElementById('basePrimSkill');
     spendPr = document.getElementById('spendPrimSkill');
+    if (basePr.parentElement.previousElementSibling.style.background == tagColor){
+        basePrimTotal =  (2 * aTotal) + (3 * sTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	basePr.value = basePrimTotal;
     	if (spendPr.min > basePr.value){
     		spendPr.value = spendPr.value - (spendPr.min - basePr.value);
-
     	}else if(spendPr.min < basePr.value) {
     		spendPr.value = +spendPr.value + (basePr.value - spendPr.min);
     	}
+
     	spendPr.min = basePrimTotal;
-    	spendPr.prevValue = spendPr.value;
-    	
+    	spendPr.prevValue = spendPr.value;    	
     }else {
     	basePr.value = 0;
     }/*---- Base Prim. Missile Weap Skill Calc ----*/    
@@ -238,17 +253,20 @@ function secondarySkills() {
     baseThrowingTotal =  5 + (4 * aTotal);
     baseTh = document.getElementById('baseThrowSkill');
     spendTh = document.getElementById('spendThrowSkill');
+    if (baseTh.parentElement.previousElementSibling.style.background == tagColor){
+        baseThrowingTotal =  5 + (4 * aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0) {
     	baseTh.value = baseThrowingTotal;
     	if (spendTh.min > baseTh.value){
     		spendTh.value = spendTh.value - (spendTh.min - baseTh.value);
-
     	}else if(spendTh.min < baseTh.value) {
     		spendTh.value = +spendTh.value + (baseTh.value - spendTh.min);
     	}
+
     	spendTh.min = baseThrowingTotal;
-    	spendTh.prevValue = spendTh.value;
-    	
+    	spendTh.prevValue = spendTh.value;    	
     }else {
     	baseTh.value = 0;
     }/*---- Base Throwing Skill Calc ----*/    
@@ -256,17 +274,20 @@ function secondarySkills() {
     baseRifleTotal =  (4 * pTotal);
     baseRi = document.getElementById('baseRifleSkill');
     spendRi = document.getElementById('spendRifleSkill');
+    if (baseRi.parentElement.previousElementSibling.style.background == tagColor){
+        baseRifleTotal =  (4 * pTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0) {
     	baseRi.value = baseRifleTotal;
     	if (spendRi.min > baseRi.value){
     		spendRi.value = spendRi.value - (spendRi.min - baseRi.value);
-
     	}else if(spendRi.min < baseRi.value) {
     		spendRi.value = +spendRi.value + (baseRi.value - spendRi.min);
     	}
+
     	spendRi.min = baseRifleTotal;
-    	spendRi.prevValue = spendRi.value;
-    	
+    	spendRi.prevValue = spendRi.value;    	
     }else {
     	baseRi.value = 0;
     }/*---- Base Rifle Skill Calc ----*/    
@@ -274,17 +295,20 @@ function secondarySkills() {
     baseShotgunTotal =  3 * (sTotal + aTotal);
     baseSh = document.getElementById('baseShotgunSkill');
     spendSh = document.getElementById('spendShotgunSkill');
+    if (baseSh.parentElement.previousElementSibling.style.background == tagColor){
+        baseShotgunTotal =  3 * (sTotal + aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	baseSh.value = baseShotgunTotal;
     	if (spendSh.min > baseSh.value){
     		spendSh.value = spendSh.value - (spendSh.min - baseSh.value);
-
     	}else if(spendSh.min < baseSh.value) {
     		spendSh.value = +spendSh.value + (baseSh.value - spendSh.min);
     	}
+
     	spendSh.min = baseShotgunTotal;
-    	spendSh.prevValue = spendSh.value;
-    	
+    	spendSh.prevValue = spendSh.value;    	
     }else {
     	baseSh.value = 0;
     }/*---- Base Shotgun Skill Calc ----*/  
@@ -292,17 +316,20 @@ function secondarySkills() {
     baseMGTotal =  10 + (4 * sTotal);
     baseMG = document.getElementById('baseMgSkill');
     spendMG = document.getElementById('spendMgSkill');
+    if (baseMG.parentElement.previousElementSibling.style.background == tagColor){
+        baseMGTotal =  10 + (4 * sTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (sTotal > 0) {
     	baseMG.value = baseMGTotal;
     	if (spendMG.min > baseMG.value){
     		spendMG.value = spendMG.value - (spendMG.min - baseMG.value);
-
     	}else if(spendMG.min < baseMG.value) {
     		spendMG.value = +spendMG.value + (baseMG.value - spendMG.min);
     	}
+
     	spendMG.min = baseMGTotal;
-    	spendMG.prevValue = spendMG.value;
-    	
+    	spendMG.prevValue = spendMG.value;    	
     }else {
     	baseMG.value = 0;
     }/*---- Base Machine Gun Skill Calc ----*/ 
@@ -313,17 +340,20 @@ function secondarySkills() {
     baseGMLaunchTotal = (3 * sTotal) + aTotal;
     baseGML = document.getElementById('baseG/MLaunchSkill');
     spendGML = document.getElementById('spendG/MLaunchSkill');
+    if (baseGML.parentElement.previousElementSibling.style.background == tagColor){
+        baseGMLaunchTotal = (3 * sTotal) + aTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	baseGML.value = baseGMLaunchTotal;
     	if (spendGML.min > baseGML.value){
     		spendGML.value = spendGML.value - (spendGML.min - baseGML.value);
-
     	}else if(spendGML.min < baseGML.value) {
     		spendGML.value = +spendGML.value + (baseGML.value - spendGML.min);
     	}
+
     	spendGML.min = baseGMLaunchTotal;
-    	spendGML.prevValue = spendGML.value;
-    	
+    	spendGML.prevValue = spendGML.value;    	
     }else {
     	baseGML.value = 0;
     }/*---- Base Grenade/Missile Launcher Skill Calc ----*/ 
@@ -331,17 +361,20 @@ function secondarySkills() {
     baseMortarsTotal = 10 + (sTotal + iTotal) * 2;
     baseMo = document.getElementById('baseMortarSkill');
     spendMo = document.getElementById('spendMortarSkill');
+    if (baseMo.parentElement.previousElementSibling.style.background == tagColor){
+        baseMortarsTotal = 10 + (sTotal + iTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (sTotal > 0 && iTotal > 0) {
     	baseMo.value = baseMortarsTotal;
     	if (spendMo.min > baseMo.value){
     		spendMo.value = spendMo.value - (spendMo.min - baseMo.value);
-
     	}else if(spendMo.min < baseMo.value) {
     		spendMo.value = +spendMo.value + (baseMo.value - spendMo.min);
     	}
+
     	spendMo.min = baseMortarsTotal;
-    	spendMo.prevValue = spendMo.value;
-    	
+    	spendMo.prevValue = spendMo.value;    	
     }else {
     	baseMo.value = 0;
     }/*---- Base Mortars Skill Calc ----*/    
@@ -349,17 +382,20 @@ function secondarySkills() {
     baseFThrowerTotal = (4 * eTotal) + sTotal;
     baseFT = document.getElementById('baseFThrowerSkill');
     spendFT = document.getElementById('spendFThrowerSkill');
+    if (baseFT.parentElement.previousElementSibling.style.background == tagColor){
+        baseFThrowerTotal = (4 * eTotal) + sTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (eTotal > 0 && sTotal > 0) {
     	baseFT.value = baseFThrowerTotal;
     	if (spendFT.min > baseFT.value){
     		spendFT.value = spendFT.value - (spendFT.min - baseFT.value);
-
     	}else if(spendFT.min < baseFT.value) {
     		spendFT.value = +spendFT.value + (baseFT.value - spendFT.min);
     	}
+
     	spendFT.min = baseFThrowerTotal;
-    	spendFT.prevValue = spendFT.value;
-    	
+    	spendFT.prevValue = spendFT.value;    	
     }else {
     	baseFT.value = 0;
     }/*---- Base Flame Throwers Skill Calc ----*/    
@@ -367,17 +403,20 @@ function secondarySkills() {
     baseEPistolTotal = (2 * aTotal) + (iTotal * 2);
     baseEP = document.getElementById('baseEPistolSkill');
     spendEp = document.getElementById('spendEPistolSkill');
+    if (baseEP.parentElement.previousElementSibling.style.background == tagColor){
+        baseEPistolTotal = (2 * aTotal) + (iTotal * 2) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && iTotal > 0) {
     	baseEP.value = baseEPistolTotal;
     	if (spendEp.min > baseEP.value){
     		spendEp.value = spendEp.value - (spendEp.min - baseEP.value);
-
     	}else if(spendEp.min < baseEP.value) {
     		spendEp.value = +spendEp.value + (baseEP.value - spendEp.min);
     	}
+
     	spendEp.min = baseEPistolTotal;
-    	spendEp.prevValue = spendEp.value;
-    	
+    	spendEp.prevValue = spendEp.value;    	
     }else {
     	baseEP.value = 0;
     }/*---- Base Energy Pistols Skill Calc ----*/
@@ -385,17 +424,20 @@ function secondarySkills() {
     baseERifleTotal = (2 * pTotal) + (iTotal * 2);
     baseER = document.getElementById('baseERifleSkill');
     spendER = document.getElementById('spendERifleSkill');
+    if (baseER.parentElement.previousElementSibling.style.background == tagColor){
+        baseERifleTotal = (2 * pTotal) + (iTotal * 2) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && iTotal > 0) {
     	baseER.value = baseERifleTotal;
     	if (spendER.min > baseER.value){
     		spendER.value = spendER.value - (spendER.min - baseER.value);
-
     	}else if(spendER.min < baseER.value) {
     		spendER.value = +spendER.value + (baseER.value - spendER.min);
     	}
+
     	spendER.min = baseERifleTotal;
-    	spendER.prevValue = spendER.value;
-    	
+    	spendER.prevValue = spendER.value;    	
     }else {
     	baseER.value = 0;
     }/*---- Base Energy Rifles Skill Calc ----*/    
@@ -403,6 +445,10 @@ function secondarySkills() {
     baseBEWeapTotal = (2 * sTotal) + (iTotal * 2);
     baseBEW = document.getElementById('baseBEWeapSkill');
     spendBEW = document.getElementById('spendBEWeapSkill');
+    if (baseBEW.parentElement.previousElementSibling.style.background == tagColor){
+         baseBEWeapTotal = (2 * sTotal) + (iTotal * 2) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (sTotal > 0 && iTotal > 0) {
     	baseBEW.value = baseBEWeapTotal;
     	if (spendBEW.min > baseBEW.value){
@@ -411,9 +457,9 @@ function secondarySkills() {
     	}else if(spendBEW.min < baseBEW.value) {
     		spendBEW.value = +spendBEW.value + (baseBEW.value - spendBEW.min);
     	}
+
     	spendBEW.min = baseBEWeapTotal;
-    	spendBEW.prevValue = spendBEW.value;
-    	
+    	spendBEW.prevValue = spendBEW.value;    	
     }else {
     	baseBEW.value = 0;
     }/*---- Base Big Energy Weapons Skill Calc ----*/    
@@ -421,35 +467,41 @@ function secondarySkills() {
     baseMeleeTotal =  15 + aTotal + (sTotal * 3);
     baseMe = document.getElementById('baseMeleeSkill');
     spendMe = document.getElementById('spendMeleeSkill');
+    if (baseMe.parentElement.previousElementSibling.style.background == tagColor){
+         baseMeleeTotal =  15 + aTotal + (sTotal * 3) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	baseMe.value = baseMeleeTotal;
     	if (spendMe.min > baseMe.value){
     		spendMe.value = spendMe.value - (spendMe.min - baseMe.value);
-
     	}else if(spendMe.min < baseMe.value) {
     		spendMe.value = +spendMe.value + (baseMe.value - spendMe.min);
     	}
+
     	spendMe.min = baseMeleeTotal;
-    	spendMe.prevValue = spendMe.value;
-    	
+    	spendMe.prevValue = spendMe.value;    	
     }else {
     	baseMe.value = 0;
     }/*---- Base Melee Skill Calc ----*/  
 
-    baseUnarmedTotal =  20 + (aTotal * 3) + sTotal ;
+    baseUnarmedTotal = 20 + (aTotal * 3) + sTotal;
     baseUn = document.getElementById('baseUnarmedSkill');
     spendUn = document.getElementById('spendUnarmedSkill');
+    if (baseUn.parentElement.previousElementSibling.style.background == tagColor){
+        baseUnarmedTotal =  20 + (aTotal * 3) + sTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && sTotal > 0) {
     	baseUn.value = baseUnarmedTotal;
     	if (spendUn.min > baseUn.value){
     		spendUn.value = spendUn.value - (spendUn.min - baseUn.value);
-
     	}else if(spendUn.min < baseUn.value) {
     		spendUn.value = +spendUn.value + (baseUn.value - spendUn.min);
     	}
+
     	spendUn.min = baseUnarmedTotal;
-    	spendUn.prevValue = spendUn.value;
-    	
+    	spendUn.prevValue = spendUn.value;    	
     }else {
     	baseUn.value = 0;
     }/*---- Base Unarmed Skill Calc ----*/   
@@ -460,17 +512,20 @@ function secondarySkills() {
     baseDoctorTotal = 5 + pTotal + iTotal;
     baseDoc = document.getElementById('baseDoctorSkill');
     spendDoc = document.getElementById('spendDoctorSkill');
+    if (baseDoc.parentElement.previousElementSibling.style.background == tagColor){
+        baseDoctorTotal = 5 + pTotal + iTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && iTotal > 0) {
     	baseDoc.value = baseDoctorTotal;
     	if (spendDoc.min > baseDoc.value){
     		spendDoc.value = spendDoc.value - (spendDoc.min - baseDoc.value);
-
     	}else if(spendDoc.min < baseDoc.value) {
     		spendDoc.value = +spendDoc.value + (baseDoc.value - spendDoc.min);
     	}
+
     	spendDoc.min = baseDoctorTotal;
-    	spendDoc.prevValue = spendDoc.value;
-    	
+    	spendDoc.prevValue = spendDoc.value;    	
     }else {
     	baseDoc.value = 0;
     }/*---- Base Doctor Skill Calc ----*/ 
@@ -478,17 +533,20 @@ function secondarySkills() {
     baseFAidTotal = (pTotal + eTotal) * 2;
     baseFA = document.getElementById('baseFAidSkill');
     spendFA = document.getElementById('spendFAidSkill');
+    if (baseFA.parentElement.previousElementSibling.style.background == tagColor){
+        baseFAidTotal = (pTotal + eTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && eTotal > 0) {
     	baseFA.value = baseFAidTotal;
     	if (spendFA.min > baseFA.value){
     		spendFA.value = spendFA.value - (spendFA.min - baseFA.value);
-
     	}else if(spendFA.min < baseFA.value) {
     		spendFA.value = +spendFA.value + (baseFA.value - spendFA.min);
     	}
+
     	spendFA.min = baseFAidTotal;
-    	spendFA.prevValue = spendFA.value;
-    	
+    	spendFA.prevValue = spendFA.value;    	
     }else {
     	baseFA.value = 0;
     }/*---- Base First Aid Skill Calc ----*/    
@@ -496,17 +554,20 @@ function secondarySkills() {
     baseSneakTotal = 5 + (3 * aTotal);
     baseSn = document.getElementById('baseSneakSkill');
     spendSn = document.getElementById('spendSneakSkill');
+    if (baseSn.parentElement.previousElementSibling.style.background == tagColor){
+        baseSneakTotal = 5 + (3 * aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0) {
     	baseSn.value = baseSneakTotal;
     	if (spendSn.min > baseSn.value){
     		spendSn.value = spendSn.value - (spendSn.min - baseSn.value);
-
     	}else if(spendSn.min < baseSn.value) {
     		spendSn.value = +spendSn.value + (baseSn.value - spendSn.min);
     	}
+
     	spendSn.min = baseSneakTotal;
-    	spendSn.prevValue = spendSn.value;
-    	
+    	spendSn.prevValue = spendSn.value;    	
     }else {
     	baseSn.value = 0;
     }/*---- Base Sneak Skill Calc ----*/    
@@ -514,17 +575,20 @@ function secondarySkills() {
     baseLockpickTotal = 10 + (pTotal + aTotal);
     baseLo = document.getElementById('baseLockpickSkill');
     spendLo = document.getElementById('spendLockpickSkill');
+    if (baseLo.parentElement.previousElementSibling.style.background == tagColor){
+        baseLockpickTotal = 10 + (pTotal + aTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && aTotal > 0) {
     	baseLo.value = baseLockpickTotal;
     	if (spendLo.min > baseLo.value){
     		spendLo.value = spendLo.value - (spendLo.min - baseLo.value);
-
     	}else if(spendLo.min < baseLo.value) {
     		spendLo.value = +spendLo.value + (baseLo.value - spendLo.min);
     	}
+
     	spendLo.min = baseLockpickTotal;
-    	spendLo.prevValue = spendLo.value;
-    	
+    	spendLo.prevValue = spendLo.value;    	
     }else {
     	baseLo.value = 0;
     }/*---- Base Lockpicking Skill Calc ----*/
@@ -532,17 +596,20 @@ function secondarySkills() {
     baseStealingTotal = 5 + (pTotal + aTotal * 2);
     baseSt = document.getElementById('baseStealSkill');
     spendSt = document.getElementById('spendStealSkill');
+    if (baseSt.parentElement.previousElementSibling.style.background == tagColor){
+        baseStealingTotal = 5 + (pTotal + aTotal * 2) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0 && aTotal > 0) {
     	baseSt.value = baseStealingTotal;
     	if (spendSt.min > baseSt.value){
     		spendSt.value = spendSt.value - (spendSt.min - baseSt.value);
-
     	}else if(spendSt.min < baseSt.value) {
     		spendSt.value = +spendSt.value + (baseSt.value - spendSt.min);
     	}
+
     	spendSt.min = baseStealingTotal;
-    	spendSt.prevValue = spendSt.value;
-    	
+    	spendSt.prevValue = spendSt.value;    	
     }else {
     	baseSt.value = 0;
     }/*---- Base Stealing Skill Calc ----*/    
@@ -550,17 +617,20 @@ function secondarySkills() {
     baseTMTotal = 10 + aTotal + iTotal;
     baseTM = document.getElementById('baseT/MSkill');
     spendTM = document.getElementById('spendT/MSkill');
+    if (baseTM.parentElement.previousElementSibling.style.background == tagColor){
+        baseTMTotal = 10 + aTotal + iTotal + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && iTotal > 0) {
     	baseTM.value = baseTMTotal;
     	if (spendTM.min > baseTM.value){
     		spendTM.value = spendTM.value - (spendTM.min - baseTM.value);
-
     	}else if(spendTM.min < baseTM.value) {
     		spendTM.value = +spendTM.value + (baseTM.value - spendTM.min);
     	}
+
     	spendTM.min = baseTMTotal;
-    	spendTM.prevValue = spendTM.value;
-    	
+    	spendTM.prevValue = spendTM.value;    	
     }else {
     	baseTM.value = 0;
     }/*---- Base Traps/Mines Skill Calc ----*/    
@@ -568,17 +638,20 @@ function secondarySkills() {
     baseScienceTotal = (4 * iTotal);
     baseSc = document.getElementById('baseScienceSkill');
     spendSc = document.getElementById('spendScienceSkill');
+    if (baseSc.parentElement.previousElementSibling.style.background == tagColor){
+        baseScienceTotal = (4 * iTotal) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (iTotal > 0 ) {
     	baseSc.value = baseScienceTotal;
     	if (spendSc.min > baseSc.value){
     		spendSc.value = spendSc.value - (spendSc.min - baseSc.value);
-
     	}else if(spendSc.min < baseSc.value) {
     		spendSc.value = +spendSc.value + (baseSc.value - spendSc.min);
     	}
+
     	spendSc.min = baseScienceTotal;
-    	spendSc.prevValue = spendSc.value;
-    	
+    	spendSc.prevValue = spendSc.value;    	
     }else {
     	baseSc.value = 0;
     }/*---- Base Science Skill Calc ----*/  
@@ -586,17 +659,20 @@ function secondarySkills() {
     baseRepairTotal =  sTotal + (iTotal * 3);
     baseRe = document.getElementById('baseRepairSkill');
     spendRe = document.getElementById('spendRepairSkill');
+    if (baseRe.parentElement.previousElementSibling.style.background == tagColor){
+        baseRepairTotal =  sTotal + (iTotal * 3) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (sTotal > 0 && iTotal > 0) {
     	baseRe.value = baseRepairTotal;
     	if (spendRe.min > baseRe.value){
     		spendRe.value = spendRe.value - (spendRe.min - baseRe.value);
-
     	}else if(spendRe.min < baseRe.value) {
     		spendRe.value = +spendRe.value + (baseRe.value - spendRe.min);
     	}
+
     	spendRe.min = baseRepairTotal;
-    	spendRe.prevValue = spendRe.value;
-    	
+    	spendRe.prevValue = spendRe.value;    	
     }else {
     	baseRe.value = 0;
     }/*---- Base Repair Skill Calc ----*/   
@@ -607,17 +683,20 @@ function secondarySkills() {
     baseLandcraftTotal = (aTotal + pTotal) * 2;
     baseCT = document.getElementById('baseP,C/TSkill');
     spendCT = document.getElementById('spendP,C/TSkill');
+    if (baseCT.parentElement.previousElementSibling.style.background == tagColor){
+        baseLandcraftTotal = (aTotal + pTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (aTotal > 0 && pTotal > 0) {
     	baseCT.value = baseLandcraftTotal;
     	if (spendCT.min > baseCT.value){
     		spendCT.value = spendCT.value - (spendCT.min - baseCT.value);
-
     	}else if(spendCT.min < baseCT.value) {
     		spendCT.value = +spendCT.value + (baseCT.value - spendCT.min);
     	}
+
     	spendCT.min = baseLandcraftTotal;
-    	spendCT.prevValue = spendCT.value;
-    	
+    	spendCT.prevValue = spendCT.value;    	
     }else {
     	baseCT.value = 0;
     }/*---- Base Pilot, Car/Truck Skill Calc ----*/ 
@@ -625,17 +704,20 @@ function secondarySkills() {
     baseWatercraftTotal = 5 + (pTotal * 3);
     baseWa = document.getElementById('baseP,WSkill');
     spendWa = document.getElementById('spendP,WSkill');
+    if (baseWa.parentElement.previousElementSibling.style.background == tagColor){
+        baseWatercraftTotal = 5 + (pTotal * 3) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (pTotal > 0) {
     	baseWa.value = baseWatercraftTotal;
     	if (spendWa.min > baseWa.value){
     		spendWa.value = spendWa.value - (spendWa.min - baseWa.value);
-
     	}else if(spendWa.min < baseWa.value) {
     		spendWa.value = +spendWa.value + (baseWa.value - spendWa.min);
     	}
+
     	spendWa.min = baseWatercraftTotal;
-    	spendWa.prevValue = spendWa.value;
-    	
+    	spendWa.prevValue = spendWa.value;    	
     }else {
     	baseWa.value = 0;
     }/*---- Base Pilot, Watercraft Skill Calc ----*/    
@@ -643,17 +725,20 @@ function secondarySkills() {
     baseAircraftTotal = (iTotal + pTotal) * 2;
     baseAi = document.getElementById('baseP,ASkill');
     spendAi = document.getElementById('spendP,ASkill');
+    if (baseAi.parentElement.previousElementSibling.style.background == tagColor){
+        baseAircraftTotal = (iTotal + pTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (iTotal > 0 && pTotal > 0) {
     	baseAi.value = baseAircraftTotal;
     	if (spendAi.min > baseAi.value){
     		spendAi.value = spendAi.value - (spendAi.min - baseAi.value);
-
     	}else if(spendAi.min < baseAi.value) {
     		spendAi.value = +spendAi.value + (baseAi.value - spendAi.min);
     	}
+
     	spendAi.min = baseAircraftTotal;
-    	spendAi.prevValue = spendAi.value;
-    	
+    	spendAi.prevValue = spendAi.value;    	
     }else {
     	baseAi.value = 0;
     }/*---- Base Pilot, Aircraft Skill Calc ----*/    
@@ -661,17 +746,20 @@ function secondarySkills() {
     baseAPCTankTotal = (sTotal + pTotal) * 2;
     baseAPC = document.getElementById('baseP,APC/TSkill');
     spendAPC = document.getElementById('spendP,APC/TSkill');
+    if (baseAPC.parentElement.previousElementSibling.style.background == tagColor){
+        baseAPCTankTotal = (sTotal + pTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (sTotal > 0 && pTotal > 0) {
     	baseAPC.value = baseAPCTankTotal;
     	if (spendAPC.min > baseAPC.value){
     		spendAPC.value = spendAPC.value - (spendAPC.min - baseAPC.value);
-
     	}else if(spendAPC.min < baseAPC.value) {
     		spendAPC.value = +spendAPC.value + (baseAPC.value - spendAPC.min);
     	}
+
     	spendAPC.min = baseAPCTankTotal;
-    	spendAPC.prevValue = spendAPC.value;
-    	
+    	spendAPC.prevValue = spendAPC.value;    	
     }else {
     	baseAPC.value = 0;
     }/*---- Base Pilot, APC/Tank Skill Calc ----*/
@@ -679,36 +767,41 @@ function secondarySkills() {
     baseSpeechTotal = cTotal * 5;
     baseSp = document.getElementById('baseSpeechSkill');
     spendSp = document.getElementById('spendSpeechSkill');
+    if (baseSp.parentElement.previousElementSibling.style.background == tagColor){
+        baseSpeechTotal = cTotal * 5 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (cTotal > 0) {
     	baseSp.value = baseSpeechTotal;
     	if (spendSp.min > baseSp.value){
     		spendSp.value = spendSp.value - (spendSp.min - baseSp.value);
-
     	}else if(spendSp.min < baseSp.value) {
     		spendSp.value = +spendSp.value + (baseSp.value - spendSp.min);
     	}
+
     	spendSp.min = baseSpeechTotal;
-    	spendSp.prevValue = spendSp.value;
-    	
+    	spendSp.prevValue = spendSp.value;    	
     }else {
     	baseSp.value = 0;
     }/*---- Base Speech Skill Calc ----*/    
-
     
     baseBarterTotal = cTotal * 4;
     baseBa = document.getElementById('baseBarterSkill');
     spendBa = document.getElementById('spendBarterSkill');
+    if (baseBa.parentElement.previousElementSibling.style.background == tagColor){
+        baseBarterTotal = cTotal * 4 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (cTotal > 0) {
     	baseBa.value = baseBarterTotal;
     	if (spendBa.min > baseBa.value){
     		spendBa.value = spendBa.value - (spendBa.min - baseBa.value);
-
     	}else if(spendBa.min < baseBa.value) {
     		spendBa.value = +spendBa.value + (baseBa.value - spendBa.min);    		
     	}
-    	spendBa.min = baseBarterTotal;
-    	spendBa.prevValue = spendBa.value; 
 
+    	spendBa.min = baseBarterTotal;
+    	spendBa.prevValue = spendBa.value;         
     }else {
     	baseBa.value = 0;
     }/*---- Base Barter Skill Calc ----*/    
@@ -716,17 +809,20 @@ function secondarySkills() {
     baseGamblingTotal = (lTotal * 4);
     baseGa = document.getElementById('baseGamblingSkill');
     spendGa = document.getElementById('spendGamblingSkill');
+    if (baseGa.parentElement.previousElementSibling.style.background == tagColor){
+        baseGamblingTotal = (lTotal * 4) + 20;
+    }/*Adds tag points to base skill*/
+    
     if (lTotal > 0) {
     	baseGa.value = baseGamblingTotal;
     	if (spendGa.min > baseGa.value){
     		spendGa.value = spendGa.value - (spendGa.min - baseGa.value);
-
     	}else if(spendGa.min < baseGa.value) {
     		spendGa.value = +spendGa.value + (baseGa.value - spendGa.min);    		
     	}
+
     	spendGa.min = baseGamblingTotal; 
     	spendGa.prevValue = spendGa.value;
-
     }else {
     	baseGa.value = 0;
     }/*---- Base Gambling Skill Calc ----*/  
@@ -734,50 +830,56 @@ function secondarySkills() {
     baseSurvivalTotal = (eTotal + iTotal) * 2;
     baseSu = document.getElementById('baseSurvivalSkill');
     spendSu = document.getElementById('spendSurvivalSkill');
+    if (baseSu.parentElement.previousElementSibling.style.background == tagColor){
+        baseSurvivalTotal = (eTotal + iTotal) * 2 + 20;
+    }/*Adds tag points to base skill*/
+    
     if (eTotal > 0 && iTotal > 0) {
     	baseSu.value = baseSurvivalTotal;
     	if (spendSu.min > baseSu.value){
     		spendSu.value = spendSu.value - (spendSu.min - baseSu.value);
-
     	}else if(spendSu.min < baseSu.value) {
     		spendSu.value = +spendSu.value + (baseSu.value - spendSu.min);    		
     	}
+
     	spendSu.min = baseSurvivalTotal;
     	spendSu.prevValue = spendSu.value;
-
     }else {
     	baseSu.value = 0;
     }/*---- Base Survivalist Skill Calc ----*/ 
+
     baseTrackingTotal = (iTotal + pTotal) * 3;
     baseTr = document.getElementById('baseTrackSkill');
     spendTr = document.getElementById('spendTrackSkill');
-    
+    if (baseTr.parentElement.previousElementSibling.style.background == tagColor){
+        baseTrackingTotal = (iTotal + pTotal) * 3 + 20;
+    }/*Adds tag points to base skill*/
 
     if (eTotal > 0 && pTotal > 0) {
     	baseTr.value = baseTrackingTotal;
-        
-
     	if (spendTr.min > baseTr.value){
-    		spendTr.value = spendTr.value - (spendTr.min - baseTr.value);
-    		
+    		spendTr.value = spendTr.value - (spendTr.min - baseTr.value);              		
     	}else if(spendTr.min < baseTr.value) {
-    		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);
-    		
+    		spendTr.value = +spendTr.value + (baseTr.value - spendTr.min);               		
     	}
+
     	spendTr.min = baseTrackingTotal;
-    	spendTr.prevValue = spendTr.value;
-    
+    	spendTr.prevValue = spendTr.value;    
     }else {
     	baseTr.value = 0;
     	spendTr.prevValue = 0;       
     }/*---- Base Tracking Skill Calc ----*/
-}
-
+}/*End of stat based skill calculations & tags*/
 
 document.addEventListener("input", function(){
 	skillPtCheck = event.target.prevValue - event.target.value;
+    if (event.target.parentElement.previousElementSibling.previousElementSibling.style.background == tagColor){
+        skillPtCheck = skillPtCheck/2;
+    }/*Adds tag point cost multiplier*/
+
 	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck;
-	switch (true) {
+
+   	switch (true) {
 	    case (event.target.name == "skills" && event.target.value <= 75 ):
 			skillPtMod.value = skillPtMod.value - skillPtCheck;			       
 			break;			    		         
@@ -785,8 +887,9 @@ document.addEventListener("input", function(){
 			skillPtMod.value = skillPtMod.value - skillIncrement;
 			if((event.target.prevValue == 101 || event.target.prevValue == 126 || 
 				event.target.prevValue == 151 || event.target.prevValue == 176 || 
-				event.target.prevValue == 201) && skillPtCheck === 1) {
-				skillPtMod.value = skillPtMod.value - 1;
+				event.target.prevValue == 201) && (skillPtCheck === 1 || skillPtCheck === 0.5)) {
+				skillPtMod.value = skillPtMod.value - skillPtCheck;
+            console.log(skillPtMod.value);
 			}       
 			break; 
 		case (event.target.name == "skills" && event.target.value > 200):
@@ -798,68 +901,21 @@ document.addEventListener("input", function(){
 		
 	event.target.prevValue = event.target.value;
 	secondarySkills();
-
 });/*End of Skill Point Spending Code*/
 
-
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-
-
 function tagSkills(){
-    var one = event.target;
-	justice = document.getElementById(event.target.nextElementSibling.firstChild.id);
-	       /*THOUGH PROBABLY BEST TO JUST SET THE ONCLICK TO THE TD AND THEN CALL THE NAMED FUNCTION WITH THAT INSTEAD
-	       OF GOING CRAZY HERE... BUT I DID IT EVENT LISTNER FTW*/
+    taggedSkills = event.target;
+	if(event.target.style.background == tagColor){
+        event.target.style.background = 'white';    
+    }else {event.target.style.background = tagColor;}
 
-	if(event.target.style.background == 'red'){
-        event.target.style.background = 'white';
-        var x1=-20;
-        console.log(one.style.background);
-
-        
-
-    
-    }else {event.target.style.background = 'red';
-        var x1=20;
-        console.log(one.style.background);
-
-       
-    }
     secondarySkills();
-    
-}       
+}/*Tag Skill function*/
 
-	/*if(justice.parentElement.previousElementSibling.style.background == 'red'
-	   ){
 
-	     justice.parentElement.previousElementSibling.style.background = 'white';
-	
-	}else {justice.parentElement.previousElementSibling.style.background = 'red';}
-	
-}*//*TEST CODE*/
-
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
-/*TEST CODE*/
+    /*justice = document.getElementById(event.target.nextElementSibling.firstChild.id);--------COOL!!!*/
+	/*justice.parentElement.previousElementSibling.style.background == 'red' --------COOL!!!*/
+	  
 
 
 
