@@ -12,7 +12,7 @@ skillPtMod,
 skillPtTotal,
 taggedSkills;
 
-var tagColor = 'rgb(255, 96, 96)';/*color of skill tag highlight*/
+var tagColor = 'rgb(208, 255, 0)' /*'rgb(255, 96, 96)';/*color of skill tag highlight*/
 
 skillPtBase = document.getElementById('baseSkillPts');
 skillPtMod = document.getElementById('modSkillPts');
@@ -159,10 +159,69 @@ function secondarySkills() {
     if (eTotal > 0 || iTotal > 0) {
     	document.getElementById('baseImpEnd').value = baseImpEndTotal;
     }else {
-    	document.getElementById('baseImpEnd').value = 0;
+    	document.getElementById('baseImpEnd').value = 0;        
     }/*---- Base ImpEnd Calc ----*/
 
-    /*---------------------------------- SKILLS PART --------------------------------------*/
+    /*------------------------------- */
+    /*---- Secondary Stat(Totals) ----*/
+    /*------------------------------- */
+    document.getElementById('totalHealth').value = +document.getElementById('modHealth').value +
+    +document.getElementById('baseHealth').value;
+    /*---- Total Health Calc ----*/
+
+    document.getElementById('totalSkillPts').value = document.getElementById('baseSkillPts').value -
+    document.getElementById('modSkillPts').value;
+    if(document.getElementById('totalSkillPts').value < 0){
+        document.getElementById('totalSkillPts').style.color = 'red';
+    }else if(document.getElementById('totalSkillPts').value >= 0){
+        document.getElementById('totalSkillPts').style.color = 'black';        
+    }/*---- Total Skill Pts Calc HERE ----*/
+    
+    document.getElementById('totalAP').value = +document.getElementById('modAP').value +
+    +document.getElementById('baseAP').value;
+    /*---- Total AP Calc ----*/
+    
+    document.getElementById('totalCarry').value = +document.getElementById('modCarry').value +
+    +document.getElementById('baseCarry').value;
+     /*---- Total Weight Calc ----*/
+
+    document.getElementById('totalMeleeD').value = +document.getElementById('modMeleeD').value +
+    +document.getElementById('baseMeleeD').value;
+    /*---- Total Melee Damage Calc ----*/
+
+    document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
+    +document.getElementById('basePoisonRes').value;
+    /*---- Total Poison Resist Calc ----*/
+        
+    document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+    +document.getElementById('baseRadRes').value;
+    /*---- Total Rad Resist Calc ----*/
+
+    document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
+    +document.getElementById('baseElecRes').value;
+    /*---- Total Electricity Resist Calc (race/items required)----*/
+
+    document.getElementById('totalGasRes').value = +document.getElementById('modGasRes').value +
+    +document.getElementById('baseGasRes').value;
+    /*---- Total Gas Resist Calc (items required)----*/
+
+    document.getElementById('totalSequence').value = +document.getElementById('modSequence').value +
+    +document.getElementById('baseSequence').value;
+    /*---- Total Sequence Calc ----*/
+
+    document.getElementById('totalHeal').value = +document.getElementById('modHeal').value +
+    +document.getElementById('baseHeal').value;
+    /*---- Total Heal Rate Calc ----*/
+
+    document.getElementById('totalCrit').value = +document.getElementById('modCrit').value +
+    +document.getElementById('baseCrit').value;
+    /*---- Total Crit Calc ----*/
+
+    document.getElementById('totalImpEnd').value = +document.getElementById('modImpEnd').value +
+    +document.getElementById('baseImpEnd').value;
+    /*---- Total ImpEnd Calc ----*/
+
+    /*---------------------------------- SKILLS SECTION --------------------------------------*/
     /*------------------------------*/
     /*---- Base Skills1 Section ----*/
     /*------------------------------*/
@@ -873,8 +932,9 @@ function secondarySkills() {
 
 document.addEventListener("input", function(){
 	skillPtCheck = event.target.prevValue - event.target.value;
-    if (event.target.parentElement.previousElementSibling.previousElementSibling.style.background == tagColor){
-        skillPtCheck = skillPtCheck/2;
+    if (event.target.name == "skills" && 
+        event.target.parentElement.previousElementSibling.previousElementSibling.style.background == tagColor){
+        skillPtCheck = skillPtCheck/2;    
     }/*Adds tag point cost multiplier*/
 
 	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck;
@@ -888,8 +948,7 @@ document.addEventListener("input", function(){
 			if((event.target.prevValue == 101 || event.target.prevValue == 126 || 
 				event.target.prevValue == 151 || event.target.prevValue == 176 || 
 				event.target.prevValue == 201) && (skillPtCheck === 1 || skillPtCheck === 0.5)) {
-				skillPtMod.value = skillPtMod.value - skillPtCheck;
-            console.log(skillPtMod.value);
+				skillPtMod.value = skillPtMod.value - skillPtCheck;            
 			}       
 			break; 
 		case (event.target.name == "skills" && event.target.value > 200):
@@ -901,18 +960,23 @@ document.addEventListener("input", function(){
 		
 	event.target.prevValue = event.target.value;
 	secondarySkills();
+
 });/*End of Skill Point Spending Code*/
 
 function tagSkills(){
     taggedSkills = event.target;
-	if(event.target.style.background == tagColor){
-        event.target.style.background = 'white';    
-    }else {event.target.style.background = tagColor;}
+    if(taggedSkills.nextElementSibling.firstChild.value == 
+    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
+    	if(event.target.style.background == tagColor){
+            event.target.style.background = 'white';    
+        }else {event.target.style.background = tagColor;}
+        
+    }else {
+        alert('Base and Spend must be equal to tag or untag this skill.');
+    }/*Tag Skill function*/
 
     secondarySkills();
-}/*Tag Skill function*/
-
-
+    }
     /*justice = document.getElementById(event.target.nextElementSibling.firstChild.id);--------COOL!!!*/
 	/*justice.parentElement.previousElementSibling.style.background == 'red' --------COOL!!!*/
 	  
