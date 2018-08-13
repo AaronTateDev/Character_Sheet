@@ -12,7 +12,8 @@ skillPtMod,
 skillPtTotal,
 taggedSkills;
 
-var tagColor = 'rgb(208, 255, 0)' /*'rgb(255, 96, 96)';/*color of skill tag highlight*/
+var tagMax = 0;
+var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)';/*color of skill tag highlight*/
 
 skillPtBase = document.getElementById('baseSkillPts');
 skillPtMod = document.getElementById('modSkillPts');
@@ -966,14 +967,28 @@ document.addEventListener("input", function(){
 function tagSkills(){
     taggedSkills = event.target;
     if(taggedSkills.nextElementSibling.firstChild.value == 
-    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
+    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagMax < 3 ){
     	if(event.target.style.background == tagColor){
-            event.target.style.background = 'white';    
-        }else {event.target.style.background = tagColor;}
+            event.target.style.background = 'white';
+            tagMax  = tagMax  - 1;   
+        }else {
+            event.target.style.background = tagColor;
+            tagMax  = tagMax  + 1;            
+        }
         
-    }else {
-        alert('Base and Spend must be equal to tag or untag this skill.');
+    }else if(event.target.style.background == tagColor && taggedSkills.nextElementSibling.firstChild.value == 
+    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
+            event.target.style.background = 'white';
+            tagMax  = tagMax  - 1;              
+          }else if (event.target.style.background != tagColor && tagMax == 3) {
+            alert("You may only tag a maximum of 3 skills.");
+          }else {alert("This skill's Base and Spend values must be equal to add or remove a tag.");
+
+
+            
+
     }/*Tag Skill function*/
+    
 
     secondarySkills();
     }
