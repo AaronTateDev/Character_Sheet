@@ -935,7 +935,7 @@ document.addEventListener("input", function(){
 	skillPtCheck = event.target.prevValue - event.target.value;
     if (event.target.name == "skills" && 
         event.target.parentElement.previousElementSibling.previousElementSibling.style.background == tagColor){
-        skillPtCheck = skillPtCheck/2;    
+        skillPtCheck = skillPtCheck / 2;    
     }/*Adds tag point cost multiplier*/
 
 	skillIncrement = Math.ceil(((event.target.value-100)/25) + 1) * skillPtCheck;
@@ -970,25 +970,20 @@ function tagSkills(){
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagMax < 3 ){
     	if(event.target.style.background == tagColor){
             event.target.style.background = 'white';
-            tagMax  = tagMax  - 1;   
+            tagMax -= 1;   
         }else {
             event.target.style.background = tagColor;
-            tagMax  = tagMax  + 1;            
+            tagMax += 1;            
         }
         
     }else if(event.target.style.background == tagColor && taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
             event.target.style.background = 'white';
-            tagMax  = tagMax  - 1;              
+            tagMax -= 1;              
           }else if (event.target.style.background != tagColor && tagMax == 3) {
-            alert("You may only tag a maximum of 3 skills.");
+            alert("You may only tag a maximum of " + tagMax + " skills.");
           }else {alert("This skill's Base and Spend values must be equal to add or remove a tag.");
-
-
-            
-
-    }/*Tag Skill function*/
-    
+    }/*Tag Skill function*/    
 
     secondarySkills();
     }
