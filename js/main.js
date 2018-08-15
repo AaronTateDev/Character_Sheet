@@ -982,8 +982,20 @@ function tagSkills(){
             tagMax -= 1;              
           }else if (event.target.style.background != tagColor && tagMax == 3) {
             alert("You may only tag a maximum of " + tagMax + " skills.");
-          }else {alert("This skill's Base and Spend values must be equal to add or remove a tag.");
-    }/*Tag Skill function*/    
+          }else {/*alert("This skill's Base and Spend values must be equal to add or remove a tag.");*/
+            
+            
+                Tipped.create(event.target, "This skill's Base and Spend values must be equal to add or remove a tag.", {
+                  skin: 'light',
+                  position: 'topleft',
+                  behavior: 'show',
+                  behavior: 'mouse',
+                  hideOnClickOutside: true,
+                  showOn: 'click',
+                  showDelay: 0
+                  
+                  });
+          }/*Tag Skill function*/    
 
     secondarySkills();
     }
