@@ -968,6 +968,11 @@ document.addEventListener("input", function(){
 
 function tagSkills(){
     taggedSkills = event.target;
+
+    var tooltip = new HTML5TooltipUIComponent;
+    var tooltip2 = new HTML5TooltipUIComponent;
+    var tipTarget = event.target;
+
     if(taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagMax < 3 ){
     	if(event.target.style.background == tagColor){
@@ -982,23 +987,35 @@ function tagSkills(){
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
             event.target.style.background = 'white';
             tagMax -= 1;              
-          }else if (event.target.style.background != tagColor && tagMax == 3) {
-            alert("You may only tag a maximum of " + tagMax + " skills.");
-          }else {/*alert("This skill's Base and Spend values must be equal to add or remove a tag.");*/
-            jQuery(event.target).tipso({
-  titleContent: 'Hello', size: 'tiny'
-});
-                           
-                
-          }/*Tag Skill function*/    
+    }else if (event.target.style.background != tagColor && tagMax == 3) {        
+        tooltip.set({
+          animateFunction: "foldout",
+          color: "navy",
+          contentText: "You may only have a maximum of " + tagMax +  " skills.",
+          stickTo: "right",      
+          maxWidth: 130,      
+          target: tipTarget
+        });//Max tags reached indicator
+        tooltip.show();        
+    }else {//TOOLTOP Reference side https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
+        tooltip2.set({
+          animateFunction: "foldout",
+          color: "rouge",
+          contentText: "This skill's Base and Spend values must be equal to add or remove a tag.",
+          stickTo: "right",                        
+          maxWidth: 130,
+          target: tipTarget
+        });//Can't tag skills with spent skill pts
+        tooltip2.show();               
+    }/*Tag Skill function*/    
+
+    tooltip.mount();
+    tooltip2.mount();
+    tipTarget.addEventListener('mousemove',function(){
+            tooltip.hide();
+            tooltip2.hide();
+        });    
 
     secondarySkills();
     }
-    /*justice = document.getElementById(event.target.nextElementSibling.firstChild.id);--------COOL!!!*/
-	/*justice.parentElement.previousElementSibling.style.background == 'red' --------COOL!!!*/
-	  
-
-
-
-
-
+    
