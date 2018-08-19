@@ -57,8 +57,7 @@
   cursor: not-allowed;
 }
 
-.nameSpace
-{
+.nameSpace{
     text-align: center;
     border: 0;
     border-bottom: 1px solid black;
@@ -131,3 +130,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 }/*Skill names styles*/
+
+.healthArmor{
+  background-color: blue;
+}
+
+.apSpoolImpEndurance{
+  background-color: red;
+}

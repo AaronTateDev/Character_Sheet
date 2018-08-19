@@ -15,11 +15,11 @@ taggedSkills;
 var tagMax = 0;
 var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)';/*color of skill tag highlight*/
 
-skillPtBase = document.getElementById('baseSkillPts');
-skillPtMod = document.getElementById('modSkillPts');
-skillPtTotal = document.getElementById('totalSkillPts');
+var skillPtBase = document.getElementById('baseSkillPts');
+var skillPtMod = document.getElementById('modSkillPts');
+var skillPtTotal = document.getElementById('totalSkillPts');
 
-$('.tipso').tipso(); //test----------------------------
+
 
 $("[type='number']").keypress(function (evt) {
     evt.preventDefault();
@@ -991,7 +991,7 @@ function tagSkills(){
         tooltip.set({
           animateFunction: "foldout",
           color: "navy",
-          contentText: "You may only have a maximum of " + tagMax +  " skills.",
+          contentText: "You may only have a maximum of " + tagMax +  " tagged skills.",
           stickTo: "right",      
           maxWidth: 130,      
           target: tipTarget
