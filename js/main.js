@@ -1019,3 +1019,21 @@ function tagSkills(){
     secondarySkills();
     }
     
+ /*   
+TEST its a test to save all info on the form
+Need to set a form ID which matches #please
+and call the functions for loading and restoring
+Still need to save the prevvalues
+
+function test(){
+    [].forEach.call(document.querySelector('#please').elements, function(el) {
+  localStorage.setItem(el.id, el.value);
+  
+});}
+function test2(){
+// then refresh the page and run this to restore your form values:
+[].forEach.call(document.querySelector('#please').elements, function(el) {
+  el.value = localStorage.getItem(el.id);
+  
+});}
+*/
