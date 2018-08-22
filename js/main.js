@@ -1023,7 +1023,7 @@ function tagSkills(){
 TEST its a test to save all info on the form
 Need to set a form ID which matches #please
 and call the functions for loading and restoring
-Still need to save the prevvalues
+Still need to save the prevvalues yes
 
 function test(){
     [].forEach.call(document.querySelector('#please').elements, function(el) {
