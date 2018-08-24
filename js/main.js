@@ -224,7 +224,15 @@ function secondarySkills() {
     +document.getElementById('baseImpEnd').value;
     /*---- Total ImpEnd Calc ----*/
 
-    /*---------------------------------- SKILLS SECTION --------------------------------------*/
+/*---------------------------------- RACIAL BONUSES SECTION ------------------------------*/
+    
+    if(document.getElementById('raceSelector').value == "Human"){
+        document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
+        +document.getElementById('baseElecRes').value + 30;
+    }/*---- Human Racial Bonuses ----*/
+
+
+/*---------------------------------- SKILLS SECTION --------------------------------------*/
     /*------------------------------*/
     /*---- Base Skills1 Section ----*/
     /*------------------------------*/
@@ -957,8 +965,8 @@ document.addEventListener("input", function(){
 		case (event.target.name == "skills" && event.target.value > 200):
 			skillPtMod.value = skillPtMod.value - skillPtCheck * 6;			        			                
 			break;			    			    
-	    default: 
-	        console.log(event.target.name);
+	    /*default: 
+	        console.log(event.target.name);*/
 	}
 		
 	event.target.prevValue = event.target.value;
@@ -990,7 +998,7 @@ function tagSkills(){
     }else if (event.target.style.background != tagColor && tagMax == 3) {        
         tooltip.set({
           animateFunction: "foldout",
-          color: "navy",
+          color: "indigo",
           contentText: "You may only have a maximum of " + tagMax +  " tagged skills.",
           stickTo: "right",      
           maxWidth: 130,      
@@ -999,8 +1007,8 @@ function tagSkills(){
         tooltip.show();        
     }else {//TOOLTOP Reference side https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
         tooltip2.set({
-          animateFunction: "foldout",
-          color: "rouge",
+          animateFunction: /*"foldout"*/"spin",
+          color: "kelly",
           contentText: "This skill's Base and Spend values must be equal to add or remove a tag.",
           stickTo: "right",                        
           maxWidth: 130,
@@ -1021,19 +1029,24 @@ function tagSkills(){
     
  /*   
 TEST its a test to save all info on the form
-Need to set a form ID which matches #please
+Need to set a form ID which matches #justice
 and call the functions for loading and restoring
-Still need to save the prevvalues 
+Still need to save the prevvalues */
 
-function test(){
-    [].forEach.call(document.querySelector('#please').elements, function(el) {
+function save(){
+    [].forEach.call(document.querySelector('#justice').elements, function(el) {
   localStorage.setItem(el.id, el.value);
+  console.log(el.id);
+  if (el.prevValue != undefined){
+    localStorage.setItem(el.id, el.prevValue);
+    console.log(el.prevValue);}
   
 });}
-function test2(){
+function load(){
 // then refresh the page and run this to restore your form values:
-[].forEach.call(document.querySelector('#please').elements, function(el) {
+[].forEach.call(document.querySelector('#justice').elements, function(el) {
   el.value = localStorage.getItem(el.id);
-  
+  if (el.prevValue != undefined){
+    el.prevValue = localStorage.getItem(el.id);
+    }
 });}
-*/

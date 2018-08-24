@@ -11,7 +11,7 @@
 	<title>Charcater Sheet</title>
 </head>
 <body onLoad="findTotal();statTotals();secondarySkills()">
-<form>
+<form id="justice">
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
 		<div class="nameArea">
@@ -22,7 +22,7 @@
    						<option value="Female">Female</option>
     				 </select></span><br/></p>
 			
-			<p>Race: <select name="races" class="nameSpace">
+			<p>Race: <select id="raceSelector" name="races" class="nameSpace">
 						<option value="" selected disabled hidden>Select Race</option>
 	    				<option value="Human">Human</option>
 	   					<option value="Ghoul">Ghoul</option>
@@ -101,10 +101,12 @@
 					</tr>
 					<tr>
 						<td>&nbsp;BASE TOTAL:</td>
-						<td><span id="total">0</span></td>
+						<td><span id="total">0</span></td>					
 					</tr>
 				</tbody>
 			</table>
+			<a href='#' onClick="save()" class='button'>Save</a>
+			<a href='#' onClick="load()" class='button'>Load</a>
 		</div> <!-- End of Stats Section-->
 		<div class="secondaryStat">
 			<table>
