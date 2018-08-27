@@ -12,14 +12,15 @@ skillPtMod,
 skillPtTotal,
 taggedSkills;
 
-var tagMax = 0;
-var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)';/*color of skill tag highlight*/
+var tagMax = 0; //Sets max number of tags (not currently implemented)
+var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
 
 var skillPtBase = document.getElementById('baseSkillPts');
 var skillPtMod = document.getElementById('modSkillPts');
 var skillPtTotal = document.getElementById('totalSkillPts');
-
-
+var healthBonuses = 0;
+var skillsPerLvlBonus = 0;
+var healthPerLvlBonus = 0;
 
 $("[type='number']").keypress(function (evt) {
     evt.preventDefault();
@@ -85,19 +86,33 @@ function statTotals(){
 /*---------------------- Secondary Stats ------------------------ */
 
 function secondarySkills() {
-    baseHealthTotal = 3 * eTotal + +(20 + sTotal) + (5 + 2*eTotal) * (charLevel - 1) ;
+    if(document.getElementById('raceSelector').value == "Deathclaw" ||
+       document.getElementById('raceSelector').value == "Deathclaw (Grey Tribe)" ||
+       document.getElementById('raceSelector').value == "Super-Mutant"){
+        healthPerLvlBonus = 2;
+    }else {
+        healthPerLvlBonus = 0;
+    } /*Bonus Health Per Lvl*/ 
+
+    baseHealthTotal = 3 * eTotal + +(20 + sTotal) + (5 + healthPerLvlBonus + 2*eTotal) * (charLevel - 1) ;
     if (eTotal > 0 && sTotal > 0) {
     	document.getElementById('baseHealth').value = baseHealthTotal;
     }else {
     	document.getElementById('baseHealth').value = 0;
     } /*---- Base Health Calc ----*/
 
-    baseSkillsTotal = (5 + 2*iTotal) * (charLevel - 1) ;
+    if(document.getElementById('raceSelector').value == "Humanoid Andriod Robot"){
+        skillsPerLvlBonus = 3;
+    }else {
+        skillsPerLvlBonus = 0;
+    } /*Additional Skill Pts*/ 
+
+    baseSkillsTotal = (5 + skillsPerLvlBonus + 2*iTotal) * (charLevel - 1);
     if (iTotal > 0) {
     	document.getElementById('baseSkillPts').value = baseSkillsTotal;
     }else {
     	document.getElementById('baseSkillPts').value = 0;
-    }/*---- Skill Pts Calc HERE ----*/
+    }/*---- Skill Pts Calc ----*/
     
     baseApTotal = Math.floor(0.5 * aTotal + 5);
     if (aTotal > 0 && aTotal < 10) {
@@ -228,8 +243,75 @@ function secondarySkills() {
     
     if(document.getElementById('raceSelector').value == "Human"){
         document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
-        +document.getElementById('baseElecRes').value + 30;
+        +document.getElementById('baseElecRes').value + 30; //Electricity Resist
     }/*---- Human Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Ghoul"){
+        document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+        +document.getElementById('baseRadRes').value + 80; //Radiation Resist
+        document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
+        +document.getElementById('basePoisonRes').value + 30; //Poison Resist
+    }/*---- Ghoul Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Super-Mutant"){        
+        document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
+        +document.getElementById('basePoisonRes').value + 20; //Poison Resist
+        document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+        +document.getElementById('baseRadRes').value + 50; //Radiation Resist
+        //Add 20% to all DRs
+        /* Extra health per level code located in Secondary Stats
+        section under in Base health code*/
+        /*Small Guns!! Here -40% to these skills
+        Pistols
+        SMG
+        Shotguns
+        Rifles
+        Assault Rifle
+        */
+
+        //NEEDS TO BE FINISHED
+    }/*---- Super-Mutant Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Half-Mutant"){
+        document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+        +document.getElementById('baseRadRes').value + 15; //Radiation Resist
+        document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
+        +document.getElementById('basePoisonRes').value + 15; //Poison Resist
+        document.getElementById('totalHealth').value = +document.getElementById('modHealth').value +
+        +document.getElementById('baseHealth').value + 5; //Bonus Health 
+    }/*---- Half-Mutant Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Deathclaw" ||
+       document.getElementById('raceSelector').value == "Deathclaw (Grey Tribe)"){
+        document.getElementById('totalGasRes').value = +document.getElementById('modGasRes').value +
+        +document.getElementById('baseGasRes').value + 40; //Gas Resist
+        document.getElementById('totalMeleeD').value = +document.getElementById('modMeleeD').value +
+        +document.getElementById('baseMeleeD').value + 10; //Melee Damage Resist    
+        /* Extra health per level code located in Secondary Stats
+        section under in Base health code*/
+
+        //NEEDS TO BE FINISHED +4/40% DT/DR
+    }/*---- Deathclaw Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Dog"){
+        document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
+        +document.getElementById('baseElecRes').value + 50; //Electricity Resist
+    }/*---- Dog Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Robot"){
+        document.getElementById('totalRadRes').value = 1000; //Radiation Immunity
+        document.getElementById('totalPoisonRes').value = 1000; //Poison Immunity
+        document.getElementById('totalGasRes').value = 1000; //Gas Immunity
+        //ADD the +40% DR
+    }/*---- Robot Racial Bonuses ----*/
+
+    if(document.getElementById('raceSelector').value == "Humanoid Andriod Robot"){
+        document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+        +document.getElementById('baseRadRes').value + 80; //Radiation Resist 
+        // Skill point increase code located in base skill pt per lvl section   
+        //ADD the +25% DR
+    }/*---- Humanoid Andriod Robot Racial Bonuses ----*/
+
 
 
 /*---------------------------------- SKILLS SECTION --------------------------------------*/
