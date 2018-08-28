@@ -1,6 +1,6 @@
 /*---------------------- Primary Stats ------------------------ */
 var 
-sTotal,
+sTotal, //Strength Total
 pTotal,
 eTotal,
 cTotal,
@@ -10,7 +10,8 @@ lTotal,
 charLevel,
 skillPtMod,
 skillPtTotal,
-taggedSkills;
+taggedSkills,
+supMutantRacialSkill;
 
 var tagMax = 0; //Sets max number of tags (not currently implemented)
 var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
@@ -18,7 +19,6 @@ var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)'; color of skill tag hi
 var skillPtBase = document.getElementById('baseSkillPts');
 var skillPtMod = document.getElementById('modSkillPts');
 var skillPtTotal = document.getElementById('totalSkillPts');
-var healthBonuses = 0;
 var skillsPerLvlBonus = 0;
 var healthPerLvlBonus = 0;
 
@@ -149,7 +149,7 @@ function secondarySkills() {
     	document.getElementById('baseRadRes').value = 0;
     }/*---- Base Poison/Rad Resist Calc ----*/
 
-    /*---- Base Electricity Resist Calc (race/items required)----*/
+    /*---- Electricity Resist Calc (from race/items)----*/
 
     /*---- Base Gas Resist Calc (items required)----*/
 
@@ -179,6 +179,13 @@ function secondarySkills() {
     }else {
     	document.getElementById('baseImpEnd').value = 0;        
     }/*---- Base ImpEnd Calc ----*/
+
+    baseArmorTotal = aTotal + 8;
+    if (aTotal > 0) {
+        document.getElementById('baseArmor').value = baseArmorTotal;
+    }else {
+        document.getElementById('baseArmor').value = 0;        
+    }/*---- Base Armor Calc ----*/
 
     /*------------------------------- */
     /*---- Secondary Stat(Totals) ----*/
@@ -239,8 +246,12 @@ function secondarySkills() {
     +document.getElementById('baseImpEnd').value;
     /*---- Total ImpEnd Calc ----*/
 
+    document.getElementById('totalArmor').value = +document.getElementById('modArmor').value +
+    +document.getElementById('baseArmor').value;
+    /*---- Total Armor Calc ----*/
+
 /*---------------------------------- RACIAL BONUSES SECTION ------------------------------*/
-    
+    supMutantRacialSkill = 0;
     if(document.getElementById('raceSelector').value == "Human"){
         document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
         +document.getElementById('baseElecRes').value + 30; //Electricity Resist
@@ -257,18 +268,12 @@ function secondarySkills() {
         document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
         +document.getElementById('basePoisonRes').value + 20; //Poison Resist
         document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
-        +document.getElementById('baseRadRes').value + 50; //Radiation Resist
-        //Add 20% to all DRs
+        +document.getElementById('baseRadRes').value + 50; //Radiation Resist        
         /* Extra health per level code located in Secondary Stats
         section under in Base health code*/
-        /*Small Guns!! Here -40% to these skills
-        Pistols
-        SMG
-        Shotguns
-        Rifles
-        Assault Rifle
-        */
+        supMutantRacialSkill = supMutantRacialSkill - 40; //Super-Mutant skill point reducer
 
+        //Add 20% to all DRs
         //NEEDS TO BE FINISHED
     }/*---- Super-Mutant Racial Bonuses ----*/
 
@@ -318,11 +323,11 @@ function secondarySkills() {
     /*------------------------------*/
     /*---- Base Skills1 Section ----*/
     /*------------------------------*/
-	basePistolsTotal =  5 + (4 * aTotal);
+	basePistolsTotal =  5 + (4 * aTotal) + supMutantRacialSkill;
 	basePi = document.getElementById('basePistolSkill');
     spendPi = document.getElementById('spendPistolSkill');
     if (basePi.parentElement.previousElementSibling.style.background == tagColor){
-        basePistolsTotal =  5 + (4 * aTotal) + 20;
+        basePistolsTotal =  5 + (4 * aTotal) + 20 + supMutantRacialSkill;
     }/*Adds tag points to base skill*/
     
     if (aTotal > 0) {
@@ -339,11 +344,11 @@ function secondarySkills() {
     	basePi.value = 0;
     }/*---- Base Pistol Skill Calc ----*/ 
 
-    baseSMGTotal =  5 + 3 * aTotal + sTotal;
+    baseSMGTotal =  5 + 3 * aTotal + sTotal + supMutantRacialSkill;
     baseSMG = document.getElementById('baseSMGSkill');
     spendSMG = document.getElementById('spendSMGSkill');
     if (baseSMG.parentElement.previousElementSibling.style.background == tagColor){
-        baseSMGTotal =  5 + 3 * aTotal + sTotal + 20;
+        baseSMGTotal =  5 + 3 * aTotal + sTotal + 20 + supMutantRacialSkill;
     }/*Adds tag points to base skill*/
     
     if (aTotal > 0 && sTotal > 0) {
@@ -360,11 +365,11 @@ function secondarySkills() {
     	baseSMG.value = 0;
     }/*---- Base SMG Skill Calc ----*/    
 
-    baseARTotal =  2 * (pTotal + aTotal);
+    baseARTotal =  2 * (pTotal + aTotal) + supMutantRacialSkill;
     baseAR = document.getElementById('baseARSkill');
     spendAR = document.getElementById('spendARSkill');
     if (baseAR.parentElement.previousElementSibling.style.background == tagColor){
-        baseARTotal =  2 * (pTotal + aTotal) + 20;
+        baseARTotal =  2 * (pTotal + aTotal) + 20 + supMutantRacialSkill;
     }/*Adds tag points to base skill*/
     
     if (pTotal > 0 && aTotal > 0) {
@@ -423,11 +428,11 @@ function secondarySkills() {
     	baseTh.value = 0;
     }/*---- Base Throwing Skill Calc ----*/    
 
-    baseRifleTotal =  (4 * pTotal);
+    baseRifleTotal =  (4 * pTotal) + supMutantRacialSkill;
     baseRi = document.getElementById('baseRifleSkill');
     spendRi = document.getElementById('spendRifleSkill');
     if (baseRi.parentElement.previousElementSibling.style.background == tagColor){
-        baseRifleTotal =  (4 * pTotal) + 20;
+        baseRifleTotal =  (4 * pTotal) + 20 + supMutantRacialSkill;
     }/*Adds tag points to base skill*/
     
     if (pTotal > 0) {
@@ -444,11 +449,11 @@ function secondarySkills() {
     	baseRi.value = 0;
     }/*---- Base Rifle Skill Calc ----*/    
 
-    baseShotgunTotal =  3 * (sTotal + aTotal);
+    baseShotgunTotal =  3 * (sTotal + aTotal) + supMutantRacialSkill;
     baseSh = document.getElementById('baseShotgunSkill');
     spendSh = document.getElementById('spendShotgunSkill');
     if (baseSh.parentElement.previousElementSibling.style.background == tagColor){
-        baseShotgunTotal =  3 * (sTotal + aTotal) + 20;
+        baseShotgunTotal =  3 * (sTotal + aTotal) + 20 + supMutantRacialSkill;
     }/*Adds tag points to base skill*/
     
     if (aTotal > 0 && sTotal > 0) {
@@ -1082,7 +1087,9 @@ function tagSkills(){
           animateFunction: "foldout",
           color: "indigo",
           contentText: "You may only have a maximum of " + tagMax +  " tagged skills.",
-          stickTo: "right",      
+          stickTo: "right",
+          persistent: true,
+          hideDelay: 900,      
           maxWidth: 130,      
           target: tipTarget
         });//Max tags reached indicator
@@ -1101,7 +1108,7 @@ function tagSkills(){
 
     tooltip.mount();
     tooltip2.mount();
-    tipTarget.addEventListener('mousemove',function(){
+    tipTarget.addEventListener('mousemove',function(){            
             tooltip.hide();
             tooltip2.hide();
         });    

@@ -47,6 +47,56 @@
 	     	   Current Level: <input onInput="statTotals();secondarySkills()" id="level" class="numSpace" name="Level" type="number" min="1" value="1" /></span><br/></p>
 		</div><!-- End of Name Section-->
 		<div class="healthArmor">
+			<table>
+				<tbody>
+					<tr>
+						<th>Resists</th>
+						<th>DT</th>
+						<th>DR</th>
+					</tr>
+					<tr>
+						<td class="dmgResist" onClick="#">&nbsp;Normal</td>						
+						<td><input value=0  name="resistance" type="number" id="normalDT"/></td>
+						<td><input value=0 name="resistance" type="number" id="normalDR"/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist" onClick="#">&nbsp;Laser</td>						
+						<td><input value=0 name="resistance" type="number" id="laserDT"/></td>
+						<td><input value=0 name="resistance" type="number" id="laserDR"/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist" onClick="#">&nbsp;Fire</td>						
+						<td><input value=0 name="resistance" type="number" id="fireDT"/></td>
+						<td><input value=0 name="resistance" type="number" id="fireDR" /></td>
+					</tr>
+					<tr>
+						<td class="dmgResist" onClick="#">&nbsp;Plasma</td>						
+						<td><input value=0 name="resistance" type="number" id="plasmaDT"/></td>
+						<td><input value=0 name="resistance" type="number" id="plasmaDR"/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist" onClick="#">&nbsp;Explode</td>						
+						<td><input value=0 name="resistance" type="number" id="explodeDT"/></td>
+						<td><input value=0 name="resistance" type="number" id="explodeDR"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tbody>
+					<tr>
+						<th>AC</th>
+						<th>Base</th>
+						<th>Mod</th>
+						<th>Total</th>
+					</tr>
+					<tr>
+						<td class="armor" onClick="#">&nbsp;Armor</td>						
+						<td><input value=0  name="resistance" type="number" id="baseArmor" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="modArmor"/></td>
+						<td><input value=0 name="resistance" type="number" id="totalArmor" readonly/></td>
+					</tr>					
+				</tbody>
+			</table>
 		</div>
 		<div class="primaryStat">
 			<table>

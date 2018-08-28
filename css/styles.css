@@ -88,7 +88,8 @@ input[type=number]::-webkit-outer-spin-button {
 .skills1 input,
 .skills2 input,
 .skills3 input,
-.skills4 input{
+.skills4 input,
+.healthArmor input{
   width: 32px;
   text-align: center;
 }
@@ -112,7 +113,8 @@ input[type=number]::-webkit-outer-spin-button {
 .skills3 input,
 .skills4 input,
 .numSpace,
-.nameSpace{
+.nameSpace,
+.healthArmor input{
   background: transparent;
 }/*Makes all input fields transparent*/
 
@@ -132,13 +134,12 @@ input[type=number]::-webkit-outer-spin-button {
 }/*Skill names styles*/
 
 .healthArmor{
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .apSpoolImpEndurance{
   background-color: red;
 }
-
 
 /*--------------------- Save/Load Styles ------------------------*/
 
