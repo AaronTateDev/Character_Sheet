@@ -273,7 +273,7 @@ function secondarySkills() {
         section under in Base health code*/
         supMutantRacialSkill = supMutantRacialSkill - 40; //Super-Mutant skill point reducer
 
-        //Add 20% to all DRs
+        //Add 20% to all DR
         //NEEDS TO BE FINISHED
     }/*---- Super-Mutant Racial Bonuses ----*/
 
@@ -316,7 +316,6 @@ function secondarySkills() {
         // Skill point increase code located in base skill pt per lvl section   
         //ADD the +25% DR
     }/*---- Humanoid Andriod Robot Racial Bonuses ----*/
-
 
 
 /*---------------------------------- SKILLS SECTION --------------------------------------*/
@@ -1087,22 +1086,20 @@ function tagSkills(){
           animateFunction: "foldout",
           color: "indigo",
           contentText: "You may only have a maximum of " + tagMax +  " tagged skills.",
-          stickTo: "right",
-          persistent: true,
-          hideDelay: 900,      
+          stickTo: "right",                
           maxWidth: 130,      
           target: tipTarget
         });//Max tags reached indicator
         tooltip.show();        
-    }else {//TOOLTOP Reference side https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
+    }else {//TOOLTOP Reference site https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
         tooltip2.set({
-          animateFunction: /*"foldout"*/"spin",
+          animateFunction: "spin",
           color: "kelly",
           contentText: "This skill's Base and Spend values must be equal to add or remove a tag.",
           stickTo: "right",                        
           maxWidth: 130,
           target: tipTarget
-        });//Can't tag skills with spent skill pts
+        });//Can't tag/untag skills with spent skill pts
         tooltip2.show();               
     }/*Tag Skill function*/    
 
