@@ -1,19 +1,21 @@
 /*---------------------- Primary Stats ------------------------ */
 var 
-sTotal, //Strength Total
-pTotal,
-eTotal,
-cTotal,
-iTotal,
-aTotal,
+sTotal, 
+pTotal, 
+eTotal, 
+cTotal, 
+iTotal, 
+aTotal, 
 lTotal,
-charLevel,
+charLevel, 
 skillPtMod,
 skillPtTotal,
 taggedSkills,
 supMutantRacialSkill;
 
-var tagMax = 0; //Sets max number of tags (not currently implemented)
+var 
+tagMax = 3,
+tagNum = 0; //Sets max number of tags (not currently implemented)
 var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
 
 var skillPtBase = document.getElementById('baseSkillPts');
@@ -1062,26 +1064,26 @@ document.addEventListener("input", function(){
 
 function tagSkills(){
     taggedSkills = event.target;
-
+    
     var tooltip = new HTML5TooltipUIComponent;
     var tooltip2 = new HTML5TooltipUIComponent;
     var tipTarget = event.target;
 
     if(taggedSkills.nextElementSibling.firstChild.value == 
-    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagMax < 3 ){
+    taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagNum < tagMax ){
     	if(event.target.style.background == tagColor){
             event.target.style.background = 'white';
-            tagMax -= 1;   
+            tagNum -= 1;
         }else {
             event.target.style.background = tagColor;
-            tagMax += 1;            
+            tagNum += 1;          
         }
         
     }else if(event.target.style.background == tagColor && taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
             event.target.style.background = 'white';
-            tagMax -= 1;              
-    }else if (event.target.style.background != tagColor && tagMax == 3) {        
+            tagNum -= 1;              
+    }else if (event.target.style.background != tagColor && tagNum == tagMax) {        
         tooltip.set({
           animateFunction: "foldout",
           color: "indigo",
