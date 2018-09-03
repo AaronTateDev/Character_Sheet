@@ -216,12 +216,16 @@ function secondarySkills() {
     +document.getElementById('baseMeleeD').value;
     /*---- Total Melee Damage Calc ----*/
 
-    document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
+    totPoisonRes = +document.getElementById('modPoisonRes').value +
     +document.getElementById('basePoisonRes').value;
+    document.getElementById('totalPoisonRes').value = totPoisonRes + ugPoisonResist + arPoisonResist ||
+    totPoisonRes + ugPoisonResist || totPoisonRes;
     /*---- Total Poison Resist Calc ----*/
         
-    document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
+    totRadRes = +document.getElementById('modRadRes').value +
     +document.getElementById('baseRadRes').value;
+    document.getElementById('totalRadRes').value = totRadRes + ugRR + arRR || totRadRes + ugRR || 
+    totRadRes + arRR || totRadRes;
     /*---- Total Rad Resist Calc ----*/
 
     document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
@@ -248,8 +252,8 @@ function secondarySkills() {
     +document.getElementById('baseImpEnd').value;
     /*---- Total ImpEnd Calc ----*/
 
-    document.getElementById('totalArmor').value = +document.getElementById('modArmor').value +
-    +document.getElementById('baseArmor').value;
+    totAR = +document.getElementById('modArmor').value + +document.getElementById('baseArmor').value;
+    document.getElementById('totalArmor').value = totAR + ugAC + arAC || totAR + ugAC || totAR;
     /*---- Total Armor Calc ----*/
 
 /*---------------------------------- RACIAL BONUSES SECTION ------------------------------*/
@@ -1130,6 +1134,7 @@ function save(){
     console.log(el.prevValue);}
   
 });}
+    
 function load(){
 // then refresh the page and run this to restore your form values:
 [].forEach.call(document.querySelector('#justice').elements, function(el) {

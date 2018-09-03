@@ -5,9 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/html5tooltips.css" />
-	<link rel="stylesheet" type="text/css" href="css/html5tooltips.animation.css" />
-	<script type="text/javascript" src="js/html5tooltips.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/html5tooltips.animation.css" />	
+	<link href="css/select.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css"/>
+	
 	<title>Charcater Sheet</title>
 </head>
 <body onLoad="findTotal();statTotals();secondarySkills()">
@@ -56,28 +57,28 @@
 					</tr>
 					<tr>
 						<td class="dmgResist">&nbsp;Normal</td>						
-						<td><input value=0  name="resistance" type="number" id="normalDT"/></td>
-						<td><input value=0 name="resistance" type="number" id="normalDR"/></td>
+						<td><input value=0  name="resistance" type="number" id="normalDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="normalDR" readonly/></td>
 					</tr>
 					<tr>
 						<td class="dmgResist">&nbsp;Laser</td>						
-						<td><input value=0 name="resistance" type="number" id="laserDT"/></td>
-						<td><input value=0 name="resistance" type="number" id="laserDR"/></td>
+						<td><input value=0 name="resistance" type="number" id="laserDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="laserDR" readonly/></td>
 					</tr>
 					<tr>
 						<td class="dmgResist">&nbsp;Fire</td>						
-						<td><input value=0 name="resistance" type="number" id="fireDT"/></td>
-						<td><input value=0 name="resistance" type="number" id="fireDR" /></td>
+						<td><input value=0 name="resistance" type="number" id="fireDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="fireDR" readonly/></td>
 					</tr>
 					<tr>
 						<td class="dmgResist">&nbsp;Plasma</td>						
-						<td><input value=0 name="resistance" type="number" id="plasmaDT"/></td>
-						<td><input value=0 name="resistance" type="number" id="plasmaDR"/></td>
+						<td><input value=0 name="resistance" type="number" id="plasmaDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="plasmaDR" readonly/></td>
 					</tr>
 					<tr>
 						<td class="dmgResist">&nbsp;Explode</td>						
-						<td><input value=0 name="resistance" type="number" id="explodeDT"/></td>
-						<td><input value=0 name="resistance" type="number" id="explodeDR"/></td>
+						<td><input value=0 name="resistance" type="number" id="explodeDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="explodeDR" readonly/></td>
 					</tr>
 				</tbody>
 			</table>
@@ -90,13 +91,64 @@
 						<th>Total</th>
 					</tr>
 					<tr>
-						<td class="armor" onClick="#">&nbsp;Armor</td>						
+						<td class="armor">&nbsp;Armor</td>						
 						<td><input value=0  name="resistance" type="number" id="baseArmor" readonly/></td>
 						<td><input value=0 name="resistance" type="number" id="modArmor"/></td>
 						<td><input value=0 name="resistance" type="number" id="totalArmor" readonly/></td>
 					</tr>					
 				</tbody>
 			</table>
+
+			<!-------------------------------------------- TEST AREA ----------------------------------------->
+			<select id="undergarment">
+				<option value="None">None</option>				
+				<option value="Basic Clothing">Basic Clothing</option>
+				<option value="Brotherhood Undersuit">Brotherhood Undersuit</option>
+				<option value="Armored Undersuit">Armored Undersuit</option>
+				<option value="Environmental Undergear">Environmental Undergear</option>				
+			</select>
+			<button onclick="undergarmentEquip()" id="undergarmentButton" type="button">Equip</button>
+
+			<select id="armor">	
+				<option value="None">None</option>			
+				<option value="Robe">Robe</option>
+				<option value="Leather Jacket">Leather Jacket</option>
+				<option value="Leather Armor">Leather Armor</option>
+				<option value="Ghoul Armor">Ghoul Armor</option>
+				<option value="Mutant Plate Armor">Mutant Plate Armor</option>
+				<option value="Raider Armor">Raider Armor</option>
+				<option value="Combat Leather Jacket">Combat Leather Jacket</option>
+				<option value="Stealth Armor">Stealth Armor</option>
+				<option value="Leather Armor MK II">Leather Armor MK II</option>
+				<option value="Brotherhood Leather Armor MK II">Brotherhood Leather Armor MK II</option>
+				<option value="Metal Armor">Metal Armor</option>
+				<option value="Brotherhood Metal Armor">Brotherhood Metal Armor</option>
+				<option value="Reaver Banding">Reaver Banding</option>
+				<option value="Superior Ghoul Armor">Superior Ghoul Armor</option>
+				<option value="Spiked Mutant Plate Armor">Spiked Mutant Plate Armor</option>
+				<option value="Greater Banding">Greater Banding</option>
+				<option value="Tesla Armor">Tesla Armor</option>
+				<option value="Metal Armor MK II">Metal Armor MK II</option>
+				<option value="Brotherhood Metal Armor MK II">Brotherhood Metal Armor MK II</option>
+				<option value="Radiation Suit">Radiation Suit</option>
+				<option value="Combat Armor">Combat Armor</option>
+				<option value="Brotherhood Combat Armor">Brotherhood Combat Armor</option>
+				<option value="Brotherhood Environmental Armor">Brotherhood Environmental Armor</option>
+				<option value="Pseudo-Chitin Armor">Pseudo-Chitin Armor</option>
+				<option value="Brotherhood Environmental Armor MK II">Brotherhood Environmental Armor MK II</option>
+				<option value="Power Armor">Power Armor</option>
+				<option value="Brotherhood Power Armor">Brotherhood Power Armor</option>
+				<option value="Stealth Power Armor">Stealth Power Armor</option>
+				<option value="(CRRAAB) Power Armor">(CRRAAB) Power Armor</option>
+				<option value="Advanced Power Armor">Advanced Power Armor</option>
+				<option value="Brotherhood Advanced Power Armor">Brotherhood Advanced Power Armor</option>
+				<option value="Advanced Power Armor MK II">Advanced Power Armor MK II</option>				
+			</select>
+			<button onclick="armorEquip()" id="armorButton" type="button">Equip</button>
+
+
+
+			<!-------------------------------------------- TEST AREA ----------------------------------------->
 		</div>
 		<div class="primaryStat">
 			<table>
@@ -503,7 +555,8 @@
 	</div>
 </form>
 <script src="js/main.js"></script>
+<script type="text/javascript" src="js/html5tooltips.js"></script>
+<script src="js/select.min.js"></script>
 <script src="js/armor.js"></script>
-
 </body>
 </html>
