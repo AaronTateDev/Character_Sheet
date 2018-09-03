@@ -103,7 +103,7 @@ function secondarySkills() {
     	document.getElementById('baseHealth').value = 0;
     } /*---- Base Health Calc ----*/
 
-    if(document.getElementById('raceSelector').value == "Humanoid Andriod Robot"){
+    if(document.getElementById('raceSelector').value == "Andriod Humanoid Robot"){
         skillsPerLvlBonus = 3;
     }else {
         skillsPerLvlBonus = 0;
@@ -316,12 +316,12 @@ function secondarySkills() {
         //ADD the +40% DR
     }/*---- Robot Racial Bonuses ----*/
 
-    if(document.getElementById('raceSelector').value == "Humanoid Andriod Robot"){
+    if(document.getElementById('raceSelector').value == "Andriod Humanoid Robot"){
         document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
         +document.getElementById('baseRadRes').value + 80; //Radiation Resist 
         // Skill point increase code located in base skill pt per lvl section   
         //ADD the +25% DR
-    }/*---- Humanoid Andriod Robot Racial Bonuses ----*/
+    }/*---- Andriod Humanoid Robot Racial Bonuses ----*/
 
 
 /*---------------------------------- SKILLS SECTION --------------------------------------*/
