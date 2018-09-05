@@ -739,339 +739,405 @@ function armorEquip() {
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
+	        case arChange.value == "Tesla Armor":
 	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
+			arNormalDR = 30;
+			arLaserDT = 10;
+			arLaserDR = 75;
 			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
+			arFireDR = 10;
+			arPlasmaDT = 10;
+			arPlasmaDR = 75;
 			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
+			arExplodeDR = 10;
+			arAC = 15;
 			arRR = 0;
 			arPoisonResist = 0;
 			arGasResist = 0;
-			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arElecResist = 30;
+			arWt = 20;
+			arStReq = 3;
+			/*Sneak reduced by 25%*/
+			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
+	        case arChange.value == "Brotherhood Tesla Armor":
+	        arNormalDT = 20;
+			arNormalDR = 20;
+			arLaserDT = 25;
+			arLaserDR = 30;
 			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
+			arFireDR = 10;
+			arPlasmaDT = 25;
+			arPlasmaDR = 30;
 			arExplodeDT = 0;
-			arExplodeDR = 0;
+			arExplodeDR = 10;
 			arAC = 0;
 			arRR = 0;
 			arPoisonResist = 0;
 			arGasResist = 0;
-			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arElecResist = 30;
+			arWt = 20;
+			arStReq = 3;
+			/*Sneak reduced by 25%*/
+			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
+	        case arChange.value == "Metal Armor MK II":
+	        arNormalDT = 10;
+			arNormalDR = 60;
 			arLaserDT = 0;
-			arLaserDR = 0;
+			arLaserDR = 45;
 			arFireDT = 0;
-			arFireDR = 0;
+			arFireDR = 25;
 			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
+			arPlasmaDR = 40;
+			arExplodeDT = 10;
+			arExplodeDR = 60;
+			arAC = 20;
 			arRR = 0;
 			arPoisonResist = 0;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 40;
+			arStReq = 7;
+			/*Sneak reduced by 30%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
+	        case arChange.value == "Brotherhood Metal Armor MK II":
+	        arNormalDT = 30;
+			arNormalDR = 30;
+			arLaserDT = 20;
+			arLaserDR = 10;
+			arFireDT = 10;
 			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
+			arPlasmaDT = 20;
+			arPlasmaDR = 10;
+			arExplodeDT = 20;
+			arExplodeDR = 20;
+			arAC = 20;
 			arRR = 0;
 			arPoisonResist = 0;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 7;
+			arStReq = 40;
+			/*Sneak reduced by 30%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
+	        case arChange.value == "Radiation Suit":
+	        arNormalDT = 4;
+			arNormalDR = 12;
+			arLaserDT = 4;
+			arLaserDR = 6;
+			arFireDT = 4;
 			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
+			arPlasmaDT = 4;
+			arPlasmaDR = 6;
+			arExplodeDT = 4;
+			arExplodeDR = 6;
+			arAC = 10;
+			arRR = 100;
 			arPoisonResist = 0;
-			arGasResist = 0;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 10;
+			arStReq = 3;
+			/*Sneak reduced by 30%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
+	        case arChange.value == "Combat Armor":
 	        arNormalDT = 0;
-			arNormalDR = 0;
+			arNormalDR = 60;
 			arLaserDT = 0;
-			arLaserDR = 0;
+			arLaserDR = 60;
 			arFireDT = 0;
-			arFireDR = 0;
+			arFireDR = 50;
 			arPlasmaDT = 0;
-			arPlasmaDR = 0;
+			arPlasmaDR = 50;
 			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
+			arExplodeDR = 50;
+			arAC = 30;
+			arRR = 20;
 			arPoisonResist = 0;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 25;
+			arStReq = 5;			
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
+	        case arChange.value == "Brotherhood Combat Armor":
+	        arNormalDT = 55;
 			arNormalDR = 0;
-			arLaserDT = 0;
+			arLaserDT = 20;
 			arLaserDR = 0;
-			arFireDT = 0;
+			arFireDT = 20;
 			arFireDR = 0;
-			arPlasmaDT = 0;
+			arPlasmaDT = 20;
 			arPlasmaDR = 0;
-			arExplodeDT = 0;
+			arExplodeDT = 20;
 			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
+			arAC = 30;
+			arRR = 20;
 			arPoisonResist = 0;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 25;
+			arStReq = 5;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
-			arGasResist = 0;
+	        case arChange.value == "Brotherhood Environmental Armor":
+	        arNormalDT = 10;
+			arNormalDR = 20;
+			arLaserDT = 10;
+			arLaserDR = 20;
+			arFireDT = 5;
+			arFireDR = 40;
+			arPlasmaDT = 5;
+			arPlasmaDR = 20;
+			arExplodeDT = 10;
+			arExplodeDR = 30;
+			arAC = 20;
+			arRR = 60;
+			arPoisonResist = 30;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 15;
+			arStReq = 3;
+			/*-50% to sneak, -20% to Science, lockpick, steal, and repair,
+			and -30% to first aid and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
+	        case arChange.value == "Pseudo-Chitin Armor":
+	        arNormalDT = 5;
+			arNormalDR = 48;
+			arLaserDT = 5;
+			arLaserDR = 48;
+			arFireDT = 5;
+			arFireDR = 48;
+			arPlasmaDT = 50;
+			arPlasmaDR = 480;
+			arExplodeDT = 5;
+			arExplodeDR = 48;
+			arAC = 50;
+			arRR = 40;
+			arPoisonResist = 50;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 3;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
+	        case arChange.value == "Crysalis Armor":
+	        arNormalDT = 25;
+			arNormalDR = 160;
+			arLaserDT = 25;
+			arLaserDR = 140;
+			arFireDT = 25;
+			arFireDR = 130;
+			arPlasmaDT = 25;
+			arPlasmaDR = 140;
+			arExplodeDT = 25;
+			arExplodeDR = 100;
+			arAC = 80;
+			arRR = 40;
+			arPoisonResist = 50;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 90;
+			arStReq = 3;
+			/*-1/3 total HP*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
+	        case arChange.value == "Pseudo-Chitin Armor(Bonded)":
+	        arNormalDT = 15;
+			arNormalDR = 70;
+			arLaserDT = 15;
+			arLaserDR = 70;
+			arFireDT = 15;
+			arFireDR = 70;
+			arPlasmaDT = 15;
+			arPlasmaDR = 70;
+			arExplodeDT = 15;
+			arExplodeDR = 70;
+			arAC = 18;
+			arRR = 40;
+			arPoisonResist = 50;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 3;
+			/*Still -1/3 total HP then +30 hp and no longer unequippable*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
+	        case arChange.value == "Brotherhood Environmental Armor MK II":
+	        arNormalDT = 20;
+			arNormalDR = 40;
+			arLaserDT = 10;
+			arLaserDR = 20;
+			arFireDT = 15;
+			arFireDR = 30;
+			arPlasmaDT = 5;
+			arPlasmaDR = 30;
 			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
-			arGasResist = 0;
+			arExplodeDR = 20;
+			arAC = 25;
+			arRR = 90;
+			arPoisonResist = 50;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 4;
+			/*-1 PE, -50% to sneak, -10% to Science, repair, and pilot skills;
+			-20% to lockpick, steal, first aid, and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
-			arGasResist = 0;
+	        case arChange.value == "Power Armor":
+	        arNormalDT = 10;
+			arNormalDR = 50;
+			arLaserDT = 10;
+			arLaserDR = 50;
+			arFireDT = 10;
+			arFireDR = 50;
+			arPlasmaDT = 10;
+			arPlasmaDR = 50;
+			arExplodeDT = 10;
+			arExplodeDR = 50;
+			arAC = 30;
+			arRR = 30;
+			arPoisonResist = 15;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 2;
+			/*+2 to ST -75% to sneak and -20% to firt aid, doctor,
+			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
-			arGasResist = 0;
+	        case arChange.value == "Brotherhood Power Armor":
+	        arNormalDT = 30;
+			arNormalDR = 50;
+			arLaserDT = 20;
+			arLaserDR = 30;
+			arFireDT = 10;
+			arFireDR = 20;
+			arPlasmaDT = 10;
+			arPlasmaDR = 30;
+			arExplodeDT = 20;
+			arExplodeDR = 40;
+			arAC = 30;
+			arRR = 30;
+			arPoisonResist = 15;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 2;
+			/*+3 to ST, -1 PE, -75% to sneak and -20% to firt aid, doctor,
+			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
-			arPoisonResist = 0;
-			arGasResist = 0;
+	        case arChange.value == "Stealth Power Armor":
+	        arNormalDT = 10;
+			arNormalDR = 40;
+			arLaserDT = 10;
+			arLaserDR = 40;
+			arFireDT = 10;
+			arFireDR = 40;
+			arPlasmaDT = 10;
+			arPlasmaDR = 40;
+			arExplodeDT = 10;
+			arExplodeDR = 40;
+			arAC = 40;
+			arRR = 50;
+			arPoisonResist = 20;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 0;//8 AG requirement
+			/*+2 to AG*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "########":
-	        arNormalDT = 0;
-			arNormalDR = 0;
-			arLaserDT = 0;
-			arLaserDR = 0;
-			arFireDT = 0;
-			arFireDR = 0;
-			arPlasmaDT = 0;
-			arPlasmaDR = 0;
-			arExplodeDT = 0;
-			arExplodeDR = 0;
-			arAC = 0;
-			arRR = 0;
+	        case arChange.value == "(CRRAAB) Power Armor":
+	        arNormalDT = 14;
+			arNormalDR = 45;
+			arLaserDT = 14;
+			arLaserDR = 45;
+			arFireDT = 14;
+			arFireDR = 45;
+			arPlasmaDT = 14;
+			arPlasmaDR = 45;
+			arExplodeDT = 14;
+			arExplodeDR = 45;
+			arAC = 20;
+			arRR = 100;
 			arPoisonResist = 0;
-			arGasResist = 0;
+			arGasResist = 100;
 			arElecResist = 0;
-			arWt = 0;
-			arStReq = 0;
+			arWt = 20;
+			arStReq = 0; //8 PE required
+			/*+3 to PE, -75% to sneak, and +35% to firt aid, doctor,
+			lockpick, steal, science, and repair, traps/mines, and all pilot skills*/
+			arButton.innerHTML = "Unequip: " + arChange.value;
+	        break;
+
+	        case arChange.value == "Advanced Power Armor":
+	        arNormalDT = 14;
+			arNormalDR = 60;
+			arLaserDT = 14;
+			arLaserDR = 60;
+			arFireDT = 14;
+			arFireDR = 60;
+			arPlasmaDT = 14;
+			arPlasmaDR = 60;
+			arExplodeDT = 14;
+			arExplodeDR = 60;
+			arAC = 35;
+			arRR = 60;
+			arPoisonResist = 30;
+			arGasResist = 100;
+			arElecResist = 0;
+			arWt = 20;
+			arStReq = 6;
+			/*+4 to ST, -1 PE, -75% to sneak and -20% to firt aid, doctor,
+			lockpick, steal, science, and repair*/
+			arButton.innerHTML = "Unequip: " + arChange.value;
+	        break;
+
+	        case arChange.value == "Brotherhood Advanced Power Armor":
+	        arNormalDT = 70;
+			arNormalDR = 20;
+			arLaserDT = 20;
+			arLaserDR = 20;
+			arFireDT = 20;
+			arFireDR = 20;
+			arPlasmaDT = 20;
+			arPlasmaDR = 20;
+			arExplodeDT = 30;
+			arExplodeDR = 20;
+			arAC = 35;
+			arRR = 60;
+			arPoisonResist = 30;
+			arGasResist = 100;
+			arElecResist = 0;
+			arWt = 20;
+			arStReq = 7;
+			/*+4 to ST, -75% to sneak and -20% to firt aid, doctor,
+			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1093,7 +1159,8 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 6;
-			/*NEEDS +4 STR & 75% sneak penalty & 10% FA/DOC/LP/Steal/sci*/
+			/*+4 to ST, -1 PE, -75% to sneak and -10% to firt aid, doctor,
+			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
