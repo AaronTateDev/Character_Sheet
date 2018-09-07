@@ -59,7 +59,7 @@ arStReq = 0; /*Armor Resistance Values*/
 
 let 
 racialDT = 0,
-racialDR = 0;/*Racial Bonus Resistance Values*/
+racialDR = 0;/*Racial Bonus Resist Values*/
 
 var myUndergarments = new Select('#undergarment',{
     // auto show the live filter
