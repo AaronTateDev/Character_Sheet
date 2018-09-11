@@ -278,9 +278,6 @@ function secondarySkills() {
         /* Extra health per level code located in Secondary Stats
         section under in Base health code*/
         supMutantRacialSkill = supMutantRacialSkill - 40; //Super-Mutant skill point reducer
-
-        //Add 20% to all DR
-        //NEEDS TO BE FINISHED
     }/*---- Super-Mutant Racial Bonuses ----*/
 
     if(document.getElementById('raceSelector').value == "Half-Mutant"){

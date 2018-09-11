@@ -59,7 +59,8 @@ arStReq = 0; /*Armor Resistance Values*/
 
 let 
 racialDT = 0,
-racialDR = 0;/*Racial Bonus Resist Values*/
+racialDR = 0,/*Racial Bonus Resist Values*/
+stealthAdjust = 0;
 
 var myUndergarments = new Select('#undergarment',{
     // auto show the live filter
@@ -112,6 +113,7 @@ function equipSelection() {
         tooltip5.mount();
         
 	if(event.target.id == "raceSelector"){
+
 		if (raceResists.value == "Deathclaw" || raceResists.value == "Deathclaw (Grey Tribe)" || raceResists.value == "Robot"){
 			tooltip5.show();
 		    event.target.addEventListener('mousemove',function(){            
@@ -134,6 +136,7 @@ function equipSelection() {
 			ugElecResist = 0;
 			ugWt = 0;
 			ugStReq = 0;
+			stealthAdjust = 0;
 			ugButton.innerHTML = "Equip";
 
 			arNormalDT = 0;
@@ -153,8 +156,12 @@ function equipSelection() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0; 
+			stealthAdjust = 0;
 			arButton.innerHTML = "Equip";
-		}else {
+
+			undergarmentEquip();
+			armorEquip();			
+		}else {			
 			undergarmentEquip();
 			armorEquip();
 		}
@@ -182,6 +189,7 @@ function equipSelection() {
 			ugElecResist = 0; 
 			ugWt = 0;
 			ugStReq = 0;
+			stealthAdjust = 0;
 			ugButton.innerHTML = "Equip";
 		}else {
 		undergarmentEquip();
@@ -209,6 +217,7 @@ function equipSelection() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
+			stealthAdjust = 0;			
 			arButton.innerHTML = "Equip";
 		}else {
 			armorEquip();
@@ -330,36 +339,36 @@ function undergarmentEquip() {
     }
 
     switch (raceResists.value) {
-    case "Super-Mutant":
-    	racialDT = 0;
-    	racialDR = 20;
-        break;
+	    case "Super-Mutant":
+	    	racialDT = 0;
+	    	racialDR = 20;
+	        break;
 
-    case "Deathclaw":
-    	racialDT = 4;
-    	racialDR = 40;
-        break;
+	    case "Deathclaw":
+	    	racialDT = 4;
+	    	racialDR = 40;
+	        break;
 
-        case "Deathclaw (Grey Tribe)":
-    	racialDT = 4;
-    	racialDR = 40;
-        break;
+	        case "Deathclaw (Grey Tribe)":
+	    	racialDT = 4;
+	    	racialDR = 40;
+	        break;
 
-    case "Robot":
-    	racialDT = 0;
-    	racialDR = 40;
-        break;
+	    case "Robot":
+	    	racialDT = 0;
+	    	racialDR = 40;
+	        break;
 
-    case "Andriod Humanoid Robot":
-    	racialDT = 0;
-    	racialDR = 25;
-        break;
+	    case "Andriod Humanoid Robot":
+	    	racialDT = 0;
+	    	racialDR = 25;
+	        break;
 
-    default:
-    	racialDT = 0;
-    	racialDR = 0;
+	    default:
+	    	racialDT = 0;
+	    	racialDR = 0;
 	}
-    
+    console.log(racialDT + " " + racialDR);
     normalDT.value = ugNormalDT + arNormalDT + racialDT || ugNormalDT + racialDT;
 	normalDR.value = ugNormalDR + arNormalDR + racialDR || ugNormalDR + racialDR;
 	laserDT.value = ugLaserDT + arLaserDT + racialDT || ugLaserDT + racialDT;
@@ -370,6 +379,7 @@ function undergarmentEquip() {
 	plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR;
 	explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT;
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR;
+	
 
 secondarySkills();
 }
@@ -397,6 +407,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Equip";		    
 	        break;	    	
 
@@ -418,6 +429,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 5;
 			arStReq = 2;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value; 			    
 	        break;
 
@@ -439,6 +451,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 5;
 			arStReq = 2;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -460,6 +473,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 8;
 			arStReq = 3;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -481,10 +495,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 2;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Mutant Plate Armor":
+	    case arChange.value == "Mutant Plate Armor":
 	        arNormalDT = 5;
 			arNormalDR = 28;
 			arLaserDT = 0;
@@ -502,10 +517,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 40;
 			arStReq = 6;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Raider Armor":
+	    case arChange.value == "Raider Armor":
 	        arNormalDT = 3;
 			arNormalDR = 30;
 			arLaserDT = 0;
@@ -523,10 +539,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 4;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Combat Leather Jacket":
+	    case arChange.value == "Combat Leather Jacket":
 	        arNormalDT = 2;
 			arNormalDR = 35;
 			arLaserDT = 0;
@@ -544,10 +561,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 7;
 			arStReq = 3;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Stealth Armor":
+	    case arChange.value == "Stealth Armor":
 	        arNormalDT = 3;
 			arNormalDR = 30;
 			arLaserDT = 2;
@@ -565,11 +583,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
-			/*Increases stealth skill by 15%*/
+			stealthAdjust = 15;			
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Leather Armor MK II":
+	    case arChange.value == "Leather Armor MK II":
 	        arNormalDT = 3;
 			arNormalDR = 30;
 			arLaserDT = 1;
@@ -587,10 +605,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Leather Armor MK II":
+	    case arChange.value == "Brotherhood Leather Armor MK II":
 	        arNormalDT = 11;
 			arNormalDR = 30;
 			arLaserDT = 5;
@@ -608,10 +627,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 11;
 			arStReq = 3;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Metal Armor":
+	    case arChange.value == "Metal Armor":
 	        arNormalDT = 7;
 			arNormalDR = 50;
 			arLaserDT = 0;
@@ -628,12 +648,12 @@ function armorEquip() {
 			arGasResist = 0;
 			arElecResist = 0;
 			arWt = 40;
-			arStReq = 8;
-			/*-45 sneak skill*/
+			arStReq = 8;			
+			stealthAdjust = -45;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Metal Armor":
+	    case arChange.value == "Brotherhood Metal Armor":
 	        arNormalDT = 20;
 			arNormalDR = 30;
 			arLaserDT = 10;
@@ -651,11 +671,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 45;
 			arStReq = 8;
-			/*-35 sneak skill*/
+			stealthAdjust = -35;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Reaver Banding":
+	    case arChange.value == "Reaver Banding":
 	        arNormalDT = 5;
 			arNormalDR = 30;
 			arLaserDT = 0;
@@ -673,10 +693,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 5;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Superior Ghoul Armor":
+	    case arChange.value == "Superior Ghoul Armor":
 	        arNormalDT = 20;
 			arNormalDR = 30;
 			arLaserDT = 0;
@@ -694,10 +715,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 8;
 			arStReq = 2;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Spiked Mutant Plate Armor":
+	    case arChange.value == "Spiked Mutant Plate Armor":
 	        arNormalDT = 10;
 			arNormalDR = 60;
 			arLaserDT = 0;
@@ -715,10 +737,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 50;
 			arStReq = 10;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Greater Banding":
+	    case arChange.value == "Greater Banding":
 	        arNormalDT = 10;
 			arNormalDR = 40;
 			arLaserDT = 0;
@@ -736,10 +759,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 18;
 			arStReq = 4;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Tesla Armor":
+	    case arChange.value == "Tesla Armor":
 	        arNormalDT = 0;
 			arNormalDR = 30;
 			arLaserDT = 10;
@@ -757,12 +781,12 @@ function armorEquip() {
 			arElecResist = 30;
 			arWt = 20;
 			arStReq = 3;
-			/*Sneak reduced by 25%*/
+			stealthAdjust = -25;
 			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Tesla Armor":
+	    case arChange.value == "Brotherhood Tesla Armor":
 	        arNormalDT = 20;
 			arNormalDR = 20;
 			arLaserDT = 25;
@@ -780,12 +804,12 @@ function armorEquip() {
 			arElecResist = 30;
 			arWt = 20;
 			arStReq = 3;
-			/*Sneak reduced by 25%*/
+			stealthAdjust = -25;
 			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Metal Armor MK II":
+	    case arChange.value == "Metal Armor MK II":
 	        arNormalDT = 10;
 			arNormalDR = 60;
 			arLaserDT = 0;
@@ -803,11 +827,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 40;
 			arStReq = 7;
-			/*Sneak reduced by 30%*/
+			stealthAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Metal Armor MK II":
+	    case arChange.value == "Brotherhood Metal Armor MK II":
 	        arNormalDT = 30;
 			arNormalDR = 30;
 			arLaserDT = 20;
@@ -825,11 +849,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 7;
 			arStReq = 40;
-			/*Sneak reduced by 30%*/
+			stealthAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Radiation Suit":
+	    case arChange.value == "Radiation Suit":
 	        arNormalDT = 4;
 			arNormalDR = 12;
 			arLaserDT = 4;
@@ -847,11 +871,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
-			/*Sneak reduced by 30%*/
+			stealthAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Combat Armor":
+	    case arChange.value == "Combat Armor":
 	        arNormalDT = 0;
 			arNormalDR = 60;
 			arLaserDT = 0;
@@ -868,11 +892,12 @@ function armorEquip() {
 			arGasResist = 0;
 			arElecResist = 0;
 			arWt = 25;
-			arStReq = 5;			
+			arStReq = 5;
+			stealthAdjust = 0;	
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Combat Armor":
+	    case arChange.value == "Brotherhood Combat Armor":
 	        arNormalDT = 55;
 			arNormalDR = 0;
 			arLaserDT = 20;
@@ -890,10 +915,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 25;
 			arStReq = 5;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Environmental Armor":
+	    case arChange.value == "Brotherhood Environmental Armor":
 	        arNormalDT = 10;
 			arNormalDR = 20;
 			arLaserDT = 10;
@@ -911,12 +937,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 3;
-			/*-50% to sneak, -20% to Science, lockpick, steal, and repair,
+			stealthAdjust = -50;
+			/* -20% to Science, lockpick, steal, and repair,
 			and -30% to first aid and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Pseudo-Chitin Armor":
+	    case arChange.value == "Pseudo-Chitin Armor":
 	        arNormalDT = 5;
 			arNormalDR = 48;
 			arLaserDT = 5;
@@ -934,10 +961,11 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 3;
+			stealthAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Crysalis Armor":
+	    case arChange.value == "Crysalis Armor":
 	        arNormalDT = 25;
 			arNormalDR = 160;
 			arLaserDT = 25;
@@ -959,7 +987,7 @@ function armorEquip() {
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Pseudo-Chitin Armor(Bonded)":
+	    case arChange.value == "Pseudo-Chitin Armor(Bonded)":
 	        arNormalDT = 15;
 			arNormalDR = 70;
 			arLaserDT = 15;
@@ -981,7 +1009,7 @@ function armorEquip() {
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Environmental Armor MK II":
+	    case arChange.value == "Brotherhood Environmental Armor MK II":
 	        arNormalDT = 20;
 			arNormalDR = 40;
 			arLaserDT = 10;
@@ -999,12 +1027,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 4;
-			/*-1 PE, -50% to sneak, -10% to Science, repair, and pilot skills;
+			stealthAdjust = -50;
+			/*-1 PE, -10% to Science, repair, and pilot skills;
 			-20% to lockpick, steal, first aid, and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Power Armor":
+	    case arChange.value == "Power Armor":
 	        arNormalDT = 10;
 			arNormalDR = 50;
 			arLaserDT = 10;
@@ -1022,12 +1051,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 2;
-			/*+2 to ST -75% to sneak and -20% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+2 to ST -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Power Armor":
+	    case arChange.value == "Brotherhood Power Armor":
 	        arNormalDT = 30;
 			arNormalDR = 50;
 			arLaserDT = 20;
@@ -1045,12 +1075,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 2;
-			/*+3 to ST, -1 PE, -75% to sneak and -20% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+3 to ST, -1 PE -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Stealth Power Armor":
+	    case arChange.value == "Stealth Power Armor":
 	        arNormalDT = 10;
 			arNormalDR = 40;
 			arLaserDT = 10;
@@ -1072,7 +1103,7 @@ function armorEquip() {
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "(CRRAAB) Power Armor":
+	    case arChange.value == "(CRRAAB) Power Armor":
 	        arNormalDT = 14;
 			arNormalDR = 45;
 			arLaserDT = 14;
@@ -1090,12 +1121,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 0; //8 PE required
-			/*+3 to PE, -75% to sneak, and +35% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+3 to PE +35% to firt aid, doctor,
 			lockpick, steal, science, and repair, traps/mines, and all pilot skills*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Advanced Power Armor":
+	    case arChange.value == "Advanced Power Armor":
 	        arNormalDT = 14;
 			arNormalDR = 60;
 			arLaserDT = 14;
@@ -1113,12 +1145,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 6;
-			/*+4 to ST, -1 PE, -75% to sneak and -20% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+4 to ST, -1 PE -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Brotherhood Advanced Power Armor":
+	    case arChange.value == "Brotherhood Advanced Power Armor":
 	        arNormalDT = 70;
 			arNormalDR = 20;
 			arLaserDT = 20;
@@ -1136,12 +1169,13 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 7;
-			/*+4 to ST, -75% to sneak and -20% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+4 to ST -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
-	        case arChange.value == "Advanced Power Armor MK II":
+	    case arChange.value == "Advanced Power Armor MK II":
 	        arNormalDT = 20;
 			arNormalDR = 70;
 			arLaserDT = 20;
@@ -1159,44 +1193,44 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 6;
-			/*+4 to ST, -1 PE, -75% to sneak and -10% to firt aid, doctor,
+			stealthAdjust = -75;
+			/*+4 to ST, -1 PE -10% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
-
 
 	        default:
 	    }
 	
 	switch (raceResists.value) {
-    case "Super-Mutant":
-    	racialDT = 0;
-    	racialDR = 20;
-        break;
+	    case "Super-Mutant":
+	    	racialDT = 0;
+	    	racialDR = 20;
+	        break;
 
-    case "Deathclaw":
-    	racialDT = 4;
-    	racialDR = 40;
-        break;
+	    case "Deathclaw":
+	    	racialDT = 4;
+	    	racialDR = 40;
+	        break;
 
-        case "Deathclaw (Grey Tribe)":
-    	racialDT = 4;
-    	racialDR = 40;
-        break;
+	    case "Deathclaw (Grey Tribe)":
+	    	racialDT = 4;
+	    	racialDR = 40;
+	        break;
 
-    case "Robot":
-    	racialDT = 0;
-    	racialDR = 40;
-        break;
+	    case "Robot":
+	    	racialDT = 0;
+	    	racialDR = 40;
+	        break;
 
-    case "Andriod Humanoid Robot":
-    	racialDT = 0;
-    	racialDR = 25;
-        break;
+	    case "Andriod Humanoid Robot":
+	    	racialDT = 0;
+	    	racialDR = 25;
+	        break;
 
-    default:
-    	racialDT = 0;
-    	racialDR = 0;
+	    default:
+	    	racialDT = 0;
+	    	racialDR = 0;
 	}
     
     normalDT.value = ugNormalDT + arNormalDT + racialDT || arNormalDT + racialDT;
