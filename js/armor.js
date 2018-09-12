@@ -60,7 +60,7 @@ arStReq = 0; /*Armor Resistance Values*/
 let 
 racialDT = 0,
 racialDR = 0,/*Racial Bonus Resist Values*/
-stealthAdjust = 0;
+sneakAdjust = 0;
 
 var myUndergarments = new Select('#undergarment',{
     // auto show the live filter
@@ -136,7 +136,7 @@ function equipSelection() {
 			ugElecResist = 0;
 			ugWt = 0;
 			ugStReq = 0;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			ugButton.innerHTML = "Equip";
 
 			arNormalDT = 0;
@@ -156,7 +156,7 @@ function equipSelection() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0; 
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Equip";
 
 			undergarmentEquip();
@@ -189,7 +189,7 @@ function equipSelection() {
 			ugElecResist = 0; 
 			ugWt = 0;
 			ugStReq = 0;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			ugButton.innerHTML = "Equip";
 		}else {
 		undergarmentEquip();
@@ -217,7 +217,7 @@ function equipSelection() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
-			stealthAdjust = 0;			
+			sneakAdjust = 0;			
 			arButton.innerHTML = "Equip";
 		}else {
 			armorEquip();
@@ -407,7 +407,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Equip";		    
 	        break;	    	
 
@@ -429,7 +429,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 5;
 			arStReq = 2;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value; 			    
 	        break;
 
@@ -451,7 +451,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 5;
 			arStReq = 2;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -473,7 +473,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 8;
 			arStReq = 3;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -495,7 +495,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 2;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -517,7 +517,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 40;
 			arStReq = 6;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -539,7 +539,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 4;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -561,7 +561,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 7;
 			arStReq = 3;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -583,7 +583,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
-			stealthAdjust = 15;			
+			sneakAdjust = 15;			
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -605,7 +605,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -627,7 +627,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 11;
 			arStReq = 3;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -649,7 +649,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 40;
 			arStReq = 8;			
-			stealthAdjust = -45;
+			sneakAdjust = -45;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -671,7 +671,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 45;
 			arStReq = 8;
-			stealthAdjust = -35;
+			sneakAdjust = -35;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -693,7 +693,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 5;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -715,7 +715,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 8;
 			arStReq = 2;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -737,7 +737,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 50;
 			arStReq = 10;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -759,7 +759,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 18;
 			arStReq = 4;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -781,7 +781,7 @@ function armorEquip() {
 			arElecResist = 30;
 			arWt = 20;
 			arStReq = 3;
-			stealthAdjust = -25;
+			sneakAdjust = -25;
 			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
@@ -804,7 +804,7 @@ function armorEquip() {
 			arElecResist = 30;
 			arWt = 20;
 			arStReq = 3;
-			stealthAdjust = -25;
+			sneakAdjust = -25;
 			/*Reduces EMP dmg to cycborgs by 20%*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
@@ -827,7 +827,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 40;
 			arStReq = 7;
-			stealthAdjust = -30;
+			sneakAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -849,7 +849,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 7;
 			arStReq = 40;
-			stealthAdjust = -30;
+			sneakAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -871,7 +871,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 10;
 			arStReq = 3;
-			stealthAdjust = -30;
+			sneakAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -893,7 +893,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 25;
 			arStReq = 5;
-			stealthAdjust = 0;	
+			sneakAdjust = 0;	
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -915,7 +915,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 25;
 			arStReq = 5;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -937,7 +937,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 3;
-			stealthAdjust = -50;
+			sneakAdjust = -50;
 			/* -20% to Science, lockpick, steal, and repair,
 			and -30% to first aid and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -961,7 +961,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 3;
-			stealthAdjust = 0;
+			sneakAdjust = 0;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1027,7 +1027,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 4;
-			stealthAdjust = -50;
+			sneakAdjust = -50;
 			/*-1 PE, -10% to Science, repair, and pilot skills;
 			-20% to lockpick, steal, first aid, and doctor*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1051,7 +1051,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 2;
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+2 to ST -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1075,7 +1075,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 2;
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+3 to ST, -1 PE -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1121,7 +1121,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 0; //8 PE required
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+3 to PE +35% to firt aid, doctor,
 			lockpick, steal, science, and repair, traps/mines, and all pilot skills*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1145,7 +1145,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 6;
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+4 to ST, -1 PE -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1169,7 +1169,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 7;
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+4 to ST -20% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
@@ -1193,7 +1193,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 6;
-			stealthAdjust = -75;
+			sneakAdjust = -75;
 			/*+4 to ST, -1 PE -10% to firt aid, doctor,
 			lockpick, steal, science, and repair*/
 			arButton.innerHTML = "Unequip: " + arChange.value;
