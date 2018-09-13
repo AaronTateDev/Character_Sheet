@@ -1,5 +1,16 @@
 
 function skillTotals(){
+
+
+			//need requirements done and armor will be completely finished
+			//arWt = 0;
+			//arStReq = 0;
+			//ugWt = 0;
+			//ugStReq = 0;
+			//arpeReq = 0;
+			//aragReq = 0;
+						
+						
       	
 	spendPi = document.getElementById('spendPistolSkill');
 	totPi = document.getElementById('totalPistolSkill');
@@ -67,11 +78,11 @@ function skillTotals(){
 
 	spendDoc = document.getElementById('spendDoctorSkill');
 	totDoc = document.getElementById('totalDoctorSkill');
-	totDoc.value = +spendDoc.value /*+ designated variable*/;
+	totDoc.value = +spendDoc.value + doctorAdjust;
 
 	spendFA = document.getElementById('spendFAidSkill');
 	totFA = document.getElementById('totalFAidSkill');
-	totFA.value = +spendFA.value /*+ designated variable*/;
+	totFA.value = +spendFA.value + firstAidAdjust;
 
 	spendSn = document.getElementById('spendSneakSkill');
 	totSn = document.getElementById('totalSneakSkill');
@@ -79,39 +90,39 @@ function skillTotals(){
 
 	spendLo = document.getElementById('spendLockpickSkill');
 	totLo = document.getElementById('totalLockpickSkill');
-	totLo.value = +spendLo.value /*+ designated variable*/;
+	totLo.value = +spendLo.value + lockpickAdjust;
 
 	spendSt = document.getElementById('spendStealSkill');
 	totSt = document.getElementById('totalStealSkill');
-	totSt.value = +spendSt.value /*+ designated variable*/;
+	totSt.value = +spendSt.value + stealingAdjust;
 
 	spendTM = document.getElementById('spendT/MSkill');
 	totTM = document.getElementById('totalT/MSkill');
-	totTM.value = +spendTM.value /*+ designated variable*/;
+	totTM.value = +spendTM.value + trapsMinesAdjust;
 
 	spendSc = document.getElementById('spendScienceSkill');
 	totSc = document.getElementById('totalScienceSkill');
-	totSc.value = +spendSc.value /*+ designated variable*/;
+	totSc.value = +spendSc.value + scienceAdjust;
 
 	spendRe = document.getElementById('spendRepairSkill');
 	totRe = document.getElementById('totalRepairSkill');
-	totRe.value = +spendRe.value /*+ designated variable*/;
+	totRe.value = +spendRe.value + repairAdjust;
 
 	spendCT = document.getElementById('spendP,C/TSkill');
 	totCT = document.getElementById('totalP,C/TSkill');
-	totCT.value = +spendCT.value /*+ designated variable*/;
+	totCT.value = +spendCT.value + pCTAdjust;
 
 	spendWa = document.getElementById('spendP,WSkill');
 	totWa = document.getElementById('totalP,WSkill');
-	totWa.value = +spendWa.value /*+ designated variable*/;
+	totWa.value = +spendWa.value + pWatercAdjust;
 
 	spendAi = document.getElementById('spendP,ASkill');
 	totAi = document.getElementById('totalP,ASkill');
-	totAi.value = +spendAi.value /*+ designated variable*/;
+	totAi.value = +spendAi.value + pACAdjust;
 
 	spendAPC = document.getElementById('spendP,APC/TSkill');
 	totAPC = document.getElementById('totalP,APC/TSkill');
-	totAPC.value = +spendAPC.value /*+ designated variable*/;
+	totAPC.value = +spendAPC.value + pAPCTAdjust;
 
 	spendSp = document.getElementById('spendSpeechSkill');
 	totSp = document.getElementById('totalSpeechSkill');
@@ -141,6 +152,7 @@ document.addEventListener("click", function (event) {
 
 	if (event.target.id == 'armorButton' || event.target.id == 'raceSelector') {
 		skillTotals();
+
 	}
 
 	if (event.target.matches('.skName')) {

@@ -61,10 +61,10 @@ function findTotal(){
 }
 
 function statTotals(){
-	sTotal = +document.getElementById('qtyBaseS').value + +document.getElementById('qtyModS').value;
+	sTotal = +document.getElementById('qtyBaseS').value + +document.getElementById('qtyModS').value + stBonus;
 	document.getElementById('qtyTotalS').value = sTotal;
 
-	pTotal = +document.getElementById('qtyBaseP').value + +document.getElementById('qtyModP').value;
+	pTotal = +document.getElementById('qtyBaseP').value + +document.getElementById('qtyModP').value + peBonus;
 	document.getElementById('qtyTotalP').value = pTotal;
 
 	eTotal = +document.getElementById('qtyBaseE').value + +document.getElementById('qtyModE').value;
@@ -76,7 +76,7 @@ function statTotals(){
 	iTotal = +document.getElementById('qtyBaseI').value + +document.getElementById('qtyModI').value;
 	document.getElementById('qtyTotalI').value = iTotal;
 
-	aTotal = +document.getElementById('qtyBaseA').value + +document.getElementById('qtyModA').value;
+	aTotal = +document.getElementById('qtyBaseA').value + +document.getElementById('qtyModA').value + agBonus;
 	document.getElementById('qtyTotalA').value = aTotal;
 
 	lTotal = +document.getElementById('qtyBaseL').value + +document.getElementById('qtyModL').value;
@@ -87,7 +87,7 @@ function statTotals(){
 
 /*---------------------- Secondary Stats ------------------------ */
 
-function secondarySkills() {
+function secondaryStats() {
     if(document.getElementById('raceSelector').value == "Deathclaw" ||
        document.getElementById('raceSelector').value == "Deathclaw (Grey Tribe)" ||
        document.getElementById('raceSelector').value == "Super-Mutant"){
@@ -192,9 +192,14 @@ function secondarySkills() {
     /*------------------------------- */
     /*---- Secondary Stat(Totals) ----*/
     /*------------------------------- */
-    document.getElementById('totalHealth').value = +document.getElementById('modHealth').value +
-    +document.getElementById('baseHealth').value;
-    /*---- Total Health Calc ----*/
+    if(healthPercentAdjust !== 0) {
+        document.getElementById('totalHealth').value = Math.floor((+document.getElementById('modHealth').value +
+        +document.getElementById('baseHealth').value) * healthPercentAdjust + healthFlatAdjust);
+        console.log("Percent: " + healthPercentAdjust + " Flat: " + healthFlatAdjust);
+    }else {
+        document.getElementById('totalHealth').value = +document.getElementById('modHealth').value +
+        +document.getElementById('baseHealth').value + healthFlatAdjust;
+    }/*---- Total Health Calc ----*/
 
     document.getElementById('totalSkillPts').value = document.getElementById('baseSkillPts').value -
     document.getElementById('modSkillPts').value;
@@ -1059,7 +1064,7 @@ document.addEventListener("input", function(){
 	}
 		
 	event.target.prevValue = event.target.value;
-	secondarySkills();
+	secondaryStats();
 
 });/*End of Skill Point Spending Code*/
 
@@ -1113,7 +1118,7 @@ function tagSkills(){
             tooltip2.hide();
         });    
 
-    secondarySkills();
+    secondaryStats();
     }
     
  /*   

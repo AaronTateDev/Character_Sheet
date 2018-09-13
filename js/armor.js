@@ -38,7 +38,7 @@ ugElecResist = 0,
 ugWt = 0,
 ugStReq = 0; /*Undergarment Resistance Values*/
 
-let 	
+let	
 arNormalDT = 0, 
 arNormalDR = 0,
 arLaserDT = 0,
@@ -55,12 +55,30 @@ arPoisonResist = 0,
 arGasResist = 0,
 arElecResist = 0,
 arWt = 0,
-arStReq = 0; /*Armor Resistance Values*/
+arStReq = 0,
+sneakAdjust = 0,
+arpeReq = 0,
+aragReq = 0,
+agBonus = 0,
+stBonus = 0,
+peBonus = 0,
+scienceAdjust = 0,
+lockpickAdjust = 0,
+stealingAdjust = 0,
+repairAdjust = 0,
+firstAidAdjust = 0,
+doctorAdjust = 0,
+trapsMinesAdjust = 0,
+healthPercentAdjust = 0,
+healthFlatAdjust = 0,
+pCTAdjust = 0,
+pWatercAdjust = 0,
+pACAdjust = 0,
+pAPCTAdjust = 0; /*Armor Resistance Values*/
 
 let 
 racialDT = 0,
-racialDR = 0,/*Racial Bonus Resist Values*/
-sneakAdjust = 0;
+racialDR = 0;
 
 var myUndergarments = new Select('#undergarment',{
     // auto show the live filter
@@ -157,6 +175,24 @@ function equipSelection() {
 			arWt = 0;
 			arStReq = 0; 
 			sneakAdjust = 0;
+			arpeReq = 0;
+			aragReq = 0;
+			agBonus = 0;
+			stBonus = 0;
+			peBonus = 0;
+			lockpickAdjust = 0;
+			stealingAdjust = 0;
+			repairAdjust = 0;
+			firstAidAdjust = 0;
+			doctorAdjust = 0;
+			scienceAdjust = 0;
+			trapsMinesAdjust = 0;
+			healthPercentAdjust = 0;
+			healthFlatAdjust = 0;
+			pCTAdjust = 0;
+			pWatercAdjust = 0;
+			pACAdjust = 0;
+			pAPCTAdjust = 0;			
 			arButton.innerHTML = "Equip";
 
 			undergarmentEquip();
@@ -189,7 +225,6 @@ function equipSelection() {
 			ugElecResist = 0; 
 			ugWt = 0;
 			ugStReq = 0;
-			sneakAdjust = 0;
 			ugButton.innerHTML = "Equip";
 		}else {
 		undergarmentEquip();
@@ -217,9 +252,45 @@ function equipSelection() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
-			sneakAdjust = 0;			
+			sneakAdjust = 0;
+			arpeReq = 0;
+			aragReq = 0;
+			agBonus = 0;
+			stBonus = 0;
+			peBonus = 0;			
+			lockpickAdjust = 0;
+			stealingAdjust = 0;
+			repairAdjust = 0;
+			firstAidAdjust = 0;
+			doctorAdjust = 0;
+			scienceAdjust = 0;
+			trapsMinesAdjust = 0;
+			healthPercentAdjust = 0;
+			healthFlatAdjust = 0;
+			pCTAdjust = 0;
+			pWatercAdjust = 0;
+			pACAdjust = 0;
+			pAPCTAdjust = 0;			
 			arButton.innerHTML = "Equip";
 		}else {
+			arpeReq = 0;
+			aragReq = 0;
+			agBonus = 0;
+			stBonus = 0;			
+			peBonus = 0;
+			scienceAdjust = 0;
+			lockpickAdjust = 0;
+			stealingAdjust = 0;
+			repairAdjust = 0;
+			firstAidAdjust = 0;
+			doctorAdjust = 0;			
+			trapsMinesAdjust = 0;
+			healthPercentAdjust = 0;
+			healthFlatAdjust = 0;
+			pCTAdjust = 0;
+			pWatercAdjust = 0;
+			pACAdjust = 0;
+			pAPCTAdjust = 0;			
 			armorEquip();
 		}		
 	}
@@ -368,7 +439,7 @@ function undergarmentEquip() {
 	    	racialDT = 0;
 	    	racialDR = 0;
 	}
-    console.log(racialDT + " " + racialDR);
+    
     normalDT.value = ugNormalDT + arNormalDT + racialDT || ugNormalDT + racialDT;
 	normalDR.value = ugNormalDR + arNormalDR + racialDR || ugNormalDR + racialDR;
 	laserDT.value = ugLaserDT + arLaserDT + racialDT || ugLaserDT + racialDT;
@@ -381,12 +452,12 @@ function undergarmentEquip() {
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR;
 	
 
-secondarySkills();
+secondaryStats();
 }
 
 function armorEquip() {     
     switch (event.target.id != "raceSelector") {
-	    case arChange.value == "None":	    		    
+    	case arChange.value == "None":	    		    
 	        break;
 
 	    case arButton.innerHTML == "Unequip: " + arChange.value:	        
@@ -407,7 +478,7 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 0;
 			arStReq = 0;
-			sneakAdjust = 0;
+			sneakAdjust = 0;			
 			arButton.innerHTML = "Equip";		    
 	        break;	    	
 
@@ -937,9 +1008,18 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 15;
 			arStReq = 3;
-			sneakAdjust = -50;
-			/* -20% to Science, lockpick, steal, and repair,
-			and -30% to first aid and doctor*/
+			arpeReq = 0;
+			aragReq = 0;
+			agBonus = 0;
+			stBonus = 0;
+			peBonus = 0;
+			sneakAdjust = 0;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -20;
+			firstAidAdjust = -30;
+			doctorAdjust = -30;
+			scienceAdjust = -20;						
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -982,8 +1062,8 @@ function armorEquip() {
 			arGasResist = 0;
 			arElecResist = 0;
 			arWt = 90;
-			arStReq = 3;
-			/*-1/3 total HP*/
+			arStReq = 3;			
+			healthPercentAdjust = 0.66;	//-1/3 hp		
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1004,9 +1084,10 @@ function armorEquip() {
 			arGasResist = 0;
 			arElecResist = 0;
 			arWt = 20;
-			arStReq = 3;
-			/*Still -1/3 total HP then +30 hp and no longer unequippable*/
-			arButton.innerHTML = "Unequip: " + arChange.value;
+			arStReq = 3;			
+			healthPercentAdjust = 0.66;//-1/3 max hp
+			healthFlatAdjust = 30;			
+			arButton.innerHTML = "Fused: " + arChange.value;
 	        break;
 
 	    case arChange.value == "Brotherhood Environmental Armor MK II":
@@ -1027,9 +1108,18 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 4;
-			sneakAdjust = -50;
-			/*-1 PE, -10% to Science, repair, and pilot skills;
-			-20% to lockpick, steal, first aid, and doctor*/
+			sneakAdjust = -50;					
+			peBonus = -1;
+			scienceAdjust = -10;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -10;
+			firstAidAdjust = -20;
+			doctorAdjust = -20;				
+			pCTAdjust = -10;
+			pWatercAdjust = -10;
+			pACAdjust = -10;
+			pAPCTAdjust = -10;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1051,9 +1141,14 @@ function armorEquip() {
 			arElecResist = 0;
 			arWt = 20;
 			arStReq = 2;
-			sneakAdjust = -75;
-			/*+2 to ST -20% to firt aid, doctor,
-			lockpick, steal, science, and repair*/
+			sneakAdjust = -75;			
+			stBonus = 2;			
+			scienceAdjust = -20;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -20;
+			firstAidAdjust = -20;
+			doctorAdjust = -20;			
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1076,8 +1171,17 @@ function armorEquip() {
 			arWt = 20;
 			arStReq = 2;
 			sneakAdjust = -75;
-			/*+3 to ST, -1 PE -20% to firt aid, doctor,
-			lockpick, steal, science, and repair*/
+			arpeReq = 0;
+			aragReq = 0;
+			agBonus = 0;
+			stBonus = 3;
+			peBonus = -1;
+			scienceAdjust = -20;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -20;
+			firstAidAdjust = -20;
+			doctorAdjust = -20;				
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1098,8 +1202,9 @@ function armorEquip() {
 			arGasResist = 100;
 			arElecResist = 0;
 			arWt = 20;
-			arStReq = 0;//8 AG requirement
-			/*+2 to AG*/
+			arStReq = 0;			
+			aragReq = 8;
+			agBonus = 2;			
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1120,10 +1225,21 @@ function armorEquip() {
 			arGasResist = 100;
 			arElecResist = 0;
 			arWt = 20;
-			arStReq = 0; //8 PE required
+			arStReq = 0;
 			sneakAdjust = -75;
-			/*+3 to PE +35% to firt aid, doctor,
-			lockpick, steal, science, and repair, traps/mines, and all pilot skills*/
+			arpeReq = 8;			
+			peBonus = 3;
+			scienceAdjust = 35;
+			lockpickAdjust = 35;
+			stealingAdjust = 35;
+			repairAdjust = 35;
+			firstAidAdjust = 35;
+			doctorAdjust = 35;			
+			trapsMinesAdjust = 35;
+			pCTAdjust = 35;
+			pWatercAdjust = 35;
+			pACAdjust = 35;
+			pAPCTAdjust = 35;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1146,8 +1262,13 @@ function armorEquip() {
 			arWt = 20;
 			arStReq = 6;
 			sneakAdjust = -75;
-			/*+4 to ST, -1 PE -20% to firt aid, doctor,
-			lockpick, steal, science, and repair*/
+			stBonus = 4;
+			scienceAdjust = -20;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -20;
+			firstAidAdjust = -20;
+			doctorAdjust = -20;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1170,8 +1291,13 @@ function armorEquip() {
 			arWt = 20;
 			arStReq = 7;
 			sneakAdjust = -75;
-			/*+4 to ST -20% to firt aid, doctor,
-			lockpick, steal, science, and repair*/
+			stBonus = 4;			
+			scienceAdjust = -20;
+			lockpickAdjust = -20;
+			stealingAdjust = -20;
+			repairAdjust = -20;
+			firstAidAdjust = -20;
+			doctorAdjust = -20;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1194,8 +1320,13 @@ function armorEquip() {
 			arWt = 20;
 			arStReq = 6;
 			sneakAdjust = -75;
-			/*+4 to ST, -1 PE -10% to firt aid, doctor,
-			lockpick, steal, science, and repair*/
+			stBonus = 4;			
+			scienceAdjust = -10;
+			lockpickAdjust = -10;
+			stealingAdjust = -10;
+			repairAdjust = -10;
+			firstAidAdjust = -10;
+			doctorAdjust = -10;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;
 
@@ -1243,7 +1374,8 @@ function armorEquip() {
 	plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || arPlasmaDR + racialDR;
 	explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || arExplodeDT + racialDT;
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR || arExplodeDR + racialDR;
-	
-secondarySkills();
+
+statTotals();	
+secondaryStats();
 }
 
