@@ -1,16 +1,14 @@
 
+var myArmor = new Select('#damageCalc',{
+    // auto show the live filter
+    filtered: 'auto',
+    // auto show the live filter when the options >= 8
+    filter_threshold: 4,
+    // custom placeholder
+    filter_placeholder: 'Damage Type...'
+});
+
 function skillTotals(){
-
-
-			//need requirements done and armor will be completely finished
-			//arWt = 0;
-			//arStReq = 0;
-			//ugWt = 0;
-			//ugStReq = 0;
-			//arpeReq = 0;
-			//aragReq = 0;
-						
-						
       	
 	spendPi = document.getElementById('spendPistolSkill');
 	totPi = document.getElementById('totalPistolSkill');

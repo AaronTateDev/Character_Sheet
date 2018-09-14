@@ -11,7 +11,8 @@ explodeDR = document.getElementById("explodeDR"),
 raceResists = document.getElementById("raceSelector"),
 tooltip3 = new HTML5TooltipUIComponent, /*Undergarment Req*/
 tooltip4 = new HTML5TooltipUIComponent, /*Armor Req*/
-tooltip5 = new HTML5TooltipUIComponent; /*Both Req*/
+tooltip5 = new HTML5TooltipUIComponent, /*Both Req*/
+tooltip6 = new HTML5TooltipUIComponent; /*Stat Req*/
 
 let 
 ugChange = document.getElementById("undergarment"),
@@ -78,7 +79,8 @@ pAPCTAdjust = 0; /*Armor Resistance Values*/
 
 let 
 racialDT = 0,
-racialDR = 0;
+racialDR = 0,
+gearStatReqTxt;
 
 var myUndergarments = new Select('#undergarment',{
     // auto show the live filter
@@ -128,7 +130,7 @@ function equipSelection() {
 
         tooltip3.mount();         
         tooltip4.mount();
-        tooltip5.mount();
+        tooltip5.mount();        
         
 	if(event.target.id == "raceSelector"){
 
@@ -200,6 +202,7 @@ function equipSelection() {
 		}else {			
 			undergarmentEquip();
 			armorEquip();
+			statRequirements();
 		}
 		
 	}else if(event.target.id == "undergarmentButton") {
@@ -228,6 +231,7 @@ function equipSelection() {
 			ugButton.innerHTML = "Equip";
 		}else {
 		undergarmentEquip();
+		statRequirements();
 		}
 	}else if(event.target.id == "armorButton") {
 		if (raceResists.value == "Deathclaw" || raceResists.value == "Deathclaw (Grey Tribe)" || raceResists.value == "Robot"){
@@ -292,8 +296,144 @@ function equipSelection() {
 			pACAdjust = 0;
 			pAPCTAdjust = 0;			
 			armorEquip();
+			statRequirements();
 		}		
 	}
+}
+
+function statRequirements() {
+		
+	if(arStReq > sTotal - stBonus || arpeReq > pTotal - peBonus || aragReq > aTotal - agBonus) {		
+		if(arStReq > sTotal - stBonus) {
+			gearStatReqTxt = "Requires atleast " + arStReq + " strength to equip.";
+		}else if(arpeReq > pTotal - peBonus) {
+			gearStatReqTxt = "Requires atleast " + arpeReq + " perception to equip.";			
+		}else if(aragReq > aTotal - agBonus) {
+			gearStatReqTxt = "Requires atleast " + aragReq + " agility to equip.";
+		}
+
+		tooltip6.set({
+          animateFunction: "scalein",
+          color: "citrus zest",
+          contentText: gearStatReqTxt,
+          stickTo: "right",                        
+          maxWidth: 130,
+          target: event.target
+        });/*Gear Stat Requirement tooltip*/ 
+
+		tooltip6.mount();
+
+		tooltip6.show();
+		event.target.addEventListener('mousemove',function(){            
+		    	tooltip6.hide();
+		});
+		
+		arNormalDT = 0;
+		arNormalDR = 0;
+		arLaserDT = 0;
+		arLaserDR = 0;
+		arFireDT = 0;
+		arFireDR = 0;
+		arPlasmaDT = 0;
+		arPlasmaDR = 0;
+		arExplodeDT = 0;
+		arExplodeDR = 0;
+		arAC = 0; 
+		arRR = 0;
+		arPoisonResist = 0;
+		arGasResist = 0;
+		arElecResist = 0;
+		arWt = 0;
+		arStReq = 0;
+		sneakAdjust = 0;
+		arpeReq = 0;
+		aragReq = 0;
+		agBonus = 0;
+		stBonus = 0;
+		peBonus = 0;			
+		lockpickAdjust = 0;
+		stealingAdjust = 0;
+		repairAdjust = 0;
+		firstAidAdjust = 0;
+		doctorAdjust = 0;
+		scienceAdjust = 0;
+		trapsMinesAdjust = 0;
+		healthPercentAdjust = 0;
+		healthFlatAdjust = 0;
+		pCTAdjust = 0;
+		pWatercAdjust = 0;
+		pACAdjust = 0;
+		pAPCTAdjust = 0;			
+		arButton.innerHTML = "Equip";	
+	
+		normalDT.value = ugNormalDT + arNormalDT + racialDT || ugNormalDT + racialDT || arNormalDT + racialDT;
+		normalDR.value = ugNormalDR + arNormalDR + racialDR || ugNormalDR + racialDR || arNormalDR + racialDR;
+		laserDT.value = ugLaserDT + arLaserDT + racialDT || ugLaserDT + racialDT || arLaserDT + racialDT;
+		laserDR.value = ugLaserDR + arLaserDR + racialDR || ugLaserDR + racialDR || arLaserDR + racialDR;
+		fireDT.value = ugFireDT + arFireDT + racialDT || ugFireDT + racialDT || arFireDT + racialDT;
+		fireDR.value = ugFireDR + arFireDR + racialDR || ugFireDR + racialDR || arFireDR + racialDR;
+		plasmaDT.value = ugPlasmaDT + arPlasmaDT + racialDT || ugPlasmaDT + racialDT || arPlasmaDT + racialDT;
+		plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR || arPlasmaDR + racialDR;
+		explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT || arExplodeDT + racialDT;
+		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
+
+		statTotals();
+		secondaryStats();
+	}
+
+	if(ugStReq > sTotal ) {
+		gearStatReqTxt = "Requires atleast " + ugStReq + " strength to equip.";
+
+		tooltip6.set({
+          animateFunction: "scalein",
+          color: "citrus zest",
+          contentText: gearStatReqTxt,
+          stickTo: "right",                        
+          maxWidth: 130,
+          target: event.target
+        });/*Gear Stat Requirement tooltip*/ 
+
+		tooltip6.mount();
+
+		tooltip6.show();
+		event.target.addEventListener('mousemove',function(){            
+		    	tooltip6.hide();
+		});
+		
+		ugNormalDT = 0;
+		ugNormalDR = 0;
+		ugLaserDT = 0;
+		ugLaserDR = 0;
+		ugFireDT = 0;
+		ugFireDR = 0;
+		ugPlasmaDT = 0;
+		ugPlasmaDR = 0;
+		ugExplodeDT = 0;
+		ugExplodeDR = 0;
+		ugAC = 0; 
+		ugRR = 0;
+		ugPoisonResist = 0;
+		ugGasResist = 0;
+		ugElecResist = 0;
+		ugWt = 0;
+		ugStReq = 0; 
+		ugButton.innerHTML = "Equip";		 	
+	
+		normalDT.value = ugNormalDT + arNormalDT + racialDT || ugNormalDT + racialDT || arNormalDT + racialDT;
+		normalDR.value = ugNormalDR + arNormalDR + racialDR || ugNormalDR + racialDR || arNormalDR + racialDR;
+		laserDT.value = ugLaserDT + arLaserDT + racialDT || ugLaserDT + racialDT || arLaserDT + racialDT;
+		laserDR.value = ugLaserDR + arLaserDR + racialDR || ugLaserDR + racialDR || arLaserDR + racialDR;
+		fireDT.value = ugFireDT + arFireDT + racialDT || ugFireDT + racialDT || arFireDT + racialDT;
+		fireDR.value = ugFireDR + arFireDR + racialDR || ugFireDR + racialDR || arFireDR + racialDR;
+		plasmaDT.value = ugPlasmaDT + arPlasmaDT + racialDT || ugPlasmaDT + racialDT || arPlasmaDT + racialDT;
+		plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR || arPlasmaDR + racialDR;
+		explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT || arExplodeDT + racialDT;
+		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
+
+		/*statTotals();*/
+		secondaryStats();
+
+	} 
 }
 
 function undergarmentEquip() {		
@@ -918,8 +1058,8 @@ function armorEquip() {
 			arPoisonResist = 0;
 			arGasResist = 0;
 			arElecResist = 0;
-			arWt = 7;
-			arStReq = 40;
+			arWt = 40;
+			arStReq = 7;
 			sneakAdjust = -30;
 			arButton.innerHTML = "Unequip: " + arChange.value;
 	        break;

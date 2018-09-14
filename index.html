@@ -97,8 +97,7 @@
 					</tr>					
 				</tbody>
 			</table>
-
-			<!-------------------------------------------- TEST AREA ----------------------------------------->
+			
 			<select id="undergarment">
 				<option value="None">None</option>				
 				<option value="Basic Clothing">Basic Clothing</option>
@@ -147,9 +146,17 @@
 			</select>
 			<button onclick="equipSelection()" id="armorButton" type="button">Equip</button>
 
+			<select id="damageCalc">
+				<option value="Normal">Normal</option>				
+				<option value="Laser">Laser</option>
+				<option value="Fire">Fire</option>
+				<option value="Plasma">Plasma</option>
+				<option value="Explode">Explode</option>				
+			</select>
+			<input min=0 value=0 name="dmg" type="number" id="damage"/></td>
+			<button onclick="" id="damageCalcButton" type="button">Take Damage</button>
 
-
-			<!-------------------------------------------- TEST AREA ----------------------------------------->
+			
 		</div>
 		<div class="primaryStat">
 			<table>

@@ -195,7 +195,6 @@ function secondaryStats() {
     if(healthPercentAdjust !== 0) {
         document.getElementById('totalHealth').value = Math.floor((+document.getElementById('modHealth').value +
         +document.getElementById('baseHealth').value) * healthPercentAdjust + healthFlatAdjust);
-        console.log("Percent: " + healthPercentAdjust + " Flat: " + healthFlatAdjust);
     }else {
         document.getElementById('totalHealth').value = +document.getElementById('modHealth').value +
         +document.getElementById('baseHealth').value + healthFlatAdjust;
@@ -214,7 +213,7 @@ function secondaryStats() {
     /*---- Total AP Calc ----*/
     
     document.getElementById('totalCarry').value = +document.getElementById('modCarry').value +
-    +document.getElementById('baseCarry').value;
+    +document.getElementById('baseCarry').value - (arWt + ugWt);
      /*---- Total Weight Calc ----*/
 
     document.getElementById('totalMeleeD').value = +document.getElementById('modMeleeD').value +
