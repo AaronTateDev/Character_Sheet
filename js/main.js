@@ -24,11 +24,11 @@ var skillPtTotal = document.getElementById('totalSkillPts');
 var skillsPerLvlBonus = 0;
 var healthPerLvlBonus = 0;
 
-$("[type='number']").keypress(function (evt) {
+$("[type='number']").not("[name='dmg']").keypress(function (evt) {
     evt.preventDefault();
   }); /*Jquery that disables key presses for inputs of type number*/
 
-$("[type='number']").keydown(function (e) {
+$("[type='number']").not("[name='dmg']").keydown(function (e) {
   var key = e.keyCode || e.charCode;
   if (key == 8 || key == 46) {
       e.preventDefault();

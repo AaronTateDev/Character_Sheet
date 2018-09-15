@@ -146,15 +146,17 @@
 			</select>
 			<button onclick="equipSelection()" id="armorButton" type="button">Equip</button>
 
-			<select id="damageCalc">
+			<select id="dmgCalc">
 				<option value="Normal">Normal</option>				
 				<option value="Laser">Laser</option>
 				<option value="Fire">Fire</option>
 				<option value="Plasma">Plasma</option>
 				<option value="Explode">Explode</option>				
 			</select>
-			<input min=0 value=0 name="dmg" type="number" id="damage"/></td>
-			<button onclick="" id="damageCalcButton" type="button">Take Damage</button>
+			<input min=0 placeholder="# of hits" name="dmg" class="dmg" type="number" id="hitCount"/></td>
+			<input min=0 placeholder="Dmg..." name="dmg" class="dmg" type="number" id="damage"/></td>
+			<button id="damageCalcButton" type="button">Take Damage</button>
+			<h3 id="dmgDisplay">Damage:</h3>
 
 			
 		</div>

@@ -1,12 +1,15 @@
 
-var myArmor = new Select('#damageCalc',{
-    // auto show the live filter
-    filtered: 'auto',
-    // auto show the live filter when the options >= 8
-    filter_threshold: 4,
-    // custom placeholder
+var myArmor = new Select('#dmgCalc',{    
+    filtered: 'auto',    
+    filter_threshold: 4,    
     filter_placeholder: 'Damage Type...'
 });
+
+let 
+hitCT = document.getElementById('hitCount'),
+dmgDisp = document.getElementById('dmgDisplay'),
+dmgTaken = document.getElementById('damage'),
+dmgCalc = document.getElementById('dmgCalc');
 
 function skillTotals(){
       	
@@ -151,11 +154,15 @@ document.addEventListener("click", function (event) {
 	if (event.target.id == 'armorButton' || event.target.id == 'raceSelector') {
 		skillTotals();
 
-	}
+	}//click event for skill totals
 
 	if (event.target.matches('.skName')) {
 		skillTotals();		
-	}
+	}//click event for skill totals
+
+	if (event.target.id == 'damageCalcButton') {
+		damageCalc();		
+	}//click event for skill totals
 
 }, false);
 
@@ -166,4 +173,42 @@ document.addEventListener("change", function (event) {
 		skillTotals();
 	}
 
-}, false);
+}, false);//click event for skill totals
+
+
+function damageCalc() {
+	switch (dmgCalc.value) {//((100-DR)/100)*DMG - DT(# of hits)
+		case 'Normal':		
+			dmgDT = normalDT.value;
+			dmgDR = normalDR.value;
+			break;
+
+		case 'Laser':		
+			dmgDT = laserDT.value;
+			dmgDR = laserDR.value;
+			break;
+
+		case 'Fire':		
+			dmgDT = fireDT.value;
+			dmgDR = fireDR.value;
+			break;
+
+		case 'Plasma':		
+			dmgDT = plasmaDT.value;
+			dmgDR = plasmaDR.value;
+			break;
+
+		case 'Explode':		
+			dmgDT = explodeDT.value;
+			dmgDR = explodeDR.value;
+			break;
+
+		default:
+			dmgDT = 0;
+			dmgDR = 0;
+	}
+
+	dmgDisp.innerHTML = "Take: " + Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) + 
+	" " + dmgCalc.value.toLowerCase() +	" damage.";
+
+}

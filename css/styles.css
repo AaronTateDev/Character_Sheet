@@ -137,8 +137,13 @@ input[type=number]::-webkit-outer-spin-button {
   /*background-color: blue;*/
 }
 
+input.dmg {
+  width: 55px;
+  text-align: center;
+}
+
 .apSpoolImpEndurance{
-  background-color: red;
+  background-color: teal;
 }
 
 /*--------------------- Save/Load Styles ------------------------*/
