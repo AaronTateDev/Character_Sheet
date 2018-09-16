@@ -146,6 +146,28 @@ input.dmg {
   background-color: teal;
 }
 
+.throwTable {
+  position: relative;
+  left: 40%;
+  bottom: 86%;
+  
+}
+
+.throwTable td input, button {
+  margin-left: 6px;
+}
+
+.throwTable td button {
+  height: 25PX;
+  margin-top: 14px;
+}
+
+table.throwTable td:first-child {
+  font-weight: bold;
+}
+
+
+
 /*--------------------- Save/Load Styles ------------------------*/
 
 .button {

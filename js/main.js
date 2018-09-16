@@ -83,6 +83,12 @@ function statTotals(){
 	document.getElementById('qtyTotalL').value = lTotal;
 
 	charLevel = document.getElementById('level').value;
+
+
+   
+        document.getElementById('thrownWeight').max = +document.getElementById('thrownMod').value + sTotal +5;
+        
+    
 }
 
 /*---------------------- Secondary Stats ------------------------ */

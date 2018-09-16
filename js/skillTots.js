@@ -9,7 +9,9 @@ let
 hitCT = document.getElementById('hitCount'),
 dmgDisp = document.getElementById('dmgDisplay'),
 dmgTaken = document.getElementById('damage'),
-dmgCalc = document.getElementById('dmgCalc');
+dmgCalc = document.getElementById('dmgCalc'),
+throwRng = document.getElementById('thrownRng'),
+thrownWt = document.getElementById('thrownWeight');
 
 function skillTotals(){
       	
@@ -164,6 +166,10 @@ document.addEventListener("click", function (event) {
 		damageCalc();		
 	}//click event for skill totals
 
+	if (event.target.id == 'thrownButton') {
+		thrownObject();		
+	}//click event for collected thrown objects
+
 }, false);
 
 document.addEventListener("change", function (event) {
@@ -172,6 +178,11 @@ document.addEventListener("change", function (event) {
 		event.target.name == 'qtyBase') {
 		skillTotals();
 	}
+
+	if (event.target.id == 'thrownMod' || event.target.id == 'thrownWeight') {
+		statTotals();
+		thrownObject();		
+	}//change event for collected thrown objects
 
 }, false);//click event for skill totals
 
@@ -209,6 +220,58 @@ function damageCalc() {
 	}
 
 	dmgDisp.innerHTML = "Take: " + Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) + 
-	" " + dmgCalc.value.toLowerCase() +	" damage.";
+		" " + dmgCalc.value.toLowerCase() +	" damage.";
+	if (Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) < 0){ 
+		dmgDisp.innerHTML = "Take: " + 0 + " " + dmgCalc.value.toLowerCase() + " damage.";
+	}
+
+}
+
+function thrownObject() {
+	quickMaths = sTotal + +document.getElementById('thrownMod').value - 5;
+	if (quickMaths < 1) {		
+		quickMaths = 1;		
+	}
+
+	let thrownDieNum = quickMaths - 2;
+	let thrownDieType;
+	thrownBonusDmg = (quickMaths + +document.getElementById('modMeleeD').value) * thrownWt.value;
+	throwRng.value = ((sTotal + +document.getElementById('thrownMod').value)  * 2) - (+thrownWt.value + 5);
+
+	switch (true) {
+		case (thrownWt.value < 6):
+			thrownDieType = 4;
+			break;
+
+		case (thrownWt.value < 8):
+			thrownDieType = 6;
+			break;
+
+		case (thrownWt.value < 10):
+			thrownDieType = 8;
+			break;
+
+		case (thrownWt.value < 11):
+			thrownDieType = 10;
+			break;
+
+		case (thrownWt.value < 17):
+			thrownDieType = 12;
+			break;
+
+		case (thrownWt.value < 61):
+			thrownDieType = 20;
+			break;
+
+		default:
+		thrownDieType = 100;
+	}
+
+	if (thrownDieNum < 1) {
+		thrownDieNum = 1;
+	}
+
+	document.getElementById('thrownButton').innerHTML = thrownDieNum + "d" + thrownDieType + " + " + thrownBonusDmg;
+
 
 }

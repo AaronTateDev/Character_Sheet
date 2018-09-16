@@ -158,6 +158,27 @@
 			<button id="damageCalcButton" type="button">Take Damage</button>
 			<h3 id="dmgDisplay">Damage:</h3>
 
+			<table class="throwTable">
+				<tbody>
+					<tr>
+						<th> </th>
+						<th>Wt.</th>
+						<th>Perk</th>
+						<th>Rng</th>
+						<th>Roll</th>
+					</tr>
+					<tr>
+						<td >Obj. Dmg</td>	
+						<td><input min=0 value=0  name="trownObject" type="number" id="thrownWeight"/></td>					
+						<td><input min=0 max=4 value=0  name="trownObject" type="number"
+							step="2" id="thrownMod"/></td>
+						<td><input value=0 name="trownObject" type="number" id="thrownRng" readonly/></td>
+						<td><button id="thrownButton" type="button">Roll</button></p></td>
+					</tr>					
+
+				</tbody>
+			</table>
+
 			
 		</div>
 		<div class="primaryStat">
