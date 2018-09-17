@@ -168,18 +168,28 @@
 						<th>Roll</th>
 					</tr>
 					<tr>
-						<td >Obj. Dmg</td>	
+						<td >Thrown Obj.</td>	
 						<td><input min=0 value=0  name="trownObject" type="number" id="thrownWeight"/></td>					
 						<td><input min=0 max=4 value=0  name="trownObject" type="number"
 							step="2" id="thrownMod"/></td>
 						<td><input value=0 name="trownObject" type="number" id="thrownRng" readonly/></td>
 						<td><button id="thrownButton" type="button">Roll</button></p></td>
-					</tr>					
-
+					</tr>	
+					<tr>
+						<td>Dmg Roll</td>	
+						<td colspan="3"><input placeholder="Ex. 2d10 + 20" name="dmgRoll" type="string" id="thrownWeight"/></td>
+						<td><button id="thrownButton2" type="button">Roll</button></p></td>
+					</tr>		
+					<tfoot>
+						<tr>
+							<td colspan="4">Damage: <span id="thrownRollResults"></span></td>
+							<td id="thrownResultTotal" >here</td>							
+						</tr>
+					</tfoot>
 				</tbody>
-			</table>
-
-			
+			</table>	
+				
+					
 		</div>
 		<div class="primaryStat">
 			<table>

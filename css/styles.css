@@ -157,16 +157,30 @@ input.dmg {
   margin-left: 6px;
 }
 
-.throwTable td button {
-  height: 25PX;
-  margin-top: 14px;
+#thrownButton {
+  position: absolute; 
+  height: 25px;
+  top: 20%; 
+  white-space: nowrap; 
 }
 
 table.throwTable td:first-child {
   font-weight: bold;
 }
 
+tfoot #thrownResultTotal {
+  text-align: center;
+  font-weight: bold;
+}
 
+tfoot #thrownRollResults, tfoot td {  
+  font-weight: normal;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
 
 /*--------------------- Save/Load Styles ------------------------*/
 

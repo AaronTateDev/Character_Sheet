@@ -84,11 +84,13 @@ function statTotals(){
 
 	charLevel = document.getElementById('level').value;
 
-
-   
-        document.getElementById('thrownWeight').max = +document.getElementById('thrownMod').value + sTotal +5;
+    if (event.target.id == 'qtyModS' || event.target.id == 'qtyBaseS' ) {
+        if ((+document.getElementById('thrownMod').value + sTotal + 5) < document.getElementById('thrownWeight').value) {
+            document.getElementById('thrownWeight').value = (+document.getElementById('thrownMod').value + sTotal + 5);
+        }      
         
-    
+     thrownObject();
+    }   
 }
 
 /*---------------------- Secondary Stats ------------------------ */
@@ -222,6 +224,9 @@ function secondaryStats() {
     +document.getElementById('baseCarry').value - (arWt + ugWt);
      /*---- Total Weight Calc ----*/
 
+    if (event.target.id == 'modMeleeD') {
+        thrownObject();
+    }
     document.getElementById('totalMeleeD').value = +document.getElementById('modMeleeD').value +
     +document.getElementById('baseMeleeD').value;
     /*---- Total Melee Damage Calc ----*/
