@@ -166,8 +166,8 @@ document.addEventListener("click", function (event) {
 		damageCalc();		
 	}//click event for skill totals
 
-	if (event.target.id == 'thrownButton') {		
-		thrownObjRoller();		
+	if (event.target.id == 'thrownButton' || event.target.id == 'dmgRollInput') {		
+		initialDRoller();		
 	}//click event for collected thrown objects
 
 }, false);
@@ -280,10 +280,20 @@ function thrownObject() {
 	document.getElementById('thrownButton').innerHTML = thrownDieNum + "d" + thrownDieType + " + " + thrownBonusDmg;
 }
 
-function thrownObjRoller() {
-	thrownRoll = parsePrecedence(document.getElementById("thrownButton").innerHTML);	
-	document.getElementById("thrownResultTotal").innerHTML = thrownRoll.total;
-	document.getElementById("thrownRollResults").innerHTML = thrownRoll.rolls.join(', ');
+function initialDRoller() {
+	if(event.target.id == 'thrownButton') {
+		initialDieRoller = parsePrecedence(document.getElementById("thrownButton").innerHTML);
+	}else if(event.target.id == 'dmgRollInput') {
+		initialDieRoller = parsePrecedence(document.getElementById("dmgRollField").value);
+	}
+		
+	document.getElementById("thrownResultTotal").innerHTML = initialDieRoller.total;
+	document.getElementById("thrownRollResults").innerHTML = initialDieRoller.rolls.join(', ');	
+
+	if(document.getElementById("dmgRollField").value == false && event.target.id == 'dmgRollInput') {
+		document.getElementById("thrownResultTotal").innerHTML = "Fail!";
+		document.getElementById("thrownRollResults").innerHTML = "Input a roll...";
+	}
 }
 
 /*-----------------------------------Dice Parser-------------------------------*/

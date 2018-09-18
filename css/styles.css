@@ -148,8 +148,8 @@ input.dmg {
 
 .throwTable {
   position: relative;
-  left: 40%;
-  bottom: 86%;
+  left: 48%;
+  bottom: 81%;
   
 }
 
@@ -159,9 +159,21 @@ input.dmg {
 
 #thrownButton {
   position: absolute; 
-  height: 25px;
-  top: 20%; 
+  height: 23px;
+  top: 24%; 
   white-space: nowrap; 
+  margin-left: 1px;
+}
+
+#dmgRollInput {
+  position: absolute; 
+  height: 22.4px;
+  top: 50.5%;   
+  margin-left: 1px; 
+}
+
+input[name=dmgRoll] {
+  width: 115px;
 }
 
 table.throwTable td:first-child {
