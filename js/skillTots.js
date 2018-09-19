@@ -292,7 +292,7 @@ function initialDRoller() {
 
 	if(document.getElementById("dmgRollField").value == false && event.target.id == 'dmgRollInput') {
 		document.getElementById("thrownResultTotal").innerHTML = "Fail!";
-		document.getElementById("thrownRollResults").innerHTML = "Input a roll...";
+		document.getElementById("thrownRollResults").innerHTML = "Input desired roll...";
 	}
 }
 
