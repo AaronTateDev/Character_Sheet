@@ -271,6 +271,17 @@ function secondaryStats() {
     document.getElementById('totalArmor').value = totAR + ugAC + arAC || totAR + ugAC || totAR;
     /*---- Total Armor Calc ----*/
 
+    baseApSpoolTotal =  document.getElementById('totalAP').value / (30/document.getElementById('totalSequence').value);
+    if (pTotal > 0 || aTotal > 0) {
+        document.getElementById('baseApSpool').value = +baseApSpoolTotal.toFixed(1);
+    }else {
+        document.getElementById('baseApSpool').value = 0;        
+    }/*---- Base AP Spool Calc ----*/
+
+     document.getElementById('totalApSpool').value = +document.getElementById('modApSpool').value +
+    +document.getElementById('baseApSpool').value;
+    /*---- Total ImpEnd Calc ----*/
+
 /*---------------------------------- RACIAL BONUSES SECTION ------------------------------*/
     supMutantRacialSkill = 0;
     if(document.getElementById('raceSelector').value == "Human"){

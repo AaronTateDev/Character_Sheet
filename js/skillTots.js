@@ -172,7 +172,7 @@ document.addEventListener("click", function (event) {
 
 }, false);
 
-document.addEventListener("change", function (event) {
+document.addEventListener("input", function (event) {
 
 	if (event.target.name == 'skills' || event.target.name == 'qtyMod' ||
 		event.target.name == 'qtyBase') {
@@ -187,6 +187,10 @@ document.addEventListener("change", function (event) {
 
         thrownObject();
 	}//change event for collected thrown objects
+
+	if (event.target.id == 'dmgTaken') {
+		ouchDmg();
+	}
 
 }, false);//click event for skill totals
 
@@ -228,7 +232,6 @@ function damageCalc() {
 	if (Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) < 0){ 
 		dmgDisp.innerHTML = "Take: " + 0 + " " + dmgCalc.value.toLowerCase() + " damage.";
 	}
-
 }
 
 function thrownObject() {
@@ -295,6 +298,39 @@ function initialDRoller() {
 		document.getElementById("thrownRollResults").innerHTML = "Input desired roll...";
 	}
 }
+
+function ouchDmg() {
+	document.getElementById('totalHP').innerHTML = document.getElementById('totalHealth').value -
+	 document.getElementById('dmgTaken').value;
+}
+
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+/*
+// Get the input field
+var input = document.getElementById("myInput");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+*/
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
+//TEST AREA--------------------------------------------------------------------------------
 
 /*-----------------------------------Dice Parser-------------------------------*/
 //infix operator-precedence parser

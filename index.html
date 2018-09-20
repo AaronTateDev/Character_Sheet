@@ -337,15 +337,22 @@
 						<td><input value=0 name="qty2Base" type="number" id="baseImpEnd" readonly/></td>
 						<td><input value=0 name="qty2Mod" type="number" id="modImpEnd"/></td>
 						<td><input value=0 name="qty2Total" type="number" id="totalImpEnd" readonly/></td>
-					</tr>				
+					</tr>	
+					<tr>
+						<td>&nbsp;AP per Spool</td>
+						<td><input value=0 name="qty2Base" type="number" id="baseApSpool" readonly/></td>
+						<td><input value=0 name="qty2Mod" type="number" id="modApSpool" readonly/></td>
+						<td><input value=0 name="qty2Total" type="number" id="totalApSpool" readonly/></td>
+					</tr>			
 				</tbody>
 			</table>
 		</div><!-- End of Secondary Stats Section-->
 		<div class="apSpoolImpEndurance">
-			<h2>Current Health: <span></span></h2>
-			<h2>Ap per Spool: <span></span></h2>
-
-
+			<h2>Current Health:  <span id="totalHP"></span></h2>
+			<h2>Damage Taken: 
+				<span><input value=0 min=0 name="dmg" type="number" id="dmgTaken"/></span>
+			</h2>
+			
 		</div>
 		<div class="skills1">
 			<table>

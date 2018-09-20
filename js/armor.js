@@ -276,6 +276,7 @@ function equipSelection() {
 			pACAdjust = 0;
 			pAPCTAdjust = 0;			
 			arButton.innerHTML = "Equip";
+
 		}else {
 			arpeReq = 0;
 			aragReq = 0;
@@ -297,7 +298,13 @@ function equipSelection() {
 			pAPCTAdjust = 0;			
 			armorEquip();
 			statRequirements();
-		}		
+			
+		}
+		if ((+document.getElementById('thrownMod').value + sTotal + 5) < document.getElementById('thrownWeight').value) {
+            document.getElementById('thrownWeight').value = (+document.getElementById('thrownMod').value + sTotal + 5);    		
+    	}
+    		
+    	thrownObject();	
 	}
 }
 
@@ -378,7 +385,7 @@ function statRequirements() {
 		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
 
 		statTotals();
-		secondaryStats();
+		secondaryStats();		
 	}
 
 	if(ugStReq > sTotal ) {
