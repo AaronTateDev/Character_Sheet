@@ -6,6 +6,7 @@ var myArmor = new Select('#dmgCalc',{
 });
 
 let 
+focusSet = document.getElementById("dmgRollField"),
 hitCT = document.getElementById('hitCount'),
 dmgDisp = document.getElementById('dmgDisplay'),
 dmgTaken = document.getElementById('damage'),
@@ -170,6 +171,31 @@ document.addEventListener("click", function (event) {
 		initialDRoller();		
 	}//click event for collected thrown objects
 
+	if (event.target.id == 'spoolButton') {		
+		spoolTracker();		
+	}//click event for tracking combat AP spool
+	
+
+	if (event.target.id == document.getElementById("thrownWeight").id) {
+		focusSet = document.getElementById("thrownWeight");		
+	} 
+
+	if (event.target.id == document.getElementById("dmgRollField").id) {
+		focusSet = document.getElementById("dmgRollField");
+	}
+
+	if (event.target.id == document.getElementById("hitCount").id) {
+		focusSet = document.getElementById("hitCount");
+	}
+
+	if (event.target.id == document.getElementById("damage").id) {
+		focusSet = document.getElementById("damage");
+	}
+
+	if (event.target.id == document.getElementById("thrownMod").id) {
+		focusSet = document.getElementById("thrownMod");
+	}
+
 }, false);
 
 document.addEventListener("input", function (event) {
@@ -193,6 +219,25 @@ document.addEventListener("input", function (event) {
 	}
 
 }, false);//click event for skill totals
+
+document.addEventListener("keydown", function(event) {		
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		if (focusSet.id == document.getElementById("thrownWeight").id ||
+			focusSet.id == document.getElementById("thrownMod").id) {
+       	document.getElementById("thrownButton").click();
+       }
+
+       if (focusSet.id == document.getElementById("hitCount").id ||
+			focusSet.id == document.getElementById("damage").id) {
+       	document.getElementById("damageCalcButton").click();
+       }
+
+       if (focusSet.id == document.getElementById("dmgRollField").id) {
+       	document.getElementById("dmgRollInput").click();
+       }
+  	}//Allows the use of Enter key in fields to activate buttons
+});
 
 
 function damageCalc() {
@@ -304,33 +349,42 @@ function ouchDmg() {
 	 document.getElementById('dmgTaken').value;
 }
 
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-/*
-// Get the input field
-var input = document.getElementById("myInput");
 
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Cancel the default action, if needed
-  event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("myBtn").click();
-  }
-});
-*/
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
-//TEST AREA--------------------------------------------------------------------------------
+function spoolTracker() {
+
+	/*Set a variable equal to these when it changes so that when spoolInputs value is changed it all works
+	document.getElementById('spoolButton').innerHTML = "3: " + 
+			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1);
+	*/
+
+	switch (true) {
+		case (document.getElementById('spoolButton').innerHTML == 'Fight!'):
+			document.getElementById('spoolButton').innerHTML = "1: " + 
+			(document.getElementById('totalApSpool').value - document.getElementById('spoolInput').value).toFixed(1);
+			break;
+
+		case (document.getElementById('spoolButton').innerHTML == "1: " + 
+			(document.getElementById('totalApSpool').value - document.getElementById('spoolInput').value).toFixed(1)):
+			document.getElementById('spoolButton').innerHTML = "2: " + (document.getElementById('totalApSpool').value * 2 -
+				document.getElementById('spoolInput').value).toFixed(1);
+			break;
+
+		case (document.getElementById('spoolButton').innerHTML == "2: " + 
+			(document.getElementById('totalApSpool').value * 2 - document.getElementById('spoolInput').value).toFixed(1)):
+			document.getElementById('spoolButton').innerHTML = "3: " + 
+			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1);
+			break;
+
+		case (document.getElementById('spoolButton').innerHTML == "3: " + 
+			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1)):
+			document.getElementById('spoolButton').innerHTML = "Chaos: " + 
+			(document.getElementById('totalAP').value - document.getElementById('spoolInput').value);
+			break;
+
+		default:
+			document.getElementById('spoolButton').innerHTML = 'Fight!'
+	}
+}
 
 /*-----------------------------------Dice Parser-------------------------------*/
 //infix operator-precedence parser

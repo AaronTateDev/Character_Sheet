@@ -278,7 +278,7 @@ function secondaryStats() {
         document.getElementById('baseApSpool').value = 0;        
     }/*---- Base AP Spool Calc ----*/
 
-     document.getElementById('totalApSpool').value = +document.getElementById('modApSpool').value +
+    document.getElementById('totalApSpool').value = +document.getElementById('modApSpool').value +
     +document.getElementById('baseApSpool').value;
     /*---- Total ImpEnd Calc ----*/
 
