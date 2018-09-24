@@ -12,7 +12,11 @@ dmgDisp = document.getElementById('dmgDisplay'),
 dmgTaken = document.getElementById('damage'),
 dmgCalc = document.getElementById('dmgCalc'),
 throwRng = document.getElementById('thrownRng'),
-thrownWt = document.getElementById('thrownWeight');
+thrownWt = document.getElementById('thrownWeight'),
+spoolButt = document.getElementById('spoolButton'),
+tApSpool = document.getElementById('totalApSpool'),
+spoolInput = document.getElementById('spoolInput'),
+spoolCounter = 0;
 
 function skillTotals(){
       	
@@ -218,6 +222,10 @@ document.addEventListener("input", function (event) {
 		ouchDmg();
 	}
 
+	if (event.target.id == 'spoolInput') {
+		spoolInputTracker();
+	}
+
 }, false);//click event for skill totals
 
 document.addEventListener("keydown", function(event) {		
@@ -351,39 +359,44 @@ function ouchDmg() {
 
 
 function spoolTracker() {
-
-	/*Set a variable equal to these when it changes so that when spoolInputs value is changed it all works
-	document.getElementById('spoolButton').innerHTML = "3: " + 
-			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1);
-	*/
-
-	switch (true) {
-		case (document.getElementById('spoolButton').innerHTML == 'Fight!'):
-			document.getElementById('spoolButton').innerHTML = "1: " + 
-			(document.getElementById('totalApSpool').value - document.getElementById('spoolInput').value).toFixed(1);
+	switch (spoolCounter) {
+		case 0:
+			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
+			spoolCounter = 1;
 			break;
 
-		case (document.getElementById('spoolButton').innerHTML == "1: " + 
-			(document.getElementById('totalApSpool').value - document.getElementById('spoolInput').value).toFixed(1)):
-			document.getElementById('spoolButton').innerHTML = "2: " + (document.getElementById('totalApSpool').value * 2 -
-				document.getElementById('spoolInput').value).toFixed(1);
+		case 1:
+			spoolButt.innerHTML = "2: " + (tApSpool.value * 2 -	spoolInput.value).toFixed(1);
+			spoolCounter = 2;
 			break;
 
-		case (document.getElementById('spoolButton').innerHTML == "2: " + 
-			(document.getElementById('totalApSpool').value * 2 - document.getElementById('spoolInput').value).toFixed(1)):
-			document.getElementById('spoolButton').innerHTML = "3: " + 
-			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1);
+		case 2:
+			spoolButt.innerHTML = "3: " + (tApSpool.value * 3 - spoolInput.value).toFixed(1);
+			spoolCounter = 3;
 			break;
 
-		case (document.getElementById('spoolButton').innerHTML == "3: " + 
-			(document.getElementById('totalApSpool').value * 3 - document.getElementById('spoolInput').value).toFixed(1)):
-			document.getElementById('spoolButton').innerHTML = "Chaos: " + 
-			(document.getElementById('totalAP').value - document.getElementById('spoolInput').value);
+		case 3:
+			spoolButt.innerHTML = "Chaos: " + (document.getElementById('totalAP').value - spoolInput.value);
+			spoolCounter = 4;
 			break;
 
 		default:
-			document.getElementById('spoolButton').innerHTML = 'Fight!'
+			spoolButt.innerHTML = 'Fight!'
+			spoolCounter = 0;
 	}
+}
+
+function spoolInputTracker() {
+	if (spoolCounter == 1) {
+		spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
+	}else if (spoolCounter == 2) {
+		spoolButt.innerHTML = "2: " + (tApSpool.value * 2 -	spoolInput.value).toFixed(1);
+	}else if (spoolCounter == 3) {
+		spoolButt.innerHTML = "3: " + (tApSpool.value * 3 - spoolInput.value).toFixed(1);
+	}else if (spoolCounter == 4) {
+		spoolButt.innerHTML = "Chaos: " + (document.getElementById('totalAP').value - spoolInput.value);
+	}
+
 }
 
 /*-----------------------------------Dice Parser-------------------------------*/
