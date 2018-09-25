@@ -168,7 +168,7 @@ document.addEventListener("click", function (event) {
 	}//click event for skill totals
 
 	if (event.target.id == 'damageCalcButton') {
-		damageCalc();		
+		damageCalc();			
 	}//click event for skill totals
 
 	if (event.target.id == 'thrownButton' || event.target.id == 'dmgRollInput') {		
@@ -222,7 +222,7 @@ document.addEventListener("input", function (event) {
 		ouchDmg();
 	}
 
-	if (event.target.id == 'spoolInput') {
+	if (event.target.id == 'spoolInput' || event.target.id == 'modSequence' ) {
 		spoolInputTracker();
 	}
 
@@ -284,6 +284,13 @@ function damageCalc() {
 		" " + dmgCalc.value.toLowerCase() +	" damage.";
 	if (Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) < 0){ 
 		dmgDisp.innerHTML = "Take: " + 0 + " " + dmgCalc.value.toLowerCase() + " damage.";
+	}
+
+	if (document.getElementById('taker').checked == true) {
+		document.getElementById('dmgTaken').value = +document.getElementById('dmgTaken').value + 
+		Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value);
+
+		ouchDmg();
 	}
 }
 
@@ -353,6 +360,7 @@ function initialDRoller() {
 }
 
 function ouchDmg() {
+
 	document.getElementById('totalHP').innerHTML = document.getElementById('totalHealth').value -
 	 document.getElementById('dmgTaken').value;
 }
@@ -384,6 +392,7 @@ function spoolTracker() {
 			spoolButt.innerHTML = 'Fight!'
 			spoolCounter = 0;
 	}
+	spoolInput.focus();
 }
 
 function spoolInputTracker() {
