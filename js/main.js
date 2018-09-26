@@ -1150,13 +1150,20 @@ Still need to save the prevvalues */
 
 function save(){
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
-  localStorage.setItem(el.id, el.value);
-  console.log(el.id);
+  localStorage.setItem(el.id, el.value);  
+  
+  //console.log(el.id);
   if (el.prevValue != undefined){
     localStorage.setItem(el.id, el.prevValue);
-    console.log(el.prevValue);}
+    /*console.log(el.prevValue);*/}
+
+ /* if (el.className == 'skName'){
+    localStorage.setItem(el.className, el.className.style.background);
+    console.log(el.className.style.background);}*/
   
 });}
+
+
     
 function load(){
 // then refresh the page and run this to restore your form values:
@@ -1165,4 +1172,7 @@ function load(){
   if (el.prevValue != undefined){
     el.prevValue = localStorage.getItem(el.id);
     }
+    statTotals();
+    secondaryStats();
+    skillTotals();
 });}

@@ -286,7 +286,8 @@ function damageCalc() {
 		dmgDisp.innerHTML = "Take: " + 0 + " " + dmgCalc.value.toLowerCase() + " damage.";
 	}
 
-	if (document.getElementById('taker').checked == true) {
+	if (document.getElementById('taker').checked == true &&
+		 Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value) > 0 ) {
 		document.getElementById('dmgTaken').value = +document.getElementById('dmgTaken').value + 
 		Math.round(((100 - dmgDR)/100)*dmgTaken.value - dmgDT * hitCT.value);
 
