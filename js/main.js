@@ -1161,7 +1161,14 @@ function save(){
     localStorage.setItem(el.className, el.className.style.background);
     console.log(el.className.style.background);}*/
   
-});}
+});
+    var elements = document.getElementsByClassName('skName');
+    for (var i = 0; i < elements.length; i++) {
+        /*elements[i] = elements[i].style.backgroundColor;*/
+        localStorage.setItem(i, elements[i].style.backgroundColor); 
+        console.log(elements[i].style.backgroundColor);
+    }
+}
 
 
     
@@ -1175,4 +1182,16 @@ function load(){
     statTotals();
     secondaryStats();
     skillTotals();
-});}
+});
+var elements = document.getElementsByClassName('skName');
+    for (var i = 0; i < elements.length; i++) {
+        //elements[i] = elements[i].style.backgroundColor;
+        if (localStorage.getItem(i) == tagColor) {
+            elements[i].nextElementSibling.nextElementSibling.firstChild.value = 
+            elements[i].nextElementSibling.nextElementSibling.firstChild.value - 20;
+            elements[i].click();
+        }
+        //elements[i].style.backgroundColor = localStorage.getItem(i);
+        console.log(elements[i].style.backgroundColor);
+    }
+}

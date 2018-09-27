@@ -15,8 +15,8 @@
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
 		<div class="nameArea">
-			<p>Name: <input class="nameSpace" type="text" size="20"/><span>
-				Sex: <select name="Sex" class="nameSpace">
+			<p>Name: <input id="charName" class="nameSpace" type="text" size="20"/><span>
+				Sex: <select id="sex" name="Sex" class="nameSpace">
 						<option value="" selected disabled hidden>Select</option>
     					<option value="Male">Male</option>
    						<option value="Female">Female</option>
@@ -34,16 +34,16 @@
 	   					<option value="Robot">Robot</option>
 	   					<option value="Andriod Humanoid Robot">Andriod Humanoid Robot</option>
    					 </select>
-			<span>Age: <input class="nameSpace" type="text" size="3"/></span><br/></p>
+			<span>Age: <input id="charAge" class="nameSpace" type="text" size="3"/></span><br/></p>
 
-			<p>Height: <input class="nameSpace" type="text" size="6"/><span>
-			   Weight: <input class="nameSpace" type="text" size="7"/></span><br/></p>
+			<p>Height: <input id="charHeight" class="nameSpace" type="text" size="6"/><span>
+			   Weight: <input id="charWeight" class="nameSpace" type="text" size="7"/></span><br/></p>
 
-			<p>Hair: <input class="nameSpace" type="text" size="10"/><span>
-			   Skin: <input class="nameSpace" type="text" size="10"/></span><span>
-			   Eyes: <input class="nameSpace" type="text" size="10"/></span><br/></p>
+			<p>Hair: <input id="charHair" class="nameSpace" type="text" size="10"/><span>
+			   Skin: <input id="charSkin" class="nameSpace" type="text" size="10"/></span><span>
+			   Eyes: <input id="charEyes" class="nameSpace" type="text" size="10"/></span><br/></p>
 
-			<p>Exp to Level: <input class="nameSpace" type="text" size="15"/><span>
+			<p>Exp to Level: <input id="charExp" class="nameSpace" type="text" size="15"/><span>
 	     	   Current Level: <input onInput="statTotals();secondaryStats()" id="level" class="numSpace" name="Level" type="number" min="1" value="1" /></span><br/></p>
 		</div><!-- End of Name Section-->
 		<div class="healthArmor">
