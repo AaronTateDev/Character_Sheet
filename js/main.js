@@ -36,7 +36,6 @@ $("[type='number']").not("[name='dmg']").keydown(function (e) {
   }
 }); /*Jquery that disables del/backspace use for inputs of type number*/
 
-
 function findTotal(){
     var arr = document.getElementsByName('qtyBase');
     var tot=0;
@@ -1142,56 +1141,58 @@ function tagSkills(){
     secondaryStats();
     }
     
- /*   
-TEST its a test to save all info on the form
-Need to set a form ID which matches #justice
-and call the functions for loading and restoring
-Still need to save the prevvalues */
-
 function save(){
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
-  localStorage.setItem(el.id, el.value);  
-  
-  //console.log(el.id);
-  if (el.prevValue != undefined){
-    localStorage.setItem(el.id, el.prevValue);
-    /*console.log(el.prevValue);*/}
-
- /* if (el.className == 'skName'){
-    localStorage.setItem(el.className, el.className.style.background);
-    console.log(el.className.style.background);}*/
-  
-});
+        localStorage.setItem(el.id, el.value);    
+        if (el.prevValue != undefined){
+            localStorage.setItem(el.id, el.prevValue);
+        }
+    });    
     var elements = document.getElementsByClassName('skName');
     for (var i = 0; i < elements.length; i++) {
-        /*elements[i] = elements[i].style.backgroundColor;*/
-        localStorage.setItem(i, elements[i].style.backgroundColor); 
-        console.log(elements[i].style.backgroundColor);
+        localStorage.setItem(i, elements[i].style.backgroundColor);         
     }
 }
 
-
+function load() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+}
     
-function load(){
-// then refresh the page and run this to restore your form values:
-[].forEach.call(document.querySelector('#justice').elements, function(el) {
-  el.value = localStorage.getItem(el.id);
-  if (el.prevValue != undefined){
-    el.prevValue = localStorage.getItem(el.id);
-    }
-    statTotals();
-    secondaryStats();
-    skillTotals();
-});
-var elements = document.getElementsByClassName('skName');
+function loader(){    
+    var elements = document.getElementsByClassName('skName');
+    // then refresh the page and run this to restore your form values:
+    [].forEach.call(document.querySelector('#justice').elements, function(el) {
+      el.value = localStorage.getItem(el.id);
+      if (el.prevValue != undefined){
+        el.prevValue = localStorage.getItem(el.id);
+        }
+        statTotals();
+        secondaryStats();
+        skillTotals();
+
+    });
+
     for (var i = 0; i < elements.length; i++) {
         //elements[i] = elements[i].style.backgroundColor;
         if (localStorage.getItem(i) == tagColor) {
             elements[i].nextElementSibling.nextElementSibling.firstChild.value = 
             elements[i].nextElementSibling.nextElementSibling.firstChild.value - 20;
             elements[i].click();
-        }
-        //elements[i].style.backgroundColor = localStorage.getItem(i);
-        console.log(elements[i].style.backgroundColor);
+        }        
     }
+    document.getElementById('undergarmentButton').click();
+    document.getElementById('armorButton').click();    
 }
+
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        loader();
+    }
+    findTotal();
+    statTotals();
+    secondaryStats();
+    skillTotals();
+}/*Reloads page and runs loader when Load/Refresh button clicked*/

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/styles.css"/>	
 	<title>Charcater Sheet</title>
 </head>
-<body onLoad="findTotal();statTotals();secondaryStats();skillTotals()">
+<body>
 <form id="justice">
 	<h2 class="charSheet">Character Sheet</h2>
 	<div class="grid-container">
@@ -43,7 +43,7 @@
 			   Skin: <input id="charSkin" class="nameSpace" type="text" size="10"/></span><span>
 			   Eyes: <input id="charEyes" class="nameSpace" type="text" size="10"/></span><br/></p>
 
-			<p>Exp to Level: <input id="charExp" class="nameSpace" type="text" size="15"/><span>
+			<p>Current Exp: <input id="charExp" class="nameSpace" type="text" size="15"/><span>
 	     	   Current Level: <input onInput="statTotals();secondaryStats()" id="level" class="numSpace" name="Level" type="number" min="1" value="1" /></span><br/></p>
 		</div><!-- End of Name Section-->
 		<div class="healthArmor">
@@ -342,7 +342,7 @@
 					<tr>
 						<td>&nbsp;AP per Spool</td>
 						<td><input value=0 name="qty2Base" type="number" id="baseApSpool" readonly/></td>
-						<td><input value=0 name="qty2Mod" type="number" id="modApSpool" readonly/></td>
+						<td><input value=0 name="qty2Mod" type="number" id="modApSpool" disabled="" /></td>
 						<td><input value=0 name="qty2Total" type="number" id="totalApSpool" readonly/></td>
 					</tr>			
 				</tbody>

@@ -52,7 +52,7 @@
 }
 
 /*--------------------- Input Field Styles -------------------*/
-#modSkillPts:hover {
+#modSkillPts:hover, #modApSpool:hover {
   background-color: #bec5d1;
   cursor: not-allowed;
 }
