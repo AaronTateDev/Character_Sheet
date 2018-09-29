@@ -466,8 +466,7 @@ function undergarmentEquip() {
 			ugElecResist = 0;
 			ugWt = 0;
 			ugStReq = 0; 
-			ugButton.innerHTML = "Equip";
-			ugChange.value = "None";	    
+			ugButton.innerHTML = "Equip";  
 	        break;
 	    	
 	    case ugChange.value == "Basic Clothing":
@@ -627,8 +626,7 @@ function armorEquip() {
 			arWt = 0;
 			arStReq = 0;
 			sneakAdjust = 0;			
-			arButton.innerHTML = "Equip";	
-			arChange.value = "None";	    
+			arButton.innerHTML = "Equip";					    
 	        break;	    	
 
 	    case arChange.value == "Robe":

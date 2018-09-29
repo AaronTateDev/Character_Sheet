@@ -1191,6 +1191,7 @@ window.onload = function() {
         sessionStorage.removeItem("reloading");
         loader();
     }
+
     findTotal();
     statTotals();
     secondaryStats();
