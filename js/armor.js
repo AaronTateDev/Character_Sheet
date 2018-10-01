@@ -1177,7 +1177,7 @@ function armorEquip() {
 			arLaserDR = 48;
 			arFireDT = 5;
 			arFireDR = 48;
-			arPlasmaDT = 50;
+			arPlasmaDT = 5;
 			arPlasmaDR = 48;
 			arExplodeDT = 5;
 			arExplodeDR = 48;

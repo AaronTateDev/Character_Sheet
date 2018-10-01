@@ -1161,6 +1161,12 @@ function load() {
     
 function loader(){    
     var elements = document.getElementsByClassName('skName');
+     for (var i = 0; i < elements.length; i++) {
+        //elements[i] = elements[i].style.backgroundColor;
+        if (localStorage.getItem(i) == tagColor) {            
+            elements[i].click();
+        }        
+    }
     // then refresh the page and run this to restore your form values:
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
       el.value = localStorage.getItem(el.id);
@@ -1172,15 +1178,7 @@ function loader(){
         skillTotals();
 
     });
-
-    for (var i = 0; i < elements.length; i++) {
-        //elements[i] = elements[i].style.backgroundColor;
-        if (localStorage.getItem(i) == tagColor) {
-            elements[i].nextElementSibling.nextElementSibling.firstChild.value = 
-            elements[i].nextElementSibling.nextElementSibling.firstChild.value - 20;
-            elements[i].click();
-        }        
-    }
+   
     document.getElementById('undergarmentButton').click();
     document.getElementById('armorButton').click();    
 }
