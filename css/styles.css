@@ -5,7 +5,7 @@
   height: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4" "skills1 skills2 skills3 skills4";
+  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4" "skills1 skills2 skills3 skills4"; 
 }
 
 .nameArea {
@@ -33,7 +33,7 @@
 }
 
 .skills2 {
-  grid-area: skills2;
+  grid-area: skills2;  
 }
 
 .skills3 {
@@ -120,9 +120,11 @@ input[type=number]::-webkit-outer-spin-button {
 }/*Makes all input fields transparent*/
 
 /* body{
-  background-image: url(parchment2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url(../img/fallout_demo2.jpg);
+  height: auto;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;  
 }  */
 
 .skName{
@@ -235,6 +237,7 @@ tfoot #thrownRollResults, tfoot td {
    text-decoration: none;
    vertical-align: middle;
    }
+
 .button:hover {
    border: 1px solid #f5f5f5;
    text-shadow: #1e4158 0 1px 0;
@@ -263,3 +266,4 @@ tfoot #thrownRollResults, tfoot td {
 
 
 /*--------------------- Armor Selection Styles ------------------------*/
+
