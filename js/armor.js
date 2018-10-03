@@ -326,7 +326,7 @@ function statRequirements() {
           stickTo: "right",                        
           maxWidth: 130,
           target: event.target
-        });/*Gear Stat Requirement tooltip*/ 
+        });/*Gear Stat Requirement tooltip*/
 
 		tooltip6.mount();
 
@@ -436,10 +436,8 @@ function statRequirements() {
 		plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR || arPlasmaDR + racialDR;
 		explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT || arExplodeDT + racialDT;
 		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
-
-		/*statTotals();*/
+		
 		secondaryStats();
-
 	} 
 }
 
