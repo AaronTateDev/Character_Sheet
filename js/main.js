@@ -321,9 +321,7 @@ function secondaryStats() {
         document.getElementById('totalMeleeD').value = +document.getElementById('modMeleeD').value +
         +document.getElementById('baseMeleeD').value + 10; //Melee Damage Resist    
         /* Extra health per level code located in Secondary Stats
-        section under in Base health code*/
-
-        //NEEDS TO BE FINISHED +4/40% DT/DR
+        section under in Base health code*/        
     }/*---- Deathclaw Racial Bonuses ----*/
 
     if(document.getElementById('raceSelector').value == "Dog"){
