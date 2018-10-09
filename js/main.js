@@ -55,8 +55,7 @@ function findTotal(){
     }else if (tot <= 40){
     	document.getElementById('total').style.color = 'black';
     	document.getElementById('total').style.fontWeight = '400';
-    }
-    
+    }    
 }
 
 function statTotals(){
@@ -158,7 +157,7 @@ function secondaryStats() {
     	document.getElementById('baseRadRes').value = 0;
     }/*---- Base Poison/Rad Resist Calc ----*/
 
-    /*---- Electricity Resist Calc (from race/items)----*/
+    /*---- Electricity Resist Calc (from race&items)----*/
 
     /*---- Base Gas Resist Calc (items required)----*/
 
