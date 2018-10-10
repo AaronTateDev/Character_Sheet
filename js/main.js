@@ -760,11 +760,11 @@ function secondaryStats() {
         baseLockpickTotal = 10 + (pTotal + aTotal) + 20;
     }/*Adds tag points to base skill*/
     
-    if (pTotal > 0 && aTotal > 0) {
+    if (pTotal > 0 && aTotal > 0){
     	baseLo.value = baseLockpickTotal;
-    	if (spendLo.min > baseLo.value){
+    	if (spendLo.min > baseLo.value) {
     		spendLo.value = spendLo.value - (spendLo.min - baseLo.value);
-    	}else if(spendLo.min < baseLo.value) {
+    	}else if(spendLo.min < baseLo.value){
     		spendLo.value = +spendLo.value + (baseLo.value - spendLo.min);
     	}
 
@@ -798,13 +798,13 @@ function secondaryStats() {
     baseTMTotal = 10 + aTotal + iTotal;
     baseTM = document.getElementById('baseT/MSkill');
     spendTM = document.getElementById('spendT/MSkill');
-    if (baseTM.parentElement.previousElementSibling.style.background == tagColor){
+    if (baseTM.parentElement.previousElementSibling.style.background == tagColor) {
         baseTMTotal = 10 + aTotal + iTotal + 20;
     }/*Adds tag points to base skill*/
     
     if (aTotal > 0 && iTotal > 0) {
     	baseTM.value = baseTMTotal;
-    	if (spendTM.min > baseTM.value){
+    	if (spendTM.min > baseTM.value) {
     		spendTM.value = spendTM.value - (spendTM.min - baseTM.value);
     	}else if(spendTM.min < baseTM.value) {
     		spendTM.value = +spendTM.value + (baseTM.value - spendTM.min);
