@@ -300,6 +300,7 @@ function equipSelection() {
 			statRequirements();
 			
 		}
+		
 		if ((+document.getElementById('thrownMod').value + sTotal + 5) < document.getElementById('thrownWeight').value) {
             document.getElementById('thrownWeight').value = (+document.getElementById('thrownMod').value + sTotal + 5);    		
     	}
