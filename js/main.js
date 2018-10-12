@@ -513,7 +513,7 @@ function secondaryStats() {
     	spendMG.prevValue = spendMG.value;    	
     }else {
     	baseMG.value = 0;
-    }/*---- Base Machine Gun Skill Calc ----*/ 
+    }/*---- Base Machine-Gun Skill Calc ----*/ 
 
     /*------------------------------*/
     /*---- Base Skills2 Section ----*/
