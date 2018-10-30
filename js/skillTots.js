@@ -270,7 +270,7 @@ function damageCalc() {
 			dmgDR = plasmaDR.value;
 			break;
 
-		case 'Explode':		
+		case 'Explode':
 			dmgDT = explodeDT.value;
 			dmgDR = explodeDR.value;
 			break;
