@@ -352,7 +352,7 @@ function initialDRoller() {
 	}
 		
 	document.getElementById("thrownResultTotal").innerHTML = initialDieRoller.total;
-	document.getElementById("thrownRollResults").innerHTML = initialDieRoller.rolls.join(', ');	
+	document.getElementById("thrownRollResults").innerHTML = initialDieRoller.rolls.join(', ');
 
 	if(document.getElementById("dmgRollField").value == false && event.target.id == 'dmgRollInput') {
 		document.getElementById("thrownResultTotal").innerHTML = "Fail!";
