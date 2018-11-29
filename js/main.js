@@ -1164,7 +1164,7 @@ function loader(){
             elements[i].click();
         }        
     }
-    // then refresh the page and run this to restore your form values:
+    
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
       el.value = localStorage.getItem(el.id);
       if (el.prevValue != undefined){
