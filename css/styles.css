@@ -132,8 +132,12 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline;
   border-radius: 3px;
   padding: 2px 5px 2px 0px;
-
-
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }/*Skill names styles*/
 
 .healthArmor{
