@@ -1,15 +1,25 @@
 
 /*--------------------- Grid Container -------------------*/
+* {box-sizing: border-box;}
+
+/* body{
+  background-image: url("../img/fallout_demo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+} */
+
 .grid-container {
   display: grid;
-  height: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4" "skills1 skills2 skills3 skills4"; 
+  
 }
 
 .nameArea {
   grid-area: nameArea;
+
  }
 
 .healthArmor {
@@ -30,19 +40,37 @@
 
 .skills1 {
   grid-area: skills1;
+  background-image: url("../img/background/charsheet_small_ verticle_rectangle.png");
+  background-size: contain;
+  background-position: : center;
+  background-repeat: no-repeat;
 }
 
 .skills2 {
-  grid-area: skills2;  
+  grid-area: skills2;
+  background-image: url("../img/background/charsheet_small_ verticle_rectangle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .skills3 {
   grid-area: skills3;
+  background-image: url("../img/background/charsheet_small_ verticle_rectangle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .skills4 {
   grid-area: skills4;
+  background-image: url("../img/background/charsheet_small_ verticle_rectangle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.container {
+  justify-self: center;
+   
+} 
 
 /*--------------------- Title Styles -------------------*/
 
@@ -94,13 +122,13 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-.skills1 table,
+/* .skills1 table,
 .skills2 table,
 .skills3 table{
   margin-left: auto;
   margin-right: auto;
   
-}
+} */
 
 #total{
   margin-left: 15px;
@@ -243,6 +271,7 @@ tfoot #thrownRollResults, tfoot td {
    }
 
 .button:hover {
+  cursor: pointer;
    border: 1px solid #f5f5f5;
    text-shadow: #1e4158 0 1px 0;
    background: #3e779d;
@@ -253,7 +282,7 @@ tfoot #thrownRollResults, tfoot td {
    background: -o-linear-gradient(top, #65a9d7, #3e779d);
    background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
    color: #eff2f1;
-   }
+}
 
 .button:active {
    text-shadow: #1e4158 0 1px 0;
