@@ -1094,17 +1094,17 @@ function tagSkills(){
 
     if(taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagNum < tagMax ){
-    	if(event.target.style.background == tagColor){
-            event.target.style.background = 'white';
+    	if(event.target.style.background == tagColor){console.log(event.target.style.background);
+            event.target.style.background = '';
             tagNum -= 1;
-        }else {
+        }else {console.log(event.target.style.background);
             event.target.style.background = tagColor;
             tagNum += 1;          
         }
         
     }else if(event.target.style.background == tagColor && taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
-            event.target.style.background = 'white';
+            event.target.style.background = '';
             tagNum -= 1;              
     }else if (event.target.style.background != tagColor && tagNum == tagMax) {        
         tooltip.set({
