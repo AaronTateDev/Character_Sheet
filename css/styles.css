@@ -70,6 +70,59 @@ button {background-color: #031f01; border-radius: 5px;}
   text-align: center;
   text-transform: uppercase;
 }
+/*---------------------------Test-----------------------------*/
+ select#raceSelector {
+
+      border: 0 !important;  /*Removes border*/
+      -webkit-appearance: none;  /*Removes default chrome and safari style*/
+      -moz-appearance: none; /* Removes Default Firefox style*/
+      background: url('http://jonathanphz.tk/dropdown_arrow.png') no-repeat;  /*Adds background-image*/
+      background-position: 80px 8px;  /*Position of the background-image*/
+      width: 100px; /*Width of select dropdown to give space for arrow image*/
+      height: 20px;/*fix for mac input height*/
+      text-indent: 0.01px; /* Removes default arrow from firefox*/
+      text-overflow: "";  /*Removes default arrow from firefox*/
+      cursor: pointer;
+      /*My custom style for fonts*/
+      color: #39ff14;  
+      background-color: #091a0d;
+
+  
+}
+
+/* select#raceSelector  {
+
+      border: 0 !important;  Removes border
+      -webkit-appearance: none;  Removes default chrome and safari style
+      -moz-appearance: none; Removes Default Firefox style
+      background: url('http://jonathanphz.tk/dropdown_arrow.png') no-repeat;  Adds background-image
+      background-position: 80px 8px;  Position of the background-image
+      width: 100px; Width of select dropdown to give space for arrow image
+      height: 20px;fix for mac input height
+      text-indent: 0.01px; Removes default arrow from firefox
+      text-overflow: "";  Removes default arrow from firefox
+      cursor: pointer;
+      My custom style for fonts
+      color: #1455a2;
+      background-color: #091a0d;
+
+  
+} */
+
+
+
+select:active, select:hover {
+  outline-color: #091a0d; 
+  border-color: gray;
+    outline:none;
+}
+
+select:focus {
+  border-color: gray;
+    outline:none;
+}
+
+/*---------------------------Test-----------------------------*/
 
 /*--------------------- Input Field Styles -------------------*/
 
@@ -265,16 +318,16 @@ tfoot #thrownRollResults, tfoot td {
 
 .button:hover {
   cursor: pointer;
-   border: 1px solid #f5f5f5;
-   text-shadow: #1e4158 0 1px 0;
-   background: #0c210e;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
-   color: #eff2f1;
+   border: 1px solid #d5ff03;
+   text-shadow: #000 0 1px 0;
+   background: #7cb07b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#7cb07b), to(#0c210e));
+   background: -webkit-linear-gradient(top, #7cb07b, #0c210e);
+   background: -moz-linear-gradient(top, #7cb07b, #0c210e);
+   background: -ms-linear-gradient(top, #7cb07b, #0c210e);
+   background: -o-linear-gradient(top, #7cb07b, #0c210e);
+   background-image: -ms-linear-gradient(top, #7cb07b 0%, #0c210e 100%);
+   color: /* #eff2f1 */ #d5ff03;
 }
 
 .button:active {
