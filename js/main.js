@@ -16,7 +16,9 @@ supMutantRacialSkill;
 var 
 tagMax = 3,
 tagNum = 0; //Sets max number of tags (not currently implemented)
-var tagColor = 'rgb(135, 182, 219)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
+var 
+tagColor = 'rgb(57, 255, 20)',
+tagTextColor = 'rgb(9, 26, 13)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
 
 var skillPtBase = document.getElementById('baseSkillPts');
 var skillPtMod = document.getElementById('modSkillPts');
@@ -1094,32 +1096,36 @@ function tagSkills(){
 
     if(taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagNum < tagMax ){
-    	if(event.target.style.background == tagColor){console.log(event.target.style.background);
+    	if(event.target.style.background == tagColor){
+            console.log(event.target.style.background);
             event.target.style.background = '';
+            event.target.style.color = tagColor;
             tagNum -= 1;
         }else {console.log(event.target.style.background);
             event.target.style.background = tagColor;
+            event.target.style.color = tagTextColor;
             tagNum += 1;          
         }
         
     }else if(event.target.style.background == tagColor && taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value){
             event.target.style.background = '';
+            event.target.style.color = tagColor;
             tagNum -= 1;              
     }else if (event.target.style.background != tagColor && tagNum == tagMax) {        
         tooltip.set({
           animateFunction: "foldout",
-          color: "indigo",
+          color: "terminal darkgreen",
           contentText: "You may only have a maximum of " + tagMax +  " tagged skills.",
           stickTo: "right",                
           maxWidth: 130,      
           target: tipTarget
         });//Max tags reached indicator
         tooltip.show();        
-    }else {//TOOLTOP Reference site https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
+    }else {//TOOLTIP Reference site https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
         tooltip2.set({
           animateFunction: "spin",
-          color: "kelly",
+          color: "terminal darkgreen",
           contentText: "This skill's Base and Spend values must be equal to add or remove a tag.",
           stickTo: "right",                        
           maxWidth: 130,

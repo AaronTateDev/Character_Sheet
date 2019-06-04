@@ -97,7 +97,9 @@
       "white": {r: 255, g: 255, b: 255},
       "metalic silver": {r: 152, g: 162, b: 171},
       "metalic gold": {r: 159, g: 135, b: 89},
-      "metalic copper": {r: 140, g: 102, b: 65}
+      "metalic copper": {r: 140, g: 102, b: 65},
+      "terminal green": {r: 57, g: 255, b: 20},
+      "terminal darkgreen": {r: 9, g: 26, b: 13},
     },
 
     stickTo: {

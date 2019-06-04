@@ -103,7 +103,7 @@ var myArmor = new Select('#armor',{
 function equipSelection() {
 	tooltip3.set({
           animateFunction: "scalein",
-          color: "salmon",
+          color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear undergarments.",
           stickTo: "right",                        
           maxWidth: 130,
@@ -112,7 +112,7 @@ function equipSelection() {
 
     tooltip4.set({
           animateFunction: "scalein",
-          color: "salmon",
+          color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear armor.",
           stickTo: "right",                        
           maxWidth: 130,
@@ -121,7 +121,7 @@ function equipSelection() {
 
     tooltip5.set({
           animateFunction: "scalein",
-          color: "salmon",
+          color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear undergarments or armor.",
           stickTo: "right",                        
           maxWidth: 130,
@@ -322,7 +322,7 @@ function statRequirements() {
 
 		tooltip6.set({
           animateFunction: "scalein",
-          color: "citrus zest",
+          color: "terminal darkgreen",
           contentText: gearStatReqTxt,
           stickTo: "right",                        
           maxWidth: 130,
@@ -394,7 +394,7 @@ function statRequirements() {
 
 		tooltip6.set({
           animateFunction: "scalein",
-          color: "citrus zest",
+          color: "terminal darkgreen",
           contentText: gearStatReqTxt,
           stickTo: "right",                        
           maxWidth: 130,
