@@ -144,7 +144,7 @@ select:focus {
 .numSpace{
     text-align: center;
     border: 0;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #FF0000;
     outline: 0;
     font-weight: bold;
     width: 35px;

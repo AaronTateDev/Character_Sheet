@@ -49,13 +49,13 @@ function findTotal(){
     document.getElementById('total').innerHTML = tot;
     
     if (tot > 40 && tot <= 47){
-    	document.getElementById('total').style.color = '#ffbf35';
+    	document.getElementById('total').style.color = '#FFCC00';
     	document.getElementById('total').style.fontWeight = '400';
     }else if (tot > 47){
-    	document.getElementById('total').style.color = 'red';
+    	document.getElementById('total').style.color = '#ff0000';
     	document.getElementById('total').style.fontWeight = '900';
     }else if (tot <= 40){
-    	document.getElementById('total').style.color = 'black';
+    	document.getElementById('total').style.color = '#39ff14';
     	document.getElementById('total').style.fontWeight = '400';
     }    
 }
@@ -211,9 +211,9 @@ function secondaryStats() {
     document.getElementById('totalSkillPts').value = document.getElementById('baseSkillPts').value -
     document.getElementById('modSkillPts').value;
     if(document.getElementById('totalSkillPts').value < 0){
-        document.getElementById('totalSkillPts').style.color = 'red';
+        document.getElementById('totalSkillPts').style.color = '#ff0000';
     }else if(document.getElementById('totalSkillPts').value >= 0){
-        document.getElementById('totalSkillPts').style.color = 'black';        
+        document.getElementById('totalSkillPts').style.color = '#39ff14';        
     }/*---- Total Skill Pts Calc HERE ----*/
     
     document.getElementById('totalAP').value = +document.getElementById('modAP').value +
