@@ -1,14 +1,25 @@
 
 /*--------------------- Grid Container -------------------*/
-* {box-sizing: border-box; color: #39ff14; border-color:#39ff14;}
+* {
+  box-sizing: border-box; 
+  color: #39ff14; 
+  border-color:#39ff14;
+}
 
 body{
   background-image: url("../img/fallout_green.png");
-  
-
 } 
-button {background-color: #031f01; border-radius: 5px;}
 
+button {
+  background-color: #031f01; 
+  border-radius: 5px;
+}
+
+div.select {
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -70,57 +81,24 @@ button {background-color: #031f01; border-radius: 5px;}
   text-transform: uppercase;
 }
 /*---------------------------Test-----------------------------*/
- select#raceSelector {
 
-      border: 0 !important;  /*Removes border*/
-      -webkit-appearance: none;  /*Removes default chrome and safari style*/
-      -moz-appearance: none; /* Removes Default Firefox style*/
-      background: url('http://jonathanphz.tk/dropdown_arrow.png') no-repeat;  /*Adds background-image*/
-      background-position: 80px 8px;  /*Position of the background-image*/
-      width: 100px; /*Width of select dropdown to give space for arrow image*/
-      height: 20px;/*fix for mac input height*/
-      text-indent: 0.01px; /* Removes default arrow from firefox*/
-      text-overflow: "";  /*Removes default arrow from firefox*/
-      cursor: pointer;
-      /*My custom style for fonts*/
-      color: #39ff14;  
-      background-color: #091a0d;
-
-  
+ul::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+  background-color: #091a0d;
 }
 
-/* select#raceSelector  {
-
-      border: 0 !important;  Removes border
-      -webkit-appearance: none;  Removes default chrome and safari style
-      -moz-appearance: none; Removes Default Firefox style
-      background: url('http://jonathanphz.tk/dropdown_arrow.png') no-repeat;  Adds background-image
-      background-position: 80px 8px;  Position of the background-image
-      width: 100px; Width of select dropdown to give space for arrow image
-      height: 20px;fix for mac input height
-      text-indent: 0.01px; Removes default arrow from firefox
-      text-overflow: "";  Removes default arrow from firefox
-      cursor: pointer;
-      My custom style for fonts
-      color: #1455a2;
-      background-color: #091a0d;
-
-  
-} */
-
-
-
-select:active, select:hover {
-  outline-color: #091a0d; 
-  border-color: gray;
-    outline:none;
+ul::-webkit-scrollbar {
+  width: 17px;
+  border-radius: 10px;
+  background-color: #091a0d;
 }
 
-select:focus {
-  border-color: gray;
-    outline:none;
+ul::-webkit-scrollbar-thumb {  
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #39ff14;
 }
-
 /*---------------------------Test-----------------------------*/
 
 /*--------------------- Input Field Styles -------------------*/

@@ -102,7 +102,7 @@ raceSelector = new Select('#raceSelector',{
     // auto show the live filter
     filtered: 'auto',
     // auto show the live filter when the options >= 8
-    filter_threshold: 4,
+    filter_threshold: 1,
     // custom placeholder
     filter_placeholder: 'Select Race...'
 });
