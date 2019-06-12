@@ -18,7 +18,7 @@ tagMax = 3,
 tagNum = 0; //Sets max number of tags (not currently implemented)
 var 
 tagColor = 'rgb(57, 255, 20)',
-tagTextColor = 'rgb(9, 26, 13)'; /*'rgb(255, 96, 96)'; color of skill tag highlight*/
+tagTextColor = 'rgb(9, 26, 13)';
 
 var skillPtBase = document.getElementById('baseSkillPts');
 var skillPtMod = document.getElementById('modSkillPts');
@@ -1164,15 +1164,19 @@ function load() {
     
 function loader(){    
     var elements = document.getElementsByClassName('skName');
-     for (var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         //elements[i] = elements[i].style.backgroundColor;
         if (localStorage.getItem(i) == tagColor) {            
             elements[i].click();
-        }        
+        }                      
     }
-    
+    event.target.innerHTML = event.target.value;
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
       el.value = localStorage.getItem(el.id);
+      /*if (el.id == document.getElementById('sex').id) {            
+           console.log(el.value);
+           document.getElementById('sex').innerHTML = el.value;
+      } */ 
       if (el.prevValue != undefined){
         el.prevValue = localStorage.getItem(el.id);
         }
@@ -1181,7 +1185,7 @@ function loader(){
         skillTotals();
 
     });
-   
+    /*document.getElementById('sex').innerHTML = document.getElementById('sex').value;*/
     document.getElementById('undergarmentButton').click();
     document.getElementById('armorButton').click();    
 }
@@ -1189,7 +1193,7 @@ function loader(){
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
     if (reloading) {
-        sessionStorage.removeItem("reloading");
+        sessionStorage.removeItem("reloading");        
         loader();
     }
 
@@ -1198,3 +1202,11 @@ window.onload = function() {
     secondaryStats();
     skillTotals();
 }/*Reloads page and runs loader when Load/Refresh button clicked*/
+
+
+//-------------------------------------------
+
+function setDropdownValue() {
+    event.target.innerHTML = event.target.value;
+
+}
