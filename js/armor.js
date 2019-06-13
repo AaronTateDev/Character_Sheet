@@ -115,6 +115,7 @@ sex = new Select('#sex',{
     filter_placeholder: 'Select Sex...'
 });
 
+
 function equipSelection() {
 	tooltip3.set({
           animateFunction: "scalein",
