@@ -82,39 +82,6 @@ racialDT = 0,
 racialDR = 0,
 gearStatReqTxt;
 
-var myUndergarments = new Select('#undergarment',{
-    // auto show the live filter
-    filtered: 'auto',
-    // auto show the live filter when the options >= 8
-    filter_threshold: 2,
-    // custom placeholder
-    filter_placeholder: 'Select Undergarments...'
-}),
-myArmor = new Select('#armor',{
-    // auto show the live filter
-    filtered: 'auto',
-    // auto show the live filter when the options >= 8
-    filter_threshold: 4,
-    // custom placeholder
-    filter_placeholder: 'Select Armor...'
-}),
-raceSelector = new Select('#raceSelector',{
-    // auto show the live filter
-    filtered: 'auto',
-    // auto show the live filter when the options >= 8
-    filter_threshold: 1,
-    // custom placeholder
-    filter_placeholder: 'Select Race...'
-}),
-sex = new Select('#sex',{
-    // auto show the live filter
-    filtered: 'auto',
-    // auto show the live filter when the options >= 8
-    filter_threshold: 8,
-    // custom placeholder
-    filter_placeholder: 'Select Sex...'
-});
-
 
 function equipSelection() {
 	tooltip3.set({

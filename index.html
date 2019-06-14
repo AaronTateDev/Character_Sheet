@@ -6,7 +6,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/html5tooltips.css"/>
 	<link rel="stylesheet" type="text/css" href="css/html5tooltips.animation.css"/>
-	<link href="css/select.min.css" rel="stylesheet"><!-- <link href="css/slimselect.min.css" rel="stylesheet"> -->
+	<link href="css/slimselect.min.css" rel="stylesheet"><!-- <link href="css/slimselect.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet" href="css/styles.css"/>
 	<title>Charcater Sheet</title>
 </head>
@@ -16,13 +16,14 @@
 	<div class="grid-container">		
 		<div class="nameArea">
 			<p>Name: <input id="charName"  class="nameSpace" type="text" size="20"/><span>
-				Sex: <select id="sex" name="Sex" class="nameSpace">
-						<option value="" selected disabled hidden>Select</option>
+				Sex: <select id="sex" name="Sex" class="nameSpace sexDropdown">
+						<option data-placeholder="true"></option>
     					<option value="value 1">Male</option>
    						<option value="Female">Female</option>
     				 </select></span><br/></p>
 			
-			<p>Race: <select onChange="equipSelection()" id="raceSelector" name="races" class="nameSpace">
+			<p>Race: <select onChange="equipSelection()" id="raceSelector" name="races" class="nameSpace raceDropdown">
+						<option data-placeholder="true"></option>
 						<option value="Human">Human</option>
 	   					<option value="Ghoul">Ghoul</option>
 	   					<option value="Super-Mutant">Super-Mutant</option>
@@ -603,7 +604,7 @@
 </form>
 <script src="js/main.js"></script>
 <script type="text/javascript" src="js/html5tooltips.js"></script>
-<script src="js/select.min.js"></script><!-- <script src="js/slimselect.min.js"></script> -->
+<script src="js/slimselect.min.js"></script><!-- <script src="js/slimselect.min.js"></script> -->
 <script src="js/armor.js"></script>
 <script src="js/skillTots.js"></script>
 </body>

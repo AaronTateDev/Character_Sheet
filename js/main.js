@@ -1197,6 +1197,37 @@ window.onload = function() {
         loader();
     }
 
+    new SlimSelect({
+        select: '#sex',
+        placeholder: 'Sex...',
+        allowDeselect: true,
+        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
+        showSearch: false,
+    })
+
+    new SlimSelect({
+        select: '#raceSelector',
+        placeholder: 'Select Race...',
+        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
+        showSearch: false,
+    })
+
+    new SlimSelect({
+        select: '#sex',
+        placeholder: 'Sex...',
+        allowDeselect: true,
+        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
+        showSearch: false
+    })
+
+    new SlimSelect({
+        select: '#sex',
+        placeholder: 'Sex...',
+        allowDeselect: true,
+        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
+        showSearch: false
+    })
+
     findTotal();
     statTotals();
     secondaryStats();

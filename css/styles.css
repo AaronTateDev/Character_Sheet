@@ -66,9 +66,6 @@ div.select {
 }
 
 .container {
- /*  background-image: url("../img/background/charsheet_small_ verticle_rectangle.png");
- background-size: cover;
- background-repeat: no-repeat; */
   justify-self: center;
   align-items: center;
   width: 242px; height: 400px;   
@@ -80,25 +77,35 @@ div.select {
   text-align: center;
   text-transform: uppercase;
 }
-/*---------------------------Test-----------------------------*/
+/*---------------------------Dropdowns-----------------------------*/
 
-ul::-webkit-scrollbar-track {
+.sexDropdown, #sex {
+  width: 113px;
+}
+
+.raceDropdown {
+  width: 220px;
+}
+
+select::-webkit-scrollbar-track {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
   background-color: #091a0d;
 }
 
-ul::-webkit-scrollbar {
+select::-webkit-scrollbar {
   width: 17px;
   border-radius: 10px;
   background-color: #091a0d;
 }
 
-ul::-webkit-scrollbar-thumb {  
+select::-webkit-scrollbar-thumb {  
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #39ff14;
 }
+
+
 /*---------------------------Test-----------------------------*/
 
 /*--------------------- Input Field Styles -------------------*/
@@ -145,14 +152,6 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-/* .skills1 table,
-.skills2 table,
-.skills3 table{
-  margin-left: auto;
-  margin-right: auto;
-  
-} */
-
 #total{
   margin-left: 15px;
 }
@@ -169,14 +168,6 @@ input[type=number]::-webkit-outer-spin-button {
 .apSpoolImpEndurance input{
   background: transparent;
 }/*Makes all input fields transparent*/
-
-/* body{
-  background-image: url(../img/fallout_demo2.jpg);
-  height: auto;
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;  
-}  */
 
 .skName{
   cursor: pointer;
