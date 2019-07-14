@@ -20,11 +20,11 @@ var
 tagColor = 'rgb(57, 255, 20)',
 tagTextColor = 'rgb(9, 26, 13)';
 
-var skillPtBase = document.getElementById('baseSkillPts');
-var skillPtMod = document.getElementById('modSkillPts');
-var skillPtTotal = document.getElementById('totalSkillPts');
-var skillsPerLvlBonus = 0;
-var healthPerLvlBonus = 0;
+var skillPtBase = document.getElementById('baseSkillPts'),
+skillPtMod = document.getElementById('modSkillPts'),
+skillPtTotal = document.getElementById('totalSkillPts'),
+skillsPerLvlBonus = 0,
+healthPerLvlBonus = 0;
 
 $("[type='number']").not("[name='dmg']").keypress(function (evt) {
     evt.preventDefault();
@@ -1208,7 +1208,6 @@ window.onload = function() {
     new SlimSelect({
         select: '#raceSelector',
         placeholder: 'Select Race...',
-        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
         showSearch: false,
     })
 

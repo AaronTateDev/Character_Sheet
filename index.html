@@ -18,7 +18,7 @@
 			<p>Name: <input id="charName"  class="nameSpace" type="text" size="20"/><span>
 				Sex: <select id="sex" name="Sex" class="nameSpace sexDropdown">
 						<option data-placeholder="true"></option>
-    					<option value="value 1">Male</option>
+    					<option value="Male">Male</option>
    						<option value="Female">Female</option>
     				 </select></span><br/></p>
 			
@@ -99,6 +99,7 @@
 				</tbody>
 			</table>			
 			<select id="undergarment">
+				<option data-placeholder="true"></option>
 				<option value="None">None</option>				
 				<option value="Basic Clothing">Basic Clothing</option>
 				<option value="Brotherhood Undersuit">Brotherhood Undersuit</option>
@@ -107,7 +108,8 @@
 			</select>
 			<button onclick="equipSelection()" id="undergarmentButton" type="button">Equip</button>
 
-			<select id="armor">	
+			<select id="armor" class="armorSelectStyle">	
+				<option data-placeholder="true"></option>
 				<option value="None">None</option>			
 				<option value="Robe">Robe</option>
 				<option value="Leather Jacket">Leather Jacket</option>
@@ -147,6 +149,7 @@
 			<button onclick="equipSelection()" id="armorButton" type="button">Equip</button>
 
 			<select id="dmgCalc">
+				<option data-placeholder="true"></option>
 				<option value="Normal">Normal</option>				
 				<option value="Laser">Laser</option>
 				<option value="Fire">Fire</option>
@@ -183,7 +186,7 @@
 					<tfoot>
 						<tr>
 							<td colspan="4">Damage: <span id="thrownRollResults"></span></td>
-							<td id="thrownResultTotal">here</td>							
+							<td id="thrownResultTotal">0</td>							
 						</tr>
 					</tfoot>
 				</tbody>

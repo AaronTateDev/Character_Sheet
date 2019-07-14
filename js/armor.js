@@ -84,6 +84,7 @@ gearStatReqTxt;
 
 
 function equipSelection() {
+	console.log(event.target);
 	tooltip3.set({
           animateFunction: "scalein",
           color: "terminal darkgreen",
@@ -108,7 +109,7 @@ function equipSelection() {
           contentText: "A " + raceResists.value + " may not wear undergarments or armor.",
           stickTo: "right",                        
           maxWidth: 130,
-          target: event.target
+          target: event.target.nextElementSibling
         });/*Armor Requirement tooltip*/ 
 
         tooltip3.mount();         
@@ -119,7 +120,7 @@ function equipSelection() {
 
 		if (raceResists.value == "Deathclaw" || raceResists.value == "Deathclaw (Grey Tribe)" || raceResists.value == "Robot"){
 			tooltip5.show();
-		    event.target.addEventListener('mousemove',function(){            
+		    document.addEventListener('mousemove',function(){            
 		    	tooltip5.hide();
 			});
 			ugNormalDT = 0;
@@ -182,7 +183,8 @@ function equipSelection() {
 
 			undergarmentEquip();
 			armorEquip();			
-		}else {			
+		}else {	
+			tooltip5.destroy();		
 			undergarmentEquip();
 			armorEquip();
 			statRequirements();

@@ -1,10 +1,3 @@
-
-var myArmor = new Select('#dmgCalc',{    
-    filtered: 'auto',    
-    filter_threshold: 4,    
-    filter_placeholder: 'Damage Type...'
-});
-
 let 
 focusSet = document.getElementById("dmgRollField"),
 hitCT = document.getElementById('hitCount'),
@@ -358,6 +351,8 @@ function initialDRoller() {
 		document.getElementById("thrownResultTotal").innerHTML = "Fail!";
 		document.getElementById("thrownRollResults").innerHTML = "Input desired roll...";
 	}
+	document.getElementById("thrownRollResults").setAttribute('data-tooltip', document.getElementById("thrownRollResults").innerHTML);
+	html5tooltips.refresh();
 }
 
 function ouchDmg() {

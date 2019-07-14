@@ -78,9 +78,6 @@ div.select {
   text-transform: uppercase;
 }
 /*---------------------------Dropdowns-----------------------------*/
-.raceDropdown {
-  
-}
 
 .nameSpace.sexDropdown {
   width: 113px;
@@ -91,38 +88,18 @@ div.select {
   width: 220px;
 }
 
-/* .nameSpace.raceDropdown ::-webkit-scrollbar-track {
-  border-radius: 10px !important;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;  
-  background-color: #091a0d !important ;
-}
-
-.nameSpace.raceDropdown ::-webkit-scrollbar {
-  width: 18px;
-  border-radius: 10px;
-  background-color: #091a0d;
-}
-
-.nameSpace.raceDropdown ::-webkit-scrollbar-thumb {  
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #39ff14;
-} */
-
-.nameSpace.raceDropdown ::-webkit-scrollbar {
+.armorSelectStyle ::-webkit-scrollbar, .nameSpace.raceDropdown ::-webkit-scrollbar {
     width: 1em;
 }
  
-.nameSpace.raceDropdown ::-webkit-scrollbar-track {
+.armorSelectStyle ::-webkit-scrollbar-track, .nameSpace.raceDropdown ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.7);
 }
  
-.nameSpace.raceDropdown ::-webkit-scrollbar-thumb {
+.armorSelectStyle ::-webkit-scrollbar-thumb, .nameSpace.raceDropdown ::-webkit-scrollbar-thumb {
   background-color: #39ff14;
   outline: 1px solid slategrey;
 }
-
-/*---------------------------Test-----------------------------*/
 
 /*--------------------- Input Field Styles -------------------*/
 
@@ -169,7 +146,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #total{
-  margin-left: 15px;
+  margin-left: 7.5px;
 }
 
 .primaryStat input, 
@@ -235,6 +212,10 @@ input.dmg {
 
 input[name=dmgRoll] {
   width: 115px;
+}
+
+#dmgTaken {
+  border-bottom-color: #fa0702;
 }
 
 table.throwTable td:first-child {
