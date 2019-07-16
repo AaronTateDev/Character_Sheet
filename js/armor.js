@@ -84,7 +84,6 @@ gearStatReqTxt;
 
 
 function equipSelection() {
-	console.log(event.target);
 	tooltip3.set({
           animateFunction: "scalein",
           color: "terminal darkgreen",

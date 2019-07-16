@@ -26,11 +26,11 @@ skillPtTotal = document.getElementById('totalSkillPts'),
 skillsPerLvlBonus = 0,
 healthPerLvlBonus = 0;
 
-$("[type='number']").not("[name='dmg']").keypress(function (evt) {
+$("[type='number']").not("[name='dmg'], [name='Level']").keypress(function (evt) {
     evt.preventDefault();
   }); /*Jquery that disables key presses for inputs of type number*/
 
-$("[type='number']").not("[name='dmg']").keydown(function (e) {
+$("[type='number']").not("[name='dmg'], [name='Level']").keydown(function (e) {
   var key = e.keyCode || e.charCode;
   if (key == 8 || key == 46) {
       e.preventDefault();
@@ -212,8 +212,10 @@ function secondaryStats() {
     document.getElementById('modSkillPts').value;
     if(document.getElementById('totalSkillPts').value < 0){
         document.getElementById('totalSkillPts').style.color = '#ff0000';
+        spendBorderStyleSolid();
     }else if(document.getElementById('totalSkillPts').value >= 0){
-        document.getElementById('totalSkillPts').style.color = '#39ff14';        
+        document.getElementById('totalSkillPts').style.color = '#39ff14';
+        spendBorderStyleDashed();        
     }/*---- Total Skill Pts Calc HERE ----*/
     
     document.getElementById('totalAP').value = +document.getElementById('modAP').value +
@@ -1214,24 +1216,18 @@ window.onload = function() {
     new SlimSelect({
         select: '#undergarment',
         placeholder: 'Select Undergarment...',
-        allowDeselect: true,
-        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
         showSearch: false
     })
 
     new SlimSelect({
         select: '#armor',
         placeholder: 'Select Armor...',
-        allowDeselect: true,
-        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
         showSearch: false
     })
 
     new SlimSelect({
         select: '#dmgCalc',
         placeholder: 'Damage Type...',
-        allowDeselect: true,
-        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
         showSearch: false
     })
 
@@ -1241,10 +1237,26 @@ window.onload = function() {
     skillTotals();
 }/*Reloads page and runs loader when Load/Refresh button clicked*/
 
+function spendBorderStyleSolid(){    
+    let spendElements = document.getElementsByClassName('spendSkill');
+    for (var i = 0; i < spendElements.length; i++) {
+        spendElements[i].style.border = "solid";
+    }
+    /*if (document.getElementById('totalSkillPts').value == 0) {
+        spendBorderStyleSolid();
+    }*/                    
+}
+
+function spendBorderStyleDashed(){    
+    let spendElements = document.getElementsByClassName('spendSkill');
+    for (var i = 0; i < spendElements.length; i++) {
+        spendElements[i].style.border = "dashed";        
+    } 
+    if (document.getElementById('totalSkillPts').value == 0) {
+        spendBorderStyleSolid();
+    }  
+                     
+}
+
 
 //-------------------------------------------
-
-function setDropdownValue() {
-    event.target.innerHTML = event.target.value;
-
-}

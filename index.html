@@ -6,7 +6,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/html5tooltips.css"/>
 	<link rel="stylesheet" type="text/css" href="css/html5tooltips.animation.css"/>
-	<link href="css/slimselect.min.css" rel="stylesheet"><!-- <link href="css/slimselect.min.css" rel="stylesheet"> -->
+	<link href="css/slimselect.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css"/>
 	<title>Charcater Sheet</title>
 </head>
@@ -98,7 +98,7 @@
 					</tr>					
 				</tbody>
 			</table>			
-			<select id="undergarment">
+			<select id="undergarment" class="selectWidth">
 				<option data-placeholder="true"></option>
 				<option value="None">None</option>				
 				<option value="Basic Clothing">Basic Clothing</option>
@@ -108,7 +108,7 @@
 			</select>
 			<button onclick="equipSelection()" id="undergarmentButton" type="button">Equip</button>
 
-			<select id="armor" class="armorSelectStyle">	
+			<select id="armor" class="armorSelectStyle selectWidth">	
 				<option data-placeholder="true"></option>
 				<option value="None">None</option>			
 				<option value="Robe">Robe</option>
@@ -148,7 +148,7 @@
 			</select>
 			<button onclick="equipSelection()" id="armorButton" type="button">Equip</button>
 
-			<select id="dmgCalc">
+			<select id="dmgCalc" class="selectWidth">
 				<option data-placeholder="true"></option>
 				<option value="Normal">Normal</option>				
 				<option value="Laser">Laser</option>
@@ -369,49 +369,49 @@
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Pistols</td>
 						<td><input value=0 name="skills" type="number" id="basePistolSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendPistolSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendPistolSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalPistolSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Sub-Machine Guns</td>
 						<td><input value=0 name="skills" type="number" id="baseSMGSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendSMGSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendSMGSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalSMGSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Assault Rifles</td>
 						<td><input value=0 name="skills" type="number" id="baseARSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendARSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendARSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalARSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Prim Missile Weap</td>
 						<td><input value=0 name="skills" type="number" id="basePrimSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendPrimSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendPrimSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalPrimSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Throwing</td>
 						<td><input value=0 name="skills" type="number" id="baseThrowSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendThrowSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendThrowSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalThrowSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Rifles</td>
 						<td><input value=0 name="skills" type="number" id="baseRifleSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendRifleSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendRifleSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalRifleSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Shotguns</td>
 						<td><input value=0 name="skills" type="number" id="baseShotgunSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendShotgunSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendShotgunSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalShotgunSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Machine Guns</td>
 						<td><input value=0 name="skills" type="number" id="baseMgSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendMgSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendMgSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalMgSkill" readonly/></td>
 					</tr>
 				</tbody>
@@ -429,49 +429,49 @@
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Grenade/Missile Launcher</td>
 						<td><input value=0 name="skills" type="number" id="baseG/MLaunchSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendG/MLaunchSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendG/MLaunchSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalG/MLaunchSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Mortars</td>
 						<td><input value=0 name="skills" type="number" id="baseMortarSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendMortarSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendMortarSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalMortarSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Flame Throwers</td>
 						<td><input value=0 name="skills" type="number" id="baseFThrowerSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendFThrowerSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendFThrowerSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalFThrowerSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Energy Pistols</td>
 						<td><input value=0 name="skills" type="number" id="baseEPistolSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendEPistolSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendEPistolSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalEPistolSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Energy Rifles</td>
 						<td><input value=0 name="skills" type="number" id="baseERifleSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendERifleSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendERifleSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalERifleSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Big Energy Weap</td>
 						<td><input value=0 name="skills" type="number" id="baseBEWeapSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendBEWeapSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendBEWeapSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalBEWeapSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Melee</td>
 						<td><input value=0 name="skills" type="number" id="baseMeleeSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendMeleeSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendMeleeSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalMeleeSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Unarmed</td>
 						<td><input value=0 name="skills" type="number" id="baseUnarmedSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendUnarmedSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendUnarmedSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalUnarmedSkill" readonly/></td>
 					</tr>
 				</tbody>
@@ -489,49 +489,49 @@
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Doctor</td>
 						<td><input value=0 name="skills" type="number" id="baseDoctorSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendDoctorSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendDoctorSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalDoctorSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;First Aid</td>
 						<td><input value=0 name="skills" type="number" id="baseFAidSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendFAidSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendFAidSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalFAidSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Sneak</td>
 						<td><input value=0 name="skills" type="number" id="baseSneakSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendSneakSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendSneakSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalSneakSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Lockpicking</td>
 						<td><input value=0 name="skills" type="number" id="baseLockpickSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendLockpickSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendLockpickSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalLockpickSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Stealing</td>
 						<td><input value=0 name="skills" type="number" id="baseStealSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendStealSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendStealSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalStealSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Traps/Mines</td>
 						<td><input value=0 name="skills" type="number" id="baseT/MSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendT/MSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendT/MSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalT/MSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Science</td>
 						<td><input value=0 name="skills" type="number" id="baseScienceSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendScienceSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendScienceSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalScienceSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Repair</td>
 						<td><input value=0 name="skills" type="number" id="baseRepairSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendRepairSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendRepairSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalRepairSkill" readonly/></td>
 					</tr>
 				</tbody>
@@ -549,55 +549,55 @@
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Pilot, Car/Truck</td>
 						<td><input value=0 name="skills" type="number" id="baseP,C/TSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendP,C/TSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendP,C/TSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalP,C/TSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Pilot, Watercraft</td>
 						<td><input value=0 name="skills" type="number" id="baseP,WSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendP,WSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendP,WSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalP,WSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Pilot, Aircraft</td>
 						<td><input value=0 name="skills" type="number" id="baseP,ASkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendP,ASkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendP,ASkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalP,ASkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Pilot, APC/Tank</td>
 						<td><input value=0 name="skills" type="number" id="baseP,APC/TSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendP,APC/TSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendP,APC/TSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalP,APC/TSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Speech</td>
 						<td><input value=0 name="skills" type="number" id="baseSpeechSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendSpeechSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendSpeechSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalSpeechSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Barter</td>
 						<td><input value=0 name="skills" type="number" id="baseBarterSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendBarterSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendBarterSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalBarterSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Gambling</td>
 						<td><input value=0 name="skills" type="number" id="baseGamblingSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendGamblingSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendGamblingSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalGamblingSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Survivalist</td>
 						<td><input value=0 name="skills" type="number" id="baseSurvivalSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendSurvivalSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendSurvivalSkill" class="spendSkill"/></td>
 						<td><input value=0 name="skills" type="number" id="totalSurvivalSkill" readonly/></td>
 					</tr>
 					<tr>
 						<td class="skName" onClick="tagSkills()">&nbsp;Tracking</td>
 						<td><input value=0 name="skills" type="number" id="baseTrackSkill" readonly/></td>
-						<td><input value=0 name="skills" type="number" id="spendTrackSkill"/></td>
+						<td><input value=0 name="skills" type="number" id="spendTrackSkill" class="spendSkill"></td>
 						<td><input value=0 name="skills" type="number" id="totalTrackSkill" readonly/></td>
 					</tr>
 				</tbody>
