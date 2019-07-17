@@ -8,6 +8,7 @@ throwRng = document.getElementById('thrownRng'),
 thrownWt = document.getElementById('thrownWeight'),
 spoolButt = document.getElementById('spoolButton'),
 tApSpool = document.getElementById('totalApSpool'),
+apTotal = document.getElementById('totalAP'),
 spoolInput = document.getElementById('spoolInput'),
 spoolCounter = 0;
 
@@ -366,27 +367,28 @@ function spoolTracker() {
 	switch (spoolCounter) {
 		case 0:
 			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
+			if((tApSpool.value - spoolInput.value).toFixed(1) > apTotal.value  ){
+				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);	
+			}
 			spoolCounter = 1;
 			break;
 
 		case 1:
-			spoolButt.innerHTML = "2: " + (tApSpool.value * 2 -	spoolInput.value).toFixed(1);
+			spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
+			if((tApSpool.value * 3 - spoolInput.value).toFixed(1) > apTotal.value  ){
+				spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
+			}
 			spoolCounter = 2;
 			break;
 
 		case 2:
-			spoolButt.innerHTML = "3: " + (tApSpool.value * 3 - spoolInput.value).toFixed(1);
+			spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);
 			spoolCounter = 3;
-			break;
-
-		case 3:
-			spoolButt.innerHTML = "Chaos: " + (document.getElementById('totalAP').value - spoolInput.value);
-			spoolCounter = 4;
 			break;
 
 		default:
 			spoolButt.innerHTML = 'Fight!'
-			spoolCounter = 0;
+			spoolCounter = 0;console.log(spoolCounter);
 	}
 	spoolInput.focus();
 }
@@ -395,12 +397,10 @@ function spoolInputTracker() {
 	if (spoolCounter == 1) {
 		spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
 	}else if (spoolCounter == 2) {
-		spoolButt.innerHTML = "2: " + (tApSpool.value * 2 -	spoolInput.value).toFixed(1);
+		spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
 	}else if (spoolCounter == 3) {
-		spoolButt.innerHTML = "3: " + (tApSpool.value * 3 - spoolInput.value).toFixed(1);
-	}else if (spoolCounter == 4) {
-		spoolButt.innerHTML = "Chaos: " + (document.getElementById('totalAP').value - spoolInput.value);
-	}
+		spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);
+	}		
 
 }
 

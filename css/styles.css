@@ -69,8 +69,21 @@ div.select {
 .container {
   justify-self: center;
   align-items: center;
-  width: 242px; height: 400px;   
+  width: auto; 
+  height: 400px;   
 } 
+
+.skills1.container {
+  min-width: 260px;
+}
+
+.skills2.container {
+  min-width: 306px;
+}
+
+.skills2.container {
+  min-width: 240px;
+} /* fix width here*/
 
 /*--------------------- Title Styles -------------------*/
 
@@ -259,6 +272,9 @@ tfoot #thrownRollResults, tfoot td {
   display: block;
 }
 
+td:nth-last-child(2) {
+  text-align: center;
+}
 /*--------------------- Save/Load Styles ------------------------*/
 
 .button {

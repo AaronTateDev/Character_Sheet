@@ -1240,7 +1240,7 @@ window.onload = function() {
 function spendBorderStyleSolid(){    
     let spendElements = document.getElementsByClassName('spendSkill');
     for (var i = 0; i < spendElements.length; i++) {
-        spendElements[i].style.border = "solid";
+        spendElements[i].style.border = "inset #39ff14 2px";
     }
     /*if (document.getElementById('totalSkillPts').value == 0) {
         spendBorderStyleSolid();
