@@ -550,7 +550,7 @@ function undergarmentEquip() {
 	    	racialDR = 40;
 	        break;
 
-	        case "Deathclaw (Grey Tribe)":
+	    case "Deathclaw (Grey Tribe)":
 	    	racialDT = 4;
 	    	racialDR = 40;
 	        break;

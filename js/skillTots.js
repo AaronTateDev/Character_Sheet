@@ -364,36 +364,47 @@ function ouchDmg() {
 
 
 function spoolTracker() {
-	switch (spoolCounter) {
-		case 0:
-			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
-			if((tApSpool.value - spoolInput.value).toFixed(1) > apTotal.value  ){
-				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);	
-			}
+	switch (true) {
+
+		case (((tApSpool.value - spoolInput.value) > apTotal.value ) && (spoolCounter == 0)) :
+			spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);
 			spoolCounter = 1;
 			break;
 
-		case 1:
-			spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
-			if((tApSpool.value * 3 - spoolInput.value).toFixed(1) > apTotal.value  ){
-				spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
-			}
+		case (spoolCounter == 0):
+			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
+			/*if((tApSpool.value - spoolInput.value).toFixed(1) > apTotal.value  ){
+				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);	
+			}*/
+			spoolCounter = 1;
+			break;
+
+		case (((tApSpool.value * 3 - spoolInput.value) > apTotal.value ) && (spoolCounter == 1)) :
+			spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
 			spoolCounter = 2;
 			break;
 
-		case 2:
+		case (spoolCounter == 1):
+			spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
+			/*if((tApSpool.value * 3 - spoolInput.value).toFixed(1) > apTotal.value  ){
+				spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
+			}*/
+			spoolCounter = 2;
+			break;
+
+		case (spoolCounter == 2):
 			spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);
 			spoolCounter = 3;
 			break;
 
 		default:
 			spoolButt.innerHTML = 'Fight!'
-			spoolCounter = 0;console.log(spoolCounter);
+			spoolCounter = 0;
 	}
 	spoolInput.focus();
 }
 
-function spoolInputTracker() {
+function spoolInputTracker() { //FIX THIS
 	if (spoolCounter == 1) {
 		spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
 	}else if (spoolCounter == 2) {

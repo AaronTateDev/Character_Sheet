@@ -70,7 +70,7 @@ div.select {
   justify-self: center;
   align-items: center;
   width: auto; 
-  height: 400px;   
+  height: 230px;   
 } 
 
 .skills1.container {
@@ -81,7 +81,7 @@ div.select {
   min-width: 306px;
 }
 
-.skills2.container {
+.skills4.container {
   min-width: 240px;
 } /* fix width here*/
 

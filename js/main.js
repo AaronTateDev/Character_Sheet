@@ -1250,7 +1250,7 @@ function spendBorderStyleSolid(){
 function spendBorderStyleDashed(){    
     let spendElements = document.getElementsByClassName('spendSkill');
     for (var i = 0; i < spendElements.length; i++) {
-        spendElements[i].style.border = "dashed";        
+        spendElements[i].style.border = "dashed 2px" ;        
     } 
     if (document.getElementById('totalSkillPts').value == 0) {
         spendBorderStyleSolid();
