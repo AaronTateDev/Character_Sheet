@@ -24,8 +24,8 @@ div.select {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4" "skills1 skills2 skills3 skills4"; 
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4"; 
   
 }
 
@@ -148,6 +148,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }/*Removes Number spinners from input type=number fields*/
 
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .primaryStat input, 
 .secondaryStat input, 
 .skills1 input,
@@ -201,8 +205,8 @@ input.dmg {
 
 .throwTable {
   position: relative;
-  left: 48%;
-  bottom: 81%;
+  left: 39%;
+  bottom: 72%;
   
 }
 
@@ -272,7 +276,7 @@ tfoot #thrownRollResults, tfoot td {
   display: block;
 }
 
-td:nth-last-child(2) {
+td:nth-last-child(2):not(.alignFix) {
   text-align: center;
 }
 /*--------------------- Save/Load Styles ------------------------*/

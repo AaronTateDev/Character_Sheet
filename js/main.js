@@ -1228,6 +1228,8 @@ window.onload = function() {
     new SlimSelect({
         select: '#dmgCalc',
         placeholder: 'Damage Type...',
+        allowDeselect: true,
+        deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
         showSearch: false
     })
 

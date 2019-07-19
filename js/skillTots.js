@@ -373,9 +373,6 @@ function spoolTracker() {
 
 		case (spoolCounter == 0):
 			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
-			/*if((tApSpool.value - spoolInput.value).toFixed(1) > apTotal.value  ){
-				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);	
-			}*/
 			spoolCounter = 1;
 			break;
 
@@ -386,9 +383,6 @@ function spoolTracker() {
 
 		case (spoolCounter == 1):
 			spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
-			/*if((tApSpool.value * 3 - spoolInput.value).toFixed(1) > apTotal.value  ){
-				spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
-			}*/
 			spoolCounter = 2;
 			break;
 
@@ -406,7 +400,10 @@ function spoolTracker() {
 
 function spoolInputTracker() { //FIX THIS
 	if (spoolCounter == 1) {
-		spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
+		if ((tApSpool.value - spoolInput.value) > apTotal.value) {
+				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value); console.log((tApSpool.value - spoolInput.value) + " "  + apTotal.value);
+		}else {spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);}
+		
 	}else if (spoolCounter == 2) {
 		spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
 	}else if (spoolCounter == 3) {
