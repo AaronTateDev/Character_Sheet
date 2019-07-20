@@ -398,7 +398,7 @@ function spoolTracker() {
 	spoolInput.focus();
 }
 
-function spoolInputTracker() { //FIX THIS
+function spoolInputTracker() {//FIX THIS
 	if (spoolCounter == 1) {
 		if ((tApSpool.value - spoolInput.value) > apTotal.value) {
 				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value); console.log((tApSpool.value - spoolInput.value) + " "  + apTotal.value);
