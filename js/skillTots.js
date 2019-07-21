@@ -10,6 +10,9 @@ spoolButt = document.getElementById('spoolButton'),
 tApSpool = document.getElementById('totalApSpool'),
 apTotal = document.getElementById('totalAP'),
 spoolInput = document.getElementById('spoolInput'),
+firstSpoolRound,
+secondSpoolRound,
+chaosSpoolRound,
 spoolCounter = 0;
 
 function skillTotals(){
@@ -216,7 +219,7 @@ document.addEventListener("input", function (event) {
 		ouchDmg();
 	}
 
-	if (event.target.id == 'spoolInput' || event.target.id == 'modSequence' ) {
+	if (event.target.id == 'spoolInput') {
 		spoolInputTracker();
 	}
 
@@ -240,7 +243,6 @@ document.addEventListener("keydown", function(event) {
        }
   	}//Allows the use of Enter key in fields to activate buttons
 });
-
 
 function damageCalc() {
 	switch (dmgCalc.value) {//((100-DR)/100)*DMG - DT(# of hits)
@@ -364,30 +366,33 @@ function ouchDmg() {
 
 
 function spoolTracker() {
-	switch (true) {
+	firstSpoolRound = (tApSpool.value - spoolInput.value).toFixed(1);
+	secondSpoolRound = (tApSpool.value * 3 - spoolInput.value).toFixed(1);
+	chaosSpoolRound = (apTotal.value - spoolInput.value).toFixed(1);
+	
+	switch (spoolCounter) {
+		case  0:
+			if (tApSpool.value >= apTotal.value) {
+				spoolButt.innerHTML = "1: " + chaosSpoolRound;
+			}else {
+				spoolButt.innerHTML = "1: " + firstSpoolRound;
+			}
 
-		case (((tApSpool.value - spoolInput.value) > apTotal.value ) && (spoolCounter == 0)) :
-			spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value);
 			spoolCounter = 1;
 			break;
 
-		case (spoolCounter == 0):
-			spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);
-			spoolCounter = 1;
-			break;
-
-		case (((tApSpool.value * 3 - spoolInput.value) > apTotal.value ) && (spoolCounter == 1)) :
-			spoolButt.innerHTML = "2: " + (apTotal.value - spoolInput.value);
+		case 1:
+			if (tApSpool.value * 3 > apTotal.value) {
+				spoolButt.innerHTML = "2: " + chaosSpoolRound;
+			}else {
+				spoolButt.innerHTML = "2: " + secondSpoolRound;
+			}
+			
 			spoolCounter = 2;
 			break;
 
-		case (spoolCounter == 1):
-			spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
-			spoolCounter = 2;
-			break;
-
-		case (spoolCounter == 2):
-			spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);
+		case 2:
+			spoolButt.innerHTML = "Chaos: " + chaosSpoolRound;
 			spoolCounter = 3;
 			break;
 
@@ -399,15 +404,20 @@ function spoolTracker() {
 }
 
 function spoolInputTracker() {//FIX THIS
-	if (spoolCounter == 1) {
-		if ((tApSpool.value - spoolInput.value) > apTotal.value) {
-				spoolButt.innerHTML = "1: " + (apTotal.value - spoolInput.value); console.log((tApSpool.value - spoolInput.value) + " "  + apTotal.value);
-		}else {spoolButt.innerHTML = "1: " + (tApSpool.value - spoolInput.value).toFixed(1);}
-		
+	firstSpoolRound = (tApSpool.value - spoolInput.value).toFixed(1);
+	secondSpoolRound = (tApSpool.value * 3 - spoolInput.value).toFixed(1);
+	chaosSpoolRound = (apTotal.value - spoolInput.value).toFixed(1);
+
+	if (spoolCounter == 1 && (tApSpool.value >= apTotal.value)) {
+		spoolButt.innerHTML = "1: " + chaosSpoolRound;
+	}else if (spoolCounter == 1) {
+		spoolButt.innerHTML = "1: " + firstSpoolRound;			
+	}else if (spoolCounter == 2 && (tApSpool.value * 3 >= apTotal.value)) {
+		spoolButt.innerHTML = "2: " + chaosSpoolRound;
 	}else if (spoolCounter == 2) {
-		spoolButt.innerHTML = "2: " + (tApSpool.value * 3 -	spoolInput.value).toFixed(1);
+		spoolButt.innerHTML = "2: " + secondSpoolRound;
 	}else if (spoolCounter == 3) {
-		spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);
+		spoolButt.innerHTML = "Chaos: " + (apTotal.value - spoolInput.value);	
 	}		
 
 }

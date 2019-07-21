@@ -48,56 +48,7 @@
 	     	   Current Level: <input onInput="statTotals();secondaryStats()" id="level" class="numSpace" name="Level" type="number" min="1" value="1" /></span><br/></p>
 		</div><!-- End of Name Section-->
 		<div class="healthArmor" >
-			<table>
-				<tbody>
-					<tr>
-						<th>Resists</th>
-						<th>DT</th>
-						<th>DR</th>
-					</tr>
-					<tr>
-						<td class="dmgResist">Normal</td>						
-						<td><input value=0 name="resistance" type="number" id="normalDT" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="normalDR" readonly/></td>
-					</tr>
-					<tr>
-						<td class="dmgResist">Laser</td>						
-						<td><input value=0 name="resistance" type="number" id="laserDT" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="laserDR" readonly/></td>
-					</tr>
-					<tr>
-						<td class="dmgResist">Fire</td>						
-						<td><input value=0 name="resistance" type="number" id="fireDT" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="fireDR" readonly/></td>
-					</tr>
-					<tr>
-						<td class="dmgResist">Plasma</td>						
-						<td><input value=0 name="resistance" type="number" id="plasmaDT" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="plasmaDR" readonly/></td>
-					</tr>
-					<tr>
-						<td class="dmgResist">Explode</td>						
-						<td><input value=0 name="resistance" type="number" id="explodeDT" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="explodeDR" readonly/></td>
-					</tr>
-				</tbody>
-			</table>
-			<table>
-				<tbody>
-					<tr>
-						<th>AC</th>
-						<th>Base</th>
-						<th>Mod</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="armor">Armor</td>						
-						<td><input value=0  name="resistance" type="number" id="baseArmor" readonly/></td>
-						<td><input value=0 name="resistance" type="number" id="modArmor"/></td>
-						<td><input value=0 name="resistance" type="number" id="totalArmor" readonly/></td>
-					</tr>					
-				</tbody>
-			</table>			
+			<h2>Armor & Undergarments</h2>			
 			<select id="undergarment" class="selectWidth">
 				<option data-placeholder="true"></option>
 				<option value="None">None</option>				
@@ -147,6 +98,57 @@
 				<option value="Advanced Power Armor MK II">Advanced Power Armor MK II</option>				
 			</select>
 			<button onclick="equipSelection()" id="armorButton" type="button">Equip</button>
+			
+			<table>
+				<tbody>
+					<tr>
+						<th>Resists</th>
+						<th>DT</th>
+						<th>DR</th>
+					</tr>
+					<tr>
+						<td class="dmgResist">Normal</td>						
+						<td><input value=0 name="resistance" type="number" id="normalDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="normalDR" readonly/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist">Laser</td>						
+						<td><input value=0 name="resistance" type="number" id="laserDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="laserDR" readonly/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist">Fire</td>						
+						<td><input value=0 name="resistance" type="number" id="fireDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="fireDR" readonly/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist">Plasma</td>						
+						<td><input value=0 name="resistance" type="number" id="plasmaDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="plasmaDR" readonly/></td>
+					</tr>
+					<tr>
+						<td class="dmgResist">Explode</td>						
+						<td><input value=0 name="resistance" type="number" id="explodeDT" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="explodeDR" readonly/></td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tbody>
+					<tr>
+						<th>AC</th>
+						<th>Base</th>
+						<th>Mod</th>
+						<th>Total</th>
+					</tr>
+					<tr>
+						<td class="armor">Armor</td>						
+						<td><input value=0  name="resistance" type="number" id="baseArmor" readonly/></td>
+						<td><input value=0 name="resistance" type="number" id="modArmor"/></td>
+						<td><input value=0 name="resistance" type="number" id="totalArmor" readonly/></td>
+					</tr>					
+				</tbody>
+			</table>
 
 			<select id="dmgCalc" class="selectWidth">
 				<option data-placeholder="true"></option>
@@ -158,8 +160,8 @@
 			</select>
 			<input min=0 placeholder="# of hits" name="dmg" class="dmg" type="number" id="hitCount"/></td>
 			<input min=0 placeholder="Dmg..." name="dmg" class="dmg" type="number" id="damage"/></td>
-			<button id="damageCalcButton" type="button">Take Damage</button>
-			<input type="checkbox" id="taker" value="Take">Apply Damage
+			<button id="damageCalcButton" type="button">Take Damage</button><br/>
+			<input type="checkbox" id="taker" value="Take"><span>Apply Damage</span>
 			<h3 id="dmgDisplay">Damage:</h3>
 			<table class="throwTable">
 				<tbody>
@@ -349,13 +351,18 @@
 			</table>
 		</div><!-- End of Secondary Stats Section-->
 		<div class="apSpoolImpEndurance">
-			<h2>Current Health:  <span id="totalHP"></span></h2>
-			<h2>Damage Taken: 
-				<span><input value=0 min=0 name="dmg" type="number" id="dmgTaken"/></span>
-			</h2>
-			<h3>Spool Segment: <br/> </h3>
-				<button  type="button" id="spoolButton"/>Fight!</button><br/><br/>
-				<input value=0 min=0 name="" type="number" id="spoolInput"/>			
+			<div class="spoolSegmentWrapper">
+				<h2>Spool Segment: </h2>
+					<button  type="button" id="spoolButton"/>Fight!</button><br/><br/>
+					<span>AP Spent:</span>
+					<input value=0 min=0 name="" type="number" id="spoolInput"/>
+			</div>
+			<div class="healthAndDamageWrapper">
+				<h2>Current Health:  <span id="totalHP"></span></h2>
+				<h2>Damage Taken: 
+					<span><input value=0 min=0 name="dmg" type="number" id="dmgTaken"/></span>
+				</h2>
+			</div>						
 		</div>
 		<div class="skills1 container">
 			<table>

@@ -205,8 +205,8 @@ input.dmg {
 
 .throwTable {
   position: relative;
-  left: 39%;
-  bottom: 72%;
+  left: 55%;
+  bottom: 21%;
   
 }
 
@@ -256,8 +256,8 @@ tfoot #thrownRollResults, tfoot td {
 }
 
 .apSpoolImpEndurance h2{
-  text-align: center;
-  padding-bottom: 30px;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 .apSpoolImpEndurance input[name=dmg] {
@@ -278,6 +278,48 @@ tfoot #thrownRollResults, tfoot td {
 
 td:nth-last-child(2):not(.alignFix) {
   text-align: center;
+}
+
+#thrownRollResults {
+  cursor: help;
+}
+
+.spollSegmentWrapper {
+  margin-top: 0;
+  position: relative;
+}
+
+.spoolSegmentWrapper > h2 {  
+  display: inline;
+}
+
+.healthAndDamageWrapper {
+  position: relative;
+  left: 60%;
+  bottom: 28%;
+}
+
+#armorButton {
+  margin: 5px 0 20px 5px;
+}
+
+#undergarmentButton {
+  margin: 5px 0 0 5px;
+}
+
+input[type='checkbox'] { 
+  height: 13px;
+  position: relative;
+  margin-top: 0.5rem;
+  right: 10px;
+  top: 3px;
+}
+
+#spoolInput{
+  width: 30px;
+  text-align: center;
+  margin-left: .5rem;
+  height: 1.2rem;
 }
 /*--------------------- Save/Load Styles ------------------------*/
 
@@ -310,7 +352,7 @@ td:nth-last-child(2):not(.alignFix) {
 
 .button:hover {
   cursor: pointer;
-   border: 1px solid #d5ff03;
+   border: 1px solid #FFCC00;
    text-shadow: #000 0 1px 0;
    background: #7cb07b;
    background: -webkit-gradient(linear, left top, left bottom, from(#7cb07b), to(#0c210e));
@@ -319,7 +361,7 @@ td:nth-last-child(2):not(.alignFix) {
    background: -ms-linear-gradient(top, #7cb07b, #0c210e);
    background: -o-linear-gradient(top, #7cb07b, #0c210e);
    background-image: -ms-linear-gradient(top, #7cb07b 0%, #0c210e 100%);
-   color: /* #eff2f1 */ #d5ff03;
+   color: /* #eff2f1 */ #FFCC00;
 }
 
 .button:active {
