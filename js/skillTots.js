@@ -372,7 +372,7 @@ function spoolTracker() {
 	
 	switch (spoolCounter) {
 		case  0:
-			if (tApSpool.value >= apTotal.value) {
+			if (+tApSpool.value >= +apTotal.value) {
 				spoolButt.innerHTML = "1: " + chaosSpoolRound;
 			}else {
 				spoolButt.innerHTML = "1: " + firstSpoolRound;
@@ -382,7 +382,7 @@ function spoolTracker() {
 			break;
 
 		case 1:
-			if (tApSpool.value * 3 > apTotal.value) {
+			if (tApSpool.value * 3 > +apTotal.value) {
 				spoolButt.innerHTML = "2: " + chaosSpoolRound;
 			}else {
 				spoolButt.innerHTML = "2: " + secondSpoolRound;
@@ -408,7 +408,7 @@ function spoolInputTracker() {//FIX THIS
 	secondSpoolRound = (tApSpool.value * 3 - spoolInput.value).toFixed(1);
 	chaosSpoolRound = (apTotal.value - spoolInput.value).toFixed(1);
 
-	if (spoolCounter == 1 && (tApSpool.value >= apTotal.value)) {
+	if (spoolCounter == 1 && (+tApSpool.value >= +apTotal.value)) {
 		spoolButt.innerHTML = "1: " + chaosSpoolRound;
 	}else if (spoolCounter == 1) {
 		spoolButt.innerHTML = "1: " + firstSpoolRound;			
