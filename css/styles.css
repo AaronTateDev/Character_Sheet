@@ -274,6 +274,8 @@ tfoot #thrownRollResults, tfoot td {
 .selectWidth {
   width: 260px;
   display: block;
+  border-bottom: solid 1px #39ff14;
+  margin-bottom: 4px;
 }
 
 td:nth-last-child(2):not(.alignFix) {
@@ -320,6 +322,11 @@ input[type='checkbox'] {
   text-align: center;
   margin-left: .5rem;
   height: 1.2rem;
+}
+
+::selection {
+  color: #0c210e;
+  background: #39ff14;
 }
 /*--------------------- Save/Load Styles ------------------------*/
 

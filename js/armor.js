@@ -427,10 +427,7 @@ function statRequirements() {
 }
 
 function undergarmentEquip() {		
-    switch (event.target.id != "raceSelector") {
-	    case ugChange.value == "None":	    		    
-	        break;
-
+    switch (event.target.id != "raceSelector") {	    
 	    case ugButton.innerHTML == "Unequip: " + ugChange.value:	        
 	    	ugNormalDT = 0;
 			ugNormalDR = 0;
@@ -586,10 +583,7 @@ secondaryStats();
 }
 
 function armorEquip() {     
-    switch (event.target.id != "raceSelector") {
-    	case arChange.value == "None":	    		    
-	        break;
-
+    switch (event.target.id != "raceSelector") {    	
 	    case arButton.innerHTML == "Unequip: " + arChange.value:	        
 	    	arNormalDT = 0;
 			arNormalDR = 0;

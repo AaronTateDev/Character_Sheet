@@ -1209,25 +1209,27 @@ window.onload = function() {
         placeholder: 'Sex...',
         allowDeselect: true,
         deselectLabel: '<span style="color:red; font-size:12px;">✖</span>',
-        showSearch: false,
+        showSearch: false
     })
 
     new SlimSelect({
         select: '#raceSelector',
         placeholder: 'Select Race...',
-        showSearch: false,
+        showSearch: false
     })
 
     new SlimSelect({
         select: '#undergarment',
         placeholder: 'Select Undergarment...',
-        showSearch: false
+        showSearch: false,
+        hideSelectedOption: true
     })
 
     new SlimSelect({
         select: '#armor',
         placeholder: 'Select Armor...',
-        showSearch: false
+        deselectLabel: '<span class="red">✖</span>'
+        
     })
 
     new SlimSelect({
