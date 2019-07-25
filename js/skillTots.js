@@ -10,6 +10,7 @@ spoolButt = document.getElementById('spoolButton'),
 tApSpool = document.getElementById('totalApSpool'),
 apTotal = document.getElementById('totalAP'),
 spoolInput = document.getElementById('spoolInput'),
+tooltip7 = new HTML5TooltipUIComponent, /*instructions*/
 firstSpoolRound,
 secondSpoolRound,
 chaosSpoolRound,
@@ -243,6 +244,9 @@ document.addEventListener("keydown", function(event) {
        }
   	}//Allows the use of Enter key in fields to activate buttons
 });
+
+document.getElementById("instructions").addEventListener("mousedown", instructionsOn);
+document.getElementById("instructions").addEventListener("mouseup", instructionsOff);
 
 function damageCalc() {
 	switch (dmgCalc.value) {//((100-DR)/100)*DMG - DT(# of hits)
@@ -679,3 +683,23 @@ return function ( source ) {
 };
 }());
 
+
+function instructionsOn() {
+	tooltip7.set({
+	          animateFunction: "foldin",
+	          color: "terminal darkgreen",
+	          contentText: "Click in fields and use up/down arrow to adjust values<br>" +
+	          			   "Level and all damage fields allow numerical inputs" +
+	          			   "The S.P.E.C.I.A.L. stat values are the only ones that allow change to the base",
+	          stickTo: "right",                        
+	          maxWidth: 250,
+	          target: event.target
+	        });/*Instructions tooltip*/ 
+
+	tooltip7.mount();
+	tooltip7.show();
+}
+
+function instructionsOff() {
+	tooltip7.hide();
+}

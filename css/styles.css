@@ -328,10 +328,18 @@ input[type='checkbox'] {
   color: #0c210e;
   background: #39ff14;
 }
+
+::-moz-selection { 
+  color: #0c210e;
+  background: #39ff14;
+ }
+
+
 /*--------------------- Save/Load Styles ------------------------*/
 
 .button {
    position: relative;
+   user-select: none;
    top: 50px;
    left: 25%;
    border: 1px solid #39ff14;
@@ -373,17 +381,32 @@ input[type='checkbox'] {
 
 .button:active {
    text-shadow: #1e4158 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
-   color: #fff;
+   border: 1px solid #0c210e;
+   background: #000;
+   background: -webkit-gradient(linear, left top, left bottom, from(#39ff14), to(#000);
+   background: -webkit-linear-gradient(top, #39ff14, #000);
+   background: -moz-linear-gradient(top, #39ff14, #000);
+   background: -ms-linear-gradient(top, #39ff14, #000);
+   background: -o-linear-gradient(top, #39ff14, #000);
+   background-image: -ms-linear-gradient(top, #39ff14 0%, #000 100%);
+   color: #000;
    }
 
 
 /*--------------------- Armor Selection Styles ------------------------*/
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: red;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: red;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: red;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: red;
+}
+#dmgRollField::placeholder {
+  color: red;
+}
