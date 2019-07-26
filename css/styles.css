@@ -334,6 +334,16 @@ input[type='checkbox'] {
   background: #39ff14;
  }
 
+.instructionsButton {
+  position: relative;
+  display: flex;
+  left: 7%;
+  width: 7.4em;
+  margin-top: 20px;
+  margin-left: 7.5%;
+
+}
+
 
 /*--------------------- Save/Load Styles ------------------------*/
 
@@ -395,18 +405,3 @@ input[type='checkbox'] {
 
 /*--------------------- Armor Selection Styles ------------------------*/
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: red;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: red;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: red;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: red;
-}
-#dmgRollField::placeholder {
-  color: red;
-}
