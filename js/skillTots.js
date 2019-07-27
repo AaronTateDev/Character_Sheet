@@ -696,9 +696,11 @@ function instructionsOn() {
 	          			   "<strong>Current Level</strong>, and <strong>Damage Taken</strong><br><br>" +
 	          			   "Selecting race from dropdown automatically adjusts stats appropriately; " + 
 	          			   "once equipped armor adjusts stats similarly<br><br>" +
-	          			   "Armor may be equiped by selecting from dropdown and clicking equip or unequipped with the same button<br>" +
-	          			   "Unequipping while a different piece of armor is equipped will" + 
-	          			   " unequip the current piece and equip the new piece<br><br>" +
+	          			   "Armor may be equipped by selecting from dropdown and clicking equip or unequipped with the same button;<br>" +
+	          			   "Unequipping while wearing a different piece of armor is equipped will " + 
+	          			   "unequip the current armor and equip the new one<br><br>" +
+	          			   "Spool Segment button can be used to keep track of AP spool, " +
+	          			   "adjust AP Spent field to keep track of spent AP in a round<br><br>" +
 	          			   "<strong>Quick Start: </strong>Choose a race and adjust <strong>base</strong> S.P.E.C.I.A.L. stat values " +
 	          			   "up to 40 or 47 with gifted and you are ready for adventure<br><br>" +
 	          			   "<strong>Tip: </strong>When you have enough skill points to spend the Spend fields will have a dashed border<br>",
