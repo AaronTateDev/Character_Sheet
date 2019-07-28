@@ -6,8 +6,10 @@
   border-color:#39ff14;
 }
 
+
 body{
-  background-image: url("../img/fallout_green.png");
+  background-image: url("../img/fallout_green.png"); 
+
 } 
 
 button {
@@ -194,9 +196,6 @@ input[type=number] {
   user-select: none;
 }/*Skill names styles*/
 
-.healthArmor{
-  /*background-color: blue;*/
-}
 
 input.dmg {
   width: 55px;
@@ -205,7 +204,7 @@ input.dmg {
 
 .throwTable {
   position: relative;
-  left: 55%;
+  left: 51%;
   bottom: 21%;
   
 }

@@ -113,7 +113,8 @@ function equipSelection() {
 
         tooltip3.mount();         
         tooltip4.mount();
-        tooltip5.mount();        
+        tooltip5.mount();
+        setBaseRacialMax();        
         
 	if(event.target.id == "raceSelector"){
 

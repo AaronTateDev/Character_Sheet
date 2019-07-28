@@ -10,6 +10,13 @@ spoolButt = document.getElementById('spoolButton'),
 tApSpool = document.getElementById('totalApSpool'),
 apTotal = document.getElementById('totalAP'),
 spoolInput = document.getElementById('spoolInput'),
+strBase = document.getElementById('qtyBaseS'),
+perBase = document.getElementById('qtyBaseP'),
+endBase = document.getElementById('qtyBaseE'),
+chaBase = document.getElementById('qtyBaseC'),
+intBase = document.getElementById('qtyBaseI'),
+agiBase = document.getElementById('qtyBaseA'),
+lucBase = document.getElementById('qtyBaseL'),
 tooltip7 = new HTML5TooltipUIComponent, /*instructions*/
 firstSpoolRound,
 secondSpoolRound,
@@ -683,7 +690,7 @@ return function ( source ) {
 };
 }());
 
-
+/*----------Inscructions toggle Functions--------*/
 function instructionsOn() {
 	tooltip7.set({
 	          animateFunction: "foldin",
@@ -716,4 +723,205 @@ function instructionsOn() {
 
 function instructionsOff() {
 	tooltip7.hide();
+}
+
+/*----------Base Stat Maximum Setter Functions--------*/
+
+function setBaseRacialMax() {	
+	switch (raceResists.value) {
+		case  "Human":
+			strBase.min = 1;
+			perBase.min = 1;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 10;
+			perBase.max = 10;
+			endBase.max = 10;
+			chaBase.max = 10;
+			intBase.max = 10;
+			agiBase.max = 10;
+			lucBase.max = 10;
+			break;
+
+		case  "Ghoul":
+			strBase.min = 1;
+			perBase.min = 4;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 2;
+			agiBase.min = 1;
+			lucBase.min = 5;
+
+			strBase.max = 8;
+			perBase.max = 13;
+			endBase.max = 10;
+			chaBase.max = 10;
+			intBase.max = 10;
+			agiBase.max = 6;
+			lucBase.max = 12;
+			break;
+
+		case  "Super-Mutant":
+			strBase.min = 5;
+			perBase.min = 1;
+			endBase.min = 4;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 14;
+			perBase.max = 11;
+			endBase.max = 14;
+			chaBase.max = 7;
+			intBase.max = 7;
+			agiBase.max = 8;
+			lucBase.max = 10;
+			break;
+
+		case  "Half-Mutant":
+			strBase.min = 3;
+			perBase.min = 1;
+			endBase.min = 2;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 12;
+			perBase.max = 10;
+			endBase.max = 12;
+			chaBase.max = 9;
+			intBase.max = 10;
+			agiBase.max = 9;
+			lucBase.max = 10;
+			break;
+
+		case  "Deathclaw":
+			strBase.min = 6;
+			perBase.min = 4;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 6;
+			lucBase.min = 1;
+
+			strBase.max = 14;
+			perBase.max = 12;
+			endBase.max = 13;
+			chaBase.max = 3;
+			intBase.max = 4;
+			agiBase.max = 16;
+			lucBase.max = 10;
+			break;
+
+		case  "Deathclaw (Grey Tribe)":
+			strBase.min = 6;
+			perBase.min = 4;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 12;
+			perBase.max = 12;
+			endBase.max = 11;
+			chaBase.max = 5;
+			intBase.max = 8;
+			agiBase.max = 14;
+			lucBase.max = 10;
+			break;
+
+		case  "Dog":
+			strBase.min = 1;
+			perBase.min = 1;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 7;
+			perBase.max = 14;
+			endBase.max = 6;
+			chaBase.max = 5;
+			intBase.max = 3;
+			agiBase.max = 15;
+			lucBase.max = 10;
+			break;
+
+		case  "Robot":
+			strBase.min = 7;
+			perBase.min = 7;
+			endBase.min = 7;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 5;
+
+			strBase.max = 12;
+			perBase.max = 12;
+			endBase.max = 12;
+			chaBase.max = 1;
+			intBase.max = 12;
+			agiBase.max = 12;
+			lucBase.max = 5;
+			break;
+
+		case  "Andriod Humanoid Robot":
+			strBase.min = 7;
+			perBase.min = 7;
+			endBase.min = 7;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 5;
+
+			strBase.max = 12;
+			perBase.max = 12;
+			endBase.max = 12;
+			chaBase.max = 1;
+			intBase.max = 12;
+			agiBase.max = 12;
+			lucBase.max = 5;
+			break;
+
+		default:
+			console.log("Hmm");
+	}
+
+	if(strBase.value > strBase.max || strBase.value < strBase.min ) {
+		strBase.value = parseInt((+strBase.min + +strBase.max) / 2);
+	}/*Str base Value Adjustment*/
+
+	if(perBase.value > perBase.max || perBase.value < perBase.min ) {
+		perBase.value = parseInt((+perBase.min + +perBase.max) / 2);
+	}/*Per base Value Adjustment*/
+
+	if(endBase.value > endBase.max || endBase.value < endBase.min ) {
+		endBase.value = parseInt((+endBase.min + +endBase.max) / 2);
+	}/*End base Value Adjustment*/
+
+	if(chaBase.value > chaBase.max || chaBase.value < chaBase.min ) {
+		chaBase.value = parseInt((+chaBase.min + +chaBase.max) / 2);
+	}/*Cha base Value Adjustment*/
+
+	if(intBase.value > intBase.max || intBase.value < intBase.min ) {
+		intBase.value = parseInt((+intBase.min + +intBase.max) / 2);
+	}/*Int base Value Adjustment*/
+
+	if(agiBase.value > agiBase.max || agiBase.value < agiBase.min ) {
+		agiBase.value = parseInt((+agiBase.min + +agiBase.max) / 2);
+	}/*Agi base Value Adjustment*/
+
+	if(lucBase.value > lucBase.max || lucBase.value < lucBase.min ) {
+		lucBase.value = parseInt((+lucBase.min + +lucBase.max) / 2);
+	}/*Luc base Value Adjustment*/
+
+	findTotal();
 }

@@ -40,8 +40,8 @@ $("[type='number']").not("[name='dmg'], [name='Level']").keydown(function (e) {
 }); /*Jquery that disables del/backspace use for inputs of type number*/
 
 function findTotal(){
-    var arr = document.getElementsByName('qtyBase');
-    var tot=0;
+    let arr = document.getElementsByName('qtyBase');
+    let tot=0;
     for(var i=0;i<arr.length;i++){
         if(parseInt(arr[i].value))
             tot += parseInt(arr[i].value);
