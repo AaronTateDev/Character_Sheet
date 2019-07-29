@@ -892,7 +892,21 @@ function setBaseRacialMax() {
 			break;
 
 		default:
-			console.log("Hmm");
+			strBase.min = 1;
+			perBase.min = 1;
+			endBase.min = 1;
+			chaBase.min = 1;
+			intBase.min = 1;
+			agiBase.min = 1;
+			lucBase.min = 1;
+
+			strBase.max = 10;
+			perBase.max = 10;
+			endBase.max = 10;
+			chaBase.max = 10;
+			intBase.max = 10;
+			agiBase.max = 10;
+			lucBase.max = 10;
 	}
 
 	if(strBase.value > strBase.max || strBase.value < strBase.min ) {

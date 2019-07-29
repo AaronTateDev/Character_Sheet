@@ -27,8 +27,10 @@ div.select {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "nameArea nameArea healthArmor healthArmor" "primaryStat secondaryStat healthArmor healthArmor" "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" "skills1 skills2 skills3 skills4"; 
-  
+  grid-template-areas: "nameArea nameArea healthArmor healthArmor"
+                       "primaryStat secondaryStat healthArmor healthArmor" 
+                       "primaryStat secondaryStat apSpoolImpEndurance apSpoolImpEndurance" 
+                       "skills1 skills2 skills3 skills4";   
 }
 
 .nameArea {
@@ -104,15 +106,18 @@ div.select {
   width: 220px;
 }
 
-.armorSelectStyle ::-webkit-scrollbar, .nameSpace.raceDropdown ::-webkit-scrollbar {
-    width: 1em;
+.armorSelectStyle ::-webkit-scrollbar,
+.nameSpace.raceDropdown ::-webkit-scrollbar {
+  width: 1em;
 }
  
-.armorSelectStyle ::-webkit-scrollbar-track, .nameSpace.raceDropdown ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.7);
+.armorSelectStyle ::-webkit-scrollbar-track,
+.nameSpace.raceDropdown ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.7);
 }
  
-.armorSelectStyle ::-webkit-scrollbar-thumb, .nameSpace.raceDropdown ::-webkit-scrollbar-thumb {
+.armorSelectStyle ::-webkit-scrollbar-thumb,
+.nameSpace.raceDropdown ::-webkit-scrollbar-thumb {
   background-color: #39ff14;
   outline: 1px solid slategrey;
 }
