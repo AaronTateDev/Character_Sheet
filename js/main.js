@@ -247,7 +247,7 @@ function secondaryStats() {
     /*---- Total Rad Resist Calc ----*/
 
     document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
-    +document.getElementById('baseElecRes').value;
+    +document.getElementById('baseElecRes').value + arElecResist + ugElecResist;
     /*---- Total Electricity Resist Calc (race/items required)----*/
 
     document.getElementById('totalGasRes').value = +document.getElementById('modGasRes').value +
@@ -290,10 +290,10 @@ function secondaryStats() {
     /*---- Total AP Spool Calc ----*/
 
 /*---------------------------------- RACIAL BONUSES SECTION ------------------------------*/
-    supMutantRacialSkill = 0;
+    supMutantRacialSkill = 0; 
     if(document.getElementById('raceSelector').value == "Human"){
         document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
-        +document.getElementById('baseElecRes').value + 30; //Electricity Resist
+        +document.getElementById('baseElecRes').value + 30 + arElecResist + ugElecResist; //Electricity Resist
     }/*---- Human Racial Bonuses ----*/
 
     if(document.getElementById('raceSelector').value == "Ghoul"){
@@ -334,7 +334,7 @@ function secondaryStats() {
 
     if(document.getElementById('raceSelector').value == "Dog"){
         document.getElementById('totalElecRes').value = +document.getElementById('modElecRes').value +
-        +document.getElementById('baseElecRes').value + 50; //Electricity Resist
+        +document.getElementById('baseElecRes').value + 50 + arElecResist + ugElecResist; //Electricity Resist
     }/*---- Dog Racial Bonuses ----*/
 
     if(document.getElementById('raceSelector').value == "Robot"){

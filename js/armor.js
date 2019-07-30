@@ -39,7 +39,7 @@ ugElecResist = 0,
 ugWt = 0,
 ugStReq = 0; /*Undergarment Resistance Values*/
 
-let	
+var	
 arNormalDT = 0, 
 arNormalDR = 0,
 arLaserDT = 0,
@@ -183,11 +183,14 @@ function equipSelection() {
 
 			undergarmentEquip();
 			armorEquip();			
-		}else {	
+		}else {
 			tooltip5.destroy();		
 			undergarmentEquip();
 			armorEquip();
 			statRequirements();
+			secondaryStats();
+			document.getElementById('armorButton').click();
+			document.getElementById('armorButton').click();
 		}
 		
 	}else if(event.target.id == "undergarmentButton") {
@@ -583,7 +586,7 @@ function undergarmentEquip() {
 secondaryStats();
 }
 
-function armorEquip() {     
+function armorEquip() { 
     switch (event.target.id != "raceSelector") {    	
 	    case arButton.innerHTML == "Unequip: " + arChange.value:	        
 	    	arNormalDT = 0;
@@ -604,8 +607,8 @@ function armorEquip() {
 			arWt = 0;
 			arStReq = 0;
 			sneakAdjust = 0;			
-			arButton.innerHTML = "Equip";					    
-	        break;	    	
+			arButton.innerHTML = "Equip";				    
+	        break;
 
 	    case arChange.value == "Robe":
 	    	arNormalDT = 0;
@@ -1500,7 +1503,7 @@ function armorEquip() {
 	explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || arExplodeDT + racialDT;
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR || arExplodeDR + racialDR;
 
-statTotals();	
+statTotals();
 secondaryStats();
 }
 
