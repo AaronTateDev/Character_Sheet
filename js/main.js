@@ -1096,19 +1096,19 @@ document.addEventListener("input", function(){
 
 function tagSkills(){
     taggedSkills = event.target;
+    let tooltip = new HTML5TooltipUIComponent;
+    let tooltip2 = new HTML5TooltipUIComponent;
     
-    var tooltip = new HTML5TooltipUIComponent;
-    var tooltip2 = new HTML5TooltipUIComponent;
+    
     var tipTarget = event.target;
 
     if(taggedSkills.nextElementSibling.firstChild.value == 
     taggedSkills.nextElementSibling.nextElementSibling.firstChild.value && tagNum < tagMax ){
     	if(event.target.style.background == tagColor){
-            console.log(event.target.style.background);
             event.target.style.background = '';
             event.target.style.color = tagColor;
             tagNum -= 1;
-        }else {console.log(event.target.style.background);
+        }else {
             event.target.style.background = tagColor;
             event.target.style.color = tagTextColor;
             tagNum += 1;          
@@ -1120,6 +1120,7 @@ function tagSkills(){
             event.target.style.color = tagColor;
             tagNum -= 1;              
     }else if (event.target.style.background != tagColor && tagNum == tagMax) {        
+        tooltip.destroy();
         tooltip.set({
           animateFunction: "foldout",
           color: "terminal darkgreen",
@@ -1130,6 +1131,7 @@ function tagSkills(){
         });//Max tags reached indicator
         tooltip.show();        
     }else {//TOOLTIP Reference site https://github.com/ytiurin/html5tooltipsjs and http://ytiurin.github.io/html5tooltipsjs/
+        tooltip2.destroy();
         tooltip2.set({
           animateFunction: "spin",
           color: "terminal darkgreen",

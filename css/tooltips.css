@@ -126,7 +126,7 @@
 .tooltip-left:after {
   right: 100%;
   bottom: 50%;
-  left: auto;
+  left: auto;margin-left: 20px;
   border-radius: 20px;
 }
 
@@ -202,6 +202,7 @@
 .tooltip-left:before,
 .tooltip-right:before {
   top: 3px;
+
 }
 
 /* Vertically center tooltip content for left/right tooltips */

@@ -68,6 +68,7 @@
 {
   left: 100%;
   top: 50%;
+  margin-left: -5px;
 }
 .html5tooltip-right .html5tooltip-box:before
 {

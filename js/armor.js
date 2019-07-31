@@ -84,8 +84,12 @@ gearStatReqTxt;
 
 
 function equipSelection() {
+	tooltip3.destroy();
+	tooltip4.destroy();
+	tooltip5.destroy();
+
 	tooltip3.set({
-          animateFunction: "scalein",
+          animateFunction: "slidein",
           color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear undergarments.",
           stickTo: "right",                        
@@ -94,7 +98,7 @@ function equipSelection() {
         });/*Undergarment Requirement tooltip*/ 
 
     tooltip4.set({
-          animateFunction: "scalein",
+          animateFunction: "slidein",
           color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear armor.",
           stickTo: "right",                        
@@ -103,7 +107,7 @@ function equipSelection() {
         });/*Armor Requirement tooltip*/ 
 
     tooltip5.set({
-          animateFunction: "scalein",
+          animateFunction: "slidein",
           color: "terminal darkgreen",
           contentText: "A " + raceResists.value + " may not wear undergarments or armor.",
           stickTo: "right",                        
@@ -308,8 +312,9 @@ function statRequirements() {
 			gearStatReqTxt = "Requires atleast " + aragReq + " agility to equip.";
 		}
 
+		tooltip6.destroy();
 		tooltip6.set({
-          animateFunction: "scalein",
+          animateFunction: "slidein",
           color: "terminal darkgreen",
           contentText: gearStatReqTxt,
           stickTo: "right",                        

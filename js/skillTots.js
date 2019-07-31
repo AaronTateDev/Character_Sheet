@@ -692,8 +692,9 @@ return function ( source ) {
 
 /*----------Inscructions toggle Functions--------*/
 function instructionsOn() {
+	tooltip7.destroy();
 	tooltip7.set({
-	          animateFunction: "foldin",
+	          animateFunction: "scalein",
 	          color: "terminal darkgreen",
 	          contentText: "Select fields and use up/down arrow to adjust values<br>" +
 	          			   "Nearly all Mods/Spend values may be adjusted<br>" +
@@ -709,7 +710,7 @@ function instructionsOn() {
 	          			   "Spool Segment button can be used to keep track of AP spool, " +
 	          			   "adjust AP Spent field to keep track of spent AP in a round<br><br>" +
 	          			   "<strong>Quick Start: </strong>Choose a race and adjust <strong>base</strong> S.P.E.C.I.A.L. stat values " +
-	          			   "up to 40 or 47 with gifted and you are ready for adventure<br><br>" +
+	          			   "up to 40 or 47 with gifted then select 3 skills to tag by clicking the desired skill name<br><br>" +
 	          			   "<strong>Tip: </strong>When you have enough skill points to spend the Spend fields will have a dashed border<br>",
 
 	          stickTo: "right",                        
