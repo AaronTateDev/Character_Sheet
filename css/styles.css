@@ -33,9 +33,11 @@ div.select {
                        "skills1 skills2 skills3 skills4";   
 }
 
-.nameArea {
+.nameArea { 
+  display: grid;
   grid-area: nameArea;
-
+  justify-items:  center;
+  align-items: start;
  }
 
 .healthArmor {
@@ -346,6 +348,10 @@ input[type='checkbox'] {
   margin-top: 20px;
   margin-left: 7.5%;
 
+}
+
+.nameAreaContainer 
+  justify-items: center;
 }
 
 
