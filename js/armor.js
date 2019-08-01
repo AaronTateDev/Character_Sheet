@@ -114,14 +114,12 @@ function equipSelection() {
           maxWidth: 130,
           target: event.target.nextElementSibling
         });/*Armor Requirement tooltip*/ 
-
         tooltip3.mount();         
         tooltip4.mount();
-        tooltip5.mount();
-        setBaseRacialMax();        
+        tooltip5.mount();        
         
 	if(event.target.id == "raceSelector"){
-
+		setBaseRacialMax();
 		if (raceResists.value == "Deathclaw" || raceResists.value == "Deathclaw (Grey Tribe)" || raceResists.value == "Robot"){
 			tooltip5.show();
 		    document.addEventListener('mousemove',function(){            

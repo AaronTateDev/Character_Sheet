@@ -36,7 +36,7 @@ div.select {
 .nameArea { 
   display: grid;
   grid-area: nameArea;
-  justify-items:  center;
+  margin-left: 4%;
   align-items: start;
  }
 
@@ -349,11 +349,6 @@ input[type='checkbox'] {
   margin-left: 7.5%;
 
 }
-
-.nameAreaContainer 
-  justify-items: center;
-}
-
 
 /*--------------------- Save/Load Styles ------------------------*/
 
