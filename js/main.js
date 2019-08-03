@@ -1174,27 +1174,20 @@ function load() {
 function loader(){    
     var elements = document.getElementsByClassName('skName');
     for (var i = 0; i < elements.length; i++) {
-        //elements[i] = elements[i].style.backgroundColor;
         if (localStorage.getItem(i) == tagColor) {            
             elements[i].click();
         }                      
     }
     event.target.innerHTML = event.target.value;
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
-      el.value = localStorage.getItem(el.id);
-      /*if (el.id == document.getElementById('sex').id) {            
-           console.log(el.value);
-           document.getElementById('sex').innerHTML = el.value;
-      } */ 
+      el.value = localStorage.getItem(el.id); 
       if (el.prevValue != undefined){
         el.prevValue = localStorage.getItem(el.id);
         }
         statTotals();
         secondaryStats();
         skillTotals();
-
     });
-    /*document.getElementById('sex').innerHTML = document.getElementById('sex').value;*/
     document.getElementById('undergarmentButton').click();
     document.getElementById('armorButton').click();    
 }
@@ -1252,10 +1245,7 @@ function spendBorderStyleSolid(){
     let spendElements = document.getElementsByClassName('spendSkill');
     for (var i = 0; i < spendElements.length; i++) {
         spendElements[i].style.border = "inset #39ff14 2px";
-    }
-    /*if (document.getElementById('totalSkillPts').value == 0) {
-        spendBorderStyleSolid();
-    }*/                    
+    }         
 }
 
 function spendBorderStyleDashed(){    
@@ -1265,9 +1255,7 @@ function spendBorderStyleDashed(){
     } 
     if (document.getElementById('totalSkillPts').value == 0) {
         spendBorderStyleSolid();
-    }  
-                     
+    }                       
 }
-
 
 //-------------------------------------------
