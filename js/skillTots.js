@@ -375,7 +375,6 @@ function ouchDmg() {
 	 document.getElementById('dmgTaken').value;
 }
 
-
 function spoolTracker() {
 	firstSpoolRound = (tApSpool.value - spoolInput.value).toFixed(1);
 	secondSpoolRound = (tApSpool.value * 3 - spoolInput.value).toFixed(1);
@@ -472,11 +471,29 @@ var operators = {
       return a / b;
     }
   },
-  'd' : {
+  'd': {
     precedence : 3,
     exec : function ( rolls, sides, rollsSoFar ) {
-      if ( rolls > 1000 ) {
-        throw new Error( 'Maximum roll count is 100' );
+      if ( rolls > 500 ) {
+        throw new Error( 'Maximum roll count is 500' );
+      }
+
+      var ret = 0, roll;
+      while ( rolls-- ) {
+        roll = Math.floor( Math.random() * sides ) + 1;
+
+        ret += roll;
+        rollsSoFar.push( roll );
+      }
+
+      return ret;
+    }
+  },
+  'D': {
+    precedence : 3,
+    exec : function ( rolls, sides, rollsSoFar ) {
+      if ( rolls > 500 ) {
+        throw new Error( 'Maximum roll count is 500' );
       }
 
       var ret = 0, roll;
@@ -626,7 +643,6 @@ var parser = {
 
       throw chuckNorris;
     }
-
 
     return ret;
   },
