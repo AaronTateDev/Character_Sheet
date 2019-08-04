@@ -488,24 +488,6 @@ var operators = {
 
       return ret;
     }
-  },
-  'D': {
-    precedence : 3,
-    exec : function ( rolls, sides, rollsSoFar ) {
-      if ( rolls > 500 ) {
-        throw new Error( 'Maximum roll count is 500' );
-      }
-
-      var ret = 0, roll;
-      while ( rolls-- ) {
-        roll = Math.floor( Math.random() * sides ) + 1;
-
-        ret += roll;
-        rollsSoFar.push( roll );
-      }
-
-      return ret;
-    }
   }
 };
 
