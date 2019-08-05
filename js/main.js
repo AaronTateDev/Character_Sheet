@@ -649,7 +649,7 @@ function secondaryStats() {
     	}
 
     	spendBEW.min = baseBEWeapTotal;
-    	spendBEW.prevValue = spendBEW.value;    	
+    	spendBEW.prevValue = spendBEW.value;
     }else {
     	baseBEW.value = 0;
     }/*---- Base Big Energy Weapons Skill Calc ----*/    
