@@ -147,7 +147,7 @@ function secondaryStats() {
     }else if (baseMeleeDTotal > 1) {
     	document.getElementById('baseMeleeD').value = baseMeleeDTotal;
     }else if (sTotal == 0) {
-    	document.getElementById('baseMeleeD').value = 0; 
+    	document.getElementById('baseMeleeD').value = 0;
     }/*---- Base Melee Damage Calc ----*/
 
     basePoisonResTotal = 5 * eTotal;
