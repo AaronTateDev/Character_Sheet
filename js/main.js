@@ -519,7 +519,7 @@ function secondaryStats() {
     	}
 
     	spendMG.min = baseMGTotal;
-    	spendMG.prevValue = spendMG.value;    	
+    	spendMG.prevValue = spendMG.value;
     }else {
     	baseMG.value = 0;
     }/*---- Base Machine-Gun Skill Calc ----*/ 
