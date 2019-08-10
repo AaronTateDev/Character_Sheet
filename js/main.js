@@ -510,7 +510,7 @@ function secondaryStats() {
         baseMGTotal =  10 + (4 * sTotal) + 20;
     }/*Adds tag points to base skill*/
     
-    if (sTotal > 0) {
+    if (sTotal > 0) { 
     	baseMG.value = baseMGTotal;
     	if (spendMG.min > baseMG.value){
     		spendMG.value = spendMG.value - (spendMG.min - baseMG.value);
