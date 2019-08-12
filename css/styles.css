@@ -212,8 +212,7 @@ input.dmg {
 .throwTable {
   position: relative;
   left: 51%;
-  bottom: 21%;
-  
+  bottom: 21%;  
 }
 
 .throwTable td input, button {
