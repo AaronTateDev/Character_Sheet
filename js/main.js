@@ -564,7 +564,7 @@ function secondaryStats() {
     	}
 
     	spendMo.min = baseMortarsTotal;
-    	spendMo.prevValue = spendMo.value;    	
+    	spendMo.prevValue = spendMo.value;
     }else {
     	baseMo.value = 0;
     }/*---- Base Mortars Skill Calc ----*/    
@@ -629,7 +629,7 @@ function secondaryStats() {
     	spendER.min = baseERifleTotal;
     	spendER.prevValue = spendER.value;    	
     }else {
-    	baseER.value = 0;
+    	baseER.value = 0;        
     }/*---- Base Energy Rifles Skill Calc ----*/    
        
     baseBEWeapTotal = (2 * sTotal) + (iTotal * 2);
