@@ -543,7 +543,7 @@ function secondaryStats() {
     	}
 
     	spendGML.min = baseGMLaunchTotal;
-    	spendGML.prevValue = spendGML.value;    	
+    	spendGML.prevValue = spendGML.value;
     }else {
     	baseGML.value = 0;
     }/*---- Base Grenade/Missile Launcher Skill Calc ----*/ 
