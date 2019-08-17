@@ -351,7 +351,6 @@ function secondaryStats() {
         //ADD the +25% DR
     }/*---- Andriod Humanoid Robot Racial Bonuses ----*/
 
-
 /*---------------------------------- SKILLS SECTION --------------------------------------*/
     /*------------------------------*/
     /*---- Base Skills1 Section ----*/
