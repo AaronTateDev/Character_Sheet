@@ -349,7 +349,7 @@ function secondaryStats() {
         +document.getElementById('baseRadRes').value + 80; //Radiation Resist 
         // Skill point increase code located in base skill pt per lvl section   
         //ADD the +25% DR
-    }/*---- Andriod Humanoid Robot Racial Bonuses ----*/
+    }/*---- Andriod Humanoid Robot Racial Bonuses ----*/ 
 
 /*---------------------------------- SKILLS SECTION --------------------------------------*/
     /*------------------------------*/
