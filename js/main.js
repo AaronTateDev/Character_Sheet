@@ -929,7 +929,7 @@ function secondaryStats() {
     	spendAi.min = baseAircraftTotal;
     	spendAi.prevValue = spendAi.value;    	
     }else {
-    	baseAi.value = 0; 
+    	baseAi.value = 0;
     }/*---- Base Pilot, Aircraft Skill Calc ----*/    
 
     baseAPCTankTotal = (sTotal + pTotal) * 2;
