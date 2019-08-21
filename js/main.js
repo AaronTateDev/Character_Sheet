@@ -89,7 +89,7 @@ function statTotals(){
         if ((+document.getElementById('thrownMod').value + sTotal + 5) < document.getElementById('thrownWeight').value) {
             document.getElementById('thrownWeight').value = (+document.getElementById('thrownMod').value + sTotal + 5);
         }      
-        
+    
      thrownObject();
     }   
 }
