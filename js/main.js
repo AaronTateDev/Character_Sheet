@@ -499,7 +499,7 @@ function secondaryStats() {
     	spendSh.min = baseShotgunTotal;
     	spendSh.prevValue = spendSh.value;    	
     }else {
-    	baseSh.value = 0; 
+    	baseSh.value = 0;
     }/*---- Base Shotgun Skill Calc ----*/  
 
     baseMGTotal =  10 + (4 * sTotal);
