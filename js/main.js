@@ -1182,7 +1182,7 @@ function loader(){
       el.value = localStorage.getItem(el.id); 
       if (el.prevValue != undefined){
         el.prevValue = localStorage.getItem(el.id);
-        }
+      }
         statTotals();
         secondaryStats();
         skillTotals();
