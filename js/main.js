@@ -1179,7 +1179,7 @@ function loader(){
     }
     event.target.innerHTML = event.target.value;
     [].forEach.call(document.querySelector('#justice').elements, function(el) {
-      el.value = localStorage.getItem(el.id); 
+      el.value = localStorage.getItem(el.id);
       if (el.prevValue != undefined){
         el.prevValue = localStorage.getItem(el.id);
       }
