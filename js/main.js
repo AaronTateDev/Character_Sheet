@@ -717,7 +717,7 @@ function secondaryStats() {
     	spendDoc.prevValue = spendDoc.value;    	
     }else {
     	baseDoc.value = 0;
-    }/*---- Base Doctor Skill Calc ----*/
+    }/*---- Base Doctor Skill Calc ----*/ 
 
     baseFAidTotal = (pTotal + eTotal) * 2;
     baseFA = document.getElementById('baseFAidSkill');
