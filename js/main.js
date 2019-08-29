@@ -668,7 +668,7 @@ function secondaryStats() {
     		spendMe.value = +spendMe.value + (baseMe.value - spendMe.min);
     	}
 
-    	spendMe.min = baseMeleeTotal;
+    	spendMe.min = baseMeleeTotal; 
     	spendMe.prevValue = spendMe.value;    	
     }else {
     	baseMe.value = 0;
@@ -676,7 +676,7 @@ function secondaryStats() {
 
     baseUnarmedTotal = 20 + (aTotal * 3) + sTotal;
     baseUn = document.getElementById('baseUnarmedSkill');
-    spendUn = document.getElementById('spendUnarmedSkill');
+    spendUn = document.getElementById('spendUnarmedSkill'); 
     if (baseUn.parentElement.previousElementSibling.style.background == tagColor){
         baseUnarmedTotal =  20 + (aTotal * 3) + sTotal + 20;
     }/*Adds tag points to base skill*/
