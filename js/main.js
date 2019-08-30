@@ -17,7 +17,7 @@ totalApSpoolChangeTest;
 var 
 tagMax = 3,
 tagNum = 0; //Sets max number of tags (not currently implemented)
-var 
+var
 tagColor = 'rgb(57, 255, 20)',
 tagTextColor = 'rgb(9, 26, 13)';
 
