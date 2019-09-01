@@ -1032,7 +1032,7 @@ function secondaryStats() {
     	}
 
     	spendSu.min = baseSurvivalTotal;
-    	spendSu.prevValue = spendSu.value;
+    	spendSu.prevValue = spendSu.value; 
     }else {
     	baseSu.value = 0;
     }/*---- Base Survivalist Skill Calc ----*/ 
