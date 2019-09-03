@@ -307,7 +307,7 @@ function secondaryStats() {
         document.getElementById('totalPoisonRes').value = +document.getElementById('modPoisonRes').value +
         +document.getElementById('basePoisonRes').value + 20; //Poison Resist
         document.getElementById('totalRadRes').value = +document.getElementById('modRadRes').value +
-        +document.getElementById('baseRadRes').value + 50;//Radiation Resist        
+        +document.getElementById('baseRadRes').value + 50; //Radiation Resist        
         /* Extra health per level code located in Secondary Stats
         section under in Base health code*/
         supMutantRacialSkill = supMutantRacialSkill - 40; //Super-Mutant skill point reducer
