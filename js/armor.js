@@ -1,4 +1,5 @@
-var normalDT = document.getElementById("normalDT"),
+var 
+normalDT = document.getElementById("normalDT"),
 normalDR = document.getElementById("normalDR"),
 laserDT = document.getElementById("laserDT"),
 laserDR = document.getElementById("laserDR"),
@@ -8,6 +9,26 @@ plasmaDT = document.getElementById("plasmaDT"),
 plasmaDR = document.getElementById("plasmaDR"),
 explodeDT = document.getElementById("explodeDT"),
 explodeDR = document.getElementById("explodeDR"),
+normalAdjustedDT = document.getElementById("normalAdjustedDT"),
+normalAdjustedDR = document.getElementById("normalAdjustedDR"),
+laserAdjustedDT = document.getElementById("laserAdjustedDT"),
+laserAdjustedDR = document.getElementById("laserAdjustedDR"),
+fireAdjustedDT = document.getElementById("fireAdjustedDT"),
+fireAdjustedDR = document.getElementById("fireAdjustedDR"),
+plasmaAdjustedDT = document.getElementById("plasmaAdjustedDT"),
+plasmaAdjustedDR = document.getElementById("plasmaAdjustedDR"),
+explodeAdjustedDT = document.getElementById("explodeAdjustedDT"),
+explodeAdjustedDR = document.getElementById("explodeAdjustedDR"),
+normalTotalDT = document.getElementById("normalTotalDT"),
+normalTotalDR = document.getElementById("normalTotalDR"),
+laserTotalDT = document.getElementById("laserTotalDT"),
+laserTotalDR = document.getElementById("laserTotalDR"),
+fireTotalDT = document.getElementById("fireTotalDT"),
+fireTotalDR = document.getElementById("fireTotalDR"),
+plasmaTotalDT = document.getElementById("plasmaTotalDT"),
+plasmaTotalDR = document.getElementById("plasmaTotalDR"),
+explodeTotalDT = document.getElementById("explodeTotalDT"),
+explodeTotalDR = document.getElementById("explodeTotalDR"),
 raceResists = document.getElementById("raceSelector"),
 tooltip3 = new HTML5TooltipUIComponent, /*Undergarment Req*/
 tooltip4 = new HTML5TooltipUIComponent, /*Armor Req*/
@@ -81,6 +102,16 @@ let
 racialDT = 0,
 racialDR = 0,
 gearStatReqTxt;
+
+document.addEventListener("input", function (event) {
+	if (event.target.id == 'normalAdjustedDT' || event.target.id == 'normalAdjustedDR'||
+		event.target.id == 'laserAdjustedDT' || event.target.id == 'laserAdjustedDR'||
+		event.target.id == 'fireAdjustedDT' || event.target.id == 'fireAdjustedDR'||
+		event.target.id == 'plasmaAdjustedDT' || event.target.id == 'plasmaAdjustedDR'||
+		event.target.id == 'explodeAdjustedDT' || event.target.id == 'explodeAdjustedDR') {
+		resistAdjustments();
+		}
+	}, false);//calculates DR/DT values when +/- adjusted
 
 
 function equipSelection() {
@@ -376,6 +407,7 @@ function statRequirements() {
 		explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT || arExplodeDT + racialDT;
 		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
 
+		resistAdjustments();
 		statTotals();
 		secondaryStats();		
 	}
@@ -428,7 +460,8 @@ function statRequirements() {
 		plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR || arPlasmaDR + racialDR;
 		explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT || arExplodeDT + racialDT;
 		explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR || arExplodeDR + racialDR;
-		
+
+		resistAdjustments();		
 		secondaryStats();
 	} 
 }
@@ -584,9 +617,9 @@ function undergarmentEquip() {
 	plasmaDR.value = ugPlasmaDR + arPlasmaDR + racialDR || ugPlasmaDR + racialDR;
 	explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || ugExplodeDT + racialDT;
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR|| ugExplodeDR + racialDR;
-	
 
-secondaryStats();
+	resistAdjustments();
+	secondaryStats();
 }
 
 function armorEquip() { 
@@ -1506,7 +1539,20 @@ function armorEquip() {
 	explodeDT.value = ugExplodeDT + arExplodeDT + racialDT || arExplodeDT + racialDT;
 	explodeDR.value = ugExplodeDR + arExplodeDR + racialDR || arExplodeDR + racialDR;
 
-statTotals();
-secondaryStats();
+	resistAdjustments();
+	statTotals();
+	secondaryStats();
 }
 
+function resistAdjustments() {
+	normalTotalDT.value = +normalDT.value + +normalAdjustedDT.value;
+	normalTotalDR.value = +normalDR.value + +normalAdjustedDR.value;
+	laserTotalDT.value = +laserDT.value + +laserAdjustedDT.value;
+	laserTotalDR.value = +laserDR.value + +laserAdjustedDR.value;
+	fireTotalDT.value = +fireDT.value + +fireAdjustedDT.value;
+	fireTotalDR.value = +fireDR.value + +fireAdjustedDR.value;
+	plasmaTotalDT.value = +plasmaDT.value + +plasmaAdjustedDT.value;
+	plasmaTotalDR.value = +plasmaDR.value + +plasmaAdjustedDR.value;
+	explodeTotalDT.value = +explodeDT.value + +explodeAdjustedDT.value;
+	explodeTotalDR.value = +explodeDR.value + +explodeAdjustedDR.value;
+}

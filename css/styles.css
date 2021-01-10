@@ -126,7 +126,12 @@ div.select {
 
 /*--------------------- Input Field Styles -------------------*/
 
-#modSkillPts:hover, #modApSpool:hover {
+#modSkillPts:hover, #modApSpool:hover,
+#normalTotalDT:hover, #normalTotalDR:hover,
+#laserTotalDT:hover, #laserTotalDR:hover,
+#fireTotalDT:hover, #fireTotalDR:hover,
+#plasmaTotalDT:hover, #plasmaTotalDR:hover,
+#explodeTotalDT:hover, #explodeTotalDR:hover {
   background-color: #bec5d1;
   cursor: not-allowed;
 }
@@ -203,6 +208,13 @@ input[type=number] {
   user-select: none;
 }/*Skill names styles*/
 
+#normalTotalDT, #normalTotalDR,
+#laserTotalDT, #laserTotalDR,
+#fireTotalDT, #fireTotalDR,
+#plasmaTotalDT, #plasmaTotalDR,
+#explodeTotalDT, #explodeTotalDR {
+  font-weight: 600;
+}
 
 input.dmg {
   width: 55px;

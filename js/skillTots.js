@@ -258,28 +258,28 @@ document.getElementById("instructions").addEventListener("mouseup", instructions
 function damageCalc() {
 	switch (dmgCalc.value) {//((100-DR)/100)*DMG - DT(# of hits)
 		case 'Normal':		
-			dmgDT = normalDT.value;
-			dmgDR = normalDR.value;
+			dmgDT = normalTotalDT.value;
+			dmgDR = normalTotalDR.value;
 			break;
 
 		case 'Laser':		
-			dmgDT = laserDT.value;
-			dmgDR = laserDR.value;
+			dmgDT = laserTotalDT.value;
+			dmgDR = laserTotalDR.value;
 			break;
 
 		case 'Fire':		
-			dmgDT = fireDT.value;
-			dmgDR = fireDR.value;
+			dmgDT = fireTotalDT.value;
+			dmgDR = fireTotalDR.value;
 			break;
 
 		case 'Plasma':		
-			dmgDT = plasmaDT.value;
-			dmgDR = plasmaDR.value;
+			dmgDT = plasmaTotalDT.value;
+			dmgDR = plasmaTotalDR.value;
 			break;
 
 		case 'Explode':
-			dmgDT = explodeDT.value;
-			dmgDR = explodeDR.value;
+			dmgDT = explodeTotalDT.value;
+			dmgDR = explodeTotalDR.value;
 			break;
 
 		default:
