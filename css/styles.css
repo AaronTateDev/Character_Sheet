@@ -360,6 +360,42 @@ input[type='checkbox'] {
   margin-left: 7.5%;
 }
 
+.notesAreaStyle {
+  margin-top: 1rem;
+  width: 255px;
+  height: 6rem;
+  max-width: 260px;
+  background-color: #031f01;
+  border-color:#39ff14;
+  border-radius: 3px;
+}
+
+.notesAreaStyle:focus {
+  border-color: #39ff14;
+  outline: none;  
+}
+
+.notesAreaStyle::placeholder {
+  color: #7cb07b;
+}
+
+.notesAreaStyle::-webkit-scrollbar {
+  width: 7px;cursor:
+}
+
+.notesAreaStyle::-webkit-scrollbar-track {
+}
+
+.notesAreaStyle::-webkit-scrollbar-thumb {
+  background-color: #39ff14 ;
+  border: 3px solid #39ff14;
+  cursor: pointer;
+}
+
+.notesAreaStyle::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 /*--------------------- Save/Load Styles ------------------------*/
 
 .button {
