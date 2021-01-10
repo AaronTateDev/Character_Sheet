@@ -15,8 +15,8 @@ supMutantRacialSkill,
 totalApSpoolChangeTest;
 
 var 
-tagMax = 3,
-tagNum = 0; //Sets max number of tags (not currently implemented)
+tagMax = 4,
+tagNum = 0; //ensures max tag limit
 var
 tagColor = 'rgb(57, 255, 20)',
 tagTextColor = 'rgb(9, 26, 13)';
