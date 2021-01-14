@@ -439,11 +439,11 @@ function secondaryStats() {
     	basePr.value = 0;
     }/*---- Base Prim. Missile Weap Skill Calc ----*/    
 
-    baseThrowingTotal =  5 + (4 * aTotal);
+    baseThrowingTotal =  (3 * sTotal) + aTotal;
     baseTh = document.getElementById('baseThrowSkill');
     spendTh = document.getElementById('spendThrowSkill');
     if (baseTh.parentElement.previousElementSibling.style.background == tagColor){
-        baseThrowingTotal =  5 + (4 * aTotal) + 20;
+        baseThrowingTotal =  (3 * sTotal) + aTotal + 20;
     }/*Adds tag points to base skill*/
     
     if (aTotal > 0) {
