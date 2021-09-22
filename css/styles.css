@@ -368,6 +368,9 @@ input[type='checkbox'] {
   background-color: #031f01;
   border-color:#39ff14;
   border-radius: 3px;
+  /*resize: none;*/
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .notesAreaStyle:focus {

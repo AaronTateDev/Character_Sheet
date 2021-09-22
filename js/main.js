@@ -39,6 +39,10 @@ $("[type='number']").not("[name='dmg'], [name='Level']").keydown(function (e) {
   }
 }); /*Jquery that disables del/backspace use for inputs of type number*/
 
+$('textarea').keydown(function(e) {
+    e.stopPropagation();
+}); /*Jquery allows for linebreaks in text area*/
+
 function findTotal(){
     let arr = document.getElementsByName('qtyBase');
     let tot=0;
